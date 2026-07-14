@@ -1,0 +1,4044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Banking Entry | Stackly</title>
+    <!-- Link to external CSS sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Preloader Shield Screen -->
+    <div id="preloader">
+        <div class="bg-grid"></div>
+        <div class="preloader-content">
+            
+            <div class="logo-wrapper">
+                <div class="logo-ring"></div>
+                <!-- Premium Vector Bank Icon -->
+                <svg class="logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22V8M5 12H19M5 17H19M2 22H22M12 2L2 7H22L12 2Z"/>
+                </svg>
+            </div>
+
+            <h1>Stackly Secure Bank</h1>
+            <div class="status-msg" id="loading-text">Initializing Firewall...</div>
+
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+            
+        </div>
+    </div>
+
+   
+<script>
+    // Dynamic Financial Network Handshake Messages
+const updates = [
+    { time: 0, text: "Initializing Security Firewall..." },
+    { time: 600, text: "Configuring End-to-End Handshake..." },
+    { time: 1300, text: "Syncing Cryptographic Ledger Assets..." },
+    { time: 2000, text: "Gateway Decryption Approved." }
+];
+
+const textElement = document.getElementById('loading-text');
+
+// Loop through each progress text sequence smoothly
+updates.forEach(phase => {
+    setTimeout(() => {
+        textElement.innerText = phase.text;
+        
+        // Turn the final verification text status to glowing green
+        if (phase.text.includes("Approved")) {
+            textElement.style.color = "var(--success-glow)";
+            textElement.style.textShadow = "0 0 10px rgba(16, 185, 129, 0.4)";
+        }
+    }, phase.time);
+});
+
+// Rigid dismissal trigger locked strictly under 3 seconds (2800 milliseconds)
+window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        const loader = document.getElementById('preloader');
+        const content = document.getElementById('app-content');
+        
+        // Hide preloader shield via smooth visual transition
+        loader.style.opacity = '0';
+        loader.style.visibility = 'hidden';
+        
+        // Reveal main dashboard console workspace
+        content.classList.add('visible');
+    }, 2800); 
+});
+
+</script>
+  
+
+    <!-- Floating Transparent Header -->
+ <!-- Floating Transparent Header -->
+<header class="navbar-wrapper">
+    <div class="navbar-container">
+        
+        <!-- Zone 1: Brand Logo Container Area -->
+        <div class="brand-logo" id="logoBtn">
+            <img src="./Assests/logo.webp" alt="Stackly Logo" class="brand-img-fallback">
+           
+        </div>
+
+        <!-- Zone 2: Centered Navigation Menu List -->
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="nav-item">Home</a></li>
+            <li><a href="#crypto" class="nav-item">Digital Assets</a></li>
+            <li><a href="#cards" class="nav-item">Premium Cards</a></li>
+            <li><a href="#rates" class="nav-item">Market Rates</a></li>
+            <li><a href="#contact" class="nav-item">Contact Us</a></li>
+            
+            <!-- Mobile View Specific Auth Buttons (Hidden on Desktop) -->
+            <div class="auth-group mobile-only-auth">
+                <a href="#login" class="btn-auth btn-login">Login</a>
+                <a href="#signup" class="btn-auth btn-signup">Sign Up</a>
+            </div>
+        </ul>
+        
+        <!-- Zone 3: Desktop View Specific Auth Buttons (Hidden on Mobile) -->
+        <div class="auth-group desktop-only-auth">
+            <a href="#login" class="btn-auth btn-login">Login</a>
+            <a href="#signup" class="btn-auth btn-signup">Sign Up</a>
+        </div>
+
+        <!-- Mobile View Hamburger Icon Button Interface -->
+        <button class="hamburger-trigger" id="hamburgerToggle" aria-label="Toggle Navigation Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+    </div>
+</header>
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+
+    /* ===============================
+       NAVBAR ELEMENTS
+    =============================== */
+
+    const logoBtn = document.getElementById("logoBtn");
+    const hamburgerToggle = document.getElementById("hamburgerToggle");
+    const navLinks = document.getElementById("navLinks");
+    const menuOverlay = document.getElementById("menuOverlay");
+    const navItems = document.querySelectorAll(".nav-item");
+
+    /* ===============================
+       LOGO REFRESH
+    =============================== */
+
+    if (logoBtn) {
+        logoBtn.addEventListener("click", () => {
+            window.location.reload();
+        });
+    }
+
+    /* ===============================
+       MOBILE MENU
+    =============================== */
+
+    function openMenu() {
+        hamburgerToggle.classList.add("active");
+        navLinks.classList.add("open");
+        menuOverlay.classList.add("active");
+        document.body.classList.add("scroll-locked");
+    }
+
+    function closeMenu() {
+        hamburgerToggle.classList.remove("active");
+        navLinks.classList.remove("open");
+        menuOverlay.classList.remove("active");
+        document.body.classList.remove("scroll-locked");
+    }
+
+    if (hamburgerToggle) {
+        hamburgerToggle.addEventListener("click", () => {
+
+            if (navLinks.classList.contains("open")) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+
+        });
+    }
+
+    if (menuOverlay) {
+        menuOverlay.addEventListener("click", closeMenu);
+    }
+
+    navItems.forEach(item => {
+        item.addEventListener("click", closeMenu);
+    });
+
+    /* ===============================
+       INVESTMENT CAROUSEL
+    =============================== */
+
+    const track = document.getElementById("carouselTrack");
+    const prevBtn = document.getElementById("carouselPrev");
+    const nextBtn = document.getElementById("carouselNext");
+
+    if (track && prevBtn && nextBtn) {
+
+        let currentIndex = 0;
+
+        function itemsPerView() {
+            if (window.innerWidth > 1024) return 3;
+            if (window.innerWidth > 768) return 2;
+            return 1;
+        }
+
+        function updateCarousel() {
+
+            const cards = document.querySelectorAll(".investment-card");
+
+            if (!cards.length) return;
+
+            const visible = itemsPerView();
+            const maxIndex = Math.max(0, cards.length - visible);
+
+            currentIndex = Math.max(0, Math.min(currentIndex, maxIndex));
+
+            const gap = parseFloat(getComputedStyle(track).gap) || 0;
+            const cardWidth = cards[0].offsetWidth;
+
+            track.style.transform =
+                `translateX(-${currentIndex * (cardWidth + gap)}px)`;
+
+            prevBtn.style.opacity = currentIndex === 0 ? "0.4" : "1";
+            prevBtn.style.pointerEvents = currentIndex === 0 ? "none" : "auto";
+
+            nextBtn.style.opacity = currentIndex === maxIndex ? "0.4" : "1";
+            nextBtn.style.pointerEvents = currentIndex === maxIndex ? "none" : "auto";
+        }
+
+        nextBtn.addEventListener("click", () => {
+
+            const cards = document.querySelectorAll(".investment-card");
+
+            if (currentIndex < cards.length - itemsPerView()) {
+                currentIndex++;
+                updateCarousel();
+            }
+
+        });
+
+        prevBtn.addEventListener("click", () => {
+
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+
+        });
+
+        let resizeTimer;
+
+        window.addEventListener("resize", () => {
+
+            clearTimeout(resizeTimer);
+
+            resizeTimer = setTimeout(() => {
+
+                updateCarousel();
+
+                if (window.innerWidth > 912) {
+                    closeMenu();
+                }
+
+            }, 100);
+
+        });
+
+        updateCarousel();
+    }
+
+});
+</script>
+
+
+
+<!-- Master Section Wrapper with Clear Layout Barriers -->
+<section class="stackly-hero-viewport" id="home">
+    
+    <!-- Zone 1: Adaptive Ambient Background Vector Image Graphic -->
+    <div class="hero-canvas-bg">
+        <img src="./Assests/bank - bg hero.webp" alt="Stackly Grid Interface Backing" class="hero-bg-asset">
+        <div class="hero-shading-mask"></div>
+    </div>
+
+    <!-- Zone 2: Main Grid Matrix Constraint Wrapper -->
+    <div class="hero-grid-matrix">
+        
+        <!-- Column A: Promotional Content Cluster -->
+        <div class="hero-text-pane">
+            <div class="hero-pill-badge">
+                <span class="pulsing-core-dot"></span>
+                Quantum Encryption Protocol v2.4 Live
+            </div>
+            
+            <h1 class="hero-master-title">
+                Architecting Next-Gen <br>
+                <span>Wealth Ecosystems</span>
+            </h1>
+            
+            <p class="hero-paragraph-text">
+                Maximize equity yields, trade secured digital assets, and control premium high-yield portfolios with Stackly's optimized institutional execution algorithms.
+            </p>
+            
+            <div class="hero-action-buttons">
+                <a href="404.html" class="hero-action-btn primary-glow">Deploy Portfolio</a>
+                <a href="404.html" class="hero-action-btn secondary-outline">Explore Metrics</a>
+            </div>
+        </div>
+
+        <!-- Column B: Interactive Media Asset Graphic Panel -->
+        <div class="hero-media-pane">
+            <div class="hero-mockup-frame">
+                <div class="hero-glowing-halo"></div>
+                <img src="./Assests/wealth management.webp" alt="Stackly Premium Workspace Mockup Overview" class="hero-mockup-img">
+                
+                <!-- Floating Info Badge 1: Yield Vector Card -->
+                <div class="floating-data-card badge-yield-position">
+                    <div class="data-icon icon-emerald-tint">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <div class="data-details">
+                        <span class="data-lbl">Yield Vector</span>
+                        <span class="data-val">+24.8% APY</span>
+                    </div>
+                </div>
+
+                <!-- Floating Info Badge 2: Security Tracker Card -->
+                <div class="floating-data-card badge-vault-position">
+                    <div class="data-icon icon-gold-tint">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div class="data-details">
+                        <span class="data-lbl">Vault Security</span>
+                        <span class="data-val">256-Bit SSL</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* ==========================================================================
+   STACKLY IMMUTABLE HERO SECTION LAYOUT BASE
+   ========================================================================== */
+
+.stackly-hero-viewport {
+    position: relative !important;
+    display: flex !important; /* Establishes a true layout containment box */
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    min-height: 100vh !important; /* Retains absolute vertical workspace real estate */
+    height: auto !important;
+    padding: 70px 5% 0 5% !important; /* Massive bottom padding locks out following sections */
+    background-color: #04070d !important;
+    box-sizing: border-box !important;
+    clear: both !important; /* Prevent layout items from floating into horizontal gaps */
+    overflow: hidden !important;
+    z-index: 5 !important;
+}
+
+/* Background image asset configuration layers */
+.hero-canvas-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-bg-asset {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.12; /* Kept dim to optimize text readability profiles */
+}
+
+.hero-shading-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, transparent 50%, #04070d 100%);
+}
+
+/* Core Responsive Grid Matrix Engine */
+.hero-grid-matrix {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* --- COLUMN A: COPYWRITING STYLE RULES --- */
+.hero-pill-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(245, 158, 11, 0.05);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    padding: 0.5rem 1.1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #f59e0b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.05);
+    animation: heroFadeInUp 0.8s ease forwards;
+}
+
+.pulsing-core-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #10b981;
+    animation: badgePulse 1.8s infinite ease-in-out;
+}
+
+.hero-master-title {
+    font-size: 3.6rem;
+    font-weight: 800;
+    line-height: 1.15;
+    color: #f8fafc;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+    animation: heroFadeInUp 1s ease 0.2s forwards;
+    opacity: 0;
+}
+
+.hero-master-title span {
+    background: linear-gradient(135deg, #ffffff 40%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.2));
+}
+
+/* Subtext paragraph with interaction text-glow rules */
+.hero-paragraph-text {
+    font-size: 1.05rem;
+    color: white;
+    line-height: 1.65;
+    margin-bottom: 2.5rem;
+    max-width: 580px;
+    cursor: default;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    animation: heroFadeInUp 1s ease 0.4s forwards;
+    opacity: 0;
+}
+
+.hero-paragraph-text:hover {
+    color: #f59e0c;
+    text-shadow: 0 0 12px rgba(245, 158, 11, 0.35); /* Subtle gold typographical glow on hover */
+}
+
+/* Call To Actions Buttons Frame */
+.hero-action-buttons {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    animation: heroFadeInUp 1s ease 0.6s forwards;
+    opacity: 0;
+}
+
+.hero-action-btn {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.9rem 2.2rem;
+    border-radius: 8px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    text-align: center;
+}
+
+.primary-glow {
+    background: linear-gradient(135deg, #b45309 0%, #f59e0b 100%);
+    color: #000000;
+    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.25);
+}
+
+.primary-glow:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(245, 158, 11, 0.55);
+    filter: brightness(1.1);
+}
+
+.secondary-outline {
+    color: #f8fafc;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+}
+
+.secondary-outline:hover {
+    border-color: #f59e0b;
+    background: rgba(245, 158, 11, 0.04);
+    color: #f59e0b;
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.15);
+    transform: translateY(-2px);
+}
+
+/* --- COLUMN B: MEDIA INTERACTION PANEL & 3D HOVER GRAPHICS --- */
+.hero-media-pane {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: heroScaleIn 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.hero-mockup-frame {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    perspective: 1000px; /* Prepare canvas space for 3D rotation steps */
+}
+
+.hero-mockup-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                border-color 0.6s ease, 
+                box-shadow 0.6s ease;
+}
+
+/* 3D Tilted Hover and Golden Neon Outline Border Reflections mapping */
+.hero-mockup-frame:hover .hero-mockup-img {
+    transform: rotateX(4deg) rotateY(-5deg) scale(1.03);
+    border-color: rgba(245, 158, 11, 0.5);
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.85), 0 0 30px rgba(245, 158, 11, 0.25);
+}
+
+/* Background Ambient Lighting Glow Halo */
+.hero-glowing-halo {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
+    filter: blur(50px);
+    z-index: -1;
+    pointer-events: none;
+    transition: transform 0.6s ease, background 0.6s ease;
+}
+
+.hero-mockup-frame:hover .hero-glowing-halo {
+    transform: translate(8px, -8px) scale(1.1);
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.22) 0%, transparent 70%);
+}
+
+/* Floating Info Badges Data Structural Frame System */
+.floating-data-card {
+    position: absolute;
+    background: rgba(9, 13, 22, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    padding: 0.7rem 1.1rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    z-index: 3;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.floating-data-card:hover {
+    transform: translateY(-4px) scale(1.05) !important;
+    border-color: #f59e0b;
+}
+
+/* Badges floating placement mappings and displacement curves loops */
+.badge-yield-position {
+    top: 15%;
+    left: -35px;
+    animation: heroItemFloatLeft 5s ease-in-out infinite alternate;
+}
+
+.badge-vault-position {
+    bottom: 15%;
+    right: -25px;
+    animation: heroItemFloatRight 6s ease-in-out infinite alternate-reverse;
+}
+
+.data-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-emerald-tint { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+.icon-gold-tint { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+
+.data-details { display: flex; flex-direction: column; }
+.data-lbl { font-size: 0.7rem; color: white; text-transform: uppercase; font-weight: 600; letter-spacing: 0.02em; }
+.data-val { font-size: 0.95rem; font-weight: 700; color: #f8fafc; }
+
+/* --- CORE ANIMATION KEYFRAMES --- */
+@keyframes heroFadeInUp {
+    0% { transform: translateY(25px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes heroScaleIn {
+    0% { transform: scale(0.97); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes badgePulse {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.25); opacity: 1; }
+}
+
+@keyframes heroItemFloatLeft {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px) translateX(2px); }
+}
+
+@keyframes heroItemFloatRight {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(10px) translateX(-2px); }
+}
+
+/* --- RESPONSIVE MEDIA VIEWPORTS ENGINEERING --- */
+@media (max-width: 1140px) {
+    .hero-master-title { font-size: 2.8rem; }
+    .badge-yield-position { left: -10px; }
+    .badge-vault-position { right: -10px; }
+}
+
+@media (max-width: 992px) {
+    .stackly-hero-viewport { padding-top: 100px !important; }
+    .hero-grid-matrix {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3.5rem;
+    }
+    .hero-paragraph-text { margin-left: auto; margin-right: auto; }
+    .hero-action-buttons { justify-content: center; }
+    .hero-media-pane { order: 2; display: flex; flex-direction: column; width: 100%; }
+    .hero-text-pane { order: 1; }
+    
+    /* Re-stack data info badges cleanly on compact tablets screens */
+    .hero-mockup-frame { display: flex; flex-direction: column; align-items: center; gap: 1rem; max-width: 440px; }
+    .floating-data-card { position: static !important; animation: none !important; width: 100%; max-width: 320px; justify-content: flex-start; }
+}
+
+@media (max-width: 480px) {
+    .hero-master-title { font-size: 2.2rem; }
+    .hero-action-buttons { flex-direction: column; width: 100%; gap: 1rem; }
+    .hero-action-btn { width: 100%; }
+}
+
+/* ==========================================================================
+   ADVANCED HERO CANVAS ANIMATION SYSTEM
+   ========================================================================== */
+
+.hero-canvas-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none; /* Allows cursor coordinates to pass through to elements below */
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+/* Upgraded Hardware-Accelerated Ambient Image Asset */
+.hero-bg-asset {
+    width: 110%; /* Sized slightly over 100% to reserve safe margin room for drift pan animations */
+    height: 110%;
+    object-fit: cover;
+    opacity: 0.12; /* Keeps image dim to maintain contrast against text layout */
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    
+    /* Hardware acceleration layer flags */
+    will-change: transform;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    
+    /* Co-existing infinite cinemagraph zoom/pan loop execution */
+    animation: luxuryAmbientDrift 28s ease-in-out infinite alternate;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth tracking catch-up on cursor move */
+}
+
+/* Premium Dark Shading Overlap Gradients */
+.hero-shading-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 30%, transparent 20%, #04070d 85%),
+                linear-gradient(180deg, transparent 40%, #04070d 100%);
+    z-index: 2;
+}
+
+/* --- ADVANCED CINEMAGRAPH LANDSCAPE MOTION KEYFRAMES --- */
+@keyframes luxuryAmbientDrift {
+    0% {
+        transform: scale(1) translate(0, 0) rotate(0deg);
+        filter: brightness(1);
+    }
+    50% {
+        transform: scale(1.06) translate(1%, -1%) rotate(0.5deg);
+        filter: brightness(1.2); /* Subtle pulse depth transformation mimicking alive terminal monitors */
+    }
+    100% {
+        transform: scale(1.02) translate(-1%, 1%) rotate(-0.5deg);
+        filter: brightness(1);
+    }
+}
+
+</style>
+
+<script>
+    // --- 6. ADVANCED CURSOR-TRACKING PARALLAX ENGINE FOR HERO BACKGROUND ---
+document.addEventListener('DOMContentLoaded', () => {
+    const heroViewport = document.querySelector('.stackly-hero-viewport');
+    const heroBgAsset = document.querySelector('.hero-bg-asset');
+
+    if (heroViewport && heroBgAsset) {
+        heroViewport.addEventListener('mousemove', (e) => {
+            // Retrieve continuous bounding canvas offset metrics parameters
+            const { width, height } = heroViewport.getBoundingClientRect();
+            
+            // Map cursor coordinates into localized central delta numbers (-0.5 to +0.5)
+            const cursorX = (e.clientX / width) - 0.5;
+            const cursorY = (e.clientY / height) - 0.5;
+
+            // Formulate responsive micro displacement pixel offsets curves
+            const maxMovePx = 20; // Limits boundary displacement movements safe limits
+            const moveX = cursorX * maxMovePx;
+            const moveY = cursorY * maxMovePx;
+
+            // Inject coordinate variables safely directly into the active transform tree
+            // Combines your manual mouse-tracking matrices smoothly alongside the CSS base rules
+            heroBgAsset.style.transform = `translate3d(${moveX}px, ${moveY}px, 0px) scale(1.04)`;
+        });
+
+        // Restore default ambient placement matrices cleanly as soon as cursor retreats from bounds
+        heroViewport.addEventListener('mouseleave', () => {
+            heroBgAsset.style.transform = 'translate3d(0px, 0px, 0px) scale(1)';
+        });
+    }
+});
+
+</script>
+
+<!-- Immutable Infinite Financial Asset Ticker Section -->
+<section class="partner-ticker-viewport">
+    <div class="ticker-header-wrap">
+        <span class="ticker-subtitle-lbl">Institutional Asset Operations & Network Infrastructure</span>
+    </div>
+
+    <!-- Infinite Carousel Track Housing Container Matrix -->
+    <div class="ticker-track-viewport">
+        <div class="ticker-slider-track" id="tickerSliderTrack">
+            
+            <!-- Original Financial Assets Set -->
+            <div class="partner-logo-node">
+                <span class="logo-text-glow">MUTUAL•FUNDS•ALPHA</span>
+            </div>
+            <div class="partner-logo-node">
+                <span class="logo-text-glow">SIP•COMPOUND•ENGINE</span>
+            </div>
+            <div class="partner-logo-node">
+                <span class="logo-text-glow">QUANT•ARBITRAGE</span>
+            </div>
+            <div class="partner-logo-node">
+                <span class="logo-text-glow">TREASURY•BONDS•FIXED</span>
+            </div>
+            <div class="partner-logo-node">
+                <span class="logo-text-glow">SOVEREIGN•WEALTH</span>
+            </div>
+            <div class="partner-logo-node">
+                <span class="logo-text-glow">LIQUIDITY•POOLS</span>
+            </div>
+
+            <!-- Cloned Financial Assets Set (Crucial for Seamless Loop Transitions) -->
+            <div class="partner-logo-node">
+                <span class="logo-text-glow">MUTUAL•FUNDS•ALPHA</span>
+            </div>
+            <div class="partner-logo-node">
+                <span class="logo-text-glow">SIP•COMPOUND•ENGINE</span>
+            </div>
+            <div class="partner-logo-node">
+                <span class="logo-text-glow">QUANT•ARBITRAGE</span>
+            </div>
+            <div class="partner-logo-node">
+                <span class="logo-text-glow">TREASURY•BONDS•FIXED</span>
+            </div>
+            <div class="partner-logo-node">
+                <span class="logo-text-glow">SOVEREIGN•WEALTH</span>
+            </div>
+            <div class="partner-logo-node">
+                <span class="logo-text-glow">LIQUIDITY•POOLS</span>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    /* ==========================================================================
+   INFINITE FINANCIAL PARTNER TICKER CAROUSEL MODULE STYLING
+   ========================================================================== */
+
+.partner-ticker-viewport {
+    position: relative !important;
+    display: block !important;
+    clear: both !important; /* Force strict block flow positioning down the screen canvas */
+    width: 100% !important;
+    background-color: #04070d; /* Native platform deep navy background color */
+    padding: 10px 0; /* Vertical isolation buffer spaces padding */
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 30;
+}
+
+/* Ticker Header Cluster Labels Setup */
+.ticker-header-wrap {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.ticker-subtitle-lbl {
+    display: inline-block;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+/* Master Layout Mask Track Viewport Housing */
+.ticker-track-viewport {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 0;
+}
+
+/* CSS Hardware Accelerated Infinite Scrolling Slider Engine */
+.ticker-slider-track {
+    display: flex;
+    width: max-content; /* Dynamically sizes to fit all inline nodes combined lengths */
+    gap: 5rem; /* Precise margins separating individual firm logs blocks */
+    animation: infiniteLogoScroll 25s linear infinite; /* Constant continuous layout translation velocity loop */
+    will-change: transform;
+}
+
+/* Pause scroll animation dynamically whenever a user hovers over the ticker track container */
+.ticker-track-viewport:hover .ticker-slider-track {
+    animation-play-state: paused;
+}
+
+/* Singular Logo Frame Component Setup Elements */
+.partner-logo-node {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 240px; /* Slightly widened from 180px to safely fit financial text widths */
+    height: 50px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Typography Gradient Headers & Custom Hover Gold Reflection Glows */
+.logo-text-glow {
+    font-size: 1.15rem; /* Balanced size for complex financial indicators text lines */
+    font-weight: 800;
+    color: white; /* Elegant translucent muted slate hue fallback stance */
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                text-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+                transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Premium Golden Metallic Shimmer & Neon Glow on Hover state triggers */
+.partner-logo-node:hover .logo-text-glow {
+    color: #f59e0b; /* Transform target to pure banking theme amber on highlight hover */
+    text-shadow: 0 0 15px rgba(245, 158, 11, 0.6); /* Vibrant gold radial glow bloom effect */
+    transform: scale(1.06);
+}
+
+/* --- THE INFINITE TRANSLATION ENGINE KEYFRAMES FRAMEWORK --- */
+@keyframes infiniteLogoScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Translates precisely exactly negative half the custom tracks elements distance to swap loops seamlessly */
+        transform: translateX(calc(-50% - 2.5rem)); 
+    }
+}
+
+/* --- RESPONSIVE SCREEN MATRIX BREAKPOINTS CONFIGURATIONS --- */
+@media (max-width: 992px) {
+    .ticker-slider-track { gap: 4rem; }
+    .logo-text-glow { font-size: 1rem; }
+    .partner-logo-node { min-width: 200px; }
+}
+
+@media (max-width: 768px) {
+    .partner-ticker-viewport { padding: 40px 0; }
+    .ticker-slider-track { gap: 3rem; } /* Compact row gaps parameters tighter for small screen boundaries */
+    .logo-text-glow { font-size: 0.9rem; }
+    .partner-logo-node { min-width: 170px; }
+    
+    @keyframes infiniteLogoScroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-50% - 1.5rem)); } /* Adjust tracking percentage shift ratios match layout changes */
+    }
+}
+
+</style>
+
+<script>
+    // --- 5. FINANCIAL TICKER CAROUSEL HORIZONTAL HOVER RESPONSIVE RESET SAFETY SYSTEM ---
+document.addEventListener('DOMContentLoaded', () => {
+    const sliderTrack = document.getElementById('tickerSliderTrack');
+    
+    if (sliderTrack) {
+        // Enforces core GPU layer rendering parameters to keep animations perfectly stutter-free
+        sliderTrack.style.transform = 'translate3d(0, 0, 0)';
+    }
+});
+
+</script>
+
+<!-- Section 2: Premium Multi-Asset Features Grid Layout -->
+<section class="asset-features-viewport" id="services">
+    
+    <!-- Section Header Cluster -->
+    <div class="features-header-block">
+        <span class="features-pill-tag">Ecosystem Suite</span>
+        <h2 class="features-master-title">Unified Capital <span>Management</span></h2>
+        <p class="features-summary-text">
+            Access elite financial architecture engineered to maximize compound yields, secure digital equities, and streamline portfolio scaling matrices.
+        </p>
+    </div>
+
+    <!-- 3D Interactive Features Content Grid Layout -->
+    <div class="features-cards-matrix">
+        
+        <!-- Card 1: Wealth Management Core -->
+        <div class="feature-card-node">
+            <div class="card-glow-barrier"></div>
+            <div class="card-structural-housing">
+                <div class="feature-media-frame">
+                    <img src="./Assests/analytics.webp" alt="Stackly Wealth Performance Analytics Visual" class="feature-graphic-img">
+                    <div class="ambient-halo-blur halo-blue"></div>
+                </div>
+                <div class="feature-text-content">
+                    <h3 class="feature-card-title">Wealth Management</h3>
+                    <p class="feature-card-desc">Deploy capital across institutional high-yield accounts optimized by macro algorithmic asset allocation models.</p>
+                    <a href="404.html" class="feature-routing-btn">Configure Yields</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2: Digital Assets Ledger -->
+        <div class="feature-card-node">
+            <div class="card-glow-barrier"></div>
+            <div class="card-structural-housing">
+                <div class="feature-media-frame">
+                    <img src="./Assests/digital vault.webp" alt="Secure Cryptographic Token Ledger Representation" class="feature-graphic-img">
+                    <div class="ambient-halo-blur halo-gold"></div>
+                </div>
+                <div class="feature-text-content">
+                    <h3 class="feature-card-title">Digital Asset Vault</h3>
+                    <p class="feature-card-desc">Trade blue-chip crypto, tokenize venture equity positions, and monitor liquidity pools under standard compliance safety keys.</p>
+                    <a href="404.html" class="feature-routing-btn">Enter Token Ledger</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3: Quantum Cards Layer -->
+        <div class="feature-card-node">
+            <div class="card-glow-barrier"></div>
+            <div class="card-structural-housing">
+                <div class="feature-media-frame">
+                    <img src="./Assests/credit card.webp" alt="Stackly Solid Metal Credit Card Mockup View" class="feature-graphic-img">
+                    <div class="ambient-halo-blur halo-purple"></div>
+                </div>
+                <div class="feature-text-content">
+                    <h3 class="feature-card-title">Premium Credit Cards</h3>
+                    <p class="feature-card-desc">Unlock physical solid metal cards offering global airport lounge passes, elite concierge routers, and instant cashback yields.</p>
+                    <a href="404.html" class="feature-routing-btn">Request Invitation</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+
+    /* ==========================================================================
+   FEATURES SUMMARY TEXT TYPOGRAPHY & HOVER GLOW SYSTEM
+   ========================================================================== */
+
+.features-summary-text {
+    font-size: 1.05rem;
+    color: white; /* Elegant muted slate baseline state */
+    line-height: 1.65;
+    cursor: default;
+    user-select: none;
+    
+    /* Hardware acceleration layer flags for liquid performance transitions */
+    will-change: color, text-shadow;
+    transition: color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                text-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Premium Gold Typographic Radial Glow Bloomberg Bloom Effect on Hover */
+.features-summary-text:hover {
+    color: #f59e0b; /* Swaps instantly to high-visibility solid clean white */
+    text-shadow: 0 0 12px rgba(245, 158, 11, 0.45); /* Soft glowing golden neon backdrop halo halo blur */
+}
+
+
+    /* ==========================================================================
+   SECTION 2: MULTI-ASSET FEATURES GRID SPECIFICATIONS
+   ========================================================================== */
+
+.asset-features-viewport {
+    position: relative !important;
+    display: block !important;
+    clear: both !important; /* Lock strict stack sequence order beneath hero viewport */
+    width: 100% !important;
+    background-color: #04070d;
+    padding: 50px 5% 50px 5%;
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 10;
+}
+
+/* Centralized Typographic Header Cluster */
+.features-header-block {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 5rem auto;
+}
+
+.features-pill-tag {
+    display: inline-block;
+    background: rgba(245, 158, 11, 0.05);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    padding: 0.45rem 1.1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #f59e0b;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.25rem;
+}
+
+.features-master-title {
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: #f8fafc;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+}
+
+.features-master-title span {
+    background: linear-gradient(135deg, #ffffff 40%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.features-summary-text {
+    font-size: 1.05rem;
+    color: white;
+    line-height: 1.65;
+}
+
+/* Responsive Grid Mapping Architecture */
+.features-cards-matrix {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Clean triple columns on modern desktop resolutions */
+    gap: 2.2rem;
+}
+
+/* Card Root Component Properties Setup */
+.feature-card-node {
+    position: relative;
+    perspective: 1000px; /* Readies empty environment tracking for clean 3D tilting space */
+}
+
+/* ==========================================================================
+   UPDATED FEATURE CARD GRAPHICS & WHITE CONTENT CONSTRAINTS
+   ========================================================================== */
+
+.card-structural-housing {
+    position: relative;
+    background: rgba(9, 13, 22, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    height: 100%;
+    
+    /* FLEXBOX ENGINE LOCK: Automatically pushes buttons downward away from text blocks */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                border-color 0.5s ease, 
+                box-shadow 0.5s ease;
+    z-index: 1;
+}
+
+/* Feature Header Typography Content */
+.feature-card-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #ffffff !important; /* Forces solid bright white instead of pale blue tint stance */
+    margin-bottom: 0.75rem;
+    transition: color 0.3s ease;
+}
+
+/* Paragraph Content Elements With Space Locks */
+.feature-card-desc {
+    font-size: 0.95rem;
+    color: #f1f5f9 !important; /* Upgraded to high-contrast clear premium bright white-slate */
+    line-height: 1.6;
+    margin-bottom: auto !important; /* MAGIC MARGIN: Fills remaining open area to isolate button base line */
+    padding-bottom: 2.5rem !important; /* FIXED SPACE: Guarantees a clean safety padding gap right under the text lines */
+}
+
+/* Upgraded Interactive White Secondary Button Frames */
+.feature-routing-btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.02);
+    color: #ffffff !important; /* Set to uniform bright clean white typography layer */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Slightly increased borders visibility footprint */
+    padding: 0.85rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    margin-top: auto !important; /* Aligns all buttons smoothly across equal horizontal planes */
+}
+
+/* --- THE HOVER ACTION TRIGGERS MATRIX STAY IMMUTABLE --- */
+.feature-card-node:hover .feature-card-title {
+    color: #f59e0b !important; /* Highlights title to pure banking amber smoothly on hover */
+    text-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
+}
+
+.feature-card-node:hover .feature-routing-btn {
+    background: linear-gradient(135deg, #b45309 0%, #f59e0b 100%) !important;
+    color: #000000 !important; /* Contrasts typography to deep black safely on gold backgrounds overlay activation */
+    border-color: transparent !important;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35);
+}
+
+
+/* Hidden Absolute Golden Neon Border Outer Highlight Framework Frame */
+.card-glow-barrier {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1.5px solid transparent;
+    border-radius: 20px;
+    pointer-events: none;
+    z-index: 3;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Inner Media Frame Box Containers */
+/* ==========================================================================
+   UPDATED FEATURE IMAGES CONFIGURATION (EDGE-TO-EDGE CARD FIT)
+   ========================================================================== */
+
+.feature-media-frame {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Slightly increased from 180px for a better visual aspect ratio */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    
+    /* CRITICAL LOCK: Clips the image corners perfectly to match the card shape */
+    border-radius: 12px; 
+    overflow: hidden; 
+}
+
+.feature-graphic-img {
+    width: 100% !important; /* Forces the image to stretch horizontally across the card width */
+    height: 100% !important; /* Forces the image to match the container height */
+    object-fit: cover; /* MAGIC PROPERTY: Crops and fills the block perfectly without skewing or stretching the image */
+    z-index: 2;
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Local Ambient Shading Backlighting halos bulbs */
+.ambient-halo-blur {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    filter: blur(25px);
+    opacity: 0.12;
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity 0.5s ease, scale 0.5s ease;
+}
+
+/* Upgraded zoom interaction on card hover */
+.feature-card-node:hover .feature-graphic-img {
+    transform: scale(1.06); /* Creates a sleek, immersive zoom effect on card hover */
+}
+
+
+.halo-blue { background: radial-gradient(circle, #0284c7 0%, transparent 70%); }
+.halo-gold { background: radial-gradient(circle, #f59e0b 0%, transparent 70%); }
+.halo-purple { background: radial-gradient(circle, #8b5cf6 0%, transparent 70%); }
+
+/* Copywriting content descriptions blocks font controls */
+.feature-text-content {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.feature-card-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #f8fafc;
+    margin-bottom: 0.75rem;
+    transition: color 0.3s ease;
+}
+
+.feature-card-desc {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+/* Standard Gray Secondary Border Control Link Buttons */
+.feature-routing-btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.02);
+    color: #f8fafc;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    padding: 0.8rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* ==========================================================================
+   3D CARD HOVER TRANSFORMATION & RADIAL GLOW MATRIX DRIVERS
+   ========================================================================== */
+
+.feature-card-node:hover .card-structural-housing {
+    transform: rotateX(3deg) rotateY(-3deg) translateY(-5px); /* Smooth 3D tilt tracking */
+    border-color: rgba(245, 158, 11, 0.25);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), 0 0 25px rgba(245, 158, 11, 0.04);
+}
+
+.feature-card-node:hover .card-glow-barrier {
+    border-color: #f59e0b; /* Turns border into clean neon gold outline link boundary */
+    box-shadow: inset 0 0 15px rgba(245, 158, 11, 0.15);
+}
+
+.feature-card-node:hover .feature-graphic-img {
+    transform: scale(1.04) translateY(-4px); /* Shifts card image subtly on user highlight actions */
+}
+
+.feature-card-node:hover .ambient-halo-blur {
+    opacity: 0.25;
+    transform: scale(1.15);
+}
+
+.feature-card-node:hover .feature-card-title {
+    color: #f59e0b; /* High-tech text color swap on hover */
+}
+
+/* Transforms static anchor buttons into an animated golden neon bar on hover triggers */
+.feature-card-node:hover .feature-routing-btn {
+    background: linear-gradient(135deg, #b45309 0%, #f59e0b 100%);
+    color: #000000;
+    border-color: transparent;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT ENGINE VIEWPADS BREAKER MAPS
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .features-cards-matrix {
+        grid-template-columns: repeat(2, 1fr); /* Re-stacks grids to dual layouts structures on tablets screens */
+        gap: 1.5rem;
+    }
+    .features-master-title { font-size: 2.2rem; }
+}
+
+@media (max-width: 748px) {
+    .features-cards-matrix {
+        grid-template-columns: 1fr; /* Compresses layout into clean full width single columns stack arrays on mobile viewports */
+    }
+    .asset-features-viewport { padding: 80px 4% 60px 4%; }
+    .features-master-title { font-size: 1.9rem; }
+    .card-structural-housing { padding: 2rem 1.5rem; }
+}
+
+</style>
+
+<!-- Interactive Institutional Gateway & Accounts Dashboard Section -->
+<section class="gateway-ledger-viewport" id="dashboard-gateway">
+    
+    <!-- Zone 1: Ambient Canvas Backdrop Configurations -->
+    <div class="gateway-bg-canvas">
+        <img src="./Assests/ATM pin - bg.webp" alt="Stackly Distributed Clearing Architecture" class="gateway-vector-backing">
+        <div class="gateway-masking-shade"></div>
+    </div>
+
+    <!-- Zone 2: Main Grid Matrix Constraint Wrapper -->
+    <div class="gateway-layout-matrix">
+        
+        <!-- Column A: High-Tech Interactive Mockup Accounts Dashboard Frame -->
+        <div class="gateway-dashboard-block">
+            <div class="dashboard-window-wrapper">
+                <div class="dashboard-neon-glow-edge"></div>
+                <div class="dashboard-inner-housing">
+                    
+                    <!-- Console Header Layer Row -->
+                    <div class="console-header-row">
+                        <div class="console-window-dots">
+                            <span class="dot-red"></span>
+                            <span class="dot-amber"></span>
+                            <span class="dot-green"></span>
+                        </div>
+                        <span class="console-secure-lbl">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                            Secure Session Encrypted
+                        </span>
+                    </div>
+
+                    <!-- Core Balances Stats Cards Housing Group -->
+                    <div class="console-balances-grid">
+                        <div class="balance-subcard balance-primary">
+                            <span class="balance-lbl">Primary Checking</span>
+                            <h4 class="balance-val">$14,250.80</h4>
+                            <span class="balance-account-num">•••• 4829</span>
+                        </div>
+                        <div class="balance-subcard balance-savings">
+                            <span class="balance-lbl">High-Yield Savings</span>
+                            <h4 class="balance-val">$84,200.15</h4>
+                            <span class="balance-account-num">•••• 8831</span>
+                        </div>
+                    </div>
+
+                    <!-- Micro Transaction Ledger Sub-Grid Tracker -->
+                    <div class="console-mini-ledger">
+                        <h5 class="mini-ledger-title">Recent Settled Asset Movements</h5>
+                        
+                        <div class="mini-ledger-row">
+                            <span class="ledger-desc">Mutual Funds Direct Yield</span>
+                            <span class="ledger-amt positive-val">+$4,250.00</span>
+                        </div>
+                        <div class="mini-ledger-row">
+                            <span class="ledger-desc">Token Ledger Swap Execution</span>
+                            <span class="ledger-amt negative-val">-$124.50</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Column B: Copywriting & High Impact Call To Action Hub -->
+        <div class="gateway-text-cluster">
+            <span class="gateway-pill-lbl">Unified Interface</span>
+            <h2 class="gateway-title">Complete Capital Control <span>At Your Fingertips</span></h2>
+            <p class="gateway-paragraph">
+                Consolidate your multi-asset checking lines, track high-yield automated SIP indices, and monitor cross-border sovereign pools through an end-to-end quantum encrypted terminal interface.
+            </p>
+            
+            <div class="gateway-action-row">
+                <a href="404.html" class="gateway-btn btn-primary-glow">Deploy Your Terminal</a>
+                <a href="404.html" class="gateway-btn btn-secondary-outline">View Security SLAs</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* ==========================================================================
+   STACKLY ACCOUNTS DASHBOARD GATEWAY SECTION ARCHITECTURE
+   ========================================================================== */
+
+.gateway-ledger-viewport {
+    position: relative !important;
+    display: block !important;
+    clear: both !important; /* Total height separation shield protection layer from previous elements */
+    width: 100% !important;
+    background-color: #04070d;
+    padding: 50px 5% 50px 5%;
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 60;
+}
+
+/* Background canvas setup tracks layers and infinite drift movements properties */
+.gateway-bg-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.gateway-vector-backing {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.14;
+}
+
+.gateway-masking-shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 30%, #04070d 95%);
+}
+
+/* Master Grid Alignment Matrix Column Split Configuration */
+.gateway-layout-matrix {
+    position: relative;
+    z-index: 5;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr; /* Custom layout column width proportions */
+    gap: 6rem;
+    align-items: center;
+}
+
+/* --- COLUMN A: HIGH TECH SIMULATED DASHBOARD WINDOW FRAME --- */
+.gateway-dashboard-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px; /* Prepare canvas space for 3D rotation steps */
+}
+
+.dashboard-window-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 540px;
+}
+
+.dashboard-inner-housing {
+    position: relative;
+    background: rgba(9, 13, 22, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 2.25rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.6s ease;
+}
+
+/* Hidden Absolute Golden Neon Border Outer Highlight Framework Frame */
+.dashboard-neon-glow-edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1.5px solid transparent;
+    border-radius: 20px;
+    pointer-events: none;
+    z-index: 3;
+    transition: all 0.5s ease;
+}
+
+/* 3D Tilted Hover and Golden Neon Outline Border Reflections mapping */
+.dashboard-window-wrapper:hover .dashboard-inner-housing {
+    transform: rotateX(3deg) rotateY(-3deg) scale(1.02);
+    border-color: rgba(245, 158, 11, 0.25);
+}
+
+.dashboard-window-wrapper:hover .dashboard-neon-glow-edge {
+    border-color: #f59e0b;
+    box-shadow: inset 0 0 15px rgba(245, 158, 11, 0.15), 0 0 25px rgba(245, 158, 11, 0.05);
+}
+
+/* Window terminal bar styling layout headers */
+.console-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    padding-bottom: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.console-window-dots { display: flex; gap: 0.4rem; }
+.console-window-dots span { width: 10px; height: 10px; border-radius: 50%; display: block; }
+.dot-red { background-color: #ef4444; }
+.dot-amber { background-color: #f59e0b; }
+.dot-green { background-color: #10b981; }
+
+.console-secure-lbl {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #10b981;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+/* Inner Balance Cards Sub-Grids Configuration */
+.console-balances-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.balance-subcard {
+    background: rgba(4, 7, 13, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    transition: background 0.3s;
+}
+
+.balance-subcard:hover { background: rgba(13, 19, 33, 0.6); }
+
+.balance-primary { border-left: 3px solid #0284c7; }
+.balance-savings { border-left: 3px solid #f59e0b; }
+
+.balance-lbl { font-size: 0.7rem; font-weight: 600; color: white; text-transform: uppercase; letter-spacing: 0.04em; }
+.balance-val { font-size: 1.5rem; font-weight: 800; color: #ffffff; letter-spacing: -0.01em; }
+.balance-account-num { font-size: 0.75rem; color: #475569; font-family: monospace; }
+
+/* Micro Transaction Ledger Panel Setup */
+.console-mini-ledger {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    background: rgba(4, 7, 13, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    padding: 1.25rem;
+    border-radius: 12px;
+}
+
+.mini-ledger-title { font-size: 0.8rem; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 0.25rem; }
+
+.mini-ledger-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+    padding-bottom: 0.5rem;
+}
+.mini-ledger-row:last-child { border: none; padding-bottom: 0; }
+
+.ledger-desc { font-size: 0.85rem; font-weight: 600; color: #f1f5f9; }
+.ledger-amt { font-size: 0.9rem; font-weight: 700; font-family: monospace; }
+.positive-val { color: #10b981; }
+.negative-val { color: #ef4444; }
+
+/* --- COLUMN B: COPYWRITING & BUTTONS LABELS --- */
+.gateway-pill-lbl {
+    display: inline-block;
+    background: rgba(2, 132, 199, 0.05);
+    border: 1px solid rgba(2, 132, 199, 0.2);
+    padding: 0.4rem 1.1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #0284c7;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.25rem;
+}
+
+.gateway-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.gateway-title span {
+    background: linear-gradient(135deg, #ffffff 40%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gateway-paragraph {
+    font-size: 1.05rem;
+    color: #94a3b8;
+    line-height: 1.65;
+    margin-bottom: 3rem;
+    max-width: 580px;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.gateway-paragraph:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(2, 132, 199, 0.3);
+}
+
+/* Call To Actions Buttons Frame Row */
+.gateway-action-row {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.gateway-btn {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.9rem 2.2rem;
+    border-radius: 8px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    text-align: center;
+}
+
+.btn-primary-glow {
+    background: linear-gradient(135deg, #b45309 0%, #f59e0b 100%);
+    color: #000000;
+    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.25);
+}
+
+.btn-primary-glow:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(245, 158, 11, 0.55);
+    filter: brightness(1.1);
+}
+
+.btn-secondary-outline {
+    color: #f8fafc;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+}
+
+.btn-secondary-outline:hover {
+    border-color: #f59e0b;
+    background: rgba(245, 158, 11, 0.04);
+    color: #f59e0b;
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.15);
+    transform: translateY(-2px);
+}
+
+/* --- RESPONSIVE MEDIA VIEWPORTS ENGINEERING --- */
+@media (max-width: 1024px) {
+    .gateway-layout-matrix {
+        grid-template-columns: 1fr; /* Re-stacks grids layout to single columns blocks on tablets views */
+        gap: 4.5rem;
+        text-align: center;
+    }
+    .gateway-paragraph { margin-left: auto; margin-right: auto; }
+    .gateway-action-row { justify-content: center; }
+    .gateway-dashboard-block { order: 2; } /* Shifts mockups console below descriptions texts over mobile screens maps */
+    .gateway-text-cluster { order: 1; }
+}
+
+@media (max-width: 600px) {
+    .gateway-title { font-size: 2rem; }
+    .console-balances-grid { grid-template-columns: 1fr; gap: 1rem; } /* Compact stacking for tiny mobile viewports screens */
+    .dashboard-inner-housing { padding: 1.5rem 1.25rem; }
+    .gateway-action-row { flex-direction: column; width: 100%; gap: 1rem; }
+    .gateway-btn { width: 100%; }
+}
+
+</style>
+
+
+<!-- Interactive Premium Tier Card Selector Vault Section -->
+<section class="premium-vault-viewport" id="cards">
+    
+    <!-- Zone 1: Ambient Canvas Backdrop Configurations -->
+    <div class="vault-bg-canvas">
+        <img src="./Assests/ATM pin - bg.webp" alt="Stackly Secure Grid Network Canvas" class="vault-vector-backing">
+        <div class="vault-masking-shade"></div>
+    </div>
+
+    <!-- Zone 2: Header Cluster Titles Group -->
+    <div class="vault-header-block">
+        <span class="vault-pill-tag">Membership Tiers</span>
+        <h2 class="vault-master-title">Select Your <span>Financial Power</span></h2>
+        <p class="vault-summary-text">
+            Unlock solid metal credit lines backed by quantum ledger keys, offering elite international priority paths and institutional liquid yield compounding.
+        </p>
+    </div>
+
+    <!-- Zone 3: 3D High-Tech Interactive Premium Card Columns Matrix -->
+    <div class="vault-cards-matrix">
+        
+        <!-- Card 1: Gold Sovereign Tier -->
+        <div class="vault-card-node gold-tier-halo">
+            <div class="vault-laser-shimmer"></div>
+            <div class="vault-inner-housing">
+                <span class="tier-badge badge-gold">Sovereign Tier</span>
+                
+                <div class="card-asset-frame">
+                    <img src="./Assests/gold.webp" alt="Stackly Gold Metal Credit Card Graphic Asset" class="card-asset-img">
+                </div>
+                
+                <div class="tier-features-list">
+                    <div class="feature-item">
+                        <strong>5.45% APY</strong> Liquidity Yields
+                    </div>
+                    <div class="feature-item">
+                        <strong>$50K Daily</strong> Transfer Limits
+                    </div>
+                    <div class="feature-item">
+                        <strong>1.5% Unlimited</strong> Cashback
+                    </div>
+                </div>
+
+                <a href="404.html" class="vault-action-btn btn-gold-style">Apply for Sovereign</a>
+            </div>
+        </div>
+
+        <!-- Card 2: Platinum Quantum Tier (The Highlighted Centered Card) -->
+        <div class="vault-card-node platinum-tier-halo card-highlighted-focus">
+            <div class="vault-laser-shimmer"></div>
+            <div class="vault-inner-housing">
+                <span class="tier-badge badge-platinum">Quantum Tier</span>
+                
+                <div class="card-asset-frame">
+                    <img src="./Assests/platinum card.webp" alt="Stackly Platinum Quantum Card Graphic Asset" class="card-asset-img">
+                </div>
+                
+                <div class="tier-features-list">
+                    <div class="feature-item">
+                        <strong>7.20% APY</strong> Capital Gearing
+                    </div>
+                    <div class="feature-item">
+                        <strong>Uncapped Global</strong> Priority Paths
+                    </div>
+                    <div class="feature-item">
+                        <strong>2.5% Crypto</strong> Ledger Yields
+                    </div>
+                </div>
+
+                <a href="404.html" class="vault-action-btn btn-platinum-style">Request Quantum Access</a>
+            </div>
+        </div>
+
+        <!-- Card 3: Obsidian Infinite Tier -->
+        <div class="vault-card-node obsidian-tier-halo">
+            <div class="vault-laser-shimmer"></div>
+            <div class="vault-inner-housing">
+                <span class="tier-badge badge-obsidian">Obsidian Infinite</span>
+                
+                <div class="card-asset-frame">
+                    <img src="./Assests/infinite card.webp" alt="Stackly Obsidian Infinite Credit Card Graphic Asset" class="card-asset-img">
+                </div>
+                
+                <div class="tier-features-list">
+                    <div class="feature-item">
+                        <strong>Alpha Managed</strong> Asset Allocation
+                    </div>
+                    <div class="feature-item">
+                        <strong>24/7 Elite</strong> Concierge Routers
+                    </div>
+                    <div class="feature-item">
+                        <strong>Polymorphic Air-Gap</strong> Protection
+                    </div>
+                </div>
+
+                <a href="404.html" class="vault-action-btn btn-obsidian-style">Join Private Invitation</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* ==========================================================================
+   STACKLY PREMIUM CREDIT CARDS VAULT DESIGN ARCHITECTURE
+   ========================================================================== */
+
+.premium-vault-viewport {
+    position: relative !important;
+    display: block !important;
+    clear: both !important; /* Total height separation shield protection layer */
+    width: 100% !important;
+    background-color: #04070d;
+    padding: 50px 5% 100px 5%;
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 40;
+}
+
+/* Background canvas setup tracks layers and infinite drift movements properties */
+.vault-bg-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.vault-vector-backing {
+    width: 110%;
+    height: 110%;
+    object-fit: cover;
+    opacity: 0.05;
+    animation: vaultMeshPan 30s linear infinite alternate;
+}
+
+.vault-masking-shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 20%, #04070d 90%),
+                linear-gradient(180deg, #04070d 0%, transparent 15%, transparent 85%, #04070d 100__);
+}
+
+/* Section Main Typography Header Clusters */
+.vault-header-block {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 5.5rem auto;
+    position: relative;
+    z-index: 5;
+}
+
+.vault-pill-tag {
+    display: inline-block;
+    background: rgba(245, 158, 11, 0.04);
+    border: 1px solid rgba(245, 158, 11, 0.15);
+    padding: 0.45rem 1.1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #f59e0b;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.25rem;
+}
+
+.vault-master-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+}
+
+.vault-master-title span {
+    background: linear-gradient(135deg, #ffffff 40%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.vault-summary-text {
+    font-size: 1.05rem;
+    color: #94a3b8;
+    line-height: 1.65;
+}
+
+/* Three-Dimensional Flexible Placement Matrix Container */
+.vault-cards-matrix {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Tiers grid matrix layout across desktops monitors */
+    gap: 2.5rem;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+}
+
+/* Singular Card Base Frame Structures Configuration Layout */
+.vault-card-node {
+    position: relative;
+    perspective: 1000px;
+    border-radius: 24px;
+    overflow: hidden;
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.5s ease;
+}
+
+.vault-inner-housing {
+    position: relative;
+    background: rgba(9, 13, 22, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 24px;
+    padding: 3rem 2.25rem 2.5rem 2.25rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.5s ease, background 0.5s ease;
+}
+
+/* Centralized Highlight Focus Override for Core Premium Selection Panel */
+.card-highlighted-focus {
+    transform: scale(1.04); /* Keeps center card slightly magnified to optimize presentation balance */
+}
+
+.card-highlighted-focus .vault-inner-housing {
+    background: rgba(13, 19, 33, 0.8);
+    border-color: rgba(245, 158, 11, 0.15);
+}
+
+/* Absolute Laser Shimmer Sweep Effect layer */
+.vault-laser-shimmer {
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+    transform: skewX(-25deg);
+    z-index: 3;
+    pointer-events: none;
+    transition: left 0.6s ease;
+}
+
+.vault-card-node:hover .vault-laser-shimmer {
+    left: 150%; /* Sends high-speed laser ray across container bounds on hover events triggers */
+}
+
+/* Pill status labels inside individual boxes */
+.tier-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.35rem 0.9rem;
+    border-radius: 30px;
+    margin-bottom: 2rem;
+}
+
+.badge-gold { background: rgba(245, 158, 11, 0.1); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.2); }
+.badge-platinum { background: rgba(2, 132, 199, 0.1); color: #0284c7; border: 1px solid rgba(2, 132, 199, 0.2); }
+.badge-obsidian { background: rgba(248, 250, 252, 0.05); color: #f8fafc; border: 1px solid rgba(255, 255, 255, 0.1); }
+
+/* Card Image Asset Display Frames mapping */
+/* ==========================================================================
+   FIXED CREDIT CARD MOCKUP PROPORTIONS (EDGE-TO-EDGE FULL CARD COVER)
+   ========================================================================== */
+
+.card-asset-frame {
+    width: 100% !important; /* Forces the graphic container to span the entire inner card block width */
+    height: 190px !important; /* FIXED ASPECT RATIO: Establishes a rigid, matching height across all 3 cards */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+    
+    /* CRITICAL EDGE CLIPPING SWITCHES */
+    border-radius: 14px; /* Matches premium metal rounded card edges look */
+    overflow: hidden; /* Clips the background edges of filling image graphics safely */
+    
+    /* 3D display perspectives parameters framework setup */
+    perspective: 1000px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+}
+
+.card-asset-img {
+    width: 100% !important; /* Forces the image width to stretch edge-to-edge horizontally */
+    height: 100% !important; /* Forces the image height to scale down and cover vertical lines precisely */
+    object-fit: cover !important; /* MAGIC PROPERTY: Proportionally crops and fills the frame completely with no empty margins left over */
+    
+    /* Premium 3D default tilted pose mimicking terminal dashboard exhibits panels layout */
+    transform: rotateY(12deg) rotateX(8deg); 
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    
+    /* Smooth interactive pacing timers catch up loops */
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 2;
+}
+
+/* ==========================================================================
+   UPGRADED IMMUTABLE ACTIVE HOVER SYMMETRY RE-ALIGNMENT MATRIX
+   ========================================================================== */
+
+.vault-card-node:hover .card-asset-img {
+    /* Re-aligns the tilted card face-on seamlessly and zooms microscopically on cursor hover actions */
+    transform: rotateY(0deg) rotateX(0deg) scale(1.05); 
+}
+
+
+/* Bullet list financial metrics text strings blocks layout system */
+.tier-features-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    margin-bottom: 3rem;
+    border-top: 1px solid rgba(255,255,255,0.03);
+    padding-top: 1.75rem;
+}
+
+.feature-item {
+    font-size: 0.95rem;
+    color: #f1f5f9 !important; /* Pure solid white typography layers upgrades */
+    text-align: center;
+}
+
+.feature-item strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* Re-usable premium white custom outline buttons frame architectures */
+.vault-action-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.02);
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.85rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    margin-top: auto;
+}
+
+/* ==========================================================================
+   INTERACTIVE INDIVIDUAL SELECTIONS HOVER RADIAL NEON BLOSSOMS
+   ========================================================================== */
+
+.vault-card-node:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+.vault-card-node:hover .card-asset-img {
+    transform: rotateY(0deg) rotateX(0deg) scale(1.06) translateY(-4px); /* Immersive face-on scale alignment on user tracks hover */
+}
+
+/* Micro color shifts overrides targeting card descriptions items dynamically */
+.vault-card-node:hover .feature-item strong {
+    color: #f59e0b;
+    text-shadow: 0 0 8px rgba(245, 158, 11, 0.3);
+}
+
+/* Specific button coloring swaps mapped across themes signatures lines */
+.gold-tier-halo:hover .vault-inner-housing { border-color: rgba(245, 158, 11, 0.4); box-shadow: 0 25px 50px rgba(0,0,0,0.7), 0 0 30px rgba(245, 158, 11, 0.1); }
+.gold-tier-halo:hover .btn-gold-style { background: linear-gradient(135deg, #b45309 0%, #f59e0b 100%); color: #000000 !important; border-color: transparent; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35); }
+
+.platinum-tier-halo:hover .vault-inner-housing { border-color: rgba(2, 132, 199, 0.4); box-shadow: 0 25px 50px rgba(0,0,0,0.7), 0 0 30px rgba(2, 132, 199, 0.15); }
+.platinum-tier-halo:hover .btn-platinum-style { background: linear-gradient(135deg, #0369a1 0%, #0284c7 100__); color: #ffffff !important; border-color: transparent; box-shadow: 0 4px 15px rgba(2, 132, 199, 0.4); }
+
+.obsidian-tier-halo:hover .vault-inner-housing { border-color: rgba(255, 255, 255, 0.3); box-shadow: 0 25px 50px rgba(0,0,0,0.7), 0 0 30px rgba(255, 255, 255, 0.05); }
+.obsidian-tier-halo:hover .btn-obsidian-style { background: #ffffff; color: #000000 !important; border-color: transparent; box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3); }
+
+/* --- CORE GRAPHICS KEYFRAMES LOOPS MODULES --- */
+@keyframes vaultMeshPan {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(-2%, -2%) scale(1.04); }
+}
+
+/* ==========================================================================
+   RESPONSIVE SCREEN VIEWPORTS MANAGEMENT CORES ENGINEERING
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .vault-cards-matrix {
+        grid-template-columns: 1fr; /* Compresses multi-columns blocks into single track arrays on tablets devices */
+        gap: 2rem;
+        max-width: 460px; /* Limits mobile grid layout bounds footprint safely */
+    }
+    .card-highlighted-focus { transform: none; } /* Resets desktop center zoom magnification factors overrides safely */
+    .vault-master-title { font-size: 2.2rem; }
+}
+
+@media (max-width: 480px) {
+    .premium-vault-viewport { padding-left: 4%; padding-right: 4%; }
+    .vault-master-title { font-size: 1.8rem; }
+    .vault-inner-housing { padding: 2.5rem 1.5rem 2rem 1.5rem; }
+}
+
+</style>
+
+
+<!-- Immutable Institutional CTA Conversion Banner Module -->
+<section class="platform-cta-viewport">
+    
+    <!-- Zone 1: Ambient Backdrop Layer Context -->
+    <div class="cta-bg-canvas">
+        <img src="./Assests/wealth management.webp" alt="Stackly Terminal Liquidity Matrix" class="cta-vector-backing">
+        <div class="cta-masking-shade"></div>
+    </div>
+
+    <!-- Zone 2: Main Grid Matrix Constraint Wrapper -->
+    <div class="cta-layout-matrix">
+        <div class="cta-glass-housing">
+            <div class="cta-neon-glow-edge"></div>
+            <div class="cta-inner-content">
+                
+                <!-- Zone 3: High-Impact 2-Line Typographic Header Cluster -->
+                <div class="cta-text-cluster">
+                    <h2 class="cta-main-headline">Ready to Supercharge Your Wealth?</h2>
+                    <p class="cta-sub-headline">Deploy your secure terminal today and unlock elite compounding portfolios.</p>
+                </div>
+
+                <!-- Zone 4: Submission Action Interceptor Trigger Component Route -->
+                <div class="cta-action-block">
+                    <a href="404.html" class="cta-execute-btn">Initialize Secure Account</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* ==========================================================================
+   STACKLY CALL TO ACTION CONVERSION BANNER MODULE STYLING
+   ========================================================================== */
+
+.platform-cta-viewport {
+    position: relative !important;
+    display: block !important;
+    clear: both !important; /* Forces strict block flow isolation downwards beneath dashboard modules */
+    width: 100% !important;
+    background-color: #04070d;
+    padding: 50px 5%; /* Tailored padding brings section boundaries close together comfortably */
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 65;
+}
+
+/* Background image asset configuration layers canvas */
+.cta-bg-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.cta-vector-backing {
+    width: 110%;
+    height: 110%;
+    object-fit: cover;
+    opacity: 0.05;
+    animation: ctaBackingPan 25s linear infinite alternate;
+}
+
+.cta-masking-shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 40%, #04070d 95%),
+                linear-gradient(180deg, #04070d 0%, transparent 10%, transparent 90%, #04070d 100__);
+}
+
+/* Master Grid Alignment Matrix Constraint Wrapper */
+.cta-layout-matrix {
+    position: relative;
+    z-index: 5;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Premium High-Tech Glassmorphic Housing Container Box */
+.cta-glass-housing {
+    position: relative;
+    background: linear-gradient(135deg, rgba(9, 13, 22, 0.75) 0%, rgba(4, 7, 13, 0.4) 100__);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 24px;
+    box-shadow: 0 25px 55px rgba(0,0,0,0.55);
+    overflow: hidden;
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.5s ease;
+}
+
+.cta-inner-content {
+    padding: 4.5rem 4rem;
+    display: flex;
+    justify-content: space-between; /* Creates mathematically precise horizontal distribution across desktop modes */
+    align-items: center;
+    gap: 4rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Hidden Absolute Golden Neon Border Outer Highlight Framework Frame */
+.cta-neon-glow-edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1.5px solid transparent;
+    border-radius: 24px;
+    pointer-events: none;
+    z-index: 3;
+    transition: all 0.5s ease;
+}
+
+/* Interactive Card Position Shifts Tilted Movements & Ambient Halos Blossoms */
+.cta-glass-housing:hover {
+    transform: translateY(-4px);
+    border-color: rgba(245, 158, 11, 0.25);
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.75), 0 0 30px rgba(245, 158, 11, 0.05);
+}
+
+.cta-glass-housing:hover .cta-neon-glow-edge {
+    border-color: #f59e0b;
+    box-shadow: inset 0 0 20px rgba(245, 158, 11, 0.15);
+}
+
+/* --- ZONE 3: 2-LINE TYPOGRAPHIC HEADERS CLUSTER --- */
+.cta-text-cluster {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 65%;
+}
+
+.cta-main-headline {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    transition: color 0.3s;
+}
+
+.cta-glass-housing:hover .cta-main-headline {
+    color: #f59e0b;
+    text-shadow: 0 0 15px rgba(245, 158, 11, 0.35);
+}
+
+.cta-sub-headline {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+/* --- ZONE 4: SUBMISSION ACTION LINK BUTTON --- */
+.cta-action-block {
+    flex-shrink: 0;
+    width: auto;
+}
+
+.cta-execute-btn {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    background: #ffffff;
+    color: #000000;
+    padding: 1.1rem 2.6rem;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.cta-glass-housing:hover .cta-execute-btn {
+    background: linear-gradient(135deg, #b45309 0%, #f59e0b 100%);
+    color: #000000 !important;
+    box-shadow: 0 6px 25px rgba(245, 158, 11, 0.5);
+    transform: scale(1.03) translateY(-1px);
+}
+
+/* --- BACKGROUND KEYFRAMES SHIFTS --- */
+@keyframes ctaBackingPan {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(-1.5%, -1.5%) scale(1.05); }
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA VIEWPORTS CONFIGURATION BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .cta-inner-content {
+        padding: 4rem 3rem;
+        gap: 3rem;
+    }
+    .cta-main-headline { font-size: 2rem; }
+    .cta-sub-headline { font-size: 1rem; }
+}
+
+@media (max-width: 912px) {
+    .cta-inner-content {
+        flex-direction: column; /* Re-stacks horizontally spread layout into single columns arrays on mobile viewports */
+        text-align: center;
+        padding: 3.5rem 2rem;
+        gap: 2.5rem;
+    }
+    .cta-text-cluster {
+        max-width: 100%;
+    }
+    .cta-action-block {
+        width: 100%;
+    }
+    .cta-execute-btn {
+        width: 100%; /* Stretch button row items full width limits inside smaller screens bounding tracks maps */
+    }
+}
+
+@media (max-width: 480px) {
+    .platform-cta-viewport { padding-left: 4%; padding-right: 4%; }
+    .cta-main-headline { font-size: 1.6rem; }
+    .cta-inner-content { padding: 3rem 1.25rem; }
+}
+
+</style>
+
+<!-- Section: Dynamic Portfolio Analytics Matrix -->
+<section class="portfolio-analytics-viewport" id="portfolio-metrics">
+    <div class="analytics-bg-canvas">
+        <div class="analytics-radial-halo"></div>
+    </div>
+
+    <div class="analytics-layout-matrix">
+        <!-- Left Side: Interactive Progress Rings & Allocation Metrics -->
+        <div class="analytics-console-pane">
+            <div class="console-glass-housing">
+                <div class="console-neon-edge"></div>
+                <div class="console-inner-content">
+                    <h3 class="console-panel-title">Asset Allocation Split</h3>
+                    
+                    <!-- Progress Node 1 -->
+                    <div class="allocation-node">
+                        <div class="allocation-meta">
+                            <span class="alloc-title">Mutual Funds Alpha</span>
+                            <span class="alloc-pct">45%</span>
+                        </div>
+                        <div class="alloc-progress-track">
+                            <div class="alloc-fill-bar bar-gold" style="width: 45%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Progress Node 2 -->
+                    <div class="allocation-node">
+                        <div class="allocation-meta">
+                            <span class="alloc-title">Automated SIP Indices</span>
+                            <span class="alloc-pct">35%</span>
+                        </div>
+                        <div class="alloc-progress-track">
+                            <div class="alloc-fill-bar bar-blue" style="width: 35%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Progress Node 3 -->
+                    <div class="allocation-node">
+                        <div class="allocation-meta">
+                            <span class="alloc-title">Digital Vault Tokens</span>
+                            <span class="alloc-pct">20%</span>
+                        </div>
+                        <div class="alloc-progress-track">
+                            <div class="alloc-fill-bar bar-emerald" style="width: 20%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Descriptive Content -->
+        <div class="analytics-text-pane">
+            <span class="analytics-pill-tag">Data Optimization</span>
+            <h2 class="analytics-master-title">Algorithmic Capital <span>Distribution</span></h2>
+            <p class="analytics-paragraph-text">
+                Monitor your wealth vectors through visual metrics. Stackly's quantitative tracking matrix automatically divides capital blocks into secure sub-accounts, matching real-time market trends.
+            </p>
+            <a href="404.html" class="analytics-action-btn">Optimize Yield Ratios</a>
+        </div>
+    </div>
+</section>
+
+<style>
+    .portfolio-analytics-viewport {
+    position: relative !important;
+    display: block !important;
+    clear: both !important;
+    width: 100% !important;
+    background-color: #04070d;
+    padding: 50px 5%;
+    box-sizing: border-box;
+    z-index: 66;
+}
+.analytics-bg-canvas { position: absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; }
+.analytics-radial-halo { position: absolute; width:400px; height:400px; background: radial-gradient(circle, rgba(245,158,11,0.03) 0%, transparent 70%); filter:blur(40px); top:10%; left:10%; }
+.analytics-layout-matrix { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+
+/* Console Box Styles */
+.console-glass-housing { position: relative; width: 100%; max-width: 500px; }
+.console-inner-content { background: rgba(9,13,22,0.6); border: 1px solid rgba(255,255,255,0.04); border-radius: 20px; padding: 2.5rem; box-shadow: 0 20px 45px rgba(0,0,0,0.5); }
+.console-neon-edge { position: absolute; top:0; left:0; width:100%; height:100%; border: 1.5px solid transparent; border-radius:20px; pointer-events:none; transition: all 0.5s ease; }
+.console-glass-housing:hover .console-neon-edge { border-color: #f59e0b; box-shadow: inset 0 0 15px rgba(245,158,11,0.15); }
+.console-panel-title { font-size: 1.2rem; font-weight:700; color:#ffffff; margin-bottom: 2rem; }
+
+/* Allocation Bars */
+.allocation-node { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+.allocation-meta { display: flex; justify-content: space-between; font-size: 0.9rem; font-weight:600; }
+.alloc-title { color: #94a3b8; }
+.alloc-pct { color: #ffffff; }
+.alloc-progress-track { width:100%; height:6px; background: rgba(255,255,255,0.02); border-radius: 10px; overflow:hidden; border: 1px solid rgba(255,255,255,0.05); }
+.alloc-fill-bar { height:100%; border-radius:10px; }
+.bar-gold { background: linear-gradient(90deg, #b45309, #f59e0b); box-shadow: 0 0 8px #f59e0b; }
+.bar-blue { background: linear-gradient(90deg, #0369a1, #0284c7); box-shadow: 0 0 8px #0284c7; }
+.bar-emerald { background: linear-gradient(90deg, #047857, #10b981); box-shadow: 0 0 8px #10b981; }
+
+/* Text Content Styles */
+.analytics-pill-tag { display: inline-block; background: rgba(245,158,11,0.05); border: 1px solid rgba(245,158,11,0.2); padding: 0.4rem 1.1rem; border-radius: 50px; font-size: 0.75rem; font-weight: 700; color: #f59e0b; text-transform: uppercase; margin-bottom: 1.25rem; }
+.analytics-master-title { font-size: 2.6rem; font-weight: 800; color: #ffffff; line-height:1.2; margin-bottom: 1.25rem; }
+.analytics-master-title span { background: linear-gradient(135deg, #ffffff 40%, #f59e0b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.analytics-paragraph-text { font-size: 1.05rem; color: #94a3b8; line-height: 1.65; margin-bottom: 2.5rem; }
+.analytics-paragraph-text:hover { color: #f59e0b; text-shadow: 0 0 10px rgba(245,158,11,0.3); }
+.analytics-action-btn { display: inline-block; text-decoration: none; background: rgba(255,255,255,0.02); color: #ffffff !important; border: 1px solid rgba(255,255,255,0.15); padding: 0.85rem 2rem; border-radius: 8px; font-weight: 700; font-size: 0.9rem; transition: all 0.4s ease; }
+.analytics-text-pane:hover .analytics-action-btn { background: linear-gradient(135deg, #b45309 0%, #f59e0b 100__); color: #f59e0b !important; border-color: transparent; box-shadow: 0 4px 15px rgba(245,158,11,0.3); }
+
+@media (max-width: 992px) {
+    .analytics-layout-matrix { grid-template-columns: 1fr; text-align: center; gap: 4rem; }
+    .analytics-paragraph-text { margin: 0 auto 2.5rem auto; }
+    .console-glass-housing { margin: 0 auto; }
+    .allocation-meta { text-align: left; }
+    .analytics-console-pane { order: 2; }
+    .analytics-text-pane { order: 1; }
+}
+
+</style>
+
+<!-- Section: Sovereign Compliance & Security SLA Grid -->
+<section class="compliance-vault-viewport" id="security-slas">
+    <div class="compliance-header-block">
+        <span class="compliance-pill-tag">Regulatory Guardrails</span>
+        <h2 class="compliance-master-title">Sovereign Compliance <span>SLA Standards</span></h2>
+        <p class="compliance-summary-text">
+            Stackly operates within international institutional frameworks, ensuring fully audited transparency parameters over multi-asset clearing tracks.
+        </p>
+    </div>
+
+    <div class="compliance-cards-matrix">
+        <!-- SLA Box 1 -->
+        <div class="sla-card-node">
+            <div class="sla-inner-housing">
+                <div class="sla-icon-wrap">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h3 class="sla-card-title">SEC Aligned Audits</h3>
+                <p class="sla-card-desc">Continuous real-time ledger accounting aligned with absolute sovereign compliance mandates to assure portfolio safety loops.</p>
+            </div>
+        </div>
+
+        <!-- SLA Box 2 -->
+        <div class="sla-card-node">
+            <div class="sla-inner-housing">
+                <div class="sla-icon-wrap">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+                <h3 class="sla-card-title">Air-Gap Protection</h3>
+                <p class="sla-card-desc">Private validation cryptographic keys are isolated inside localized cold storage arrays to eliminate peripheral entry leaks.</p>
+            </div>
+        </div>
+
+        <!-- SLA Box 3 -->
+        <div class="sla-card-node">
+            <div class="sla-inner-housing">
+                <div class="sla-icon-wrap">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                <h3 class="sla-card-title">99.99% Liquidity SLA</h3>
+                <p class="sla-card-desc">Redundant routing tracks connect directly with tier-1 clearing institutions to secure constant, slippage-free asset conversions.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .compliance-vault-viewport {
+    position: relative !important;
+    display: block !important;
+    clear: both !important;
+    width: 100% !important;
+    background-color: #04070d;
+    padding: 50px 5%;
+    box-sizing: border-box;
+    z-index: 67;
+}
+.compliance-header-block { text-align: center; max-width: 700px; margin: 0 auto 5rem auto; }
+.compliance-pill-tag { display: inline-block; background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); padding: 0.45rem 1.1rem; border-radius: 50px; font-size: 0.75rem; font-weight: 700; color: #10b981; text-transform: uppercase; margin-bottom: 1.25rem; }
+.compliance-master-title { font-size: 2.6rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; margin-bottom: 1.25rem; }
+.compliance-master-title span { background: linear-gradient(135deg, #ffffff 40%, #f59e0b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.compliance-summary-text { font-size: 1.05rem; color:white; line-height: 1.65; }
+
+
+/* Grid Mechanics */
+.compliance-cards-matrix { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+.sla-inner-housing { background: rgba(9,13,22,0.55); border: 1px solid rgba(255,255,255,0.04); border-radius: 20px; padding: 2.5rem 2rem; height: 100%; display: flex; flex-direction: column; transition: all 0.4s ease; }
+.sla-icon-wrap { width:44px; height:44px; border-radius:10px; background: rgba(245,158,11,0.08); color:#f59e0b; display:flex; align-items:center; justify-content:center; margin-bottom: 1.5rem; transition: transform 0.4s ease; }
+.sla-card-title { font-size: 1.3rem; font-weight:700; color:#ffffff; margin-bottom: 0.75rem; transition: color 0.3s ease; }
+.sla-card-desc { font-size: 0.95rem; color: #f1f5f9; line-height: 1.6; }
+
+/* Hover Effects */
+.sla-card-node:hover .sla-inner-housing { border-color: rgba(245,158,11,0.25); box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 20px rgba(245,158,11,0.04); transform: translateY(-4px); }
+.sla-card-node:hover .sla-icon-wrap { transform: scale(1.1) rotate(3deg); background:#f59e0b; color:#000000; box-shadow: 0 0 15px #f59e0b; }
+.sla-card-node:hover .sla-card-title { color: #f59e0b; }
+
+@media (max-width: 1024px) {
+    .compliance-cards-matrix { grid-template-columns: 1fr; gap: 1.5rem; max-width: 460px; margin: 0 auto; }
+    .compliance-master-title { font-size: 2.2rem; }
+}
+
+</style>
+
+<!-- High-Impact Compact Testimonial Carousel Matrix -->
+<section class="compact-review-viewport" id="testimonials">
+    
+    <!-- Zone 1: Ambient Canvas Backdrop Configurations -->
+    <div class="review-bg-canvas">
+        <img src="./Assests/money plant.webp" alt="Global Capital Flow Node Network" class="review-vector-backing">
+        <div class="review-masking-shade"></div>
+    </div>
+
+    <!-- Zone 2: Tight Header Cluster Group -->
+    <div class="review-header-block">
+        <span class="review-pill-tag">Validation Matrix</span>
+        <h2 class="review-master-title">Trusted By <span>Global Wealth</span></h2>
+    </div>
+
+    <!-- Zone 3: Horizontal Carousel Slider Frame -->
+    <div class="review-carousel-container">
+        <div class="review-slider-track" id="reviewSliderTrack">
+            
+            <!-- Review Card 1 -->
+            <div class="review-card-node">
+                <div class="review-glow-edge"></div>
+                <div class="review-inner-housing">
+                    
+                    <!-- Star Rating Vectors Block Row -->
+                    <div class="rating-stars-row">
+                        <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+
+                    <p class="review-quote-text">
+                        "Stackly's microsecond algorithmic rebalancing transformed our high-yield portfolio pipelines. The zero-knowledge data vault safeguards compliance keys perfectly."
+                    </p>
+                    
+                    <div class="review-client-row">
+                        <div class="review-avatar-frame">
+                            <img src="./Assests/testimonial 2.webp" alt="Marcus Vance Portrait" class="review-avatar-img">
+                        </div>
+                        <div class="review-client-meta">
+                            <h4 class="review-client-name">Marcus Vance</h4>
+                            <span class="review-client-position">Director, Vanguard Alpha</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review Card 2 -->
+            <div class="review-card-node">
+                <div class="review-glow-edge"></div>
+                <div class="review-inner-housing">
+                    
+                    <div class="rating-stars-row">
+                        <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+
+                    <p class="review-quote-text">
+                        "The solid metal credit lines coupled with automated digital asset derivatives hedging provide our asset allocation tracks with a comprehensive buffer framework."
+                    </p>
+                    
+                    <div class="review-client-row">
+                        <div class="review-avatar-frame">
+                            <img src="./Assests/testimonial 1.webp" alt="Elena Rostova Visual" class="review-avatar-img">
+                        </div>
+                        <div class="review-client-meta">
+                            <h4 class="review-client-name">Elena Rostova</h4>
+                            <span class="review-client-position">Treasurer, Helion Sovereign</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review Card 3 -->
+            <div class="review-card-node">
+                <div class="review-glow-edge"></div>
+                <div class="review-inner-housing">
+                    
+                    <div class="rating-stars-row">
+                        <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+
+                    <p class="review-quote-text">
+                        "Deploying corporate treasury into Stackly's automated SIP engines yielded unprecedented alpha while matching strict cross-border liquidity clearing matrices."
+                    </p>
+                    
+                    <div class="review-client-row">
+                        <div class="review-avatar-frame">
+                            <img src="./Assests/testimonial 3.webp" alt="David Chen Representation" class="review-avatar-img">
+                        </div>
+                        <div class="review-client-meta">
+                            <h4 class="review-client-name">Rose Chen</h4>
+                            <span class="review-client-position">Partner, Nexus Quantum</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Minimal Carousel Navigation Control Rails -->
+    <div class="review-carousel-controls">
+        <button class="review-ctrl-btn" id="reviewPrev" aria-label="Previous reviews">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="review-ctrl-btn" id="reviewNext" aria-label="Next reviews">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+    </div>
+</section>
+
+<style>
+    /* ==========================================================================
+   HIGHLY COMPACT INTERACTIVE TESTIMONIAL CAROUSEL ARCHITECTURE
+   ========================================================================== */
+
+.compact-review-viewport {
+    position: relative !important;
+    display: block !important;
+    clear: both !important; /* Prevents overlapping bugs entirely */
+    width: 100% !important;
+    background-color: #04070d;
+    padding: 60px 5% 40px 5% !important; /* COMPACT SPACING: Reduced padding creates a shorter, tighter section layout */
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 45;
+}
+
+/* Background canvas setup tracks layers and depth masks */
+.review-bg-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.review-vector-backing {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.13;
+}
+
+.review-masking-shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 30%, #04070d 95%);
+}
+
+/* Tight Header Configuration */
+.review-header-block {
+    text-align: center;
+    margin-bottom: 2rem !important; /* LESS SPACE: Tightened gap between header text and the cards below */
+    position: relative;
+    z-index: 5;
+}
+
+.review-pill-tag {
+    display: inline-block;
+    background: rgba(16, 185, 129, 0.05);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    padding: 0.35rem 0.9rem;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #10b981;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem; /* Tight content margin spacer */
+}
+
+.review-master-title {
+    font-size: 2.2rem; /* Balanced size to save viewport real estate */
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+}
+
+.review-master-title span {
+    background: linear-gradient(135deg, #ffffff 40%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Carousel Container Viewport Layer Mask */
+.review-carousel-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 10px 5px;
+    position: relative;
+    z-index: 5;
+}
+
+/* Horizontal Track Slide Matrix Container Grid */
+.review-slider-track {
+    display: flex;
+    gap: 1.5rem; /* LESS SPACE: Tightened space separating individual cards */
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    will-change: transform;
+}
+
+/* Premium Glassmorphic Testimonial Card Housing Structure */
+.review-card-node {
+    flex: 0 0 calc(33.333% - 1rem); /* Fits 3 cards perfectly on desktop grids */
+    min-width: 310px;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: rgba(9, 13, 22, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.4s ease;
+}
+
+.review-glow-edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1.5px solid transparent;
+    border-radius: 16px;
+    pointer-events: none;
+    z-index: 3;
+    transition: all 0.4s ease;
+}
+
+.review-inner-housing {
+    padding: 1.75rem; /* LESS SPACE: Tighter interior box padding balances empty spots */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* LESS SPACE: Minimizes interior padding distance between text modules */
+}
+
+/* Vector Star Rating Nodes Row */
+.rating-stars-row {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.star-icon {
+    width: 16px;
+    height: 16px;
+    fill: #f59e0b; /* Pure banking gold star color track lines */
+    filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.4));
+}
+
+/* Quote Paragraph Block Configuration */
+.review-quote-text {
+    font-size: 0.95rem;
+    color: #ffffff !important; /* Pure solid white typography layers upgrades */
+    line-height: 1.5;
+    font-style: italic;
+    min-height: 72px; /* Rigid alignment base constraints keeps layout clean */
+}
+
+/* Client Profiles Section Layout Elements */
+.review-client-row {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    border-top: 1px solid rgba(255,255,255,0.03);
+    padding-top: 1rem;
+}
+
+.review-avatar-frame {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1.5px solid rgba(245, 158, 11, 0.25);
+    background: #090d16;
+}
+
+.review-avatar-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* EDGE TO EDGE FIT: Clips profile graphics cleanly without visual stretching */
+}
+
+.review-client-meta { display: flex; flex-direction: column; }
+.review-client-name { font-size: 1rem; font-weight: 700; color: #ffffff; }
+.review-client-position { font-size: 0.75rem; color: white; font-weight: 500; }
+
+/* --- INTERACTIVE CAROUSEL HOVER GLOW STATE TRIGGERS --- */
+.review-card-node:hover {
+    transform: translateY(-4px);
+    border-color: rgba(245, 158, 11, 0.25);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.65), 0 0 20px rgba(245, 158, 11, 0.05);
+}
+
+.review-card-node:hover .review-glow-edge {
+    border-color: #f59e0b; /* Lights up a clean neon golden outline border on card hover */
+    box-shadow: inset 0 0 12px rgba(245, 158, 11, 0.15);
+}
+
+.review-card-node:hover .review-client-name {
+    color: #f59e0b; /* Text color swap on user tracking highlight */
+}
+
+/* Carousel Control Arrow Buttons Group Row */
+.review-carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem !important; /* LESS SPACE: Decreased distance below cards */
+    position: relative;
+    z-index: 5;
+}
+
+.review-ctrl-btn {
+    background: rgba(9, 13, 22, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #94a3b8;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.review-ctrl-btn:hover {
+    color: #f59e0b;
+    border-color: #f59e0b;
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.2);
+    transform: scale(1.05);
+}
+
+/* --- RESPONSIVE MEDIA VIEWPORTS ENGINEERING --- */
+@media (max-width: 1024px) {
+    .review-card-node {
+        flex: 0 0 calc(50% - 0.75rem); /* Drops grid to 2 items per row on tablets formats screens */
+    }
+    .review-master-title { font-size: 1.9rem; }
+}
+
+@media (max-width: 768px) {
+    .review-card-node {
+        flex: 0 0 100%; /* Spans full single rows on compact smartphone screens boundaries */
+    }
+    .compact-review-viewport { padding: 40px 4% 30px 4% !important; } /* Tighter responsive mobile padding maps */
+}
+
+</style>
+
+<script>
+    // --- 12. COMPACT REVIEWS CAROUSEL TRACK SLIDER CONTROL RAIL ENGINE ---
+document.addEventListener('DOMContentLoaded', () => {
+    const track = document.getElementById('reviewSliderTrack');
+    const prevBtn = document.getElementById('reviewPrev');
+    const nextBtn = document.getElementById('reviewNext');
+    
+    if (track && prevBtn && nextBtn) {
+        let currentIndex = 0;
+
+        function getVisibleCardsCount() {
+            if (window.innerWidth > 1024) return 3;
+            if (window.innerWidth > 768) return 2;
+            return 1;
+        }
+
+        function renderTrackPosition() {
+            const cards = document.querySelectorAll('.review-card-node');
+            if (cards.length === 0) return;
+
+            const visibleCards = getVisibleCardsCount();
+            const maxIndex = Math.max(0, cards.length - visibleCards);
+
+            if (currentIndex > maxIndex) currentIndex = maxIndex;
+            if (currentIndex < 0) currentIndex = 0;
+
+            const cardWidth = cards[0].offsetWidth;
+            const gapValue = parseFloat(window.getComputedStyle(track).gap) || 0;
+            
+            // Mathematically evaluate absolute translate pixel displacement metrics values
+            const finalShiftDistance = currentIndex * (cardWidth + gapValue);
+            track.style.transform = `translateX(-${finalShiftDistance}px)`;
+
+            // Update arrow keys visibility triggers signaling
+            prevBtn.style.opacity = currentIndex === 0 ? '0.3' : '1';
+            prevBtn.style.pointerEvents = currentIndex === 0 ? 'none' : 'auto';
+            
+            nextBtn.style.opacity = currentIndex === maxIndex ? '0.3' : '1';
+            nextBtn.style.pointerEvents = currentIndex === maxIndex ? 'none' : 'auto';
+        }
+
+        nextBtn.addEventListener('click', () => {
+            const cards = document.querySelectorAll('.review-card-node');
+            if (currentIndex < cards.length - getVisibleCardsCount()) {
+                currentIndex++;
+                renderTrackPosition();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                renderTrackPosition();
+            }
+        });
+
+        let resizeDebounceTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeDebounceTimer);
+            resizeDebounceTimer = setTimeout(renderTrackPosition, 100);
+        });
+
+        renderTrackPosition();
+    }
+});
+
+</script>
+
+<!-- Interactive Global Financial Node Mapping Section -->
+<section class="global-nodes-viewport" id="global-network">
+    
+    <!-- Zone 1: Ambient Canvas Backdrop Configurations -->
+    <div class="nodes-bg-canvas">
+        <img src="./Assests/analytics - bg.webp" alt="Stackly Sovereign Clearing Horizon Base Canvas" class="nodes-vector-backing">
+        <div class="nodes-masking-shade"></div>
+    </div>
+
+    <!-- Zone 2: Main Grid Matrix Constraint Wrapper -->
+    <div class="nodes-layout-matrix">
+        
+        <!-- Column A: Descriptive Text Hub Component -->
+        <div class="nodes-text-cluster">
+            <span class="nodes-pill-lbl">Liquidity Ingress</span>
+            <h2 class="nodes-title">Borderless Sovereign <span>Network Grid</span></h2>
+            <p class="nodes-paragraph">
+                Bridge international bank clearing networks with decentralised digital asset nodes instantly. Stackly maintains continuous pipeline linkages across premium financial epicenters to deliver microsecond execution SLAs worldwide.
+            </p>
+            
+            <div class="nodes-action-row">
+                <a href="404.html" class="nodes-btn btn-primary-glow">Inspect Global Links</a>
+            </div>
+        </div>
+
+        <!-- Column B: Interactive Network Telemetry Display Component Frame -->
+        <div class="nodes-visual-block">
+            <div class="telemetry-window-wrapper">
+                <div class="telemetry-neon-glow-edge"></div>
+                <div class="telemetry-inner-housing">
+                    
+                    <div class="telemetry-main-display">
+                        <img src="./Assests/analytics framework.webp" alt="Global Server Framework Visualization Panel" class="telemetry-display-img">
+                        <div class="telemetry-overlay-halo"></div>
+                    </div>
+
+                    <!-- Floating Telemetry Data Badges -->
+                    <div class="telemetry-badge badge-london">
+                        <span class="badge-signal-ping"></span>
+                        <div class="badge-text-strings">
+                            <span class="badge-title">London Vault</span>
+                            <span class="badge-metric">Settle Delay: 0.001s</span>
+                        </div>
+                    </div>
+
+                    <div class="telemetry-badge badge-tokyo">
+                        <span class="badge-signal-ping"></span>
+                        <div class="badge-text-strings">
+                            <span class="badge-title">Tokyo Node</span>
+                            <span class="badge-metric">Active Pools: Live</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* ==========================================================================
+   STACKLY GLOBAL FINANCIAL NODE MAPPING SECTION ARCHITECTURE
+   ========================================================================== */
+
+.global-nodes-viewport {
+    position: relative !important;
+    display: block !important;
+    clear: both !important; /* Forces strict block flow isolation downwards beneath previous structures */
+    width: 100% !important;
+    background-color: #04070d;
+    
+    /* SPECIFIC CONFIGURATION: RIGID COMPACT VERTICAL SPACING BARRIERS */
+    padding-top: 50px !important;    /* Tightened top cushion area down to 50px */
+    padding-bottom: 30px !important; /* Tightened bottom cushion area down to 30px */
+    
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 55;
+}
+
+/* Background image asset configuration layers canvas */
+.nodes-bg-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.nodes-vector-backing {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.13;
+}
+
+.nodes-masking-shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 30%, #04070d 95%);
+}
+
+/* Master Grid Alignment Matrix Split Layout Cores */
+.nodes-layout-matrix {
+    position: relative;
+    z-index: 5;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+/* --- COLUMN A: DESCRIPTION MODULE TEXT LABELS --- */
+.nodes-pill-lbl {
+    display: inline-block;
+    background: rgba(2, 132, 199, 0.05);
+    border: 1px solid rgba(2, 132, 199, 0.2);
+    padding: 0.4rem 1.1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #0284c7;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+}
+
+.nodes-title {
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.nodes-title span {
+    background: linear-gradient(135deg, #ffffff 40%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nodes-paragraph {
+    font-size: 1.05rem;
+    color: white;
+    line-height: 1.65;
+    margin-bottom: 2rem;
+    max-width: 580px;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nodes-paragraph:hover {
+    color: #f59e0b;
+    text-shadow: 0 0 10px rgba(2, 132, 199, 0.35); /* Soft blue typographical glow on hover */
+}
+
+.nodes-action-row { display: flex; }
+
+.nodes-btn {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.85rem 2rem;
+    border-radius: 8px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    text-align: center;
+}
+
+.btn-primary-glow {
+    background: linear-gradient(135deg, #b45309 0%, #f59e0b 100%);
+    color: #000000;
+    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.25);
+}
+
+.btn-primary-glow:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(245, 158, 11, 0.55);
+    filter: brightness(1.1);
+}
+
+/* --- COLUMN B: HIGH TECH TELEMETRY WINDOW DISPLAY CARD --- */
+.nodes-visual-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.telemetry-window-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+}
+
+.telemetry-inner-housing {
+    position: relative;
+    background: rgba(9, 13, 22, 0.65);
+    border: 1px solid rgba(255,255,255,0.04);
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    z-index: 2;
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Edge-To-Edge Cover Setup Framework Image Box */
+.telemetry-main-display {
+    width: 100%;
+    height: 240px; /* Rigid aspect height container */
+    border-radius: 12px;
+    overflow: hidden; /* Clips outer corners smoothly */
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.03);
+}
+
+.telemetry-display-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* MAGIC COVER: Crops and fills the block perfectly without skewing graphic geometry */
+    z-index: 2;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.telemetry-overlay-halo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle at center, transparent 40%, rgba(4, 7, 13, 0.7) 100%);
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* Neon Overlay Golden Border highlight configuration system rules */
+.telemetry-neon-glow-edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1.5px solid transparent;
+    border-radius: 20px;
+    pointer-events: none;
+    z-index: 3;
+    transition: all 0.5s ease;
+}
+
+/* Interactive Card Position Shifts Tilted Movements */
+.telemetry-window-wrapper:hover .telemetry-inner-housing {
+    transform: rotateX(2deg) rotateY(-2deg) scale(1.02);
+    border-color: rgba(245, 158, 11, 0.20);
+}
+
+.telemetry-window-wrapper:hover .telemetry-neon-glow-edge {
+    border-color: #f59e0b;
+    box-shadow: inset 0 0 15px rgba(245, 158, 11, 0.15), 0 0 25px rgba(245, 158, 11, 0.05);
+}
+
+.telemetry-window-wrapper:hover .telemetry-display-img {
+    transform: scale(1.04);
+}
+
+/* Floating Telemetry Info Badges Data Structural Frame System */
+.telemetry-badge {
+    position: absolute;
+    background: rgba(9, 13, 22, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(2, 132, 199, 0.25);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    z-index: 4;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.telemetry-badge:hover {
+    transform: translateY(-3px) scale(1.04) !important;
+    border-color: #f59e0b;
+}
+
+/* Badges floating placement mappings and displacement loops curves */
+.badge-london {
+    top: 25%;
+    left: -25px;
+    animation: telemetryNodeFloatA 5s ease-in-out infinite alternate;
+}
+
+.badge-tokyo {
+    bottom: 25%;
+    right: -15px;
+    animation: telemetryNodeFloatB 6s ease-in-out infinite alternate-reverse;
+}
+
+.badge-signal-ping {
+    width: 6px;
+    height: 6px;
+    background-color: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #10b981;
+    animation: telemetryPulseBlink 1.5s infinite alternate;
+}
+
+.badge-text-strings { display: flex; flex-direction: column; }
+.badge-title { font-size: 0.8rem; font-weight: 700; color: #ffffff; }
+.badge-metric { font-size: 0.7rem; color: white; font-weight: 600; font-family: monospace; }
+
+/* --- CORE GRAPHICS ANIMATIONS KEYFRAMES --- */
+@keyframes telemetryPulseBlink {
+    0% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(1.3); opacity: 1; box-shadow: 0 0 10px #10b981; }
+}
+
+@keyframes telemetryNodeFloatA {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px) translateX(2px); }
+}
+
+@keyframes telemetryNodeFloatB {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(10px) translateX(-2px); }
+}
+
+/* --- RESPONSIVE MEDIA VIEWPORTS CONFIGURATION BREAKPOINTS --- */
+@media (max-width: 1024px) {
+    .nodes-layout-matrix {
+        grid-template-columns: 1fr; /* Re-stacks panels into a single column on smaller viewports */
+        gap: 3.5rem;
+        text-align: center;
+    }
+    .nodes-paragraph { margin-left: auto; margin-right: auto; }
+    .nodes-action-row { justify-content: center; }
+    .nodes-visual-block { order: 2; display: flex; flex-direction: column; width: 100%; }
+    .nodes-text-cluster { order: 1; }
+    
+    /* Re-stack data info badges cleanly on compact tablet screens profiles */
+    .telemetry-inner-housing { display: flex; flex-direction: column; align-items: center; gap: 1rem; max-width: 440px; }
+    .telemetry-badge { position: static !important; animation: none !important; width: 100%; max-width: 320px; justify-content: flex-start; }
+}
+
+@media (max-width: 480px) {
+    .global-nodes-viewport { padding: 40px 4% 25px 4% !important; } /* Safe padding reduction scale overrides */
+    .nodes-title { font-size: 2rem; }
+    .telemetry-main-display { height: 190px; }
+    .nodes-action-row { width: 100%; }
+    .nodes-btn { width: 100%; }
+}
+
+</style>
+
+<!-- Full Width Single-Line Institutional CTA Banner -->
+<section class="cta-banner-horizon-viewport">
+    
+    <!-- Zone 1: Ambient Canvas Backdrop Configurations -->
+    <div class="cta-horizon-bg-canvas">
+        <img src="./Assests/money plant.webp" alt="Stackly Distributed Clearing Network" class="cta-horizon-vector">
+        <div class="cta-horizon-masking-shade"></div>
+    </div>
+
+    <!-- Zone 2: Main Grid Matrix Constraint Wrapper -->
+    <div class="cta-horizon-layout-matrix">
+        <div class="cta-horizon-inner-content">
+            
+            <!-- Single-Line Copywriting Statement -->
+            <h2 class="cta-horizon-headline-text">
+                Ready to Deploy Next-Gen Capital? <span>Initialize Your Secure Vault Terminal.</span>
+            </h2>
+            
+            <!-- Action Trigger Component Route -->
+            <div class="cta-horizon-action-block">
+                <a href="404.html" class="cta-horizon-execute-btn">
+                    <span>Deploy Portfolio</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    /* ==========================================================================
+   FULL WIDTH SINGLE-LINE CONVERSION CTA BANNER MODULE STYLING
+   ========================================================================== */
+
+.cta-banner-horizon-viewport {
+    position: relative !important;
+    display: block !important;
+    clear: both !important; /* Blockades any floating layers outliers layout corruption completely */
+    width: 100% !important;
+    background-color: #04070d;
+    padding: 70px 5% !important; /* Balanced compact layout padding handles vertical text line spaces cleanly */
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 69;
+    border-top: 1px solid rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+/* Background image asset configuration layers canvas */
+.cta-horizon-bg-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.cta-horizon-vector {
+    width: 105%;
+    height: 105%;
+    object-fit: cover;
+    opacity: 0.14; /* Kept highly subtle to focus vision on typography statement tracks */
+    animation: ctaHorizonBackingDrift 20s ease-in-out infinite alternate;
+}
+
+.cta-horizon-masking-shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 40%, #04070d 95%);
+}
+
+/* Master Grid Alignment Matrix Constraint Wrapper */
+.cta-horizon-layout-matrix {
+    position: relative;
+    z-index: 5;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Symmetric Horizontal Alignment Row Housing */
+.cta-horizon-inner-content {
+    display: flex;
+    justify-content: space-between; /* Creates mathematically precise horizontal distribution across desktop modes */
+    align-items: center;
+    gap: 4rem;
+    width: 100%;
+}
+
+/* Single-Line High-Impact Headline Typography Parameters */
+.cta-horizon-headline-text {
+    font-size: 1.65rem; /* Balanced visibility scale metrics across desktop formats monitors */
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.3;
+    max-width: 900px;
+    letter-spacing: -0.01em;
+    cursor: default;
+    user-select: none;
+    transition: transform 0.4s ease;
+}
+
+.cta-horizon-headline-text span {
+    background: linear-gradient(135deg, #94a3b8 30%, #475569 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.4s ease;
+}
+
+/* Premium Gold Shimmer Reflection Glow on text hover action triggers */
+.cta-horizon-inner-content:hover .cta-horizon-headline-text span {
+    background: linear-gradient(135deg, #ffffff 40%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.35)); /* Vibrant golden neon bloom halo */
+}
+
+/* Submission Action Link Button Frame Architecture */
+.cta-horizon-action-block {
+    flex-shrink: 0;
+    width: auto;
+}
+
+.cta-horizon-execute-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: center;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.02);
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.9rem 2.2rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.cta-horizon-execute-btn svg {
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Transforms basic outline buttons into a burning linear gold bar on row hover events triggers */
+.cta-horizon-inner-content:hover .cta-horizon-execute-btn {
+    background: linear-gradient(135deg, #b45309 0%, #f59e0b 100%);
+    color: #000000 !important;
+    border-color: transparent;
+    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.45);
+    transform: translateY(-2px);
+}
+
+.cta-horizon-inner-content:hover .cta-horizon-execute-btn svg {
+    transform: translateX(4px); /* Interactive dynamic vector arrow push shift nudge */
+}
+
+/* --- BACKGROUND KEYFRAMES SHIFTS --- */
+@keyframes ctaHorizonBackingDrift {
+    0% { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.04) translate(-1%, -1%); }
+}
+
+/* ==========================================================================
+   RESPONSIVE SCREEN MATRIX BREAKPOINTS CONFIGURATIONS
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .cta-horizon-headline-text { font-size: 1.4rem; }
+    .cta-horizon-inner-content { gap: 2.5rem; }
+}
+
+@media (max-width: 912px) {
+    .cta-horizon-inner-content {
+        flex-direction: column; /* Re-stacks horizontally spread layout into single columns arrays on mobile viewports */
+        text-align: center;
+        padding: 1rem 0;
+        gap: 2rem;
+    }
+    .cta-horizon-headline-text {
+        max-width: 100%;
+    }
+    .cta-horizon-action-block {
+        width: 100%;
+    }
+    .cta-horizon-execute-btn {
+        width: 100%; /* Stretch button row items full width limits inside smaller screens bounding tracks maps */
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-banner-horizon-viewport { padding: 50px 4% !important; } /* Tighter cushion overrides safely over mobile dimensions */
+    .cta-horizon-headline-text { font-size: 1.2rem; }
+}
+
+</style>
+
+<!-- Secure Financial Infrastructure Directory Footer Matrix -->
+<footer class="vault-footer-viewport">
+    
+    <!-- Core Upper Structural Row Links Grid Mapping -->
+    <div class="footer-layout-matrix">
+        
+        <!-- Column 1: Institutional Core Brand Metrics Panel -->
+        <div class="footer-brand-column">
+            <div class="footer-logo-row" id="footerLogoScrollTop" title="Scroll back to top of terminal vault">
+                <img src="./Assests/logo.webp" alt="Stackly Secure Finance Logo" class="footer-logo-img">
+               
+            </div>
+            <p class="footer-brand-desc">
+                Engineering institutional banking clearings, high-yield compound assets, and polymorphic cross-border liquidity clearings securely.
+            </p>
+            
+            <div class="footer-address-block">
+                <svg class="addr-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span class="addr-text">MMR Complex, Periyakollappatty, Chinna Thirupathi, Salem, Tamil Nadu 636008</span>
+            </div>
+
+            <!-- Social Media Routing Anchor Nodes Row -->
+            <div class="footer-social-row">
+                <a href="404.html" class="social-node-btn" aria-label="Access Matrix Telegram Clearing Network">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2L2 11.5l6 2.5 11-7.5-8 8.5v5.5l3.5-3 5 4L21.5 2z"/></svg>
+                </a>
+                 <a href="404.html" class="social-node-btn" aria-label="Access Institutional Facebook Network">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-4h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+    </a>
+    
+    <!-- Instagram Grid Node -->
+    <a href="404.html" class="social-node-btn" aria-label="Access Corporate Instagram Hub">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+    </a>
+
+    <!-- Modern X (Twitter) Minimal Matrix Node -->
+    <a href="404.html" class="social-node-btn" aria-label="Access Core Institutional X Channels">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733-16z M4 20l6.768-6.88M20 4l-6.768 6.88"/></svg>
+    </a>
+            </div>
+        </div>
+
+        <!-- Column 2: Capital Products Directory Group -->
+        <div class="footer-links-column">
+            <h4 class="directory-title">Quick Links</h4>
+            <ul class="directory-list-stack">
+                <li><a href="#services" class="directory-item">Mutual Funds Alpha</a></li>
+                <li><a href="#liquidity" class="directory-item">SIP Compound Engines</a></li>
+                <li><a href="#features" class="directory-item">Quantum Trading Gates</a></li>
+                <li><a href="#cards" class="directory-item">Premium Credit Lines</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Vault Security & Compliance Directory Group -->
+        <div class="footer-links-column">
+            <h4 class="directory-title">Support Hub</h4>
+            <ul class="directory-list-stack">
+                <li><a href="404.html" class="directory-item">Encryption Keys SLA</a></li>
+                <li><a href="404.html" class="directory-item">Air-Gap Vault Setup</a></li>
+                <li><a href="#security" class="directory-item">Firewall Help Portal</a></li>
+                <li><a href="404.html" class="directory-item">Institutional Compliance</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 4: High Yield Capital Newsletter Subscription Hub -->
+        <div class="footer-subscription-column">
+            <h4 class="directory-title">The Terminal Dispatch</h4>
+            <p class="subscription-pitch">Subscribe to unlock premium custom financial blueprint designs and private portfolio asset launches.</p>
+            
+            <!-- Secure Native Validation Email Input Box Container Form -->
+            <form class="subscription-form-wrapper" id="footerSubscriptionForm">
+                <input type="email" id="subEmailInput" placeholder="Enter your email..." required>
+                <button type="submit" class="sub-submit-trigger" aria-label="Submit secure data subscription">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Core Lower Structural Horizon Legal attribution row bar -->
+    <div class="footer-copyright-bar">
+        <div class="copyright-content-wrapper">
+            <p class="copyright-legal-text">&copy; 2026 Stackly Financial Ecosystem. All rights reserved. Vault transactions are sovereign encrypted.</p>
+            
+            <div class="legal-links-row">
+                <a href="404.html" class="legal-link-item">Privacy Policy</a>
+                <a href="404.html" class="legal-link-item">Terms of Service</a>
+                <a href="404.html" class="legal-link-item">Cookie Management</a>
+            </div>
+
+            <!-- Right-Side Floating Navigation Arrow Node Button -->
+            <button class="scroll-top-arrow-btn" id="arrowScrollTop" aria-label="Scroll back straight to top of document canvas">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+            </button>
+        </div>
+    </div>
+</footer>
+
+<style>
+    /* ==========================================================================
+   STACKLY MULTI-COLUMN COMPACT FINANCE DIRECTORY FOOTER MATRIX
+   ========================================================================== */
+
+.vault-footer-viewport {
+    position: relative !important;
+    display: block !important;
+    clear: both !important; /* Total height separation shield protection layer from previous elements */
+    width: 100% !important;
+    background-color: #04070d;
+    
+    /* SPECIFIC CONFIGURATION SPECS: FORCED COMPACT VIEW BUFFER SPACES PADDING */
+    padding-top: 50px !important;    /* Tightened top cushion area down to 50px */
+    padding-bottom: 30px !important; /* Tightened bottom cushion area down to 30px */
+    
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 70;
+    border-top: 1px solid rgba(255, 255, 255, 0.03); /* Subtle separation horizon line */
+}
+
+/* Master Grid Alignment Matrix Column Split Configuration */
+.footer-layout-matrix {
+    max-width: 1400px;
+    margin: 0 auto 2.5rem auto; /* Creates a structured gap right above the copyright row bar */
+    display: grid;
+    grid-template-columns: 1.15fr 0.75fr 0.75fr 1.35fr; /* Matches the custom structural footprint proportions from screenshot */
+    gap: 3.5rem;
+    padding: 0 5%;
+}
+
+/* --- COLUMN 1: BRAND IDENTITY & LOGO LAYOUT MODULE --- */
+.footer-brand-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-logo-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    width: max-content;
+    user-select: none;
+}
+
+.footer-logo-img {
+    width: 150px;
+    height: 40px;
+    object-fit: contain;
+    
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.footer-logo-row:hover .footer-logo-img {
+    transform: scale(1.08) rotate(3deg);
+}
+
+.footer-logo-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    background: linear-gradient(135deg, #ffffff 40%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer-brand-desc {
+    font-size: 0.9rem;
+    color: white;
+    line-height: 1.6;
+    max-width: 320px;
+}
+
+/* Aligned Physical Office Address Block styling */
+.footer-address-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    max-width: 340px;
+}
+
+.addr-icon {
+    color: #f59e0b;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+    filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.3));
+}
+
+.addr-text {
+    font-size: 0.85rem;
+    color: white;
+    line-height: 1.5;
+}
+
+.footer-social-row { display: flex; gap: 0.75rem; }
+
+.social-node-btn {
+    width: 34px;
+    height: 34px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    color: white;
+    border-radius: 50%; /* Continuous perfect round circles profile match screenshot circles design */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-node-btn:hover {
+    color: #f59e0b;
+    border-color: #f59e0b;
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.25);
+    transform: translateY(-2px);
+}
+
+/* --- COLUMNS 2 & 3: SPEED ROUTING DIRECTORIES LINKS --- */
+.footer-links-column { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.directory-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.02em;
+    position: relative;
+    padding-bottom: 0.25rem;
+}
+
+/* Accent bottom lines parameters replicated right underneath header rows from screenshot */
+.directory-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 28px;
+    height: 2px;
+    background-color: #ef4444; /* Replicates custom pink coral alignment mark lines matches your image */
+    border-radius: 2px;
+}
+
+.directory-list-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    list-style: none;
+}
+
+.directory-item {
+    font-size: 0.9rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s, text-shadow 0.3s, padding-left 0.3s;
+}
+
+/* Premium Gold Shimmer Reflection on link hover events */
+.directory-item:hover {
+    color: #ffffff !important; /* Converts text to pure bright white for absolute readability contrast */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+    padding-left: 3px; /* Micro push animation signals on highlight actions */
+}
+
+/* --- COLUMN 4: NEWSLETTER EMAIL CAPTURE SUBSCRIPTION ENGINE --- */
+.footer-subscription-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.footer-subscription-column .directory-title::after {
+    width: 44px; /* Extends accent line proportionally for the wider header */
+}
+
+.subscription-pitch {
+    font-size: 0.9rem;
+    color: white;
+    line-height: 1.6;
+    max-width: 380px;
+}
+
+/* Glassmorphism custom inputs layout row element backing */
+.subscription-form-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+    background: rgba(4, 7, 13, 0.6);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 50px; /* Aligns input to seamless rounded capsules shape match image */
+    padding: 0.3rem 0.3rem 0.3rem 1.25rem;
+    align-items: center;
+    justify-content: space-between;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.subscription-form-wrapper:focus-within {
+    border-color: #f59e0b;
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.1);
+}
+
+.subscription-form-wrapper input {
+    width: 80%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.subscription-form-wrapper input::placeholder {
+    color: white;
+}
+
+/* Coral pink circular execution trigger button matches image mockup exactly */
+.sub-submit-trigger {
+    width: 36px;
+    height: 36px;
+    background: #f43f5e; /* Premium high-yield energetic pink coral overlay tint stance */
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+}
+
+.sub-submit-trigger:hover {
+    transform: scale(1.06) rotate(15deg);
+    background-color: #e11d48;
+    box-shadow: 0 0 12px rgba(244, 63, 94, 0.5);
+}
+
+/* --- LOWER LEGAL MATRICES COPYRIGHT STACK HORIZON --- */
+.footer-copyright-bar {
+    max-width: 1400px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(255,255,255,0.03);
+    padding: 1.5rem 5% 0 5%;
+}
+
+.copyright-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+}
+
+.copyright-legal-text { font-size: 0.8rem; color: white; line-height: 1.5; }
+
+.legal-links-row { display: flex; gap: 1.5rem; }
+
+.legal-link-item {
+    font-size: 0.8rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+.legal-link-item:hover { 
+    color: #ffffff; 
+    text-shadow: 0 0 6px rgba(255,255,255,0.4);
+}
+
+/* Right-Side back to top arrow action trigger */
+.scroll-top-arrow-btn {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.scroll-top-arrow-btn:hover {
+    color: #ffffff;
+    border-color: #ffffff;
+    background: rgba(255,255,255,0.05);
+    box-shadow: 0 0 12px rgba(255,255,255,0.25);
+    transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   RESPONSIVE MATRIX BREAKPOINTS ENGINE
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .footer-layout-matrix {
+        grid-template-columns: repeat(2, 1fr); /* Re-allocates layout tracks structure into standard dual block boxes grid on tablets */
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 680px) {
+    .vault-footer-viewport { padding-top: 40px !important; padding-bottom: 20px !important; } /* Proportional space reduction overrides for mobile screen tracking */
+    .footer-layout-matrix {
+        grid-template-columns: 1fr; /* Compresses multi-columns blocks into simple full-width single column stack array maps */
+        gap: 2rem;
+    }
+    .copyright-content-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+    }
+    .legal-links-row { flex-direction: column; gap: 0.75rem; }
+    .scroll-top-arrow-btn {
+        position: absolute;
+        right: 0;
+        bottom: 0; /* Moves back to top arrow button to the lower right corner on smartphones models viewports */
+    }
+}
+
+</style>
+
+<script>
+    // --- 13. SECURE DIRECTORY FOOTER NAVIGATION ACTIONS & FORM INTELLIGENCE ---
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // 1. Dual-Anchor Scroll Back To Top System Engine
+    const footerLogo = document.getElementById('footerLogoScrollTop');
+    const arrowScrollBtn = document.getElementById('arrowScrollTop');
+
+    function executeSmoothScrollTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' /* Invokes continuous seamless hardware vertical ease migration back straight to top coordinates line */
+        });
+    }
+
+    if (footerLogo) footerLogo.addEventListener('click', executeSmoothScrollTop);
+    if (arrowScrollBtn) arrowScrollBtn.addEventListener('click', executeSmoothScrollTop);
+
+
+    // 2. Automated Newsletter Submission Interceptor & Native Constraint Validator Engine
+    const subscriptionForm = document.getElementById('footerSubscriptionForm');
+    const emailInputField = document.getElementById('subEmailInput');
+
+    if (subscriptionForm && emailInputField) {
+        subscriptionForm.addEventListener('submit', function(e) {
+            // Halt standard browser network reload operations intercepting pipeline sequences
+            e.preventDefault();
+
+            const userEmailAddressValue = emailInputField.value.trim();
+
+            // Safety Constraint Interceptor Gate: Check string value contents metrics
+            if (userEmailAddressValue === "") {
+                // Throws localized pop message if client targets execution with empty fields arrays variables 
+                alert("Security Validation Intercept: Please fill the required email field entry.");
+                return;
+            }
+
+            // If string content passes, execute safe routing down the 404 security error tree page
+            alert("Handshake Confirmed. Encrypting transmission path connection parameters...");
+            window.location.href = "404.html";
+        });
+    }
+});
+
+</script>
+</body>

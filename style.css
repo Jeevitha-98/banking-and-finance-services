@@ -1,0 +1,500 @@
+:root {
+    --bg-primary: #090d16;
+    --gold-glow: #f59e0b;
+    --gold-dim: #b45309;
+    --text-light: #f8fafc;
+    --text-muted: #64748b;
+    --success-glow: #10b981;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body{
+    background-color: var(--bg-primary);
+    color: var(--text-light);
+    min-height:100vh;
+
+    overflow-x:hidden;
+}
+
+/* Fullscreen Preloader Container */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 2rem;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Abstract Digital Vault Backdrop Grid */
+.bg-grid {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background-image: 
+        linear-gradient(rgba(245, 158, 11, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245, 158, 11, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+    transform: perspective(500px) rotateX(60deg);
+    top: -50%;
+    animation: gridMove 20s linear infinite;
+    z-index: 1;
+}
+
+.preloader-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 450px;
+    width: 100%;
+}
+
+/* Vector Logo Section with Pulsing Glow */
+.logo-wrapper {
+    position: relative;
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+
+.logo-svg {
+    width: 80px;
+    height: 80px;
+    color: var(--gold-glow);
+    filter: drop-shadow(0 0 15px rgba(245, 158, 11, 0.4));
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.4s ease;
+}
+
+/* Interactive Hover & Glow Effects */
+.logo-wrapper:hover .logo-svg {
+    transform: scale(1.12) rotate(5deg);
+    filter: drop-shadow(0 0 30px rgba(245, 158, 11, 0.8));
+}
+
+.logo-ring {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px dashed rgba(245, 158, 11, 0.2);
+    border-radius: 50%;
+    animation: spinRing 4s linear infinite;
+}
+
+/* Typography & Glow Header */
+h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #ffffff 30%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.status-msg {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+    height: 20px;
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.02em;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+/* Premium Progress Rail */
+.progress-container {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    height: 4px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+    margin-bottom: 1.5rem;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--gold-dim), var(--gold-glow));
+    box-shadow: 0 0 12px var(--gold-glow);
+    border-radius: 10px;
+    animation: loadProgress 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* App View Main State */
+#app-content {
+    opacity: 0;
+    transform: scale(0.98);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    max-width: 600px;
+    padding: 2rem;
+    text-align: center;
+    z-index: 1;
+}
+
+#app-content.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.welcome-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(245, 158, 11, 0.15);
+    padding: 3rem;
+    border-radius: 1.25rem;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+}
+
+.welcome-card h2 {
+    color: var(--gold-glow);
+    margin-bottom: 1rem;
+}
+
+.welcome-card p {
+    color: var(--text-muted);
+}
+
+/* Core Animations */
+@keyframes loadProgress {
+    0% { width: 0%; }
+    20% { width: 15%; }
+    50% { width: 55%; }
+    80% { width: 88%; }
+    100% { width: 100%; }
+}
+
+@keyframes spinRing {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes gridMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 1000px; }
+}
+
+/* Responsive Viewports */
+@media (max-width: 480px) {
+    h1 { font-size: 1.4rem; }
+    .logo-svg { width: 65px; height: 65px; }
+    .welcome-card { padding: 1.75rem; }
+}
+
+
+/* ==========================================================================
+   STACKLY GLOBAL STYLING VARIABLES & RESET CORES
+   ========================================================================== */
+:root {
+    --bg-primary: #04070d;
+    --gold-glow: #f59e0b;
+    --gold-dim: #b45309;
+    --text-light: #f8fafc;
+    --text-muted: white;
+    --navbar-blur: rgba(9, 13, 22, 0.7);
+    --border-glow: rgba(245, 158, 11, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* Scroll lock state toggled by your JavaScript engine to freeze background canvas tracking */
+body.scroll-locked,
+html.scroll-locked{
+    overflow:hidden;
+}
+
+/* ==========================================================================
+   FLOATING HEADER CORE STRUCTURES (PREVENTS HEIGHT COLLAPSE FLATTENING)
+   ========================================================================== */
+
+/* The outer float frame container strip wrapper */
+.navbar-wrapper {
+    position: fixed !important;
+    top: 20px !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 9998 !important;
+    padding: 0 5% !important;
+    box-sizing: border-box !important;
+}
+
+/* The balanced flexbox alignment housing panel row */
+.navbar-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: var(--navbar-blur);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--border-glow);
+    padding: 0.75rem 2rem;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.navbar-container:hover {
+    border-color: rgba(245, 158, 11, 0.3);
+    box-shadow: 0 10px 40px rgba(245, 158, 11, 0.08);
+}
+
+/* ==========================================================================
+   ZONE 1: INTERACTIVE BRAND IDENTITY LOGO
+   ========================================================================== */
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    flex-shrink: 0;
+    user-select: none;
+}
+
+.brand-img-fallback {
+    width: 150px;
+    height: 50px;
+    object-fit: contain;
+   
+    border-radius: 6px; 
+    transition: transform 0.3s ease;
+}
+
+.brand-logo:hover .brand-img-fallback {
+    transform: scale(1.08) rotate(3deg);
+}
+
+.brand-logo span {
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+   
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================================================
+   ZONE 2: CENTERED ROUTING NAVIGATION LINKS (DESKTOP STATE)
+   ========================================================================== */
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 2.2rem; 
+    margin: 0 auto; 
+}
+
+.nav-item {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+    padding: 0.25rem 0;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.nav-item:hover {
+    color: var(--text-light);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
+}
+
+/* Slid-over underlines neon golden highlights path tracks on item hover states */
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--gold-glow);
+    box-shadow: 0 0 8px var(--gold-glow);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-item:hover::after {
+    width: 100%;
+}
+
+/* ==========================================================================
+   ZONE 3: RE-USABLE ACTIONS GROUP GLOBAL STYLING UTILITIES
+   ========================================================================== */
+.auth-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+.btn-auth {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.55rem 1.35rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn-login {
+    color: var(--text-light);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: transparent;
+}
+
+.btn-login:hover {
+    border-color: var(--text-light);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.btn-signup {
+    background: linear-gradient(135deg, var(--gold-dim) 0%, var(--gold-glow) 100%);
+    color: #000000;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+}
+
+.btn-signup:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(245, 158, 11, 0.4);
+}
+
+/* Visibility toggles filtering configurations between layouts formats */
+.mobile-only-auth { display: none; }
+.desktop-only-auth { display: flex; }
+
+/* ==========================================================================
+   RESPONSIVE VIEWPANELS HARDWARE INTERFACES MODIFIERS (MOBILE VIEW CORES)
+   ========================================================================== */
+
+/* Hamburger menu toggle button architecture */
+.hamburger-trigger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10000;
+    padding: 0;
+}
+
+.hamburger-trigger .bar {
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-light);
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Ambient shadow overlay frame covering page behind drawer */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(4, 6, 10, 0.7);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 9996;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Mobile Adaptive Breakpoint Matrix */
+@media (max-width: 912px) {
+    .hamburger-trigger { display: flex; }
+    .desktop-only-auth { display: none; }
+    .mobile-only-auth { display: flex; width: 100%; margin-top: auto; }
+
+    /* Transforms Zone 2 into a clean 74% Wide Side Drawer Panel Screen */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Hides the drawer off-screen completely */
+        width: 74% !important; /* Forces your requested 74% container width limit */
+        height: 100vh;
+        background: #090e18;
+        border-left: 1px solid var(--border-glow);
+        padding: 6rem 2rem 3rem 2rem;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 2rem;
+        margin: 0;
+        z-index: 9997;
+        box-shadow: -15px 0 40px rgba(0,0,0,0.6);
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* JavaScript toggled active animation drawer container slide-in entry flag */
+    .nav-links.open { 
+        right: 0; 
+    }
+
+    .nav-links .auth-group {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links .btn-auth {
+        width: 100%;
+        text-align: center;
+        padding: 0.8rem;
+    }
+
+    .nav-item {
+        font-size: 1.15rem;
+        width: 100%;
+        display: block;
+    }
+
+    /* Morph hamburger lines into an 'X' geometry on state changes triggers */
+    .hamburger-trigger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        background-color: var(--gold-glow);
+    }
+    .hamburger-trigger.active .bar:nth-child(2) { 
+        opacity: 0; 
+    }
+    .hamburger-trigger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        background-color: var(--gold-glow);
+    }
+}
+
+
