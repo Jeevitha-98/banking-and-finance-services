@@ -1,0 +1,2258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Banking Entry | Stackly</title>
+    <!-- Link to external CSS sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Preloader Shield Screen -->
+    <div id="preloader">
+        <div class="bg-grid"></div>
+        <div class="preloader-content">
+            
+            <div class="logo-wrapper">
+                <div class="logo-ring"></div>
+                <!-- Premium Vector Bank Icon -->
+                <svg class="logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22V8M5 12H19M5 17H19M2 22H22M12 2L2 7H22L12 2Z"/>
+                </svg>
+            </div>
+
+            <h1>Stackly Secure Bank</h1>
+            <div class="status-msg" id="loading-text">Initializing Firewall...</div>
+
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+            
+        </div>
+    </div>
+
+   
+<script>
+    // Dynamic Financial Network Handshake Messages
+const updates = [
+    { time: 0, text: "Initializing Security Firewall..." },
+    { time: 600, text: "Configuring End-to-End Handshake..." },
+    { time: 1300, text: "Syncing Cryptographic Ledger Assets..." },
+    { time: 2000, text: "Gateway Decryption Approved." }
+];
+
+const textElement = document.getElementById('loading-text');
+
+// Loop through each progress text sequence smoothly
+updates.forEach(phase => {
+    setTimeout(() => {
+        textElement.innerText = phase.text;
+        
+        // Turn the final verification text status to glowing green
+        if (phase.text.includes("Approved")) {
+            textElement.style.color = "var(--success-glow)";
+            textElement.style.textShadow = "0 0 10px rgba(16, 185, 129, 0.4)";
+        }
+    }, phase.time);
+});
+
+// Rigid dismissal trigger locked strictly under 3 seconds (2800 milliseconds)
+window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        const loader = document.getElementById('preloader');
+        const content = document.getElementById('app-content');
+        
+        // Hide preloader shield via smooth visual transition
+        loader.style.opacity = '0';
+        loader.style.visibility = 'hidden';
+        
+        // Reveal main dashboard console workspace
+        content.classList.add('visible');
+    }, 2800); 
+});
+
+</script>
+  
+
+    <!-- Floating Transparent Header -->
+<header class="navbar-wrapper">
+        <div class="navbar-container">
+            
+            
+            <div class="brand-logo" id="logoBtn" title="Refresh Secure Vault Terminal">
+                <img src="./Assests/logo.webp" alt="Stackly Secure Finance Logo" class="brand-img-fallback">
+                
+            </div>
+
+            <!-- Zone 2: Centered Navigation Menu List (Transforms into 75% wide drawer on mobile) -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-item">Home</a></li>
+                <li><a href="digitalassests.html" class="nav-item active">Digital Assets</a></li>
+                <li><a href="#cards" class="nav-item">Premium Cards</a></li>
+                <li><a href="#rates" class="nav-item">Market Rates</a></li>
+                <li><a href="#contact" class="nav-item">Contact Us</a></li>
+                
+                <!-- Mobile View Specific Auth Buttons (Hidden on Desktop) -->
+                <div class="auth-group mobile-only-auth">
+                    <a href="404.html" class="btn-auth btn-login">Login</a>
+                    <a href="404.html" class="btn-auth btn-signup">Sign Up</a>
+                </div>
+            </ul>
+            
+            <!-- Zone 3: Desktop View Specific Auth Buttons (Hidden on Mobile) -->
+            <div class="auth-group desktop-only-auth">
+                <a href="404.html" class="btn-auth btn-login">Login</a>
+                <a href="404.html" class="btn-auth btn-signup">Sign Up</a>
+            </div>
+
+            <!-- Mobile View Hamburger Icon Button Interface -->
+            <button class="hamburger-trigger" id="hamburgerToggle" aria-label="Toggle Navigation Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+        </div>
+    </header>
+    
+    <!-- Dim Dark Screen Background Overlay veil -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+<script>
+      document.addEventListener('DOMContentLoaded', () => {
+    
+    // Core Layout Interaction Handles Declarations
+    const logoBtn = document.getElementById('logoBtn');
+    const hamburgerToggle = document.getElementById('hamburgerToggle');
+    const navLinks = document.getElementById('navLinks');
+    const menuOverlay = document.getElementById('menuOverlay');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    // ==========================================================================
+    // 1. BRAND LOGO HARD PAGE REFRESH ENGINE
+    // ==========================================================================
+    if (logoBtn) {
+        logoBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            window.location.reload(); // Invokes immediate native hard page document refresh loop
+        });
+    }
+
+    // ==========================================================================
+    // 2. GLASSMORPHISM AUTO-SCROLL MONITOR
+    // ==========================================================================
+    window.addEventListener('scroll', () => {
+        const headerNode = document.querySelector('.navbar-wrapper');
+        if (headerNode) {
+            if (window.scrollY > 30) {
+                headerNode.classList.add('scrolled');
+            } else {
+                headerNode.classList.remove('scrolled');
+            }
+        }
+    });
+
+    // ==========================================================================
+    // 3. RESPONSIVE HAMBURGER & 75% SIDEBAR DRAWER MASTER CONTROLLERS
+    // ==========================================================================
+    function openMenu() {
+        if (hamburgerToggle && navLinks && menuOverlay) {
+            hamburgerToggle.classList.add('active');
+            navLinks.classList.add('open');
+            menuOverlay.classList.add('active');
+            
+            // FREEZES BACKGROUND SCROLLING: Symmetrically locks window views across both root body & html tags
+            document.body.classList.add('scroll-locked');
+            document.documentElement.classList.add('scroll-locked');
+        }
+    }
+
+    function closeMenu() {
+        if (hamburgerToggle && navLinks && menuOverlay) {
+            hamburgerToggle.classList.remove('active');
+            navLinks.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            
+            // ALLOWS SCROLLING AGAIN: Wipes constraint classes to return liquid background tracking instantly
+            document.body.classList.remove('scroll-locked');
+            document.documentElement.classList.remove('scroll-locked');
+        }
+    }
+
+    if (hamburgerToggle) {
+        hamburgerToggle.addEventListener('click', () => {
+            if (navLinks && navLinks.classList.contains('open')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+    }
+    
+    if (menuOverlay) {
+        menuOverlay.addEventListener('click', closeMenu);
+    }
+
+    // Automatically close mobile menu and unlock scrolling if a user hits any active navigation link anchor choice
+    navItems.forEach(item => {
+        item.addEventListener('click', closeMenu);
+    });
+
+    // ==========================================================================
+    // 4. GLOBAL INTERCEPTION ROUTER FOR 404 TEMPLATE TARGETS
+    // ==========================================================================
+    const secureLinks404 = document.querySelectorAll('a[href="404.html"], .btn-auth');
+
+    secureLinks404.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault(); 
+            closeMenu(); // Safeguard: shut open drawers before navigation transitions
+            
+            const interfaceSegmentName = link.textContent.trim() || "Secure Gateway Module";
+            alert(`🔍 Stackly Route Monitor:\n\n"${interfaceSegmentName}" has been routed into a 404 navigation point safely!`);
+            window.location.href = "404.html";
+        });
+    });
+
+    // ==========================================================================
+    // 5. SAFETY CANVAS CLEAN SWEEP OVERRIDE
+    // ==========================================================================
+    window.addEventListener('resize', () => {
+        // Auto-unlocks page scrolling if window workspace scales dynamically back up past mobile limits
+        if (window.innerWidth > 1024) {
+            closeMenu(); 
+        }
+    });
+});
+
+// --- 14. PRELOADER TERMINAL INTERFACE COMPLETE DETECTION & NAVBAR REVELATION ENGINE ---
+document.addEventListener('DOMContentLoaded', () => {
+    const preloaderElement = document.getElementById('preloader');
+    const masterNavbarWrapper = document.querySelector('.navbar-wrapper');
+
+    // Simulate standard preloader duration timing catch up curves loops
+    // Change the timeout delay milliseconds metrics to match your exact loader animation timing config
+    setTimeout(() => {
+        if (preloaderElement) {
+            // 1. Fade out and disable the preloader screen overlays interface canvas
+            preloaderElement.style.opacity = '0';
+            preloaderElement.style.visibility = 'hidden';
+        }
+
+        // 2. Safely reveal the premium glassmorphic navigation header capsule bar after the loader drops out
+        if (masterNavbarWrapper) {
+            masterNavbarWrapper.classList.add('navbar-visible');
+        }
+    }, 2500); // 2500ms matches the 2.5s progress-bar loading animation timeline
+});
+
+</script>
+
+<!-- Alternative Command-Centre Digital Assets Hero -->
+<section class="crypto-dashboard-hero" id="digital-assets-v2">
+    
+    <!-- Ambient Holographic Canvas Backing Wrap -->
+    <div class="holo-canvas-bg">
+        <img src="./Assests/money plant.webp" alt="Stackly Quantum Node Mesh Network" class="holo-bg-img">
+        <div class="holo-mesh-overlay"></div>
+    </div>
+
+    <div class="holo-content-matrix">
+        
+        <!-- Column A: Command Metadata & Typography Frame -->
+        <div class="holo-text-panel">
+            <div class="secure-node-badge">
+                <span class="active-node-ping"></span>
+                Terminal Node: SEC-Compliant / Air-Gapped
+            </div>
+            
+            <h1 class="holo-headline">
+                Sovereign Liquidity <br>
+                <span>Command Centre</span>
+            </h1>
+            
+            <p class="holo-description">
+                Consolidate decentralized blue-chip token reserves, optimize recursive yield allocations, and deploy cross-chain hedging protocols directly onto premium tier-1 bank clearings.
+            </p>
+            
+            <!-- Holographic Metadata Metric Rows Panel Grid -->
+            <div class="holo-metadata-grid">
+                <div class="metadata-node">
+                    <span class="meta-label">Aggregation Engine</span>
+                    <span class="meta-value value-gold">Alpha Delta v4.1</span>
+                </div>
+                <div class="metadata-node">
+                    <span class="meta-label">Global Core SLA</span>
+                    <span class="meta-value value-emerald">0.002s Settle</span>
+                </div>
+            </div>
+
+            <div class="holo-action-row">
+                <a href="404.html" class="holo-btn btn-gold-neon">Deploy Asset Terminal</a>
+                <a href="404.html" class="holo-btn btn-glass-outline">View Clearing Audit</a>
+            </div>
+        </div>
+
+        <!-- Column B: 3D Floating Layered Multi-Token Stack Container Panel -->
+        <div class="holo-interactive-pane">
+            <div class="token-stack-wrapper">
+                <div class="holo-radial-backdrop"></div>
+                
+                <!-- Layer 1: Core Interface Panel Graphic Backdrop Asset -->
+                <div class="stack-layer layer-base">
+                    <img src="./Assests/analytics.webp" alt="Base Analytics Grid Layer" class="layer-img-asset">
+                </div>
+
+                <!-- Layer 2: Floating Secondary Token Badge Overlay Indicator -->
+                <div class="stack-layer layer-mid floating-card-left">
+                    <div class="glass-token-pill">
+                        <span class="token-symbol crypto-eth">Ξ</span>
+                        <div class="token-info">
+                            <span class="token-lbl">ETH Yield Pool</span>
+                            <span class="token-val">+7.42% APY</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Layer 3: Floating Primary Token Badge Overlay Indicator -->
+                <div class="stack-layer layer-top floating-card-right">
+                    <div class="glass-token-pill premium-gold-card">
+                        <span class="token-symbol crypto-btc">₿</span>
+                        <div class="token-info">
+                            <span class="token-lbl">BTC Volatility Hedge</span>
+                            <span class="token-val" id="liveBtcPriceV2">$68,450.25</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* ==========================================================================
+   ALTERNATIVE COMMAND-CENTRE HERO INTERFACE SPECIFICATIONS
+   ========================================================================== */
+
+.crypto-dashboard-hero {
+    position: relative !important;
+    display: block !important;
+    clear: both !important; /* Total height separation shield protection layer */
+    width: 100% !important;
+    min-height: 100vh !important;
+    height: auto !important;
+    padding: 140px 5% 30px 5% !important; /* Padding top pushes content downstream past the floating header */
+    background-color: #04070d;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    z-index: 5 !important;
+}
+
+/* Ambient canvas setup layers background image wrapper layout box */
+.holo-canvas-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.holo-bg-img {
+    width: 105%;
+    height: 105%;
+    object-fit: cover;
+    opacity: 0.15;
+    animation: holoBackingDrift 22s linear infinite alternate;
+}
+
+.holo-mesh-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 20%, #04070d 90%),
+                linear-gradient(180deg, transparent 40%, #04070d 100__);
+}
+
+/* Master content grid separation engine split row layout */
+.holo-content-matrix {
+    position: relative;
+    z-index: 5;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 6rem;
+    align-items: center;
+}
+
+/* --- COLUMN A: COMMAND METADATA HUB STYLING --- */
+.secure-node-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(2, 132, 199, 0.05);
+    border: 1px solid rgba(2, 132, 199, 0.2);
+    padding: 0.5rem 1.1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 15px rgba(2, 132, 199, 0.05);
+    animation: holoFadeInUp 0.8s ease forwards;
+}
+
+.active-node-ping {
+    width: 6px;
+    height: 6px;
+    background-color: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #10b981;
+    animation: holoPulseBlink 1.5s infinite alternate;
+}
+
+.holo-headline {
+    font-size: 3.6rem;
+    font-weight: 800;
+    line-height: 1.15;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+    animation: holoFadeInUp 1s ease 0.2s forwards;
+    opacity: 0;
+}
+
+.holo-headline span {
+    background: linear-gradient(135deg, #ffffff 40%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.25));
+}
+
+.holo-description {
+    font-size: 1.05rem;
+    color: white;
+    line-height: 1.65;
+    margin-bottom: 2rem;
+    max-width: 580px;
+    transition: color 0.3s, text-shadow 0.3s;
+    animation: holoFadeInUp 1s ease 0.4s forwards;
+    opacity: 0;
+}
+
+.holo-description:hover {
+    color:#f59e0b;
+    text-shadow: 0 0 10px rgba(245, 158, 11, 0.35);
+}
+
+/* Holographic Metadata Rows Panel Grid Cores styles */
+.holo-metadata-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 480px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    padding-top: 1.5rem;
+    margin-bottom: 2.5rem;
+    animation: holoFadeInUp 1s ease 0.5s forwards;
+    opacity: 0;
+}
+
+.metadata-node { display: flex; flex-direction: column; gap: 0.25rem; }
+.meta-label { font-size: 0.7rem; font-weight: 600; color: white; text-transform: uppercase; letter-spacing: 0.05em; }
+.meta-value { font-size: 1.15rem; font-weight: 700; }
+.value-gold { color: #f59e0b; text-shadow: 0 0 10px rgba(245,158,11,0.2); }
+.value-emerald { color: #10b981; text-shadow: 0 0 10px rgba(16,185,129,0.2); }
+
+.holo-action-row {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    animation: holoFadeInUp 1s ease 0.6s forwards;
+    opacity: 0;
+}
+
+.holo-btn {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.9rem 2.2rem;
+    border-radius: 8px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    text-align: center;
+}
+
+.btn-gold-neon {
+    background: linear-gradient(135deg, #b45309 0%, #f59e0b 100__);
+    color: white;
+    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.25);
+}
+
+.btn-gold-neon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px #f59e0b;
+    filter: brightness(1.1);
+}
+
+.btn-glass-outline {
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+}
+
+.btn-glass-outline:hover {
+    border-color: #f59e0b;
+    background: rgba(245, 158, 11, 0.04);
+    color: #f59e0b;
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.15);
+    transform: translateY(-2px);
+}
+
+/* --- COLUMN B: 3D FLOATING ASSET LAYERED TOKENS STACK PANEL --- */
+.holo-interactive-pane {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: holoScaleIn 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.token-stack-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    height: 380px; /* Rigis vertical height container wraps multiple overlap cards elements */
+}
+
+.holo-radial-backdrop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(245, 158, 11, 0.12) 0%, transparent 70%);
+    filter: blur(40px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Master core hardware isolated layering engine properties configuration */
+.stack-layer {
+    position: absolute;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), filter 0.6s ease;
+    will-change: transform;
+}
+
+/* Layer A: Base dashboard background visual mockup graphic asset */
+.layer-base {
+    top: 15%;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.layer-img-asset {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+    filter: brightness(0.7) blur(0.5px); /* Soft dims base layer to let floating badges pop out */
+}
+
+/* Glassmorphic custom floating capsule pill design framework cards */
+.glass-token-pill {
+    background: rgba(9, 13, 22, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 0.75rem 1.25rem;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+}
+
+.token-symbol {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.crypto-eth { background: rgba(139, 92, 246, 0.12); color: #8b5cf6; }
+.crypto-btc { background: rgba(245, 158, 11, 0.12); color: #f59e0b; }
+
+.token-info { display: flex; flex-direction: column; }
+.token-lbl { font-size: 0.68rem; color: white; text-transform: uppercase; font-weight: 700; letter-spacing: 0.02em; }
+.token-val { font-size: 0.95rem; font-weight: 700; color: #ffffff; }
+
+/* Layer B: Secondary overlapping floating element capsule */
+.layer-mid {
+    top: 5%;
+    left: -20px;
+    z-index: 3;
+}
+
+/* Layer C: Primary focused topmost floating component capsule */
+.layer-top {
+    bottom: 12%;
+    right: -10px;
+    z-index: 4;
+}
+
+.premium-gold-card {
+    border-color: rgba(245, 158, 11, 0.35);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(245, 158, 11, 0.05);
+}
+
+/* Continuous asymmetric cinematic breathing loops animations lines */
+.floating-card-left { animation: holoCardDriftA 5s ease-in-out infinite alternate; }
+.floating-card-right { animation: holoCardDriftB 6s ease-in-out infinite alternate-reverse; }
+
+/* ==========================================================================
+   ADVANCED HOVER STATE TRANSLATION COORDINATES DE-SYNC FOR REAL DEPTH
+   ========================================================================== */
+
+/* De-synchronizes and pulls overlapping stacked layers independently toward the cursor vector on hover */
+.token-stack-wrapper:hover .layer-base .layer-img-asset {
+    transform: scale(0.98);
+    filter: brightness(0.9) blur(0px);
+}
+
+.token-stack-wrapper:hover .layer-mid {
+    transform: translate3d(-15px, -10px, 0) scale(1.05); /* Shifts left badge outward */
+    z-index: 5;
+}
+
+.token-stack-wrapper:hover .layer-top {
+    transform: translate3d(20px, 15px, 0) scale(1.06); /* Shifts right gold badge outward */
+    z-index: 6;
+}
+
+.token-stack-wrapper:hover .premium-gold-card {
+    border-color: #f59e0b;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.7), 0 0 25px rgba(245, 158, 11, 0.25);
+}
+
+/* --- MOTION LIBRARY KEYFRAMES --- */
+@keyframes holoFadeInUp {
+    0% { transform: translateY(25px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes holoScaleIn {
+    0% { transform: scale(0.97); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes holoPulseBlink {
+    0% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(1.25); opacity: 1; }
+}
+
+@keyframes holoBackingDrift {
+    0% { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.04) translate(-1%, -1%); }
+}
+
+@keyframes holoCardDriftA {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-12px) translateX(3px); }
+}
+
+@keyframes holoCardDriftB {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(12px) translateX(-3px); }
+}
+
+/* ==========================================================================
+   RESPONSIVE VIEWPORTS LAYOUT ADAPTABILITY
+   ========================================================================== */
+@media (max-width: 1140px) {.holo-headline { font-size: 3rem; }.layer-mid { left: 0; }.layer-top { right: 0; }}@media (max-width: 992px) {.crypto-dashboard-hero { padding-top: 100px !important; }.holo-content-matrix {grid-template-columns: 1fr;text-align: center;gap: 4rem;}.holo-description { margin-left: auto; margin-right: auto; }.holo-metadata-grid { margin-left: auto; margin-right: auto; text-align: left; width: 100%; }.holo-action-row { justify-content: center; }/* Converts 3D absolute overlaps stack cleanly into safe, visible flex blocks for smaller mobile screens */.holo-interactive-pane { order: 2; display: flex; flex-direction: column; width: 100%; }.holo-text-panel { order: 1; }.token-stack-wrapper { height: auto; display: flex; flex-direction: column; align-items: center; gap: 1rem; max-width: 440px; }.stack-layer { position: static !important; transform: none !important; animation: none !important; width: 100%; max-width: 320px; }.layer-base { order: 1; max-width: 100%; margin-bottom: 0.5rem; }.layer-mid { order: 2; }.layer-top { order: 3; }.layer-img-asset { filter: none; }}@media (max-width: 480px) {.holo-headline { font-size: 2.2rem; }.holo-action-row { flex-direction: column; width: 100%; gap: 1rem; }.holo-btn { width: 100%; }}
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const btcDisplayFieldV2 = document.getElementById('liveBtcPriceV2');
+
+    if (btcDisplayFieldV2) {
+        setInterval(() => {
+            const continuousVariance = (Math.random() * 90) - 45;
+            const rawCurrentValue = parseFloat(btcDisplayFieldV2.innerText.replace(/[$,]/g, ''));
+            const ultimateUpdatedValue = rawCurrentValue + continuousVariance;
+
+            btcDisplayFieldV2.innerText = `$${ultimateUpdatedValue.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+            btcDisplayFieldV2.style.color = continuousVariance >= 0 ? '#10b981' : '#ef4444';
+            
+            setTimeout(() => { btcDisplayFieldV2.style.color = '#ffffff'; }, 400);
+        }, 3500);
+    }
+});
+</script>
+
+<!-- Interactive Token Liquidity Staking Ledger & Yield Calculator -->
+<section class="staking-ledger-viewport" id="staking-node" aria-labelledby="staking-title">
+    
+    <!-- Zone 1: Ambient Canvas Backdrop Configurations -->
+    <div class="staking-bg-canvas">
+        <img src="./Assests/analytics framework.webp" alt="Stackly Cryptographic Node Mesh Ledger" class="staking-vector-backing">
+        <div class="staking-masking-shade"></div>
+    </div>
+
+    <!-- Zone 2: Main Grid Matrix Constraint Wrapper -->
+    <div class="staking-layout-matrix">
+        
+        <!-- Column A: Descriptive Text Hub Component -->
+        <div class="staking-text-cluster">
+            <span class="staking-pill-lbl">Yield Gearing Pool</span>
+            <h2 class="staking-title" id="staking-title">Autonomous Capital <span>Staking Node</span></h2>
+            <p class="staking-paragraph">
+                Lock assets directly inside automated decentralized validation structures. Stackly's zero-knowledge ledger allocation system optimizes compound growth variables natively while buffering portfolio risk down asset lines.
+            </p>
+            
+            <!-- Real-Time Vault Metrics Micro-Grid Panel -->
+            <div class="staking-metrics-board">
+                <div class="metric-node">
+                    <span class="metric-val-num">$4.2B+</span>
+                    <span class="metric-lbl-text">Total Value Locked</span>
+                </div>
+                <div class="metric-node">
+                    <span class="metric-val-num">&lt; 0.01%</span>
+                    <span class="metric-lbl-text">Smart Slashing Risk</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Column B: Interactive Liquidity Staking Estimator Calculator Card -->
+        <div class="staking-calculator-block">
+            <div class="stake-card-wrapper">
+                <div class="stake-neon-glow-edge"></div>
+                <div class="stake-inner-housing">
+                    
+                    <h3 class="stake-header-title">Simulate Staking Vector</h3>
+                    
+                    <!-- Input Input Block Group 1 -->
+                    <div class="stake-input-box">
+                        <label for="stakePrincipalAmount">Allocation Amount ($)</label>
+                        <div class="stake-input-row">
+                            <input type="number" id="stakePrincipalAmount" value="50000" min="100" step="500">
+                        </div>
+                    </div>
+
+                    <!-- Input Input Block Group 2 -->
+                    <div class="stake-input-box">
+                        <label for="stakeDurationYears">Duration (Years Line)</label>
+                        <div class="stake-input-row">
+                            <input type="number" id="stakeDurationYears" value="5" min="1" max="10">
+                        </div>
+                    </div>
+
+                    <!-- Real-Time Mathematics Pricing Track Matrix Feed -->
+                    <div class="stake-pricing-ticker">
+                        <span class="stake-ticker-dot"></span>
+                        <span id="stakeLiveRateText">Estimated Compound Baseline Rate: 8.5% APY</span>
+                    </div>
+
+                    <!-- Output Result Frame Component -->
+                    <div class="stake-live-output">
+                        <span class="output-lbl-text">Future Compounded Wealth Balance:</span>
+                        <span class="output-val-num" id="stakeWealthResultDisplay">$75,182.83</span>
+                    </div>
+
+                    <!-- Submission Action Interceptor Trigger Component Route -->
+                    <a href="404.html" class="stake-execute-btn">Authorize Staking Handshake</a>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* ==========================================================================
+   INTERACTIVE LIQUIDITY STAKING LEDGER MODULE STYLING
+   ========================================================================== */
+
+.staking-ledger-viewport {
+    position: relative !important;
+    display: block !important;
+    clear: both !important; /* Forces strict block flow isolation downwards beneath FAQ components */
+    width: 100% !important;
+    background-color: #04070d;
+    
+    /* SPECIFIC CONFIGURATION: RIGID COMPACT VERTICAL SPACING CONTROLS */
+    padding-top: 50px !important;    /* Tightened top cushion area down to 50px */
+    padding-bottom: 30px !important; /* Tightened bottom cushion area down to 30px */
+    
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 55;
+}
+
+/* Background image asset configuration layers canvas */
+.staking-bg-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.staking-vector-backing {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.20;
+}
+
+.staking-masking-shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 30%, #04070d 95%);
+}
+
+/* Master Grid Alignment Matrix Split Layout Cores */
+.staking-layout-matrix {
+    position: relative;
+    z-index: 5;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    padding: 0 5%;
+}
+
+/* --- COLUMN A: DESCRIPTION MODULE TEXT LABELS --- */
+.staking-pill-lbl {
+    display: inline-block;
+    background: rgba(16, 185, 129, 0.05);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    padding: 0.35rem 0.95rem;
+    border-radius: 50px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #10b981;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+}
+
+.staking-title {
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.02em;
+}
+
+.staking-title span {
+    background: linear-gradient(135deg, #ffffff 40%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.staking-paragraph {
+    font-size: 1.05rem;
+    color: white;
+    line-height: 1.65;
+    margin-bottom: 2rem;
+    max-width: 580px;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.staking-paragraph:hover {
+    color: #f59e0b;
+    text-shadow: 0 0 10px rgba(245, 158, 11, 0.35); /* Amber typographical glow on hover */
+}
+
+/* Data Statistics Cluster Blocks Grid Systems */
+.staking-metrics-board {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.04);
+    padding-top: 1.5rem;
+    max-width: 480px;
+}
+
+.metric-node { display: flex; flex-direction: column; gap: 0.25rem; }
+
+.metric-val-num {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.01em;
+    transition: color 0.3s;
+}
+
+.metric-node:hover .metric-val-num {
+    color: #f59e0b;
+    text-shadow: 0 0 12px rgba(245, 158, 11, 0.4);
+}
+
+.metric-lbl-text {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* --- COLUMN B: HIGH TECH STAKING CALCULATOR PANEL CARD --- */
+.staking-calculator-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.stake-card-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 460px;
+}
+
+.stake-inner-housing {
+    position: relative;
+    background: rgba(9, 13, 22, 0.65);
+    border: 1px solid rgba(255,255,255,0.04);
+    padding: 2.25rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    z-index: 2;
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Neon Overlay Golden Border highlight configuration system rules */
+.stake-neon-glow-edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1.5px solid transparent;
+    border-radius: 20px;
+    pointer-events: none;
+    z-index: 3;
+    transition: all 0.5s ease;
+}
+
+/* Interactive Card Position Shifts Tilted Movements */
+.stake-card-wrapper:hover .stake-inner-housing {
+    transform: rotateX(2deg) rotateY(-2deg) translateY(-3px);
+    border-color: rgba(245, 158, 11, 0.20);
+}
+
+.stake-card-wrapper:hover .stake-neon-glow-edge {
+    border-color: #f59e0b;
+    box-shadow: inset 0 0 15px rgba(245, 158, 11, 0.15), 0 0 25px rgba(245, 158, 11, 0.05);
+}
+
+.stake-header-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.01em;
+}
+
+/* Input boxes fields systems labels styles configuration */
+.stake-input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.stake-input-box label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.stake-input-row {
+    display: flex;
+    background: rgba(4, 7, 13, 0.6);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px;
+    padding: 0.25rem;
+    transition: border-color 0.3s;
+}
+
+.stake-input-row:focus-within {
+    border-color: #f59e0b;
+}
+
+.stake-input-row input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0.65rem 0.85rem;
+    color: #ffffff;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+/* Real-Time Pricing Track Matrix Feed Info Row */
+.stake-pricing-ticker {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1.25rem 0;
+    background: rgba(245, 158, 11, 0.04);
+    padding: 0.55rem 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(245, 158, 11, 0.1);
+}
+
+.stake-ticker-dot {
+    width: 5px;
+    height: 5px;
+    background-color: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 6px #10b981;
+    animation: stakeDotPulse 1.5s infinite alternate;
+}
+
+#stakeLiveRateText { font-size: 0.8rem; font-weight: 600; color: #94a3b8; }
+
+/* Real-Time Arithmetic Calculation Display Layout Box */
+.stake-live-output {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 1.75rem;
+    background: rgba(16, 185, 129, 0.03);
+    padding: 0.85rem 1.25rem;
+    border-radius: 10px;
+    border: 1px solid rgba(16, 185, 129, 0.15);
+}
+
+.output-lbl-text { font-size: 0.75rem; color: white; font-weight: 600; text-transform: uppercase; letter-spacing: 0.02em; }
+.output-val-num { font-size: 1.5rem; font-weight: 800; color: #10b981; text-shadow: 0 0 10px rgba(16,185,129,0.3); }
+
+/* Main Action Submission execution link button element block box */
+.stake-execute-btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background: rgba(255,255,255,0.02);
+    color: #ffffff !important;
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 0.85rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.01em;
+    transition: all 0.4s ease;
+}
+
+.stake-card-wrapper:hover .stake-execute-btn {
+    background: linear-gradient(135deg, #b45309 0%, #f59e0b 100__);
+    color: white !important;
+    border-color: transparent;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35);
+}
+
+@keyframes stakeDotPulse {
+    0% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(1.3); opacity: 1; box-shadow: 0 0 10px #10b981; }
+}
+
+/* --- RESPONSIVE MEDIA VIEWPORTS CONFIGURATION BREAKPOINTS --- */
+@media (max-width: 1024px) {
+    .staking-layout-matrix {
+        grid-template-columns: 1fr; /* Re-stacks panels into a single column on smaller viewports */
+        gap: 3.5rem;
+        text-align: center;
+    }
+    .staking-paragraph { margin-left: auto; margin-right: auto; }
+    .staking-metrics-board { margin: 0 auto; text-align: left; }
+    .stake-card-wrapper { margin: 0 auto; }
+}
+
+@media (max-width: 480px) {
+    .staking-title { font-size: 2rem; }
+    .stake-inner-housing { padding: 1.5rem 1.25rem; }
+    .output-val-num { font-size: 1.3rem; }
+}
+
+</style>
+
+<script>
+    // --- 18. AUTONOMOUS LIQUIDITY STAKING CALCULATION MECHANICS CORES ---
+document.addEventListener('DOMContentLoaded', () => {
+    const stakeAmountInput = document.getElementById('stakePrincipalAmount');
+    const stakeYearsInput = document.getElementById('stakeDurationYears');
+    const stakeDisplayResult = document.getElementById('stakeWealthResultDisplay');
+
+    if (stakeAmountInput && stakeYearsInput && stakeDisplayResult) {
+        function recalculateCompoundedStaking() {
+            const principal = parseFloat(stakeAmountInput.value);
+            const durationYears = parseInt(stakeYearsInput.value);
+            
+            // Baseline Fixed APY Rate Assignment Model (8.5% APY -> 0.085)
+            const baselineApyRate = 0.085;
+
+            if (isNaN(principal) || isNaN(durationYears) || principal <= 0 || durationYears <= 0) {
+                stakeDisplayResult.innerText = "$0.00";
+                return;
+            }
+
+            // Execute geometric compound calculation loop: A = P * (1 + r)^t
+            const futureStakedWealth = principal * Math.pow((1 + baselineApyRate), durationYears);
+            
+            // Map output value safely with standard localized currency formatting
+            stakeDisplayResult.innerText = `$${futureStakedWealth.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        }
+
+        // Attach layout interaction listeners monitoring input adjustments
+        stakeAmountInput.addEventListener('input', recalculateCompoundedStaking);
+        stakeYearsInput.addEventListener('input', recalculateCompoundedStaking);
+
+        // Run initial calculation matching default state values instantly
+        recalculateCompoundedStaking();
+    }
+});
+
+</script>
+
+<!-- Section: Polymorphic Crypto Vault Node Selector -->
+<section class="vault-nodes-viewport" id="vault-nodes-matrix" aria-labelledby="nodes-master-title">
+    
+    <!-- Zone 1: Ambient Grid Backdrop Mesh Canvas -->
+    <div class="vnodes-bg-canvas">
+        <img src="./Assests/digi locker.webp" alt="Stackly Distributed Clearing Horizon Canvas" class="vnodes-vector-backing">
+        <div class="vnodes-masking-shade"></div>
+    </div>
+
+    <div class="vnodes-layout-container">
+        
+        <!-- Zone 2: Section Header Cluster -->
+        <header class="vnodes-header-block">
+            <span class="vnodes-pill-tag">Secure Cryptographic Core</span>
+            <h2 class="vnodes-title" id="nodes-master-title">Distributed <span>Vault Infrastructure</span></h2>
+            <p class="vnodes-summary">
+                Select your localized algorithmic clearing pipeline gateway. Every vault deployment leverages redundant multi-sig routing tracks and continuous real-time ledger accounting.
+            </p>
+        </header>
+
+        <!-- Zone 3: 3D Holographic Creative Card Grid Matrix -->
+        <div class="vnodes-cards-matrix">
+            
+            <!-- Creative Node Card 1: Core Settlement Validator -->
+            <article class="vnodes-card-item card-theme-blue" aria-label="Core Settlement Validator Cryptographic Node">
+                <div class="vnodes-laser-shimmer"></div>
+                <div class="vnodes-inner-housing">
+                    
+                    <div class="vnodes-media-frame">
+                        <img src="./Assests/verification.webp" alt="Quantum Order Routing Console Interface Graphics" class="vnodes-graphic-img">
+                        <div class="vnodes-halo-blur"></div>
+                    </div>
+
+                    <div class="vnodes-text-content">
+                        <div class="vnodes-status-row">
+                            <span class="vnodes-node-id">Node ID: #US-EAST-01</span>
+                            <span class="vnodes-status-badge badge-active">Online</span>
+                        </div>
+                        <h3 class="vnodes-card-title">Settlement Validator</h3>
+                        <p class="vnodes-card-desc">Processes cross-border layer-1 index conversions natively under zero-knowledge air-gap protection frameworks.</p>
+                        <a href="404.html" class="vnodes-routing-btn">Bind Validator Key</a>
+                    </div>
+
+                </div>
+            </article>
+
+            <!-- Creative Node Card 2: Quantum Arbitrage Router -->
+            <article class="vnodes-card-item card-theme-gold card-highlighted-focus" aria-label="Quantum Arbitrage Router Cryptographic Node">
+                <div class="vnodes-laser-shimmer"></div>
+                <div class="vnodes-inner-housing">
+                    
+                    <div class="vnodes-media-frame">
+                        <img src="./Assests/router.webp" alt="Delta Neutral Arbitrage Trading Graph Screen" class="vnodes-graphic-img">
+                        <div class="vnodes-halo-blur"></div>
+                    </div>
+
+                    <div class="vnodes-text-content">
+                        <div class="vnodes-status-row">
+                            <span class="vnodes-node-id">Node ID: #EU-WEST-04</span>
+                            <span class="vnodes-status-badge badge-active">Prime</span>
+                        </div>
+                        <h3 class="vnodes-card-title">Arbitrage Router</h3>
+                        <p class="vnodes-card-desc">Aggregates multi-chain liquidity indexes with tier-1 bank systems to complete slippage-free asset swaps.</p>
+                        <a href="404.html" class="vnodes-routing-btn">Launch Delta Engine</a>
+                    </div>
+
+                </div>
+            </article>
+
+            <!-- Creative Node Card 3: Polymorphic Derivative Vault -->
+            <article class="vnodes-card-item card-theme-purple" aria-label="Polymorphic Derivative Vault Cryptographic Node">
+                <div class="vnodes-laser-shimmer"></div>
+                <div class="vnodes-inner-housing">
+                    
+                    <div class="vnodes-media-frame">
+                        <img src="./Assests/vault.webp" alt="Decentralized Nodes Mesh Protection Shield Graphics" class="vnodes-graphic-img">
+                        <div class="vnodes-halo-blur"></div>
+                    </div>
+
+                    <div class="vnodes-text-content">
+                        <div class="vnodes-status-row">
+                            <span class="vnodes-node-id">Node ID: #AP-SOUTH-02</span>
+                            <span class="vnodes-status-badge badge-active">Online</span>
+                        </div>
+                        <h3 class="vnodes-card-title">Derivative Vault</h3>
+                        <p class="vnodes-card-desc">Executes automated delta-neutral portfolio rebalancing cycles to absorb macro market downward trends.</p>
+                        <a href="404.html" class="vnodes-routing-btn">Unlock Clearing SLA</a>
+                    </div>
+
+                </div>
+            </article>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* ==========================================================================
+   CREATIVE POLYMORPHIC VAULT NODES SECTION STYLING
+   ========================================================================== */
+
+.vault-nodes-viewport {
+    position: relative !important;
+    display: block !important;
+    clear: both !important; /* Total height separation shield protection layer */
+    width: 100% !important;
+    background-color: #04070d;
+    
+    /* SPECIFIC COMPACT CONFIGURATION SPECS */
+    padding-top: 50px !important;    /* Tightened top cushion area down to 50px */
+    padding-bottom: 30px !important; /* Tightened bottom cushion area down to 30px */
+    
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 65;
+}
+
+/* Background canvas setup layers backdrop mesh */
+.vnodes-bg-canvas {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1; pointer-events: none;
+}
+.vnodes-vector-backing {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.13;
+}
+.vnodes-masking-shade {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at center, transparent 30%, #04070d 95%);
+}
+
+.vnodes-layout-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Tight Header Cluster Configurations */
+.vnodes-header-block {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 3rem auto; /* Tight margin spacing limit block */
+    position: relative;
+    z-index: 5;
+    padding: 0 5%;
+}
+.vnodes-pill-tag {
+    display: inline-block;
+    background: rgba(2, 132, 199, 0.05);
+    border: 1px solid rgba(2, 132, 199, 0.2);
+    padding: 0.35rem 0.95rem;
+    border-radius: 50px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #0284c7;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+}
+.vnodes-title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+}
+.vnodes-title span {
+    background: linear-gradient(135deg, #ffffff 40%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.vnodes-summary {
+    font-size: 1.02rem;
+    color: white;
+    line-height: 1.6;
+}
+
+/* --- THREE-DIMENSIONAL CREATIVE CARDS MATRIX --- */
+.vnodes-cards-matrix {
+    position: relative;
+    z-index: 5;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Clean desktop triple column distribution */
+    gap: 2rem;
+    padding: 0 5%;
+}
+
+/* Card Root Component Properties Setup */
+.vnodes-card-item {
+    position: relative;
+    perspective: 1000px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(9, 13, 22, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                border-color 0.5s ease, 
+                box-shadow 0.5s ease;
+}
+
+.vnodes-inner-housing {
+    padding: 1.5rem; /* LESS SPACE: Tighter inner card padding balances margins */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+    position: relative;
+}
+
+/* Absolute Laser Shimmer Sweep Effect Layer */
+.vnodes-laser-shimmer {
+    position: absolute;
+    top: 0; left: -150%; width: 50%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
+    transform: skewX(-25deg);
+    z-index: 3;
+    pointer-events: none;
+    transition: left 0.6s ease;
+}
+
+.vnodes-card-item:hover .vnodes-laser-shimmer {
+    left: 150%; /* Sends laser ray reflection sweep across container bounds on hover triggers */
+}
+
+/* Creative Dashboard Style Image Display Frames */
+.vnodes-media-frame {
+    position: relative;
+    width: 100%;
+    height: 160px; /* Rigid aspect height container */
+    border-radius: 12px;
+    overflow: hidden; /* Clips image corners perfectly to match the card shape */
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    background: #090d16;
+}
+.vnodes-graphic-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Edge to edge fit: crops graphic proportionally with zero stretch distortion */
+    z-index: 2;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.vnodes-halo-blur {
+    position: absolute;
+    width: 100px; height: 100px;
+    filter: blur(25px); opacity: 0.15;
+    z-index: 1; pointer-events: none;
+    transition: opacity 0.5s ease, scale 0.5s ease;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+}
+
+/* Typography elements cluster blocks fields */
+.vnodes-text-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.vnodes-status-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+.vnodes-node-id {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+    font-family: monospace;
+}
+.vnodes-status-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border-radius: 30px;
+    letter-spacing: 0.04em;
+}
+.badge-active { background: rgba(16, 185, 129, 0.08); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.15); }
+
+.vnodes-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+.vnodes-card-desc {
+    font-size: 0.92rem;
+    color: #f1f5f9 !important; /* High contrast premium white description strings line */
+    line-height: 1.5;
+    margin-bottom: auto !important; /* Flex spacer alignment helper */
+    padding-bottom: 1.5rem; /* Spatial space lock right under text block before action button */
+}
+
+/* Secondary White Interactive Outline Action Trigger Buttons */
+.vnodes-routing-btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.02);
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 0.8rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    margin-top: auto;
+}
+
+/* ==========================================================================
+   HOVER ACTIONS NEON THEMATIC OVERLAYS AND GLOW MATRIX DRIVERS
+   ========================================================================== */
+
+/* Multi-Theme Palette Signature Filters for Card Nodes Mapping */
+.card-theme-blue .vnodes-halo-blur { background: radial-gradient(circle, #0284c7 0%, transparent 70%); }
+.card-theme-gold .vnodes-halo-blur { background: radial-gradient(circle, #f59e0b 0%, transparent 70%); }
+.card-theme-purple .vnodes-halo-blur { background: radial-gradient(circle, #8b5cf6 0%, transparent 70%); }
+
+/* Core interaction state movements */
+.vnodes-card-item:hover {
+    transform: rotateX(2deg) rotateY(-2deg) translateY(-4px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+}
+
+.vnodes-card-item:hover .vnodes-graphic-img { transform: scale(1.05); }
+.vnodes-card-item:hover .vnodes-halo-blur { opacity: 0.3; transform: translate(-50%, -50%) scale(1.2); }
+
+/* Specific border lighting and linear button coloration mapped across themes signature tracks */
+.card-theme-blue:hover { border-color: rgba(2, 132, 199, 0.35); box-shadow: 0 25px 50px rgba(0,0,0,0.75), 0 0 20px rgba(2, 132, 199, 0.04); }
+.card-theme-blue:hover .vnodes-card-title { color: #0284c7; }
+.card-theme-blue:hover .vnodes-routing-btn { background: linear-gradient(135deg, #0369a1 0%, #0284c7 100%); color: #ffffff !important; border-color: transparent; box-shadow: 0 4px 15px rgba(2, 132, 199, 0.35); }
+
+.card-theme-gold:hover { border-color: rgba(245, 158, 11, 0.35); box-shadow: 0 25px 50px rgba(0,0,0,0.75), 0 0 20px rgba(245, 158, 11, 0.04); }
+.card-theme-gold:hover .vnodes-card-title { color: #f59e0b; }
+.card-theme-gold:hover .vnodes-routing-btn { background: linear-gradient(135deg, #b45309 0%, #f59e0b 100%); color: white !important; border-color: transparent; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35); }
+
+.card-theme-purple:hover { border-color: rgba(139, 92, 246, 0.35); box-shadow: 0 25px 50px rgba(0,0,0,0.75), 0 0 20px rgba(139, 92, 246, 0.04); }
+.card-theme-purple:hover .vnodes-card-title { color: #8b5cf6; }
+.card-theme-purple:hover .vnodes-routing-btn { background: linear-gradient(135deg, #6d28d9 0%, #8b5cf6 100%); color: #ffffff !important; border-color: transparent; box-shadow: 0 4px 15px rgba(139, 92, 246, 0.35); }
+
+/* Centered focus card accent initialization setup */
+.card-highlighted-focus {
+    border-color: rgba(245, 158, 11, 0.12);
+    background: rgba(13, 19, 33, 0.7);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN MANAGEMENT BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .vnodes-cards-matrix {
+        grid-template-columns: repeat(2, 1fr); /* Re-stacks grids layout to dual configurations on tablets formats */
+        gap: 1.5rem;
+    }
+    .vnodes-title { font-size: 2.2rem; }
+    .card-highlighted-focus { transform: none; } /* Drops automatic desktop scale factor resets override safely */
+}
+
+@media (max-width: 748px) {
+    .vnodes-cards-matrix {
+        grid-template-columns: 1fr; /* Compresses matrix layout into clean full-width single column array cards on phones */
+        max-width: 440px;
+        margin: 0 auto;
+    }
+    .vnodes-card-item { width: 100%; }
+    .vault-nodes-viewport { padding-top: 40px !important; padding-bottom: 25px !important; } /* Tighter mobile vertical padding specification overrides */
+    .vnodes-title { font-size: 1.9rem; }
+}
+
+</style>
+
+<!-- Immutable Institutional 2-Line CTA Conversion Banner -->
+<section class="platform-cta-viewport" id="conversion-banner">
+    
+    <!-- Zone 1: Ambient Canvas Backdrop Configurations -->
+    <div class="cta-bg-canvas">
+        <img src="./Assets/cta-matrix-shading.webp" alt="Stackly Terminal Liquidity Matrix" class="cta-vector-backing">
+        <div class="cta-masking-shade"></div>
+    </div>
+
+    <!-- Zone 2: Main Grid Matrix Constraint Wrapper -->
+    <div class="cta-layout-matrix">
+        <div class="cta-glass-housing">
+            <div class="cta-neon-glow-edge"></div>
+            <div class="cta-inner-content">
+                
+                <!-- Zone 3: High-Impact 2-Line Typographic Header Cluster -->
+                <div class="cta-text-cluster">
+                    <h2 class="cta-main-headline">Ready to Supercharge Your Wealth Vectors?</h2>
+                    <p class="cta-sub-headline">Deploy your secure quantum terminal today and unlock elite asset compounding pipelines.</p>
+                </div>
+
+                <!-- Zone 4: Submission Action Interceptor Trigger Component Route -->
+                <div class="cta-action-block">
+                    <a href="404.html" class="cta-execute-btn">
+                        <span>Initialize Secure Account</span>
+                        <svg class="cta-btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* ==========================================================================
+   STACKLY 2-LINE CONVERSION CTA BANNER MODULE STYLING
+   ========================================================================== */
+
+.platform-cta-viewport {
+    position: relative !important;
+    display: block !important;
+    clear: both !important; /* Forces strict block flow isolation downwards beneath previous structures */
+    width: 100% !important;
+    background-color: #04070d;
+    
+    /* COMPACT VERTICAL SPACING CONTROLS */
+    padding-top: 50px !important;    /* Tightened top cushion area down to 50px */
+    padding-bottom: 30px !important; /* Tightened bottom cushion area down to 30px */
+    
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 65;
+}
+
+/* Background image asset configuration layers canvas */
+.cta-bg-canvas {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1; pointer-events: none;
+}
+
+.cta-vector-backing {
+    width: 110%; height: 110%;
+    object-fit: cover; opacity: 0.05;
+    animation: ctaBackingPan 25s linear infinite alternate;
+}
+
+.cta-masking-shade {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at center, transparent 40%, #04070d 95%),
+                linear-gradient(180deg, #04070d 0%, transparent 10%, transparent 90%, #04070d 100__);
+}
+
+/* Master Grid Alignment Matrix Constraint Wrapper */
+.cta-layout-matrix {
+    position: relative;
+    z-index: 5;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 5%;
+}
+
+/* Premium High-Tech Glassmorphic Housing Container Box */
+.cta-glass-housing {
+    position: relative;
+    background: linear-gradient(135deg, rgba(9, 13, 22, 0.75) 0%, rgba(4, 7, 13, 0.4) 100__);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 24px;
+    box-shadow: 0 25px 55px rgba(0,0,0,0.55);
+    overflow: hidden;
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.5s ease;
+}
+
+/* Symmetric Horizontal Alignment Row Housing */
+.cta-inner-content {
+    padding: 3.5rem 3rem; /* LESS SPACE: Compact interior spacing balances margins */
+    display: flex;
+    justify-content: space-between; /* Creates mathematically precise horizontal distribution across desktop modes */
+    align-items: center;
+    gap: 4rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Absolute Glowing Neon Border Highlight Framework Overlay Frame */
+.cta-neon-glow-edge {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    border: 1.5px solid transparent;
+    border-radius: 24px;
+    pointer-events: none;
+    z-index: 3;
+    transition: all 0.5s ease;
+}
+
+/* Interactive Card Position Shifts Tilted Movements & Ambient Halos Blossoms */
+.cta-glass-housing:hover {
+    transform: translateY(-4px);
+    border-color: rgba(245, 158, 11, 0.25);
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.75), 0 0 30px rgba(245, 158, 11, 0.05);
+}
+
+.cta-glass-housing:hover .cta-neon-glow-edge {
+    border-color: #f59e0b;
+    box-shadow: inset 0 0 20px rgba(245, 158, 11, 0.15);
+}
+
+/* --- ZONE 3: 2-LINE TYPOGRAPHIC HEADERS CLUSTER --- */
+.cta-text-cluster {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* LESS SPACE: Tightened distance between header rows */
+    max-width: 65%;
+    text-align: left;
+}
+
+.cta-main-headline {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.cta-glass-housing:hover .cta-main-headline {
+    color: #f59e0b;
+    text-shadow: 0 0 15px rgba(245, 158, 11, 0.35);
+}
+
+.cta-sub-headline {
+    font-size: 1.05rem;
+    color: #94a3b8;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+/* --- ZONE 4: SUBMISSION ACTION LINK BUTTON --- */
+.cta-action-block {
+    flex-shrink: 0;
+    width: auto;
+}
+
+.cta-execute-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: center;
+    text-decoration: none;
+    background: #ffffff;
+    color: #000000;
+    padding: 1rem 2.4rem;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.cta-btn-arrow {
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Transforms white outline button into full linear gold bar bar row hover events triggers */
+.cta-glass-housing:hover .cta-execute-btn {
+    background: linear-gradient(135deg, #b45309 0%, #f59e0b 100%);
+    color: #000000 !important;
+    box-shadow: 0 6px 25px rgba(245, 158, 11, 0.5);
+    transform: scale(1.02);
+}
+
+.cta-glass-housing:hover .cta-btn-arrow {
+    transform: translateX(4px); /* Interactive dynamic vector arrow push shift nudge */
+}
+
+/* --- BACKGROUND KEYFRAMES SHIFTS --- */
+@keyframes ctaBackingPan {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(-1.5%, -1.5%) scale(1.05); }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN MANAGEMENT BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .cta-inner-content {
+        padding: 3rem 2.25rem;
+        gap: 2.5rem;
+    }
+    .cta-main-headline { font-size: 1.8rem; }
+    .cta-sub-headline { font-size: 1rem; }
+}
+
+@media (max-width: 880px) {
+    .cta-inner-content {
+        flex-direction: column; /* Re-stacks horizontally spread layout into single columns arrays on mobile viewports */
+        text-align: center;
+        padding: 3rem 1.5rem;
+        gap: 2rem;
+    }
+    .cta-text-cluster {
+        max-width: 100%;
+        text-align: center;
+    }
+    .cta-action-block {
+        width: 100%;
+    }
+    .cta-execute-btn {
+        width: 100%; /* Stretch button row items full width limits inside smaller screens bounding tracks maps */
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .platform-cta-viewport { padding-left: 4% !important; padding-right: 4% !important; }
+    .cta-main-headline { font-size: 1.5rem; }
+    .cta-inner-content { padding: 2.5rem 1.15rem; }
+}
+
+</style>
+
+<!-- Interactive Institutional Asset Liquidity Pools Ledger -->
+<section class="liquidity-pools-viewport" id="liquidity-pools">
+    
+    <!-- Zone 1: Ambient Backdrop Layer Context -->
+    <div class="pools-bg-canvas">
+        <img src="./Assets/liquidity-grid-bg.webp" alt="Stackly Capital Settlement Streams Network" class="pools-vector-backing">
+        <div class="pools-masking-shade"></div>
+    </div>
+
+    <!-- Zone 2: Main Grid Matrix Constraint Wrapper -->
+    <div class="pools-layout-matrix">
+        
+        <!-- Column A: Descriptive Text Hub Component -->
+        <div class="pools-text-cluster">
+            <span class="pools-pill-lbl">Clearing Networks</span>
+            <h2 class="pools-title">Deep Cross-Border <span>Sovereign Pools</span></h2>
+            <p class="pools-paragraph">
+                Deploy treasury capital across automated delta-neutral liquidity paths. Stackly aggregates multi-chain clearing indexes with tier-1 banking institutions to deliver zero-slippage market settlement depth.
+            </p>
+            
+            <!-- Real-Time Institutional Yield Indicators Row Grid -->
+            <div class="pools-yield-board">
+                <div class="pool-yield-node">
+                    <span class="pool-yield-lbl">Mutual Funds Alpha</span>
+                    <span class="pool-yield-val">+14.2% APY</span>
+                    <div class="pool-progress-track">
+                        <div class="pool-fill-bar" style="width: 88%"></div>
+                    </div>
+                </div>
+                <div class="pool-yield-node">
+                    <span class="pool-yield-lbl">Systematic SIP Index</span>
+                    <span class="pool-yield-val">+18.5% CAGR</span>
+                    <div class="pool-progress-track">
+                        <div class="pool-fill-bar" style="width: 94%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Column B: Interactive Dynamic Network Ledger Display Component Card -->
+        <div class="pools-ledger-block">
+            <div class="pools-card-wrapper">
+                <div class="pools-neon-glow-edge"></div>
+                <div class="pools-inner-housing">
+                    
+                    <div class="pools-header-row">
+                        <h3 class="pools-header-title">Live Settlement Ledger</h3>
+                        <span class="pools-live-tag">
+                            <span class="pools-dot-pulse"></span> Live Feed
+                        </span>
+                    </div>
+
+                    <!-- Ledger Item Grid Block Sequence -->
+                    <div class="pools-feed-stack" id="livePoolsLedgerStack">
+                        
+                        <!-- Transaction Entry 1 -->
+                        <div class="pools-row-entry">
+                            
+                                <div class="pools-icon-tint icon-blue">MF</div>
+                                <div class="pools-meta-data">
+                                    <span class="pools-entry-title">Alpha Mutual Fund Pool</span>
+                                    <span class="pools-timestamp">Settle Block #482910</span>
+                                </div>
+                            </div>
+                            <div class="pools-financial-metrics">
+                                <span class="pools-amount credit-amt">+$1,450,200</span>
+                                <span class="pools-status-lbl">Cleared Vault</span>
+                            </div>
+                        </div>
+
+                        <!-- Transaction Entry 2 -->
+                        <div class="pools-row-entry">
+                            
+                                <div class="pools-icon-tint icon-emerald">SIP</div>
+                                <div class="pools-meta-data">
+                                    <span class="pools-entry-title">Automated SIP Compounder</span>
+                                    <span class="pools-timestamp">Settle Block #482911</span>
+                                </div>
+                            </div>
+                            <div class="pools-financial-metrics">
+                                <span class="pools-amount credit-amt">+$824,550</span>
+                                <span class="pools-status-lbl">Cleared Vault</span>
+                            </div>
+                        </div>
+
+                        <!-- Transaction Entry 3 -->
+                        <div class="pools-row-entry">
+                            
+                                <div class="pools-icon-tint icon-purple">DA</div>
+                                <div class="pools-meta-data">
+                                    <span class="pools-entry-title">Digital Equities Hedging</span>
+                                    <span class="pools-timestamp">Settle Block #482912</span>
+                                </div>
+                            </div>
+                            <div class="pools-financial-metrics">
+                                <span class="pools-amount debit-amt">-$310,400</span>
+                                <span class="pools-status-lbl">Hedged Swap</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Submission Action Interceptor Trigger Component Route -->
+                    <a href="404.html" class="pools-audit-btn">Inspect Complete Chain Audit</a>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* ==========================================================================
+   INTERACTIVE INSTITUTIONAL CRYPTO LIQUIDITY POOLS STYLING
+   ========================================================================== */
+
+.crypto-pools-viewport {
+    position: relative !important;
+    display: block !important;
+    clear: both !important; /* Forces strict block flow isolation downwards */
+    width: 100% !important;
+    background-color: #04070d;
+    
+    /* SPECIFIC CONFIGURATION SPECS: FORCED COMPACT VIEW BUFFER SPACES PADDING */
+    padding-top: 50px !important;    /* Tightened top cushion area down to 50px */
+    padding-bottom: 30px !important; /* Tightened bottom cushion area down to 30px */
+    
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 55;
+}
+
+/* Background image asset canvas wrap */
+.pools-bg-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.pools-vector-backing {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.04;
+}
+
+.pools-masking-shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 30%, #04070d 95%);
+}
+
+/* Master Grid Alignment Matrix Split Layout Cores */
+.pools-layout-matrix {
+    position: relative;
+    z-index: 5;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    gap: 6rem;
+    align-items: center;
+    padding: 0 5%;
+}
+
+/* --- COLUMN A: DESCRIPTION MODULE TEXT LABELS --- */
+.pools-pill-lbl {
+    display: inline-block;
+    background: rgba(16, 185, 129, 0.05);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    padding: 0.4rem 1.1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #10b981;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.25rem;
+}
+
+.pools-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.pools-title span {
+    background: linear-gradient(135deg, #ffffff 40%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.pools-paragraph {
+    font-size: 1.05rem;
+    color: #94a3b8;
+    line-height: 1.65;
+    margin-bottom: 3rem;
+    max-width: 580px;
+}
+
+/* Data Yield Cluster Bars Systems */
+.pools-yield-board {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    padding-top: 2rem;
+    max-width: 540px;
+}
+
+.pool-yield-node { display: flex; flex-direction: column; gap: 0.5rem; }
+.pool-yield-lbl { font-size: 0.85rem; font-weight: 700; color: #ffffff; text-transform: uppercase; letter-spacing: 0.02em; }
+.pool-yield-val { font-size: 1.25rem; font-weight: 800; color: #f59e0b; text-shadow: 0 0 10px rgba(245,158,11,0.25); }
+
+.pool-progress-track {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pool-fill-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #b45309, #f59e0b);
+    border-radius: 10px;
+    box-shadow: 0 0 8px #f59e0b;
+}
+
+/* --- COLUMN B: HIGH TECH MULTI-ASSET SETTLEMENT LEDGER CARD --- */
+.pools-ledger-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.pools-card-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+}
+
+.pools-inner-housing {
+    position: relative;
+    background: rgba(9, 13, 22, 0.65);
+    border: 1px solid rgba(255,255,255,0.04);
+    padding: 2.5rem 2.25rem;
+    border-radius: 20px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    z-index: 2;
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Neon Overlay Golden Border highlight configuration system rules */
+.pools-neon-glow-edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1.5px solid transparent;
+    border-radius: 20px;
+    pointer-events: none;
+    z-index: 3;
+    transition: all 0.5s ease;
+}
+
+/* Interactive Card Position Shifts Tilted Movements */
+.pools-card-wrapper:hover .pools-inner-housing {
+    transform: rotateX(2deg) rotateY(-2deg) translateY(-3px);
+    border-color: rgba(245, 158, 11, 0.20);
+}
+
+.pools-card-wrapper:hover .pools-neon-glow-edge {
+    border-color: #f59e0b;
+    box-shadow: inset 0 0 15px rgba(245, 158, 11, 0.15), 0 0 25px rgba(245, 158, 11, 0.05);
+}
+
+.pools-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    padding-bottom: 1rem;
+}
+
+.pools-header-title { font-size: 1.2rem; font-weight: 700; color: #ffffff; letter-spacing: 0.01em; }
+
+.pools-live-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(16, 185, 129, 0.06);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    padding: 0.35rem 0.8rem;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #10b981;
+    text-transform: uppercase;
+}
+
+.pools-dot-pulse {
+    width: 5px;
+    height: 5px;
+    background-color: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 6px #10b981;
+    animation: poolsPulseBlink 1.5s infinite alternate;
+}
+
+/* Ledger Item List Row Configurations */
+.pools-feed-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 2.25rem;
+}
+
+.pools-row-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(4, 7, 13, 0.4);
+    border: 1px solid rgba(255,255,255,0.03);
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+.pools-row-entry:hover {
+    background: rgba(13, 19, 33, 0.6);
+    border-color: rgba(255,255,255,0.08);
+}
+
+.pools-asset-identity { display: flex; align-items: center; gap: 1rem; }
+
+.pools-icon-tint {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+}
+
+.icon-blue { background: rgba(2, 132, 199, 0.12); color: #0284c7; }
+.icon-emerald { background: rgba(16, 185, 129, 0.12); color: #10b981; }
+.icon-purple { background: rgba(139, 92, 246, 0.12); color: #8b5cf6; }
+
+.pools-meta-data { display: flex; flex-direction: column; }
+.pools-entry-title { font-size: 0.95rem; font-weight: 700; color: #ffffff; }
+.pools-timestamp { font-size: 0.75rem; color: #64748b; font-weight: 500; font-family: monospace; }
+
+.pools-financial-metrics { display: flex; flex-direction: column; align-items: flex-end; }
+.pools-amount { font-size: 1.05rem; font-weight: 700; }
+.credit-amt { color: #10b981; }
+.debit-amt { color: #ef4444; }
+.pools-status-lbl { font-size: 0.7rem; color: #64748b; text-transform: uppercase; font-weight: 600; letter-spacing: 0.04em; }
+
+/* Main Action Submission execution link button element block box */
+.pools-audit-btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background: rgba(255,255,255,0.02);
+    color: #ffffff !important;
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 0.9rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.01em;
+    transition: all 0.4s ease;
+}
+
+.pools-card-wrapper:hover .pools-audit-btn {
+    background: linear-gradient(135deg, #b45309 0%, #f59e0b 100%);
+    color: #000000 !important;
+    border-color: transparent;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35);
+}
+
+@keyframes poolsPulseBlink {
+    0% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(1.25); opacity: 1; box-shadow: 0 0 8px #10b981; }
+}
+
+/* --- RESPONSIVE MEDIA VIEWPORTS CONFIGURATION BREAKPOINTS --- */
+@media (max-width: 1024px) {
+    .pools-layout-matrix {
+        grid-template-columns: 1fr; /* Re-stacks panels into a single column on smaller viewports */
+        gap: 4rem;
+        text-align: center;
+    }
+    .pools-paragraph { margin-left: auto; margin-right: auto; }
+    .pools-yield-board { margin: 0 auto; text-align: left; width: 100%; }
+}
+
+@media (max-width: 600px) {
+    .pools-title { font-size: 2rem; }
+    .pools-inner-housing { padding: 1.75rem 1.25rem; }
+    .pools-row-entry { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .pools-financial-metrics { align-items: flex-start; }
+}
+
+</style>
+
+<script>
+    // --- 19. LIQUIDITY POOLS REAL-TIME TRANSMISSION DATA INSERTER ENGINE ---
+document.addEventListener('DOMContentLoaded', () => {
+    const poolsLedgerStack = document.getElementById('livePoolsLedgerStack');
+    
+    if (poolsLedgerStack) {
+        const poolAssetTypes = [
+            { title: "Alpha Mutual Fund Pool", short: "MF", class: "icon-blue", prefix: "+" },
+            { title: "Automated SIP Compounder", short: "SIP", class: "icon-emerald", prefix: "+" },
+            { title: "Digital Equities Hedging", short: "DA", class: "icon-purple", prefix: "-" }
+        ];
+
+        function pushSimulatedPoolTransaction() {
+            const rows = poolsLedgerStack.querySelectorAll('.pools-row-entry');
+            if (rows.length >= 4) {
+                rows[rows.length - 1].remove(); // Maintain standard stack boundaries
+            }
+
+            const currentTemplate = poolAssetTypes[Math.floor(Math.random() * poolAssetTypes.length)];
+            const randomVal = Math.floor(Math.random() * 800000) + 100000;
+            const blockNum = Math.floor(Math.random() * 9000) + 482000;
+            
+            const isCredit = currentTemplate.prefix === "+";
+            const amtClass = isCredit ? "credit-amt" : "debit-amt";
+            const statusText = isCredit ? "Cleared Vault" : "Hedged Swap";
+
+            const newRow = document.createElement('div');
+            newRow.className = 'pools-row-entry';
+            newRow.style.opacity = '0';
+            newRow.style.transform = 'translateY(-15px)';
+            newRow.style.transition = 'all 0.5s ease';
+
+            newRow.innerHTML = `
+                
+                    <div class="pools-icon-tint ${currentTemplate.class}">${currentTemplate.short}</div>
+                    <div class="pools-meta-data">
+                        <span class="pools-entry-title">${currentTemplate.title}</span>
+                        <span class="pools-timestamp">Settle Block #${blockNum}</span>
+                    </div>
+                </div>
+                <div class="pools-financial-metrics">
+                    <span class="pools-amount ${amtClass}">${currentTemplate.prefix}$${randomVal.toLocaleString()}</span>
+                    <span class="pools-status-lbl">${statusText}</span>
+                </div>
+            `;
+
+            poolsLedgerStack.insertBefore(newRow, poolsLedgerStack.firstChild);
+
+            setTimeout(() => {
+                newRow.style.opacity = '1';
+                newRow.style.transform = 'translateY(0)';
+            }, 50);
+
+            // Re-schedules looping stream continuously between 4 and 8 seconds
+            setTimeout(pushSimulatedPoolTransaction, Math.floor(Math.random() * 4000) + 4000);
+        }
+
+        setTimeout(pushSimulatedPoolTransaction, 5000);
+    }
+});
+
+</script>
+</body>
