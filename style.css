@@ -205,12 +205,15 @@ h1 {
 /* ==========================================================================
    STACKLY GLOBAL STYLING VARIABLES & RESET CORES
    ========================================================================== */
+/* ==========================================================================
+   STACKLY GLOBAL STYLING VARIABLES & RESET CORES
+   ========================================================================== */
 :root {
     --bg-primary: #04070d;
     --gold-glow: #f59e0b;
     --gold-dim: #b45309;
     --text-light: #f8fafc;
-    --text-muted: white;
+    --text-muted: #94a3b8;
     --navbar-blur: rgba(9, 13, 22, 0.7);
     --border-glow: rgba(245, 158, 11, 0.15);
 }
@@ -222,28 +225,41 @@ h1 {
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
-/* Scroll lock state toggled by your JavaScript engine to freeze background canvas tracking */
+/* Rigid scroll lock states toggled by your JavaScript engine to completely freeze background tracking */
 body.scroll-locked,
-html.scroll-locked{
-    overflow:hidden;
+html.scroll-locked {
+    overflow: hidden !important;
+    height: 100vh !important;
+    position: fixed !important;
+    width: 100% !important;
 }
 
 /* ==========================================================================
-   FLOATING HEADER CORE STRUCTURES (PREVENTS HEIGHT COLLAPSE FLATTENING)
+   FLOATING HEADER CORE ARCHITECTURE
    ========================================================================== */
-
-/* The outer float frame container strip wrapper */
+/* Floating Header Container Outer Wrap (Updated Visibility Initial State) */
 .navbar-wrapper {
     position: fixed !important;
     top: 20px !important;
     left: 0 !important;
     width: 100% !important;
-    z-index: 9998 !important;
     padding: 0 5% !important;
     box-sizing: border-box !important;
+    z-index: 99999 !important; 
+    
+    /* CRITICAL INITIAL LOCKS: Keeps header completely hidden while page is preloading */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
 }
 
-/* The balanced flexbox alignment housing panel row */
+/* New Operational State Class: Pushed dynamically by your script when the loader finishes */
+.navbar-wrapper.navbar-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+
 .navbar-container {
     max-width: 1400px;
     margin: 0 auto;
@@ -257,17 +273,21 @@ html.scroll-locked{
     justify-content: space-between; 
     align-items: center;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    transition: box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.navbar-container:hover {
-    border-color: rgba(245, 158, 11, 0.3);
-    box-shadow: 0 10px 40px rgba(245, 158, 11, 0.08);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    gap: 10%;
 }
 
 /* ==========================================================================
-   ZONE 1: INTERACTIVE BRAND IDENTITY LOGO
+   GLASSMORPHISM SCROLL ACTIVE ANIMATIONS
    ========================================================================== */
+.navbar-wrapper.scrolled .navbar-container {
+    background: rgba(4, 7, 13, 0.85) !important; /* Darkens opacity on layout scroll */
+    border-color: rgba(245, 158, 11, 0.35) !important; /* Intensifies gold glowing borders */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(245, 158, 11, 0.12) !important;
+    padding: 0.6rem 2rem !important; /* Compresses header row height slightly for a sleeker profile */
+}
+
+/* --- ZONE 1: BRAND LOGO --- */
 .brand-logo {
     display: flex;
     align-items: center;
@@ -275,33 +295,30 @@ html.scroll-locked{
     cursor: pointer;
     flex-shrink: 0;
     user-select: none;
+    max-width: 45% !important;
 }
 
 .brand-img-fallback {
+    height: 50px; 
     width: 150px;
-    height: 50px;
     object-fit: contain;
-   
-    border-radius: 6px; 
-    transition: transform 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .brand-logo:hover .brand-img-fallback {
-    transform: scale(1.08) rotate(3deg);
+    transform: scale(1.05) rotate(2deg);
 }
 
 .brand-logo span {
     font-size: 1.35rem;
     font-weight: 700;
     letter-spacing: 0.03em;
-   
+    background: linear-gradient(135deg, #ffffff 40%, var(--gold-glow) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/* ==========================================================================
-   ZONE 2: CENTERED ROUTING NAVIGATION LINKS (DESKTOP STATE)
-   ========================================================================== */
+/* --- ZONE 2: NAVIGATION LINKS (DESKTOP MODE) --- */
 .nav-links {
     display: flex;
     align-items: center;
@@ -325,7 +342,6 @@ html.scroll-locked{
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
 }
 
-/* Slid-over underlines neon golden highlights path tracks on item hover states */
 .nav-item::after {
     content: '';
     position: absolute;
@@ -342,9 +358,7 @@ html.scroll-locked{
     width: 100%;
 }
 
-/* ==========================================================================
-   ZONE 3: RE-USABLE ACTIONS GROUP GLOBAL STYLING UTILITIES
-   ========================================================================== */
+/* --- ZONE 3: RE-USABLE ACTIONS GROUP GLOBAL UTILITIES --- */
 .auth-group {
     display: flex;
     align-items: center;
@@ -384,37 +398,39 @@ html.scroll-locked{
     box-shadow: 0 6px 15px rgba(245, 158, 11, 0.4);
 }
 
-/* Visibility toggles filtering configurations between layouts formats */
 .mobile-only-auth { display: none; }
 .desktop-only-auth { display: flex; }
 
-/* ==========================================================================
-   RESPONSIVE VIEWPANELS HARDWARE INTERFACES MODIFIERS (MOBILE VIEW CORES)
-   ========================================================================== */
-
-/* Hamburger menu toggle button architecture */
+/* Hamburger Icon Trigger Layout Button */
 .hamburger-trigger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 24px;
-    height: 18px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    z-index: 10000;
-    padding: 0;
+    display: none; 
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 26px !important; 
+    height: 18px !important;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+    z-index: 100005 !important;
 }
 
 .hamburger-trigger .bar {
-    width: 100%;
-    height: 2px;
-    background-color: var(--text-light);
-    border-radius: 2px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: block !important;
+    width: 100% !important;
+    height: 2px !important;
+    background-color: #ffffff !important; /* FORCES HIGH-CONTRAST SOLID WHITE AGAINST DARK BACKGROUNDS */
+    border-radius: 2px !important;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    will-change: transform, opacity;
 }
 
-/* Ambient shadow overlay frame covering page behind drawer */
+/* Dim Dark Screen Background Overlay layer */
 .menu-overlay {
     position: fixed;
     top: 0;
@@ -435,66 +451,67 @@ html.scroll-locked{
     visibility: visible;
 }
 
-/* Mobile Adaptive Breakpoint Matrix */
-@media (max-width: 912px) {
-    .hamburger-trigger { display: flex; }
-    .desktop-only-auth { display: none; }
-    .mobile-only-auth { display: flex; width: 100%; margin-top: auto; }
+/* ==========================================================================
+   RESPONSIVE LAYOUT ENGINE VIEWPADS BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .hamburger-trigger { display: flex !important; }
+    .desktop-only-auth { display: none !important; }
+    .mobile-only-auth { display: flex !important; width: 100%; margin-top: auto; }
 
-    /* Transforms Zone 2 into a clean 74% Wide Side Drawer Panel Screen */
+    /* Transforms Zone 2 into your requested 75% wide Side Drawer Screen Panel */
     .nav-links {
-        position: fixed;
-        top: 0;
+        position: fixed !important;
+        top: 0 !important;
         right: -100%; /* Hides the drawer off-screen completely */
-        width: 74% !important; /* Forces your requested 74% container width limit */
-        height: 100vh;
-        background: #090e18;
-        border-left: 1px solid var(--border-glow);
-        padding: 6rem 2rem 3rem 2rem;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        gap: 2rem;
-        margin: 0;
-        z-index: 9997;
-        box-shadow: -15px 0 40px rgba(0,0,0,0.6);
-        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        width: 75% !important; /* SPECIFIC PARAMETER SPEC: Forced exact 75% side drawer width */
+        height: 100vh !important;
+        background: #090e18 !important;
+        border-left: 1px solid var(--border-glow) !important;
+        padding: 6rem 2rem 3rem 2rem !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+        gap: 2rem !important;
+        margin: 0 !important;
+        z-index: 9997 !important;
+        box-shadow: -15px 0 40px rgba(0,0,0,0.6) !important;
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
     }
 
-    /* JavaScript toggled active animation drawer container slide-in entry flag */
     .nav-links.open { 
-        right: 0; 
+        right: 0 !important; 
     }
 
     .nav-links .auth-group {
-        flex-direction: column;
-        gap: 1rem;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        width: 100% !important;
     }
 
     .nav-links .btn-auth {
-        width: 100%;
-        text-align: center;
-        padding: 0.8rem;
+        width: 100% !important;
+        text-align: center !important;
+        padding: 0.8rem !important;
     }
 
     .nav-item {
-        font-size: 1.15rem;
-        width: 100%;
-        display: block;
+        font-size: 1.15rem !important;
+        width: 100% !important;
+        display: block !important;
     }
 
-    /* Morph hamburger lines into an 'X' geometry on state changes triggers */
+    /* Morph hamburger lines into an 'X' geometry shape on active open state changes */
     .hamburger-trigger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-        background-color: var(--gold-glow);
+        transform: translateY(8px) rotate(45deg) !important;
+        background-color: var(--gold-glow) !important;
     }
     .hamburger-trigger.active .bar:nth-child(2) { 
-        opacity: 0; 
+        opacity: 0 !important; 
     }
     .hamburger-trigger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-        background-color: var(--gold-glow);
+        transform: translateY(-8px) rotate(-45deg) !important;
+        background-color: var(--gold-glow) !important;
     }
 }
-
 

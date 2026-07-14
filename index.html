@@ -76,193 +76,177 @@ window.addEventListener('DOMContentLoaded', () => {
   
 
     <!-- Floating Transparent Header -->
- <!-- Floating Transparent Header -->
 <header class="navbar-wrapper">
-    <div class="navbar-container">
-        
-        <!-- Zone 1: Brand Logo Container Area -->
-        <div class="brand-logo" id="logoBtn">
-            <img src="./Assests/logo.webp" alt="Stackly Logo" class="brand-img-fallback">
-           
-        </div>
-
-        <!-- Zone 2: Centered Navigation Menu List -->
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#home" class="nav-item">Home</a></li>
-            <li><a href="#crypto" class="nav-item">Digital Assets</a></li>
-            <li><a href="#cards" class="nav-item">Premium Cards</a></li>
-            <li><a href="#rates" class="nav-item">Market Rates</a></li>
-            <li><a href="#contact" class="nav-item">Contact Us</a></li>
+        <div class="navbar-container">
             
-            <!-- Mobile View Specific Auth Buttons (Hidden on Desktop) -->
-            <div class="auth-group mobile-only-auth">
-                <a href="#login" class="btn-auth btn-login">Login</a>
-                <a href="#signup" class="btn-auth btn-signup">Sign Up</a>
+            
+            <div class="brand-logo" id="logoBtn" title="Refresh Secure Vault Terminal">
+                <img src="./Assests/logo.webp" alt="Stackly Secure Finance Logo" class="brand-img-fallback">
+                
             </div>
-        </ul>
-        
-        <!-- Zone 3: Desktop View Specific Auth Buttons (Hidden on Mobile) -->
-        <div class="auth-group desktop-only-auth">
-            <a href="#login" class="btn-auth btn-login">Login</a>
-            <a href="#signup" class="btn-auth btn-signup">Sign Up</a>
+
+            <!-- Zone 2: Centered Navigation Menu List (Transforms into 75% wide drawer on mobile) -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-item">Home</a></li>
+                <li><a href="#crypto" class="nav-item">Digital Assets</a></li>
+                <li><a href="#cards" class="nav-item">Premium Cards</a></li>
+                <li><a href="#rates" class="nav-item">Market Rates</a></li>
+                <li><a href="#contact" class="nav-item">Contact Us</a></li>
+                
+                <!-- Mobile View Specific Auth Buttons (Hidden on Desktop) -->
+                <div class="auth-group mobile-only-auth">
+                    <a href="404.html" class="btn-auth btn-login">Login</a>
+                    <a href="404.html" class="btn-auth btn-signup">Sign Up</a>
+                </div>
+            </ul>
+            
+            <!-- Zone 3: Desktop View Specific Auth Buttons (Hidden on Mobile) -->
+            <div class="auth-group desktop-only-auth">
+                <a href="404.html" class="btn-auth btn-login">Login</a>
+                <a href="404.html" class="btn-auth btn-signup">Sign Up</a>
+            </div>
+
+            <!-- Mobile View Hamburger Icon Button Interface -->
+            <button class="hamburger-trigger" id="hamburgerToggle" aria-label="Toggle Navigation Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
         </div>
-
-        <!-- Mobile View Hamburger Icon Button Interface -->
-        <button class="hamburger-trigger" id="hamburgerToggle" aria-label="Toggle Navigation Menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-
-    </div>
-</header>
-<div class="menu-overlay" id="menuOverlay"></div>
+    </header>
+    
+    <!-- Dim Dark Screen Background Overlay veil -->
+    <div class="menu-overlay" id="menuOverlay"></div>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
+      document.addEventListener('DOMContentLoaded', () => {
+    
+    // Core Layout Interaction Handles Declarations
+    const logoBtn = document.getElementById('logoBtn');
+    const hamburgerToggle = document.getElementById('hamburgerToggle');
+    const navLinks = document.getElementById('navLinks');
+    const menuOverlay = document.getElementById('menuOverlay');
+    const navItems = document.querySelectorAll('.nav-item');
 
-    /* ===============================
-       NAVBAR ELEMENTS
-    =============================== */
-
-    const logoBtn = document.getElementById("logoBtn");
-    const hamburgerToggle = document.getElementById("hamburgerToggle");
-    const navLinks = document.getElementById("navLinks");
-    const menuOverlay = document.getElementById("menuOverlay");
-    const navItems = document.querySelectorAll(".nav-item");
-
-    /* ===============================
-       LOGO REFRESH
-    =============================== */
-
+    // ==========================================================================
+    // 1. BRAND LOGO HARD PAGE REFRESH ENGINE
+    // ==========================================================================
     if (logoBtn) {
-        logoBtn.addEventListener("click", () => {
-            window.location.reload();
+        logoBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            window.location.reload(); // Invokes immediate native hard page document refresh loop
         });
     }
 
-    /* ===============================
-       MOBILE MENU
-    =============================== */
+    // ==========================================================================
+    // 2. GLASSMORPHISM AUTO-SCROLL MONITOR
+    // ==========================================================================
+    window.addEventListener('scroll', () => {
+        const headerNode = document.querySelector('.navbar-wrapper');
+        if (headerNode) {
+            if (window.scrollY > 30) {
+                headerNode.classList.add('scrolled');
+            } else {
+                headerNode.classList.remove('scrolled');
+            }
+        }
+    });
 
+    // ==========================================================================
+    // 3. RESPONSIVE HAMBURGER & 75% SIDEBAR DRAWER MASTER CONTROLLERS
+    // ==========================================================================
     function openMenu() {
-        hamburgerToggle.classList.add("active");
-        navLinks.classList.add("open");
-        menuOverlay.classList.add("active");
-        document.body.classList.add("scroll-locked");
+        if (hamburgerToggle && navLinks && menuOverlay) {
+            hamburgerToggle.classList.add('active');
+            navLinks.classList.add('open');
+            menuOverlay.classList.add('active');
+            
+            // FREEZES BACKGROUND SCROLLING: Symmetrically locks window views across both root body & html tags
+            document.body.classList.add('scroll-locked');
+            document.documentElement.classList.add('scroll-locked');
+        }
     }
 
     function closeMenu() {
-        hamburgerToggle.classList.remove("active");
-        navLinks.classList.remove("open");
-        menuOverlay.classList.remove("active");
-        document.body.classList.remove("scroll-locked");
+        if (hamburgerToggle && navLinks && menuOverlay) {
+            hamburgerToggle.classList.remove('active');
+            navLinks.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            
+            // ALLOWS SCROLLING AGAIN: Wipes constraint classes to return liquid background tracking instantly
+            document.body.classList.remove('scroll-locked');
+            document.documentElement.classList.remove('scroll-locked');
+        }
     }
 
     if (hamburgerToggle) {
-        hamburgerToggle.addEventListener("click", () => {
-
-            if (navLinks.classList.contains("open")) {
+        hamburgerToggle.addEventListener('click', () => {
+            if (navLinks && navLinks.classList.contains('open')) {
                 closeMenu();
             } else {
                 openMenu();
             }
-
         });
     }
-
+    
     if (menuOverlay) {
-        menuOverlay.addEventListener("click", closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
     }
 
+    // Automatically close mobile menu and unlock scrolling if a user hits any active navigation link anchor choice
     navItems.forEach(item => {
-        item.addEventListener("click", closeMenu);
+        item.addEventListener('click', closeMenu);
     });
 
-    /* ===============================
-       INVESTMENT CAROUSEL
-    =============================== */
+    // ==========================================================================
+    // 4. GLOBAL INTERCEPTION ROUTER FOR 404 TEMPLATE TARGETS
+    // ==========================================================================
+    const secureLinks404 = document.querySelectorAll('a[href="404.html"], .btn-auth');
 
-    const track = document.getElementById("carouselTrack");
-    const prevBtn = document.getElementById("carouselPrev");
-    const nextBtn = document.getElementById("carouselNext");
+    secureLinks404.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault(); 
+            closeMenu(); // Safeguard: shut open drawers before navigation transitions
+            
+            const interfaceSegmentName = link.textContent.trim() || "Secure Gateway Module";
+            alert(`🔍 Stackly Route Monitor:\n\n"${interfaceSegmentName}" has been routed into a 404 navigation point safely!`);
+            window.location.href = "404.html";
+        });
+    });
 
-    if (track && prevBtn && nextBtn) {
-
-        let currentIndex = 0;
-
-        function itemsPerView() {
-            if (window.innerWidth > 1024) return 3;
-            if (window.innerWidth > 768) return 2;
-            return 1;
+    // ==========================================================================
+    // 5. SAFETY CANVAS CLEAN SWEEP OVERRIDE
+    // ==========================================================================
+    window.addEventListener('resize', () => {
+        // Auto-unlocks page scrolling if window workspace scales dynamically back up past mobile limits
+        if (window.innerWidth > 1024) {
+            closeMenu(); 
         }
-
-        function updateCarousel() {
-
-            const cards = document.querySelectorAll(".investment-card");
-
-            if (!cards.length) return;
-
-            const visible = itemsPerView();
-            const maxIndex = Math.max(0, cards.length - visible);
-
-            currentIndex = Math.max(0, Math.min(currentIndex, maxIndex));
-
-            const gap = parseFloat(getComputedStyle(track).gap) || 0;
-            const cardWidth = cards[0].offsetWidth;
-
-            track.style.transform =
-                `translateX(-${currentIndex * (cardWidth + gap)}px)`;
-
-            prevBtn.style.opacity = currentIndex === 0 ? "0.4" : "1";
-            prevBtn.style.pointerEvents = currentIndex === 0 ? "none" : "auto";
-
-            nextBtn.style.opacity = currentIndex === maxIndex ? "0.4" : "1";
-            nextBtn.style.pointerEvents = currentIndex === maxIndex ? "none" : "auto";
-        }
-
-        nextBtn.addEventListener("click", () => {
-
-            const cards = document.querySelectorAll(".investment-card");
-
-            if (currentIndex < cards.length - itemsPerView()) {
-                currentIndex++;
-                updateCarousel();
-            }
-
-        });
-
-        prevBtn.addEventListener("click", () => {
-
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateCarousel();
-            }
-
-        });
-
-        let resizeTimer;
-
-        window.addEventListener("resize", () => {
-
-            clearTimeout(resizeTimer);
-
-            resizeTimer = setTimeout(() => {
-
-                updateCarousel();
-
-                if (window.innerWidth > 912) {
-                    closeMenu();
-                }
-
-            }, 100);
-
-        });
-
-        updateCarousel();
-    }
-
+    });
 });
+
+// --- 14. PRELOADER TERMINAL INTERFACE COMPLETE DETECTION & NAVBAR REVELATION ENGINE ---
+document.addEventListener('DOMContentLoaded', () => {
+    const preloaderElement = document.getElementById('preloader');
+    const masterNavbarWrapper = document.querySelector('.navbar-wrapper');
+
+    // Simulate standard preloader duration timing catch up curves loops
+    // Change the timeout delay milliseconds metrics to match your exact loader animation timing config
+    setTimeout(() => {
+        if (preloaderElement) {
+            // 1. Fade out and disable the preloader screen overlays interface canvas
+            preloaderElement.style.opacity = '0';
+            preloaderElement.style.visibility = 'hidden';
+        }
+
+        // 2. Safely reveal the premium glassmorphic navigation header capsule bar after the loader drops out
+        if (masterNavbarWrapper) {
+            masterNavbarWrapper.classList.add('navbar-visible');
+        }
+    }, 2500); // 2500ms matches the 2.5s progress-bar loading animation timeline
+});
+
 </script>
 
 
