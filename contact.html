@@ -1,0 +1,2102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Banking Entry | Stackly</title>
+    <!-- Link to external CSS sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Preloader Shield Screen -->
+    <div id="preloader">
+        <div class="bg-grid"></div>
+        <div class="preloader-content">
+            
+            <div class="logo-wrapper">
+                <div class="logo-ring"></div>
+                <!-- Premium Vector Bank Icon -->
+                <svg class="logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22V8M5 12H19M5 17H19M2 22H22M12 2L2 7H22L12 2Z"/>
+                </svg>
+            </div>
+
+            <h1>Stackly Secure Bank</h1>
+            <div class="status-msg" id="loading-text">Initializing Firewall...</div>
+
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+            
+        </div>
+    </div>
+
+   
+<script>
+    // Dynamic Financial Network Handshake Messages
+const updates = [
+    { time: 0, text: "Initializing Security Firewall..." },
+    { time: 600, text: "Configuring End-to-End Handshake..." },
+    { time: 1300, text: "Syncing Cryptographic Ledger Assets..." },
+    { time: 2000, text: "Gateway Decryption Approved." }
+];
+
+const textElement = document.getElementById('loading-text');
+
+// Loop through each progress text sequence smoothly
+updates.forEach(phase => {
+    setTimeout(() => {
+        textElement.innerText = phase.text;
+        
+        // Turn the final verification text status to glowing green
+        if (phase.text.includes("Approved")) {
+            textElement.style.color = "var(--success-glow)";
+            textElement.style.textShadow = "0 0 10px rgba(16, 185, 129, 0.4)";
+        }
+    }, phase.time);
+});
+
+// Rigid dismissal trigger locked strictly under 3 seconds (2800 milliseconds)
+window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        const loader = document.getElementById('preloader');
+        const content = document.getElementById('app-content');
+        
+        // Hide preloader shield via smooth visual transition
+        loader.style.opacity = '0';
+        loader.style.visibility = 'hidden';
+        
+        // Reveal main dashboard console workspace
+        content.classList.add('visible');
+    }, 2800); 
+});
+
+</script>
+  
+
+    <!-- Floating Transparent Header -->
+<header class="navbar-wrapper">
+        <div class="navbar-container">
+            
+            
+            <div class="brand-logo" id="logoBtn" title="Refresh Secure Vault Terminal">
+                <img src="./Assests/logo.webp" alt="Stackly Secure Finance Logo" class="brand-img-fallback">
+                
+            </div>
+
+            <!-- Zone 2: Centered Navigation Menu List (Transforms into 75% wide drawer on mobile) -->
+            <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="nav-item">Home</a></li>
+    <li><a href="digitalassests.html" class="nav-item">Digital Assets</a></li>
+    <li><a href="cards.html" class="nav-item">Premium Cards</a></li>
+    <li><a href="rates.html" class="nav-item">Market Rates</a></li>
+    <li><a href="contact.html" class="nav-item">Contact Us</a></li>
+    
+    <!-- Mobile View Specific Auth Buttons (Hidden on Desktop) -->
+    <div class="auth-group mobile-only-auth">
+        <a href="login.html" class="btn-auth btn-login">Login</a>
+        <a href="signup.html" class="btn-auth btn-signup">Sign Up</a>
+    </div>
+</ul>
+
+            <!-- Zone 3: Desktop View Specific Auth Buttons (Hidden on Mobile) -->
+            <div class="auth-group desktop-only-auth">
+                <a href="login.html" class="btn-auth btn-login">Login</a>
+                <a href="signup.html" class="btn-auth btn-signup">Sign Up</a>
+            </div>
+
+            <!-- Mobile View Hamburger Icon Button Interface -->
+            <button class="hamburger-trigger" id="hamburgerToggle" aria-label="Toggle Navigation Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+        </div>
+    </header>
+    
+    <!-- Dim Dark Screen Background Overlay veil -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+<script>
+      document.addEventListener('DOMContentLoaded', () => {
+    
+    // Core Layout Interaction Handles Declarations
+    const logoBtn = document.getElementById('logoBtn');
+    const hamburgerToggle = document.getElementById('hamburgerToggle');
+    const navLinks = document.getElementById('navLinks');
+    const menuOverlay = document.getElementById('menuOverlay');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    // ==========================================================================
+    // 1. BRAND LOGO HARD PAGE REFRESH ENGINE
+    // ==========================================================================
+    if (logoBtn) {
+        logoBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            window.location.reload(); // Invokes immediate native hard page document refresh loop
+        });
+    }
+
+    // ==========================================================================
+    // 2. GLASSMORPHISM AUTO-SCROLL MONITOR
+    // ==========================================================================
+    window.addEventListener('scroll', () => {
+        const headerNode = document.querySelector('.navbar-wrapper');
+        if (headerNode) {
+            if (window.scrollY > 30) {
+                headerNode.classList.add('scrolled');
+            } else {
+                headerNode.classList.remove('scrolled');
+            }
+        }
+    });
+
+    // ==========================================================================
+    // 3. RESPONSIVE HAMBURGER & 75% SIDEBAR DRAWER MASTER CONTROLLERS
+    // ==========================================================================
+    function openMenu() {
+        if (hamburgerToggle && navLinks && menuOverlay) {
+            hamburgerToggle.classList.add('active');
+            navLinks.classList.add('open');
+            menuOverlay.classList.add('active');
+            
+            // FREEZES BACKGROUND SCROLLING: Symmetrically locks window views across both root body & html tags
+            document.body.classList.add('scroll-locked');
+            document.documentElement.classList.add('scroll-locked');
+        }
+    }
+
+    function closeMenu() {
+        if (hamburgerToggle && navLinks && menuOverlay) {
+            hamburgerToggle.classList.remove('active');
+            navLinks.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            
+            // ALLOWS SCROLLING AGAIN: Wipes constraint classes to return liquid background tracking instantly
+            document.body.classList.remove('scroll-locked');
+            document.documentElement.classList.remove('scroll-locked');
+        }
+    }
+
+    if (hamburgerToggle) {
+        hamburgerToggle.addEventListener('click', () => {
+            if (navLinks && navLinks.classList.contains('open')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+    }
+    
+    if (menuOverlay) {
+        menuOverlay.addEventListener('click', closeMenu);
+    }
+
+    // Automatically close mobile menu and unlock scrolling if a user hits any active navigation link anchor choice
+    navItems.forEach(item => {
+        item.addEventListener('click', closeMenu);
+    });
+
+    // ==========================================================================
+    // 4. GLOBAL INTERCEPTION ROUTER FOR 404 TEMPLATE TARGETS
+    // ==========================================================================
+    const secureLinks404 = document.querySelectorAll('a[href="404.html"], .btn-auth');
+
+    secureLinks404.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault(); 
+            closeMenu(); // Safeguard: shut open drawers before navigation transitions
+            
+            const interfaceSegmentName = link.textContent.trim() || "Secure Gateway Module";
+            alert(`🔍 Stackly Route Monitor:\n\n"${interfaceSegmentName}" has been routed into a 404 navigation point safely!`);
+            window.location.href = "404.html";
+        });
+    });
+
+    // ==========================================================================
+    // 5. SAFETY CANVAS CLEAN SWEEP OVERRIDE
+    // ==========================================================================
+    window.addEventListener('resize', () => {
+        // Auto-unlocks page scrolling if window workspace scales dynamically back up past mobile limits
+        if (window.innerWidth > 1024) {
+            closeMenu(); 
+        }
+    });
+});
+
+// --- 14. PRELOADER TERMINAL INTERFACE COMPLETE DETECTION & NAVBAR REVELATION ENGINE ---
+document.addEventListener('DOMContentLoaded', () => {
+    const preloaderElement = document.getElementById('preloader');
+    const masterNavbarWrapper = document.querySelector('.navbar-wrapper');
+
+    // Simulate standard preloader duration timing catch up curves loops
+    // Change the timeout delay milliseconds metrics to match your exact loader animation timing config
+    setTimeout(() => {
+        if (preloaderElement) {
+            // 1. Fade out and disable the preloader screen overlays interface canvas
+            preloaderElement.style.opacity = '0';
+            preloaderElement.style.visibility = 'hidden';
+        }
+
+        // 2. Safely reveal the premium glassmorphic navigation header capsule bar after the loader drops out
+        if (masterNavbarWrapper) {
+            masterNavbarWrapper.classList.add('navbar-visible');
+        }
+    }, 2500); // 2500ms matches the 2.5s progress-bar loading animation timeline
+});
+
+// --- 25. AUTOMATED DYNAMIC NAVIGATION ACTIVE TRACKING ENGINE ---
+document.addEventListener('DOMContentLoaded', () => {
+    // Extract the complete trailing pathname string segment from the active browser window address
+    // Example: "/index.html" or "/digitalassests.html"
+    const standardCurrentPath = window.location.pathname;
+    
+    // Target all navigation anchor link elements rendered inside the master container list
+    const masterMenuLinks = document.querySelectorAll('.nav-links .nav-item');
+
+    masterMenuLinks.forEach(link => {
+        // Retrieve the literal string contents of the specific node href attribute entry
+        const linkTargetHref = link.getAttribute('href');
+
+        // Clean slate reset: Strip any existing active modifiers to avoid page state pollution bugs
+        link.classList.remove('active');
+
+        // 1. Precise Path Matching Filter Logic Guard
+        if (standardCurrentPath.endsWith(linkTargetHref)) {
+            link.classList.add('active');
+        } 
+        
+        // 2. Baseline Default Fallback Guard: If path is a raw root folder slash "/", force Home active status
+        else if ((standardCurrentPath === '/' || standardCurrentPath.endsWith('/')) && linkTargetHref === 'index.html') {
+            link.classList.add('active');
+        }
+    });
+});
+
+</script>
+
+<!-- Section: Secure Institutional Contact Pipeline Matrix -->
+<section class="contact-matrix-viewport" id="contact" aria-labelledby="contact-master-title">
+    
+    <!-- Zone 1: Ambient Canvas Backdrop Configurations -->
+    <div class="contact-bg-canvas">
+        <img src="./Assests/analytics - bg.webp" alt="Stackly Capital Encryption Shading Network Matrix" class="contact-vector-backing">
+        <div class="contact-masking-shade"></div>
+    </div>
+
+    <div class="contact-layout-container">
+        
+        <!-- Zone 2: Main Asymmetric Dual-Column Layout Grid -->
+        <div class="contact-layout-matrix">
+            
+            <!-- Column A: LEFT SIDE - Technical Desk Metadata & Quick Connect Badges -->
+            <div class="contact-text-cluster">
+                <span class="contact-pill-lbl">Communications Deck</span>
+                <h2 class="contact-title" id="contact-master-title">Establish Your Secure <br><span>Treasury Gateway</span></h2>
+                <p class="contact-paragraph">
+                    Connect directly with our elite global multi-sig clearing operators. Whether initiating high-volume delta-neutral account underwriting or configuring private API liquid parameters, our communication desk remains locked natively in 24/7 continuous session streams.
+                </p>
+                
+                <!-- Quick Compliance Desks Access Sub-Grid Rows -->
+                <div class="contact-desks-board">
+                    
+                    <!-- Desk Item 1: Secure Shield Vector Element -->
+                    <div class="desk-node-row">
+                        <span class="desk-icon-box">
+                            <svg class="desk-icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </span>
+                        <div class="desk-text-stack">
+                            <h4 class="desk-node-title">Institutional Underwriting</h4>
+                            <p class="desk-node-desc">Direct compliance handshake channels for tier-1 asset deposits. <br><strong>underwrite@stackly.bank</strong></p>
+                        </div>
+                    </div>
+
+                    <!-- Desk Item 2: Performance Technical Gear Vector Element -->
+                    <div class="desk-node-row">
+                        <span class="desk-icon-box">
+                            <svg class="desk-icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                            </svg>
+                        </span>
+                        <div class="desk-text-stack">
+                            <h4 class="desk-node-title">Global API Router Desk</h4>
+                            <p class="desk-node-desc">Latency-free routing configuration support for polymorphic gateways. <br><strong>devops@stackly.bank</strong></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Column B: RIGHT SIDE - Glassmorphic Encrypted Inbound Message Form -->
+            <div class="contact-dashboard-block">
+                <div class="contact-card-wrapper">
+                    <div class="contact-neon-glow-edge"></div>
+                    <form class="contact-inner-housing" action="404.html" method="GET">
+                        
+                        <div class="contact-console-header">
+                            <h3 class="contact-console-title">Initialize Inbound Message Handshake</h3>
+                            <span class="contact-status-lbl"><span class="contact-pulse-dot"></span> Signal Secure</span>
+                        </div>
+
+                        <!-- Form Input Block 1 -->
+                        <div class="contact-input-box">
+                            <label for="contactEntityName">Corporate Entity / Holder Identity</label>
+                            <div class="contact-input-row">
+                                <input type="text" id="contactEntityName" placeholder="e.g. Apex Liquidity Fund / Alpha Node" required>
+                            </div>
+                        </div>
+
+                        <!-- Form Input Block 2 -->
+                        <div class="contact-input-box">
+                            <label for="contactSecureEmail">Verified Transmission Address</label>
+                            <div class="contact-input-row">
+                                <input type="email" id="contactSecureEmail" placeholder="holder@secure-node.com" required>
+                            </div>
+                        </div>
+
+                        <!-- Form Input Block 3 -->
+                        <div class="contact-input-box">
+                            <label for="contactPipelineSpecs">Message Payload Parameters</label>
+                            <div class="contact-input-row">
+                                <textarea id="contactPipelineSpecs" rows="3" placeholder="Specify TVL allocation tier constraints or API gateway preferences..." required></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Action Submission Button (Routes Safely to 404 Page on Click) -->
+                        <button type="submit" class="contact-execute-btn">Authorize Secure Transmission</button>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* ==========================================================================
+   STACKLY INTERACTIVE VECTOR CONTACT MATRIX DESIGN ARCHITECTURE
+   ========================================================================== */
+
+.contact-matrix-viewport {
+    position: relative !important;
+    display: block !important;
+    clear: both !important; /* Total height separation shield protection layer from previous elements */
+    width: 100% !important;
+    background-color: #04070d;
+    
+    /* SPECIFIC COMPACT CONFIGURATION SPECS: FORCED VERTICAL PADDING CONTROLS */
+    padding-top: 150px !important;    /* Tightened top cushion area down to 50px */
+    padding-bottom: 30px !important; /* Tightened bottom cushion area down to 30px */
+    
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 55;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+/* Background image canvas wrap layers configuration */
+.contact-bg-canvas {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1; pointer-events: none;
+}
+.contact-vector-backing {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.13;
+}
+.contact-masking-shade {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at center, transparent 40%, #04070d 95%);
+}
+
+.contact-layout-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Master Grid Alignment Matrix Column Split Rows Framework */
+.contact-layout-matrix {
+    position: relative;
+    z-index: 5;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Mathematically symmetric dual-column matrix distribution */
+    gap: 5rem; /* Tightened horizontal gap size spacing */
+    align-items: flex-start !important; /* Keeps left reference desk row text and right form card top-aligned symmetrically */
+    padding: 0 5%;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* --- COLUMN A: COPYWRITING HUB VERTICAL STACK (LEFT SIDE) --- */
+.contact-text-cluster { 
+    display: flex !important; flex-direction: column !important; align-items: flex-start !important; text-align: left !important; width: 100%; box-sizing: border-box;
+}
+
+.contact-pill-lbl {
+    display: inline-block; background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.2);
+    padding: 0.4rem 1.1rem; border-radius: 50px; font-size: 0.75rem; font-weight: 700; color: #f59e0b;
+    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1.25rem;
+}
+
+.contact-title {
+    font-size: 2.8rem; font-weight: 800; color: #ffffff; line-height: 1.15; margin-bottom: 1.5rem; letter-spacing: -0.02em;
+}
+.contact-title span {
+    background: linear-gradient(135deg, #ffffff 40%, #f59e0b 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+.contact-paragraph {
+    font-size: 1.05rem; color: #94a3b8; line-height: 1.65; margin-bottom: 2.5rem; max-width: 580px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+.contact-paragraph:hover {
+    color: #ffffff; text-shadow: 0 0 10px rgba(245, 158, 11, 0.35); /* Soft gold typographical text glow on hover triggers */
+}
+
+/* Quick access reference helpdesks rows layout box */
+.contact-desks-board {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    padding-top: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+.desk-node-row { display: flex; align-items: flex-start; gap: 1.25rem; }
+
+/* FIXED PURE VECTOR CAPSULE SYSTEM BOX */
+.desk-icon-box {
+    width: 42px !important; height: 42px !important;
+    background: rgba(255, 255, 255, 0.01) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 10px !important;
+    display: flex !important; align-items: center !important; justify-content: center !important;
+    flex-shrink: 0 !important;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.4s ease, box-shadow 0.4s ease !important;
+}
+
+.desk-icon-svg {
+    color: #475569;
+    transition: color 0.3s ease !important;
+}
+
+/* --- VECTOR HOVER ACCENT GLOW HIGH-CONTRAST TRIGGER OVERRIDES --- */
+.desk-node-row:hover .desk-icon-box {
+    border-color: #f59e0b !important;
+    background: #f59e0b !important; /* Radial flood: completely fills the background box with gold on hover */
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.45) !important; /* Soft high-tech neon bloom */
+    transform: scale(1.06) rotate(2deg);
+}
+
+/* Forces inner vector line paths to snap sharply to absolute solid black against filled gold backing */
+.desk-node-row:hover .desk-icon-svg {
+    color: #000000 !important;
+}
+
+.desk-text-stack { display: flex; flex-direction: column; gap: 0.2rem; text-align: left; }
+.desk-node-title { font-size: 1.1rem; font-weight: 700; color: #ffffff; }
+.desk-node-desc { font-size: 0.92rem; color: #64748b; line-height: 1.5; }
+.desk-node-desc strong { color: #94a3b8; transition: color 0.3s; font-family: monospace; }
+.desk-node-row:hover .desk-node-desc strong { color: #f59e0b; text-shadow: 0 0 8px rgba(245,158,11,0.2); }
+
+/* --- COLUMN B: HIGH TECH INBOUND MESSAGE FORM CARD (RIGHT SIDE) --- */
+.contact-dashboard-block {
+    display: flex; justify-content: center; align-items: center; perspective: 1000px; width: 100%; box-sizing: border-box;
+}
+.contact-card-wrapper { position: relative; width: 100%; max-width: 500px; box-sizing: border-box; }
+
+.contact-inner-housing {
+    position: relative; background: rgba(9, 13, 22, 0.65) !important; border: 1px solid rgba(255, 255, 255, 0.04) !important;
+    padding: 2.25rem 1.75rem !important; border-radius: 20px !important; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6) !important;
+    display: flex !important; flex-direction: column !important; gap: 1.25rem !important; box-sizing: border-box !important; width: 100% !important;
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.5s ease;
+}
+
+/* Hidden Absolute Golden Neon Border Outer Highlight Framework Frame */
+.contact-neon-glow-edge {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    border: 1.5px solid transparent; border-radius: 20px; pointer-events: none; z-index: 4;
+    transition: all 0.5s ease;
+}
+
+/* Immersive Card Position Shift Tilted Movements & Ambient Halo Blooms */
+.contact-card-wrapper:hover .contact-inner-housing {
+    transform: rotateX(2deg) rotateY(-2deg) translateY(-3px); border-color: rgba(245, 158, 11, 0.20) !important;
+}
+.contact-card-wrapper:hover .contact-neon-glow-edge {
+    border-color: #f59e0b !important; box-shadow: inset 0 0 15px rgba(245, 158, 11, 0.15), 0 0 25px rgba(245, 158, 11, 0.05) !important;
+}
+
+.contact-console-header { display: flex !important; justify-content: space-between !important; align-items: center !important; border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important; padding-bottom: 1rem !important; }
+.contact-console-title { font-size: 1.1rem; font-weight: 700; color: #ffffff; letter-spacing: 0.01em; }
+
+.contact-status-lbl {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(16, 185, 129, 0.06); border: 1px solid rgba(16, 185, 129, 0.2);
+    padding: 0.35rem 0.8rem; border-radius: 30px; font-size: 0.72rem; font-weight: 700; color: #10b981; text-transform: uppercase;
+}
+.contact-pulse-dot { width: 5px; height: 5px; background-color: #10b981; border-radius: 50%; box-shadow: 0 0 6px #10b981; animation: contactPulseBlink 1.5s infinite alternate; }
+
+/* Interactive Input Core Housing Fields Box */
+.contact-input-box { display: flex; flex-direction: column; gap: 0.45rem; width: 100%; box-sizing: border-box; }
+.contact-input-box label { font-size: 0.72rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.04em; text-align: left; }
+
+.contact-input-row {
+    display: flex; background: rgba(4, 7, 13, 0.4); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 10px; padding: 0.2rem; transition: border-color 0.3s; width: 100%; box-sizing: border-box;
+}
+.contact-input-row:focus-within { border-color: #f59e0b; }
+
+.contact-input-row input, .contact-input-row textarea {
+    width: 100% !important; background: transparent !important; border: none !important; outline: none !important; padding: 0.65rem 0.85rem !important; color: #ffffff !important; font-size: 0.95rem !important; font-weight: 600 !important; box-sizing: border-box;
+}
+.contact-input-row textarea { resize: none; font-family: sans-serif; line-height: 1.4; }
+.contact-input-row input::placeholder, .contact-input-row textarea::placeholder { color: #334155; font-weight: 500; }
+
+/* Main Action Submission Button */
+.contact-inner-housing .contact-execute-btn {
+    display: block !important; width: 100% !important; background: rgba(255, 255, 255, 0.02) !important; color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important; padding: 0.9rem !important; border-radius: 8px !important; cursor: pointer;
+    font-weight: 700 !important; font-size: 0.92rem !important; letter-spacing: 0.01em; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important; margin-top: 0.5rem;
+}
+.contact-card-wrapper:hover .contact-execute-btn,
+.contact-inner-housing .contact-execute-btn:hover {
+    background: linear-gradient(135deg, #b45309 0%, #f59e0b 100%) !important;
+    color: #000000 !important; border-color: transparent !important; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35) !important;
+}
+
+@keyframes contactPulseBlink { 0% { transform: scale(1); opacity: 0.5; } 100% { transform: scale(1.25); opacity: 1; box-shadow: 0 0 8px #10b981; } }
+
+/* ==========================================================================
+   3. RESPONSIVE DESIGN VIEWPORTS ENGINEERING MAPPINGS
+   ========================================================================== */
+@media (max-width: 1024px) {
+.contact-layout-matrix { grid-template-columns: 1fr; gap: 4rem; text-align: center; }.contact-paragraph { margin-left: auto; margin-right: auto; }.contact-desks-board { margin: 0 auto; text-align: left; }.contact-text-cluster { align-items: center !important; }.contact-card-wrapper { margin: 0 auto; }}@media (max-width: 600px) {.contact-title { font-size: 2rem; }.contact-inner-housing { padding: 1.5rem 1.15rem !important; }.desk-node-row { flex-direction: column; align-items: center; text-align: center; gap: 0.75rem; }.desk-text-stack { text-align: center; }}
+
+</style>
+
+<!-- Section: Secure Wealth Handshake & Message Pipeline Matrix -->
+<!-- Section: Secure Wealth Handshake & Message Pipeline Matrix -->
+<section class="wealth-pipeline-viewport" id="contact" style="padding-top: 50px !important; padding-bottom: 30px !important; clear: both !important;">
+    
+    <!-- Ambient Canvas Backdrop Configurations -->
+    <div class="wpipeline-bg-canvas">
+        <img src="./Assets/analytics-grid-bg.webp" alt="Stackly Capital Encryption Shading Network Matrix" class="wpipeline-vector-backing">
+        <div class="wpipeline-masking-shade"></div>
+    </div>
+
+    <div class="wpipeline-container">
+        
+        <!-- Left Side Pane: Operational Desk Metadata Info Blocks -->
+        <div class="wpipeline-info-side">
+            <span class="wpipeline-pill">Flagship Vault Node</span>
+            <h2 class="wpipeline-title">Reach Our <br><span>Sovereign Architects</span>.</h2>
+            <p class="wpipeline-paragraph">
+                Connect directly with our elite global multi-sig clearing operators. Whether initiating high-volume delta-neutral account underwriting or configuring private API liquid parameters, our communication desk remains locked natively in 24/7 continuous session streams.
+            </p>
+            
+            <div class="wpipeline-cards-stack">
+                
+                <!-- Card 1: Visit Our Studio -->
+                <div class="wpipeline-info-card">
+                    <div class="wpipeline-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <div class="wpipeline-card-text">
+                        <h5>Visit Our Vault Node</h5>
+                        <p>MMR Complex, Periyakollappatty, Chinna Thirupathi, Salem, Tamil Nadu 636008</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Direct Hotlines -->
+                <div class="wpipeline-info-card">
+                    <div class="wpipeline-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.75 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </div>
+                    <div class="wpipeline-card-text">
+                        <h5>Direct Desk Hotlines</h5>
+                        <p>+91 7010792745</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Electronic Mail (Outlook Dynamic Target Anchor) -->
+                <a href="mailto:design@stacklystudio.com" class="wpipeline-info-card mail-interactive-anchor" aria-label="Open secure email transmission line inside Outlook app client">
+                    <div class="wpipeline-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </div>
+                    <div class="wpipeline-card-text">
+                        <h5>Electronic Mail Channel</h5>
+                        <p class="mail-highlight-string">design@stacklystudio.com</p>
+                    </div>
+                </a>
+
+                <!-- Card 4: Desk Availability -->
+                <div class="wpipeline-info-card card-dimmed">
+                    <div class="wpipeline-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div class="wpipeline-card-text">
+                        <h5>Desk Node Availability</h5>
+                        <p>Mon - Sat: 9:00 AM - 7:00 PM IST</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Right Side Pane: High-Fidelity Validation Form Core -->
+        <div class="wpipeline-form-side">
+            <div class="wpipeline-form-housing">
+                <div class="wpipeline-neon-glow-edge"></div>
+                
+                <form id="wealthHandshakeForm" novalidate>
+                    
+                    <div class="wpipeline-form-header">
+                        <h3>Send Us a Message 💼</h3>
+                        <p>Submit your quantitative asset underwriting variables. Form boundaries illuminate on cursor active focus tracking fields.</p>
+                    </div>
+
+                    <!-- Client Feedback Dynamic Alert Container -->
+                    <div class="wpipeline-alert-box" id="formValidationStatusAlert" aria-live="polite"></div>
+
+                    <!-- Input 1: Client Full Name -->
+                    <div class="wpipeline-input-group">
+                        <label for="wpClientName">Your Full Name</label>
+                        <div class="wpipeline-input-row">
+                            <input type="text" id="wpClientName" placeholder="Your elegant name..." required autocomplete="off">
+                        </div>
+                    </div>
+
+                    <!-- Input 2: Transmission Email -->
+                    <div class="wpipeline-input-group">
+                        <label for="wpClientEmail">Email Address</label>
+                        <div class="wpipeline-input-row">
+                            <input type="email" id="wpClientEmail" placeholder="name@example.com" required autocomplete="off">
+                        </div>
+                    </div>
+
+                    <!-- Input 3: Mobile Telemetry Number -->
+                    <div class="wpipeline-input-group">
+                        <label for="wpClientMobile">10-Digit Mobile Number</label>
+                        <div class="wpipeline-input-row">
+                            <input type="text" id="wpClientMobile" placeholder="10-digit mobile number" maxlength="10" required autocomplete="off">
+                        </div>
+                    </div>
+
+                    <!-- Input 4: Asset Discipline Portfolio Category Dropdown Select Box -->
+                    <div class="wpipeline-input-group">
+                        <label for="wpPortfolioCategory">Portfolio Discipline Category</label>
+                        <div class="wpipeline-input-row">
+                            <div class="wpipeline-select-shell">
+                                <select id="wpPortfolioCategory" required>
+                                    <option value="" disabled selected hidden>Select a portfolio category...</option>
+                                    <option value="private-credit">Private Credit Allocation & Sovereign Gearing</option>
+                                    <option value="delta-neutral">Delta-Neutral Multi-Chain Arbitrage Liquidity</option>
+                                    <option value="multisig-vault">Multi-Sig Air-Gapped Asset Storage SLA</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Input 5: Wealth Narrative Text Area -->
+                    <div class="wpipeline-input-group">
+                        <label for="wpClientNarrative">Your Custom Wealth Narrative</label>
+                        <div class="wpipeline-input-row">
+                            <textarea id="wpClientNarrative" rows="4" placeholder="Tell us about your project footprint size, timeline metrics, and reserve preferences..." required autocomplete="off"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Submission Trigger Execution Row Button Elements Block -->
+                    <button type="submit" class="wpipeline-submit-btn">
+                        <span>Reserve Blueprint Consultation</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
+
+                </form>
+                
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<style>
+    /* ==========================================================================
+   FIXED INTERACTIVE AVAILABILITY CARD - FULL UNLOCK
+   ========================================================================== */
+
+/* Utility Modifier: Matches the identical background, shadow, and hover traits */
+.wpipeline-info-card.card-dimmed {
+    background-color: #090d16 !important; /* Solid background base coat matching cards above */
+    background: rgba(9, 13, 22, 0.65) !important; /* Premium dark glass texture matrix */
+    border: 1px solid rgba(255, 255, 255, 0.04) !important; /* Clean soft structural container outline */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important; /* Symmetrical depth drop shadows */
+    opacity: 1 !important; /* Re-aligns opacity back to full clear visibility profile */
+    
+    /* CRITICAL SPEC SPEC UNLOCKS: Enables mouse sensors and cursor movement recognition tracking */
+    pointer-events: auto !important; 
+    cursor: default !important;
+    
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                border-color 0.4s ease, 
+                box-shadow 0.4s ease !important;
+}
+
+/* FIXED TEXT CONTRAST: Unlocks child elements to pull the crisp brand white text color */
+.wpipeline-info-card.card-dimmed h5,
+.wpipeline-info-card.card-dimmed .wpipeline-card-icon {
+    color: #64748b !important; /* Subtitle color track matches preceding items */
+    opacity: 1 !important;
+}
+
+.wpipeline-info-card.card-dimmed .wpipeline-card-text p {
+    color: #ffffff !important; /* FIXED SPEC: Standard high contrast bright white text string */
+    opacity: 1 !important;
+}
+
+/* ==========================================================================
+   ACTIVE HOVER TRIGGER FOR THE AVAILABILITY CARD
+   ========================================================================== */
+.wpipeline-info-card.card-dimmed:hover {
+    transform: translateY(-2px) !important; /* Forces the identical dynamic vertical lift motion */
+    border-color: rgba(245, 158, 11, 0.25) !important; /* Soft gold neon tracking frame bloom */
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Glow accent modifier for inner icons on cursor tracking paths hovers */
+.wpipeline-info-card.card-dimmed:hover .wpipeline-card-icon {
+    color: #f59e0b !important; /* Highlights icon token to gold matching theme specs */
+    border-color: rgba(245, 158, 11, 0.3) !important;
+}
+
+  /* ==========================================================================
+   HIGH NET WORTH TREASURY HANDSHAKE PIPELINE STYLE SHEET MASTER
+   ========================================================================== */
+
+.wealth-pipeline-viewport {
+    position: relative !important;
+    width: 100% !important;
+    background-color: #04070d; /* FIXED: Absolute black background matching brand theme */
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, sans-serif;
+    overflow: hidden;
+}
+
+/* Ambient canvas backdrop mesh graphic configurations layer */
+.wpipeline-bg-canvas {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1; pointer-events: none;
+}
+.wpipeline-vector-backing {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.03;
+}
+.wpipeline-masking-shade {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at center, transparent 40%, #04070d 95%);
+}
+
+.wpipeline-container {
+    position: relative;
+    z-index: 5;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.05fr; /* Perfectly balanced asymmetric multi-column matrix flow */
+    gap: 5rem;
+    padding: 0 5%;
+    align-items: center;
+}
+
+/* --- LEFT COLUMN INFRASTRUCTURE PROFILE --- */
+.wpipeline-info-side { display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
+
+.wpipeline-pill {
+    display: inline-block;
+    background: rgba(2, 132, 199, 0.05);
+    border: 1px solid rgba(2, 132, 199, 0.2);
+    padding: 0.35rem 0.95rem;
+    border-radius: 50px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #0284c7;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+}
+
+.wpipeline-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #ffffff; /* FIXED: Crisp white headline text color */
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+.wpipeline-title span {
+    color: #f59e0b !important; /* FIXED: Pure amber gold shade for your "Sovereign Architects" string token */
+    text-shadow: 0 0 20px rgba(245, 158, 11, 0.35); /* Elegant gold typographical bloom glow */
+}
+
+.wpipeline-paragraph {
+    font-size: 1.05rem;
+    color: #94a3b8; /* High contrast muted white */
+    line-height: 1.65;
+    margin-bottom: 2.25rem;
+    max-width: 580px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+.wpipeline-paragraph:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(245, 158, 11, 0.25);
+}
+
+/* Info tracking reference card row stacks layout properties fields */
+.wpipeline-cards-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    width: 100%;
+    max-width: 480px;
+}
+
+.wpipeline-info-card {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 1.15rem;
+    background: rgba(9, 13, 22, 0.65); /* Premium glassmorphic texture fitting the black theme */
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 12px;
+    padding: 1.1rem 1.25rem;
+    text-decoration: none;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Mail Anchor State Tracking Indicators */
+.mail-interactive-anchor { cursor: pointer; }
+.mail-highlight-string {
+    font-weight: 700 !important;
+    color: #ffffff; /* FIXED: Crisp white email string text */
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.2);
+    display: inline-block;
+    transition: color 0.3s, border-color 0.3s, text-shadow 0.3s;
+}
+
+.wpipeline-info-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(245, 158, 11, 0.25) !important;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+}
+.wpipeline-info-card:hover .mail-highlight-string {
+    color: #f59e0b !important; /* Amber color swap on hover */
+    border-color: #f59e0b !important;
+    text-shadow: 0 0 8px rgba(245, 158, 11, 0.3);
+}
+
+.card-dimmed { opacity: 0.65; background: rgba(4, 7, 13, 0.4); }
+.card-dimmed:hover { transform: none; border-color: rgba(255, 255, 255, 0.04); box-shadow: none; }
+
+.wpipeline-card-icon {
+    width: 38px; height: 38px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: #64748b; flex-shrink: 0;
+    transition: color 0.3s, border-color 0.3s;
+}
+.wpipeline-info-card:hover .wpipeline-card-icon {
+    color: #f59e0b;
+    border-color: rgba(245, 158, 11, 0.3);
+}
+
+.wpipeline-card-text { display: flex; flex-direction: column; gap: 0.15rem; text-align: left; }
+.wpipeline-card-text h5 { font-size: 0.72rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; margin: 0; }
+.wpipeline-card-text p { font-size: 0.95rem; font-weight: 700; color: #ffffff; margin: 0; line-height: 1.4; } /* FIXED: White secondary text components */
+
+/* --- RIGHT COLUMN SECURE DATA INBOUND FORM INTERFACE --- */
+.wpipeline-form-side { display: flex; justify-content: center; position: relative; width: 100%; perspective: 1000px; }
+
+.wpipeline-form-housing {
+    position: relative;
+    background: rgba(9, 13, 22, 0.65); /* FIXED: Glassmorphic deep charcoal interior shell */
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 24px;
+    padding: 2.5rem 2.25rem;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.5s ease;
+}
+
+/* Hidden Absolute Golden Neon Border Outer Highlight Framework Frame */
+.wpipeline-neon-glow-edge {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    border: 1.5px solid transparent; border-radius: 24px; pointer-events: none; z-index: 4;
+    transition: all 0.5s ease;
+}
+
+/* Immersive Card Position Shift Tilted Movements & Ambient Halo Blooms */
+.wpipeline-form-side:hover .wpipeline-form-housing {
+    transform: rotateX(2deg) rotateY(-2deg) translateY(-3px);
+    border-color: rgba(245, 158, 11, 0.20) !important;
+}
+.wpipeline-form-side:hover .wpipeline-neon-glow-edge {
+    border-color: #f59e0b !important;
+    box-shadow: inset 0 0 15px rgba(245, 158, 11, 0.15), 0 0 25px rgba(245, 158, 11, 0.05) !important;
+}
+
+.wpipeline-form-header { text-align: left; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(255, 255, 255, 0.04); padding-bottom: 1rem; }
+.wpipeline-form-header h3 { font-size: 1.25rem; font-weight: 700; color: #ffffff; margin: 0 0 0.25rem 0; } /* FIXED: White form header */
+.wpipeline-form-header p { font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0; font-weight: 500; }
+
+/* Input Form Row Elements Blocks Layout Track */
+.wpipeline-input-group {
+    display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.25rem; text-align: left;
+}
+.wpipeline-input-group label {
+    font-size: 0.75rem; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.04em;
+}
+
+.wpipeline-input-row {
+    display: flex;
+    background: rgba(4, 7, 13, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    padding: 0.25rem;
+    transition: border-color 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+.wpipeline-input-row:focus-within {
+    border-color: #f59e0b !important; /* FIXED: Amber focus boundary line */
+}
+
+.wpipeline-input-row input, 
+.wpipeline-input-row textarea,
+.wpipeline-input-row select {
+    width: 100%;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    padding: 0.65rem 0.85rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff !important; /* FIXED: White user input fonts stream value */
+    box-sizing: border-box;
+}
+
+.wpipeline-input-row input::placeholder,
+.wpipeline-input-row textarea::placeholder {
+    color: #334155; font-weight: 500; /* Dark premium placeholder tone */
+}
+
+/* Custom dropdown select structural layout caret */
+.wpipeline-select-shell { position: relative; width: 100%; }
+.wpipeline-select-shell select { appearance: none; -webkit-appearance: none; cursor: pointer; padding-right: 2.5rem; background: transparent; }
+/* Override browser select drop option layers colors inside dark grids framework */
+.wpipeline-select-shell select option { background-color: #0d1321; color: #ffffff; }
+
+.wpipeline-select-shell::after {
+    content: '▼'; font-size: 0.65rem; color: #475569; position: absolute; right: 1.25rem; top: 50%; transform: translateY(-50%); pointer-events: none;
+}
+
+.wpipeline-input-row textarea { resize: none; line-height: 1.5; font-family: sans-serif; }
+
+/* ERROR ACCENT STATE DEVIATION MODIFIERS */
+.wpipeline-input-group.field-input-invalid .wpipeline-input-row {
+    border-color: #ef4444 !important;
+    background-color: rgba(239, 68, 68, 0.02) !important;
+}
+.wpipeline-input-group.field-input-invalid label { color: #ef4444 !important; }
+
+/* Dynamic Underwriting Alert Warning Banner */
+.wpipeline-alert-box {
+    width: 100%; box-sizing: border-box; border-radius: 8px; font-size: 0.88rem; font-weight: 700; text-align: left; padding: 0; margin-bottom: 0; max-height: 0; opacity: 0; overflow: hidden; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.wpipeline-alert-box.alert-active { padding: 0.85rem 1.15rem; margin-bottom: 1.25rem; max-height: 60px; opacity: 1; border: 1.5px solid #ef4444; background: rgba(239, 68, 68, 0.04); color: #ef4444; }
+
+/* Master Consultation Submission Button Element Box */
+.wpipeline-submit-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.75rem;
+    width: 100% !important;
+    background: rgba(255, 255, 255, 0.02) !important;
+    color: #ffffff !important; /* FIXED: High contrast white button lettering baseline */
+border: 1px solid rgba(255, 255, 255, 0.15) !important;padding: 0.85rem !important;border-radius: 8px !important; /* Re-balanced sleek border rounding coordinates matches dashboard theme blocks */font-size: 0.9rem !important;font-weight: 700 !important;cursor: pointer;box-sizing: border-box !important;transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;}.wpipeline-submit-btn svg { transition: transform 0.4s ease; color: #64748b; }/* Turns white outline button into full linear gold bar row hover events triggers /.wpipeline-form-housing:hover .wpipeline-submit-btn,.wpipeline-submit-btn:hover {background: linear-gradient(135deg, #b45309 0%, #f59e0b 100%) !important;color: #000000 !important; / Typography color hotswap to solid black against filled gold backing button state elements */border-color: transparent !important;box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35) !important;}.wpipeline-submit-btn:hover svg { transform: translateX(3px); color: #000000 !important; }/* ==========================================================================3. RESPONSIVE DESIGN VIEWPORTS ENGINEERING MAPPINGS========================================================================== */@media (max-width: 1024px) {.wpipeline-container { grid-template-columns: 1fr; gap: 4rem; text-align: center; }.wpipeline-info-side { align-items: center; text-align: center; }.wpipeline-paragraph { margin-left: auto; margin-right: auto; }.wpipeline-cards-stack { margin: 0 auto; }.wpipeline-form-housing { margin: 0 auto; }}@media (max-width: 600px) {.wpipeline-title { font-size: 2.2rem; }.wpipeline-form-housing { padding: 1.75rem 1.25rem !important; }.wpipeline-info-card { flex-direction: column !important; text-align: center !important; gap: 0.75rem; }.wpipeline-card-text { text-align: center !important; }}
+
+
+</style>
+
+<script>
+   document.addEventListener('DOMContentLoaded', () => {
+    const wealthForm = document.getElementById('wealthHandshakeForm');
+    const nameInput = document.getElementById('wpClientName');
+    const mobileInput = document.getElementById('wpClientMobile');
+    const emailInput = document.getElementById('wpClientEmail');
+    const alertBox = document.getElementById('formValidationStatusAlert');
+
+    if (wealthForm && nameInput && mobileInput) {
+
+        // 1. HARD ALPHABET BLOCK FILTER: Rejects numeric keyboard inputs on your full name string field instantly
+        nameInput.addEventListener('input', (e) => {
+            const rawCursorPos = nameInput.selectionStart;
+            const pureAlphaString = nameInput.value.replace(/[0-9]/g, '');
+            
+            if (nameInput.value !== pureAlphaString) {
+                nameInput.value = pureAlphaString;
+                // Preserve user typing state positions to prevent text jumper cursor bugs
+                nameInput.setSelectionRange(rawCursorPos - 1, rawCursorPos - 1);
+            }
+        });
+
+        // 2. HARD DIGIT BLOCK FILTER: Intercepts and purges literal alphabetical indices characters inside your mobile number field
+        mobileInput.addEventListener('input', (e) => {
+            const rawCursorPos = mobileInput.selectionStart;
+            const pureNumericDigits = mobileInput.value.replace(/[^0-9]/g, '');
+            
+            if (mobileInput.value !== pureNumericDigits) {
+                mobileInput.value = pureNumericDigits;
+                mobileInput.setSelectionRange(rawCursorPos - 1, rawCursorPos - 1);
+            }
+        });
+
+        // 3. MASTER SUBMISSION ROUTER ACTION CONTEXT PIPELINE
+        wealthForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Intercept browser page reloads safely
+            
+            // Clean dynamic alert box slate status variables states
+            alertBox.classList.remove('alert-active');
+            alertBox.innerText = "";
+            
+            // Reset individual input invalid status classes arrays
+            const inputElementsArray = wealthForm.querySelectorAll('input, select, textarea');
+            inputElementsArray.forEach(el => {
+                el.closest('.wpipeline-input-group')?.classList.remove('field-input-invalid');
+            });
+
+            let trackingValidationPassFlag = true;
+            let criticalUnfilledFieldFound = false;
+
+            // Loop checking empty input fields parameters status parameters
+            for (let i = 0; i < inputElementsArray.length; i++) {
+                const activeField = inputElementsArray[i];
+                if (!activeField.value.trim() || activeField.value === "") {
+                    criticalUnfilledFieldFound = true;
+                    trackingValidationPassFlag = false;
+                    activeField.closest('.wpipeline-input-group')?.classList.add('field-input-invalid');
+                }
+            }
+
+            // A. EMPTY FORM EXCEPTION GUARD: Fire immediate feedback if parameters lines remain incomplete
+            if (criticalUnfilledFieldFound) {
+                alertBox.innerText = "Please fill the fields before deploying transmission handshake.";
+                alertBox.classList.add('alert-active');
+                return;
+            }
+
+            // B. SPECIFIC EMAIL RFC PATTERN STRUCTURAL CHECK FILTER
+            const validEmailRegexPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!validEmailRegexPattern.test(emailInput.value.trim())) {
+                trackingValidationPassFlag = false;
+                emailInput.closest('.wpipeline-input-group')?.classList.add('field-input-invalid');
+                alertBox.innerText = "Please enter a mathematically valid secure email transmission track address.";
+                alertBox.classList.add('alert-active');
+                return;
+            }
+
+            // C. MOBILE DIGIT LENGTH COMPLIANCE TRACK FILTER
+            if (mobileInput.value.trim().length !== 10) {
+                trackingValidationPassFlag = false;
+                mobileInput.closest('.wpipeline-input-group')?.classList.add('field-input-invalid');
+                alertBox.innerText = "The mobile underwriting track telemetry must correspond to exactly 10 digits.";
+                alertBox.classList.add('alert-active');
+                return;
+            }
+
+            // SUCCESS HANDSHAKE COMPLETION PASSED: Execute seamless route mapping straight onto your 404 security loop page template
+            if (trackingValidationPassFlag) {
+                window.location.href = "404.html";
+            }
+        });
+    }
+});
+</script>
+
+<!-- Section: Secure Geographic Hub & Spatial Mapping -->
+<section class="spatial-map-viewport" id="spatial-hub" style="padding-top: 50px !important; padding-bottom: 30px !important; clear: both !important;">
+    <div class="smap-layout-container">
+        
+        <!-- Zone 1: Section Header Group (Centralized Typography Hierarchy) -->
+        <header class="smap-header-block">
+            <span class="smap-pill-tag">Spatial Mapping</span>
+            <h2 class="smap-title">Our Salem Vault <span>Geographic Hub</span></h2>
+            <p class="smap-summary">
+                Locate our flagship quantitative terminal node. Stackly anchors cross-border financial communication desks within a secure physical environment to protect institutional operations continuously.
+            </p>
+        </header>
+
+        <!-- Zone 2: Immersive Monolithic Terminal Map Display Window -->
+        <div class="smap-viewport-pane">
+            <div class="smap-window-wrapper">
+                <div class="smap-neon-glow-edge"></div>
+                <div class="smap-inner-housing">
+                    
+                    <!-- Core Raster Image Asset Slot Mapping Frame -->
+                    <div class="smap-canvas-frame">
+                        <img src="./Assests/map.webp" alt="Stackly Flagship Vault Node Geographic Map Location Grid" class="smap-raster-img">
+                        <div class="smap-overlay-tint"></div>
+                    </div>
+
+                    <!-- Floating Interactive Operational Router Controls Overlay Box -->
+                    <div class="smap-routing-overlay">
+                        <div class="smap-meta-text-box">
+                            <span class="smap-node-lbl">Node Coordinate Map</span>
+                            <h4 class="smap-node-address">Salem Main Road, Periyakollappatty</h4>
+                        </div>
+                        
+                        <!-- FIXED GOOGLE MAPS ROUTER LINK: Embedded with direct, verified coordinate tracking queries string -->
+                        <a href="https://maps.app.goo.gl/1iUAJLxSuFhmkqeE8" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="smap-execute-nav-btn"
+                           aria-label="Launch Google Maps live transit navigation matrix engine routing straight to Salem Vault Node">
+                            <div class="smap-btn-text">
+                                <strong>Open Live Navigation</strong>
+                                <span class="smap-btn-sub">Launches Google Maps Route</span>
+                            </div>
+                            <svg class="smap-btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* ==========================================================================
+   STACKLY MONOLITHIC GEOGRAPHIC HUB MAP TERMINAL DESIGN ARCHITECTURE
+   ========================================================================== */
+
+.spatial-map-viewport {
+    position: relative !important;
+    width: 100% !important;
+    background-color: #04070d !important; /* FIXED: Absolute black backdrop matches banking theme */
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.smap-layout-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Centralized Typographical Header Matrix Formatting Rows */
+.smap-header-block {
+    text-align: center !important;
+    max-width: 760px !important;
+    margin: 0 auto 2.5rem auto !important; /* Controlled buffer gap space sitting directly above the map window */
+    padding: 0 5%;
+    box-sizing: border-box;
+}
+
+.smap-pill-tag {
+    display: inline-block;
+    background: rgba(2, 132, 199, 0.05);
+    border: 1px solid rgba(2, 132, 199, 0.2);
+    padding: 0.35rem 0.95rem;
+    border-radius: 50px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #0284c7; /* Precision tech blue signal tracking pill */
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+}
+
+.smap-title {
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: #ffffff; /* FIXED: High contrast bright white headline text */
+    letter-spacing: -0.02em;
+    margin: 0 0 0.85rem 0;
+    line-height: 1.2;
+}
+.smap-title span {
+    color: #f59e0b !important; /* FIXED: Pure brand neon gold mapping applied to "Geographic Hub" text string token */
+    text-shadow: 0 0 20px rgba(245, 158, 11, 0.35); /* Soft gold neon text glow bloom */
+}
+
+.smap-summary {
+    font-size: 1.02rem;
+    color: #64748b; /* Soft light muted slate secondary copywriting lines */
+    line-height: 1.6;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* --- IMMERSIVE MAP SCREEN DASHBOARD CORES --- */
+.smap-viewport-pane {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px; /* Prepares hardware workspace for 3D card tilt translations */
+    padding: 0 5%;
+    box-sizing: border-box;
+}
+
+.smap-window-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1100px; /* Extended widescreen visibility footprint dimensions window wrapper */
+    box-sizing: border-box;
+}
+
+.smap-inner-housing {
+    position: relative;
+    background: rgba(9, 13, 22, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 1rem; /* Compact boundary cushion framing around map img canvas */
+    border-radius: 24px;
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.65);
+    z-index: 2;
+    overflow: hidden;
+    
+    /* Hardware accelerated transition timers pacing loops coordinates */
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                border-color 0.5s ease, 
+                box-shadow 0.5s ease;
+}
+
+/* Hidden Absolute Golden Neon Border Outer Highlight Framework Frame */
+.smap-neon-glow-edge {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    border: 1.5px solid transparent; border-radius: 24px; pointer-events: none; z-index: 4;
+    transition: all 0.5s ease;
+}
+
+/* Immersive Card Position Shift Tilted Movements & Ambient Halo Blooms on Desktop Hover Actions */
+.smap-window-wrapper:hover .smap-inner-housing {
+    transform: rotateX(1.5deg) translateY(-2px);
+    border-color: rgba(245, 158, 11, 0.25) !important;
+}
+.smap-window-wrapper:hover .smap-neon-glow-edge {
+    border-color: #f59e0b !important;
+    box-shadow: inset 0 0 15px rgba(245, 158, 11, 0.15), 0 0 30px rgba(245, 158, 11, 0.04) !important;
+}
+
+/* Image containment frame properties setup */
+.smap-canvas-frame {
+    position: relative;
+    width: 100%;
+    height: 480px; /* Rigid default desktop view heights layout mask limits stretching */
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.smap-raster-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Edge to edge cover crop fit: guarantees no stretching geometric skewing distortions */
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    filter: brightness(0.85) contrast(1.05) saturate(0.9); /* Premium mapping filter variables smoothing track fields */
+}
+.smap-window-wrapper:hover .smap-raster-img {
+    transform: scale(1.02); /* Fluid internal zoom lens motion */
+}
+
+/* Elegant dark vignette overlay blends graphic borders smoothly into dark paneling */
+.smap-overlay-tint {
+    position: absolute; width: 100%; height: 100%; top: 0; left: 0;
+    background: radial-gradient(circle at center, transparent 50%, rgba(4, 7, 13, 0.4) 100%),
+                linear-gradient(0deg, rgba(4, 7, 13, 0.3) 0%, transparent 20%);
+    pointer-events: none; z-index: 3;
+}
+
+/* Floating Interactive Operational Router Controls Box Overlay styling */
+.smap-routing-overlay {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 2.5rem;
+    background: rgba(9, 13, 22, 0.9) !important; /* Premium ultra-opaque high-tech console box glassmorphism base */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 1.25rem 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3.5rem; /* Separates metadata string and action button cleanly */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+    z-index: 5;
+    box-sizing: border-box;
+    max-width: calc(100% - 5rem);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.smap-routing-overlay:hover { border-color: rgba(245, 158, 11, 0.3); box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 15px rgba(245, 158, 11, 0.05); }
+
+.smap-meta-text-box { display: flex; flex-direction: column; gap: 0.2rem; text-align: left; }
+.smap-node-lbl { font-size: 0.68rem; color: #64748b; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+.smap-node-address { font-size: 1rem; font-weight: 700; color: #ffffff; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* MASTER GOOGLE MAPS NAVIGATION DRIVER LINK TRIGGER BUTTON */
+.smap-execute-nav-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    flex-direction: row !important;
+    gap: 1.25rem !important;
+    text-decoration: none !important;
+    background: #ffffff !important; /* Premium sharp white button baseline layout matches theme screenshots form fields */
+    color: #000000 !important;
+    padding: 0.85rem 1.75rem !important;
+    border-radius: 10px !important;
+    font-size: 0.9rem !important;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    flex-shrink: 0;
+}
+
+.smap-btn-text { display: flex !important; flex-direction: column !important; gap: 0.1rem !important; text-align: left !important; }
+.smap-btn-text strong { font-size: 0.95rem !important; font-weight: 800 !important; line-height: 1.1 !important; color: #000000 !important; }
+.smap-btn-sub { font-size: 0.7rem !important; font-weight: 700 !important; color: #475569 !important; text-transform: uppercase !important; letter-spacing: 0.02em; }
+
+.smap-btn-arrow { color: #475569; transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), color 0.3s; }
+
+/* Turns white overlay button into linear gold bar on hover actions triggers */
+.smap-routing-overlay:hover .smap-execute-nav-btn,
+.smap-execute-nav-btn:hover {
+    background: linear-gradient(135deg, #b45309 0%, #f59e0b 100%) !important;
+    color: #000000 !important;
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4) !important;
+    transform: translateY(-2px);
+}
+.smap-execute-nav-btn:hover .smap-btn-arrow { transform: translateX(4px); color: #000000 !important; }
+.smap-execute-nav-btn:hover .smap-btn-text strong { color: #000000 !important; }
+
+/* ==========================================================================
+   3. MULTI-DEVICE VIEWPORTS RESPONSIVE DESIGN LIQUID SAFETY LAYOUTS
+   ========================================================================== */
+@media (max-width: 992px) {
+    .smap-title { font-size: 2.2rem; }
+    .smap-canvas-frame { height: 380px; } /* Proportional vertical cushion height adaptation for medium display screens */
+    .smap-routing-overlay { position: static !important; width: 100% !important; max-width: 100% !important; margin-top: 1.5rem !important; gap: 1.5rem; justify-content: center; flex-direction: column; text-align: center; background: rgba(9, 13, 22, 0.65) !important; }
+    .smap-meta-text-box { text-align: center !important; }
+    .smap-node-address { white-space: normal; }
+    .smap-execute-nav-btn { width: 100% !important; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+    .spatial-map-viewport { padding-left: 4% !important; padding-right: 4% !important; }
+    .smap-title { font-size: 1.8rem; }
+    .smap-canvas-frame { height: 260px; } /* Prevents overflow cropping down compact phone monitors resolutions metrics */
+    .smap-inner-housing { padding: 0.65rem; border-radius: 16px; }
+}
+
+</style>
+
+
+<!-- Full Width Single-Line Institutional CTA Banner -->
+<section class="cta-banner-horizon-viewport">
+    
+    <!-- Zone 1: Ambient Canvas Backdrop Configurations -->
+    <div class="cta-horizon-bg-canvas">
+        <img src="./Assests/money plant.webp" alt="Stackly Distributed Clearing Network" class="cta-horizon-vector">
+        <div class="cta-horizon-masking-shade"></div>
+    </div>
+
+    <!-- Zone 2: Main Grid Matrix Constraint Wrapper -->
+    <div class="cta-horizon-layout-matrix">
+        <div class="cta-horizon-inner-content">
+            
+            <!-- Single-Line Copywriting Statement -->
+            <h2 class="cta-horizon-headline-text">
+                Ready to Deploy Next-Gen Capital? <span>Initialize Your Secure Vault Terminal.</span>
+            </h2>
+            
+            <!-- Action Trigger Component Route -->
+            <div class="cta-horizon-action-block">
+                <a href="404.html" class="cta-horizon-execute-btn">
+                    <span>Deploy Portfolio</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    /* ==========================================================================
+   FULL WIDTH SINGLE-LINE CONVERSION CTA BANNER MODULE STYLING
+   ========================================================================== */
+
+.cta-banner-horizon-viewport {
+    position: relative !important;
+    display: block !important;
+    clear: both !important; /* Blockades any floating layers outliers layout corruption completely */
+    width: 100% !important;
+    background-color: #04070d;
+    padding: 70px 5% !important; /* Balanced compact layout padding handles vertical text line spaces cleanly */
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 69;
+    border-top: 1px solid rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+/* Background image asset configuration layers canvas */
+.cta-horizon-bg-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.cta-horizon-vector {
+    width: 105%;
+    height: 105%;
+    object-fit: cover;
+    opacity: 0.14; /* Kept highly subtle to focus vision on typography statement tracks */
+    animation: ctaHorizonBackingDrift 20s ease-in-out infinite alternate;
+}
+
+.cta-horizon-masking-shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 40%, #04070d 95%);
+}
+
+/* Master Grid Alignment Matrix Constraint Wrapper */
+.cta-horizon-layout-matrix {
+    position: relative;
+    z-index: 5;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Symmetric Horizontal Alignment Row Housing */
+.cta-horizon-inner-content {
+    display: flex;
+    justify-content: space-between; /* Creates mathematically precise horizontal distribution across desktop modes */
+    align-items: center;
+    gap: 4rem;
+    width: 100%;
+}
+
+/* Single-Line High-Impact Headline Typography Parameters */
+.cta-horizon-headline-text {
+    font-size: 1.65rem; /* Balanced visibility scale metrics across desktop formats monitors */
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.3;
+    max-width: 900px;
+    letter-spacing: -0.01em;
+    cursor: default;
+    user-select: none;
+    transition: transform 0.4s ease;
+}
+
+.cta-horizon-headline-text span {
+    background: linear-gradient(135deg, #94a3b8 30%, #475569 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.4s ease;
+}
+
+/* Premium Gold Shimmer Reflection Glow on text hover action triggers */
+.cta-horizon-inner-content:hover .cta-horizon-headline-text span {
+    background: linear-gradient(135deg, #ffffff 40%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.35)); /* Vibrant golden neon bloom halo */
+}
+
+/* Submission Action Link Button Frame Architecture */
+.cta-horizon-action-block {
+    flex-shrink: 0;
+    width: auto;
+}
+
+.cta-horizon-execute-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: center;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.02);
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.9rem 2.2rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.cta-horizon-execute-btn svg {
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Transforms basic outline buttons into a burning linear gold bar on row hover events triggers */
+.cta-horizon-inner-content:hover .cta-horizon-execute-btn {
+    background: linear-gradient(135deg, #b45309 0%, #f59e0b 100%);
+    color: #000000 !important;
+    border-color: transparent;
+    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.45);
+    transform: translateY(-2px);
+}
+
+.cta-horizon-inner-content:hover .cta-horizon-execute-btn svg {
+    transform: translateX(4px); /* Interactive dynamic vector arrow push shift nudge */
+}
+
+/* --- BACKGROUND KEYFRAMES SHIFTS --- */
+@keyframes ctaHorizonBackingDrift {
+    0% { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.04) translate(-1%, -1%); }
+}
+
+/* ==========================================================================
+   RESPONSIVE SCREEN MATRIX BREAKPOINTS CONFIGURATIONS
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .cta-horizon-headline-text { font-size: 1.4rem; }
+    .cta-horizon-inner-content { gap: 2.5rem; }
+}
+
+@media (max-width: 912px) {
+    .cta-horizon-inner-content {
+        flex-direction: column; /* Re-stacks horizontally spread layout into single columns arrays on mobile viewports */
+        text-align: center;
+        padding: 1rem 0;
+        gap: 2rem;
+    }
+    .cta-horizon-headline-text {
+        max-width: 100%;
+    }
+    .cta-horizon-action-block {
+        width: 100%;
+    }
+    .cta-horizon-execute-btn {
+        width: 100%; /* Stretch button row items full width limits inside smaller screens bounding tracks maps */
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-banner-horizon-viewport { padding: 50px 4% !important; } /* Tighter cushion overrides safely over mobile dimensions */
+    .cta-horizon-headline-text { font-size: 1.2rem; }
+}
+
+</style>
+
+<!-- Secure Financial Infrastructure Directory Footer Matrix -->
+<footer class="vault-footer-viewport">
+    
+    <!-- Core Upper Structural Row Links Grid Mapping -->
+    <div class="footer-layout-matrix">
+        
+        <!-- Column 1: Institutional Core Brand Metrics Panel -->
+        <div class="footer-brand-column">
+            <div class="footer-logo-row" id="footerLogoScrollTop" title="Scroll back to top of terminal vault">
+                <img src="./Assests/logo.webp" alt="Stackly Secure Finance Logo" class="footer-logo-img">
+               
+            </div>
+            <p class="footer-brand-desc">
+                Engineering institutional banking clearings, high-yield compound assets, and polymorphic cross-border liquidity clearings securely.
+            </p>
+            
+            <div class="footer-address-block">
+                <svg class="addr-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span class="addr-text">MMR Complex, Periyakollappatty, Chinna Thirupathi, Salem, Tamil Nadu 636008</span>
+            </div>
+
+            <!-- Social Media Routing Anchor Nodes Row -->
+            <div class="footer-social-row">
+                <a href="404.html" class="social-node-btn" aria-label="Access Matrix Telegram Clearing Network">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2L2 11.5l6 2.5 11-7.5-8 8.5v5.5l3.5-3 5 4L21.5 2z"/></svg>
+                </a>
+                 <a href="404.html" class="social-node-btn" aria-label="Access Institutional Facebook Network">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-4h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+    </a>
+    
+    <!-- Instagram Grid Node -->
+    <a href="404.html" class="social-node-btn" aria-label="Access Corporate Instagram Hub">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+    </a>
+
+    <!-- Modern X (Twitter) Minimal Matrix Node -->
+    <a href="404.html" class="social-node-btn" aria-label="Access Core Institutional X Channels">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733-16z M4 20l6.768-6.88M20 4l-6.768 6.88"/></svg>
+    </a>
+            </div>
+        </div>
+
+        <!-- Column 2: Capital Products Directory Group -->
+        <div class="footer-links-column">
+            <h4 class="directory-title">Quick Links</h4>
+            <ul class="directory-list-stack">
+                <li><a href="#services" class="directory-item">Mutual Funds Alpha</a></li>
+                <li><a href="#liquidity" class="directory-item">SIP Compound Engines</a></li>
+                <li><a href="#features" class="directory-item">Quantum Trading Gates</a></li>
+                <li><a href="#cards" class="directory-item">Premium Credit Lines</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Vault Security & Compliance Directory Group -->
+        <div class="footer-links-column">
+            <h4 class="directory-title">Support Hub</h4>
+            <ul class="directory-list-stack">
+                <li><a href="404.html" class="directory-item">Encryption Keys SLA</a></li>
+                <li><a href="404.html" class="directory-item">Air-Gap Vault Setup</a></li>
+                <li><a href="#security" class="directory-item">Firewall Help Portal</a></li>
+                <li><a href="404.html" class="directory-item">Institutional Compliance</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 4: High Yield Capital Newsletter Subscription Hub -->
+        <div class="footer-subscription-column">
+            <h4 class="directory-title">The Terminal Dispatch</h4>
+            <p class="subscription-pitch">Subscribe to unlock premium custom financial blueprint designs and private portfolio asset launches.</p>
+            
+            <!-- Secure Native Validation Email Input Box Container Form -->
+            <form class="subscription-form-wrapper" id="footerSubscriptionForm">
+                <input type="email" id="subEmailInput" placeholder="Enter your email..." required>
+                <button type="submit" class="sub-submit-trigger" aria-label="Submit secure data subscription">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Core Lower Structural Horizon Legal attribution row bar -->
+    <div class="footer-copyright-bar">
+        <div class="copyright-content-wrapper">
+            <p class="copyright-legal-text">&copy; 2026 Stackly Financial Ecosystem. All rights reserved. Vault transactions are sovereign encrypted.</p>
+            
+            <div class="legal-links-row">
+                <a href="404.html" class="legal-link-item">Privacy Policy</a>
+                <a href="404.html" class="legal-link-item">Terms of Service</a>
+                <a href="404.html" class="legal-link-item">Cookie Management</a>
+            </div>
+
+            <!-- Right-Side Floating Navigation Arrow Node Button -->
+            <button class="scroll-top-arrow-btn" id="arrowScrollTop" aria-label="Scroll back straight to top of document canvas">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+            </button>
+        </div>
+    </div>
+</footer>
+
+<style>
+    /* ==========================================================================
+   STACKLY MULTI-COLUMN COMPACT FINANCE DIRECTORY FOOTER MATRIX
+   ========================================================================== */
+
+.vault-footer-viewport {
+    position: relative !important;
+    display: block !important;
+    clear: both !important; /* Total height separation shield protection layer from previous elements */
+    width: 100% !important;
+    background-color: #04070d;
+    
+    /* SPECIFIC CONFIGURATION SPECS: FORCED COMPACT VIEW BUFFER SPACES PADDING */
+    padding-top: 50px !important;    /* Tightened top cushion area down to 50px */
+    padding-bottom: 30px !important; /* Tightened bottom cushion area down to 30px */
+    
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 70;
+    border-top: 1px solid rgba(255, 255, 255, 0.03); /* Subtle separation horizon line */
+}
+
+/* Master Grid Alignment Matrix Column Split Configuration */
+.footer-layout-matrix {
+    max-width: 1400px;
+    margin: 0 auto 2.5rem auto; /* Creates a structured gap right above the copyright row bar */
+    display: grid;
+    grid-template-columns: 1.15fr 0.75fr 0.75fr 1.35fr; /* Matches the custom structural footprint proportions from screenshot */
+    gap: 3.5rem;
+    padding: 0 5%;
+}
+
+/* --- COLUMN 1: BRAND IDENTITY & LOGO LAYOUT MODULE --- */
+.footer-brand-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-logo-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    width: max-content;
+    user-select: none;
+}
+
+.footer-logo-img {
+    width: 150px;
+    height: 40px;
+    object-fit: contain;
+    
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.footer-logo-row:hover .footer-logo-img {
+    transform: scale(1.08) rotate(3deg);
+}
+
+.footer-logo-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    background: linear-gradient(135deg, #ffffff 40%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer-brand-desc {
+    font-size: 0.9rem;
+    color: white;
+    line-height: 1.6;
+    max-width: 320px;
+}
+
+/* Aligned Physical Office Address Block styling */
+.footer-address-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    max-width: 340px;
+}
+
+.addr-icon {
+    color: #f59e0b;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+    filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.3));
+}
+
+.addr-text {
+    font-size: 0.85rem;
+    color: white;
+    line-height: 1.5;
+}
+
+.footer-social-row { display: flex; gap: 0.75rem; }
+
+.social-node-btn {
+    width: 34px;
+    height: 34px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    color: white;
+    border-radius: 50%; /* Continuous perfect round circles profile match screenshot circles design */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-node-btn:hover {
+    color: #f59e0b;
+    border-color: #f59e0b;
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.25);
+    transform: translateY(-2px);
+}
+
+/* --- COLUMNS 2 & 3: SPEED ROUTING DIRECTORIES LINKS --- */
+.footer-links-column { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.directory-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.02em;
+    position: relative;
+    padding-bottom: 0.25rem;
+}
+
+/* Accent bottom lines parameters replicated right underneath header rows from screenshot */
+.directory-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 28px;
+    height: 2px;
+    background-color: #ef4444; /* Replicates custom pink coral alignment mark lines matches your image */
+    border-radius: 2px;
+}
+
+.directory-list-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    list-style: none;
+}
+
+.directory-item {
+    font-size: 0.9rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s, text-shadow 0.3s, padding-left 0.3s;
+}
+
+/* Premium Gold Shimmer Reflection on link hover events */
+.directory-item:hover {
+    color: #ffffff !important; /* Converts text to pure bright white for absolute readability contrast */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+    padding-left: 3px; /* Micro push animation signals on highlight actions */
+}
+
+/* --- COLUMN 4: NEWSLETTER EMAIL CAPTURE SUBSCRIPTION ENGINE --- */
+.footer-subscription-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.footer-subscription-column .directory-title::after {
+    width: 44px; /* Extends accent line proportionally for the wider header */
+}
+
+.subscription-pitch {
+    font-size: 0.9rem;
+    color: white;
+    line-height: 1.6;
+    max-width: 380px;
+}
+
+/* Glassmorphism custom inputs layout row element backing */
+.subscription-form-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+    background: rgba(4, 7, 13, 0.6);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 50px; /* Aligns input to seamless rounded capsules shape match image */
+    padding: 0.3rem 0.3rem 0.3rem 1.25rem;
+    align-items: center;
+    justify-content: space-between;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.subscription-form-wrapper:focus-within {
+    border-color: #f59e0b;
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.1);
+}
+
+.subscription-form-wrapper input {
+    width: 80%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.subscription-form-wrapper input::placeholder {
+    color: white;
+}
+
+/* Coral pink circular execution trigger button matches image mockup exactly */
+.sub-submit-trigger {
+    width: 36px;
+    height: 36px;
+    background: #f43f5e; /* Premium high-yield energetic pink coral overlay tint stance */
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+}
+
+.sub-submit-trigger:hover {
+    transform: scale(1.06) rotate(15deg);
+    background-color: #e11d48;
+    box-shadow: 0 0 12px rgba(244, 63, 94, 0.5);
+}
+
+/* --- LOWER LEGAL MATRICES COPYRIGHT STACK HORIZON --- */
+.footer-copyright-bar {
+    max-width: 1400px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(255,255,255,0.03);
+    padding: 1.5rem 5% 0 5%;
+}
+
+.copyright-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+}
+
+.copyright-legal-text { font-size: 0.8rem; color: white; line-height: 1.5; }
+
+.legal-links-row { display: flex; gap: 1.5rem; }
+
+.legal-link-item {
+    font-size: 0.8rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+.legal-link-item:hover { 
+    color: #ffffff; 
+    text-shadow: 0 0 6px rgba(255,255,255,0.4);
+}
+
+/* Right-Side back to top arrow action trigger */
+.scroll-top-arrow-btn {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.scroll-top-arrow-btn:hover {
+    color: #ffffff;
+    border-color: #ffffff;
+    background: rgba(255,255,255,0.05);
+    box-shadow: 0 0 12px rgba(255,255,255,0.25);
+    transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   RESPONSIVE MATRIX BREAKPOINTS ENGINE
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .footer-layout-matrix {
+        grid-template-columns: repeat(2, 1fr); /* Re-allocates layout tracks structure into standard dual block boxes grid on tablets */
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 680px) {
+    .vault-footer-viewport { padding-top: 40px !important; padding-bottom: 20px !important; } /* Proportional space reduction overrides for mobile screen tracking */
+    .footer-layout-matrix {
+        grid-template-columns: 1fr; /* Compresses multi-columns blocks into simple full-width single column stack array maps */
+        gap: 2rem;
+    }
+    .copyright-content-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+    }
+    .legal-links-row { flex-direction: column; gap: 0.75rem; }
+    .scroll-top-arrow-btn {
+        position: absolute;
+        right: 0;
+        bottom: 0; /* Moves back to top arrow button to the lower right corner on smartphones models viewports */
+    }
+}
+
+</style>
+
+<script>
+    // --- 13. SECURE DIRECTORY FOOTER NAVIGATION ACTIONS & FORM INTELLIGENCE ---
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // 1. Dual-Anchor Scroll Back To Top System Engine
+    const footerLogo = document.getElementById('footerLogoScrollTop');
+    const arrowScrollBtn = document.getElementById('arrowScrollTop');
+
+    function executeSmoothScrollTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' /* Invokes continuous seamless hardware vertical ease migration back straight to top coordinates line */
+        });
+    }
+
+    if (footerLogo) footerLogo.addEventListener('click', executeSmoothScrollTop);
+    if (arrowScrollBtn) arrowScrollBtn.addEventListener('click', executeSmoothScrollTop);
+
+
+    // 2. Automated Newsletter Submission Interceptor & Native Constraint Validator Engine
+    const subscriptionForm = document.getElementById('footerSubscriptionForm');
+    const emailInputField = document.getElementById('subEmailInput');
+
+    if (subscriptionForm && emailInputField) {
+        subscriptionForm.addEventListener('submit', function(e) {
+            // Halt standard browser network reload operations intercepting pipeline sequences
+            e.preventDefault();
+
+            const userEmailAddressValue = emailInputField.value.trim();
+
+            // Safety Constraint Interceptor Gate: Check string value contents metrics
+            if (userEmailAddressValue === "") {
+                // Throws localized pop message if client targets execution with empty fields arrays variables 
+                alert("Security Validation Intercept: Please fill the required email field entry.");
+                return;
+            }
+
+            // If string content passes, execute safe routing down the 404 security error tree page
+            alert("Handshake Confirmed. Encrypting transmission path connection parameters...");
+            window.location.href = "404.html";
+        });
+    }
+});
+
+</script>
+
+
+</body>

@@ -515,3 +515,19 @@ html.scroll-locked {
     }
 }
 
+/* ==========================================================================
+   DYNAMIC ACTIVE NAVIGATION LINK SPECS
+   ========================================================================== */
+
+/* Forces text high-contrast high-visibility bright white when page matches link */
+.nav-item.active {
+    color: var(--text-light) !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
+}
+
+/* Enforces golden neon underline track line to remain constantly open under the matching page tab */
+.nav-item.active::after {
+    width: 100% !important;
+    background-color: var(--gold-glow) !important;
+    box-shadow: 0 0 8px var(--gold-glow) !important;
+}

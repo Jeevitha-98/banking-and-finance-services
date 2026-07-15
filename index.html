@@ -86,24 +86,25 @@ window.addEventListener('DOMContentLoaded', () => {
             </div>
 
             <!-- Zone 2: Centered Navigation Menu List (Transforms into 75% wide drawer on mobile) -->
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" class="nav-item active">Home</a></li>
-                <li><a href="digitalassests.html" class="nav-item">Digital Assets</a></li>
-                <li><a href="cards.html" class="nav-item">Premium Cards</a></li>
-                <li><a href="rates.html" class="nav-item">Market Rates</a></li>
-                <li><a href="contact.html" class="nav-item">Contact Us</a></li>
-                
-                <!-- Mobile View Specific Auth Buttons (Hidden on Desktop) -->
-                <div class="auth-group mobile-only-auth">
-                    <a href="404.html" class="btn-auth btn-login">Login</a>
-                    <a href="404.html" class="btn-auth btn-signup">Sign Up</a>
-                </div>
-            </ul>
+          <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="nav-item">Home</a></li>
+    <li><a href="digitalassests.html" class="nav-item">Digital Assets</a></li>
+    <li><a href="cards.html" class="nav-item">Premium Cards</a></li>
+    <li><a href="rates.html" class="nav-item">Market Rates</a></li>
+    <li><a href="contact.html" class="nav-item">Contact Us</a></li>
+    
+    <!-- Mobile View Specific Auth Buttons (Hidden on Desktop) -->
+    <div class="auth-group mobile-only-auth">
+        <a href="login.html" class="btn-auth btn-login">Login</a>
+        <a href="signup.html" class="btn-auth btn-signup">Sign Up</a>
+    </div>
+</ul>
+
             
             <!-- Zone 3: Desktop View Specific Auth Buttons (Hidden on Mobile) -->
             <div class="auth-group desktop-only-auth">
-                <a href="404.html" class="btn-auth btn-login">Login</a>
-                <a href="404.html" class="btn-auth btn-signup">Sign Up</a>
+                <a href="login.html" class="btn-auth btn-login">Login</a>
+                <a href="signup.html" class="btn-auth btn-signup">Sign Up</a>
             </div>
 
             <!-- Mobile View Hamburger Icon Button Interface -->
@@ -202,7 +203,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // ==========================================================================
     // 4. GLOBAL INTERCEPTION ROUTER FOR 404 TEMPLATE TARGETS
     // ==========================================================================
-    const secureLinks404 = document.querySelectorAll('a[href="404.html"], .btn-auth');
+    const secureLinks404 = document.querySelectorAll('a[href="404.html"], ');
 
     secureLinks404.forEach(link => {
         link.addEventListener('click', (event) => {
@@ -245,6 +246,34 @@ document.addEventListener('DOMContentLoaded', () => {
             masterNavbarWrapper.classList.add('navbar-visible');
         }
     }, 2500); // 2500ms matches the 2.5s progress-bar loading animation timeline
+});
+
+// --- 25. AUTOMATED DYNAMIC NAVIGATION ACTIVE TRACKING ENGINE ---
+document.addEventListener('DOMContentLoaded', () => {
+    // Extract the complete trailing pathname string segment from the active browser window address
+    // Example: "/index.html" or "/digitalassests.html"
+    const standardCurrentPath = window.location.pathname;
+    
+    // Target all navigation anchor link elements rendered inside the master container list
+    const masterMenuLinks = document.querySelectorAll('.nav-links .nav-item');
+
+    masterMenuLinks.forEach(link => {
+        // Retrieve the literal string contents of the specific node href attribute entry
+        const linkTargetHref = link.getAttribute('href');
+
+        // Clean slate reset: Strip any existing active modifiers to avoid page state pollution bugs
+        link.classList.remove('active');
+
+        // 1. Precise Path Matching Filter Logic Guard
+        if (standardCurrentPath.endsWith(linkTargetHref)) {
+            link.classList.add('active');
+        } 
+        
+        // 2. Baseline Default Fallback Guard: If path is a raw root folder slash "/", force Home active status
+        else if ((standardCurrentPath === '/' || standardCurrentPath.endsWith('/')) && linkTargetHref === 'index.html') {
+            link.classList.add('active');
+        }
+    });
 });
 
 </script>

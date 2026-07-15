@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly Institutional Partner Console</title>
+    <link rel="stylesheet" href="partner-dashboard.css">
+</head>
+<body>
+
+    <!-- Master Layout Grid Matrix -->
+    <div class="dash-master-wrapper">
+        
+        <!-- ==========================================
+             COLUMN 1: SIDEBAR NAVIGATION HUD
+             ========================================== -->
+        <aside class="dash-sidebar-housing" id="dashboardSidebar">
+            <div class="sidebar-inner-housing">
+                
+                <!-- Brand logo top cluster inside left navigation column -->
+                <div class="sidebar-brand-container">
+                    <a href="javascript:void(0)" class="sidebar-brand-refresh-link" id="brandLogoRefreshHook" title="Execute secure hard refresh page reload">
+                        <!-- FIXED: Verified absolute vector placeholder icon link prevents broken path image blocks -->
+                        <svg class="sidebar-brand-logo-img" style="color: #f59e0b; filter: drop-shadow(0 0 4px #f59e0b);" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                        <span class="sidebar-brand-text-lbl">STACKLY <span>PRO</span></span>
+                    </a>
+                </div>
+
+                <!-- Categorized Workspace Section 1: Core Operations -->
+                <div class="sidebar-category-group">
+                    <span class="sidebar-cat-title">Core Operations</span>
+                    <nav class="sidebar-nav">
+                        <button type="button" class="sidebar-menu-item item-active" data-target="partner-overview">
+                            <svg class="menu-vector-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"></rect><rect x="14" y="3" width="7" height="5"></rect><rect x="14" y="12" width="7" height="9"></rect><rect x="3" y="16" width="7" height="5"></rect></svg>
+                            <span>Partner Overview</span>
+                        </button>
+                        <button type="button" class="sidebar-menu-item" data-target="clearing-pipelines">
+                            <svg class="menu-vector-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                            <span>Clearing Pipelines</span>
+                        </button>
+                    </nav>
+                </div>
+
+                <!-- Categorized Workspace Section 2: Vault Telemetry -->
+                <div class="sidebar-category-group">
+                    <span class="sidebar-cat-title">Vault Telemetry</span>
+                    <nav class="sidebar-nav">
+                        <button type="button" class="sidebar-menu-item" data-target="yield-allocations">
+                            <svg class="menu-vector-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" r="9" h="3"></ellipse><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"></path></svg>
+                            <span>Yield Allocations</span>
+                        </button>
+                        <button type="button" class="sidebar-menu-item" data-target="compliance-handshakes">
+                            <svg class="menu-vector-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            <span>Audit Handshakes</span>
+                        </button>
+                    </nav>
+                </div>
+
+                <!-- Session Exit Action Block Footer -->
+                <footer class="sidebar-action-footer">
+                    <button type="button" class="sidebar-logout-btn" id="partnerLogoutTrigger">
+                        <svg class="menu-vector-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                        <span>Terminate Session</span>
+                    </button>
+                </footer>
+
+            </div>
+        </aside>
+
+        <!-- ==========================================
+             COLUMN 2: MASTER VIEWPORT CONTAINER 
+             ========================================== -->
+        <div class="dash-viewport-container">
+            
+            <!-- Global Dashboard System Header Control Bar -->
+            <header class="dash-master-header">
+                <div class="header-left-cluster">
+                    <button type="button" class="mobile-hamburger-toggle" id="hamburgerMenuBtn" aria-label="Toggle navigation list">
+                        <span class="hamburger-bar"></span>
+                        <span class="hamburger-bar"></span>
+                        <span class="hamburger-bar"></span>
+                    </button>
+                </div>
+
+                <!-- Far right profile channel corner snap lock -->
+                <div class="header-right-cluster">
+                    <a href="404.html" class="header-utility-icon-btn" aria-label="Open network alerts desk parameters">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                        <span class="utility-notification-badge-dot"></span>
+                    </a>
+
+                    <div class="header-profile-capsule">
+                        <div class="profile-avatar-box">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        </div>
+                        
+                            <span class="profile-welcome-lbl">Welcome,</span>
+                            <span class="profile-extracted-username" id="headerExtractedUserField">Jeevi</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- ==========================================
+                 MODULAR DATA VIEWS WORKSPACE DISPLAY HUD
+                 ========================================== -->
+            <main class="dash-content-display-pane">
+                
+                <!-- View Segment 1: Partner Overview (FIXED: High-visibility dashboard template contents) -->
+                <section class="dash-modular-view-section view-active" id="partner-overview">
+                    <div class="dash-view-content-housing">
+                        <h2 class="view-panel-title-heading">Partner Overview Dashboard</h2>
+                        <p class="view-panel-placeholder-desc">Welcome to the flagship operations command module. Select menu routes down the left-hand ledger tracking column to switch views parameter cards.</p>
+                        
+                        <!-- High Fidelity Visual Metrics Overview Base Board Card Matrix Grid Row -->
+                        <div class="dash-metrics-showcase-grid">
+                            <div class="showcase-metric-card">
+                                <span class="metric-card-lbl">Total Underwritten backings</span>
+                                <h3 class="metric-card-figure">$48.25B</h3>
+                                <span class="metric-card-delta-badge text-emerald">▲ +12.4% vs prev week</span>
+                            </div>
+                            <div class="showcase-metric-card">
+                                <span class="metric-card-lbl">Active clearing execution node vectors</span>
+                                <h3 class="metric-card-figure">14 Nodes</h3>
+                                <span class="metric-card-delta-badge text-emerald">● Status Normal Secure</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- View Segment 2: Clearing Pipelines -->
+                <section class="dash-modular-view-section" id="clearing-pipelines">
+                    <div class="dash-view-content-housing">
+                        <h2 class="view-panel-title-heading">Clearing Pipelines Main View</h2>
+                        <p class="view-panel-placeholder-desc">This modular interface row captures atomic liquidity transaction pipelines routing cross-chain banking nodes clearances metrics data sheets logs securely.</p>
+                    </div>
+                </section>
+
+                <!-- View Segment 3: Yield Allocations -->
+                <section class="dash-modular-view-section" id="yield-allocations">
+                    <div class="dash-view-content-housing">
+                        <h2 class="view-panel-title-heading">Yield Allocations Main View</h2>
+
+                    <p class="view-panel-placeholder-desc">This panel tracks autonomous auto-compounding mutual funding curves, portfolio treasury deposits, and index gearing parameters.</p>
+                </section>
+
+                <!-- View Segment 4: Audit Handshakes Main View -->
+                <section class="dash-modular-view-section" id="compliance-handshakes">
+                    <h2 class="view-panel-title-heading">Audit Handshakes Main View</h2>
+                    <p class="view-panel-placeholder-desc">This panel manages cryptographic validation security SLAs, air-gapped protection channels records, and multi-sig compliance parameters.</p>
+                </section>
+
+            </main>
+
+
+
+    <style>
+     /* ==========================================================================
+   STACKLY FIXED DUAL-COLUMN CONSOLE DESIGN ARCHITECTURE MASTER
+   ========================================================================== */
+html, body {
+    margin: 0 !important; padding: 0 !important;
+    width: 100% !important; height: 100% !important;
+    background-color: #04070d !important; /* Pure brand absolute black canvas background background */
+    color: #ffffff !important;
+    font-family: system-ui, -apple-system, sans-serif;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+}
+*, *::before, *::after { box-sizing: border-box !important; }
+
+/* FIXED MASTER GRID BLUEPRINT FRAMEWORK: Locks sections side-by-side [INDEX] */
+.dash-master-wrapper {
+    display: grid !important;
+    grid-template-columns: 280px 1fr !important; /* Column 1: Static Sidebar | Column 2: Fluid Content Viewport */
+    width: 100vw !important;
+    height: 100vh !important;
+    overflow: hidden !important;
+    position: relative !important;
+    box-sizing: border-box !important;
+    background-color: #04070d !important;
+}
+
+/* --- COLUMN 1: LEFT HAND CATEGORIZED SIDEBAR NAVIGATION HUD --- */
+.dash-sidebar-housing {
+    grid-column: 1 !important; /* Hardlocks sidebar bounds completely inside grid cell track 1 [INDEX] */
+    height: 100% !important;
+    background: #090d16 !important; /* Deep charcoal glass texture base background */
+    border-right: 1px solid rgba(255, 255, 255, 0.04) !important;
+    z-index: 900 !important;
+    box-sizing: border-box !important;
+}
+
+.sidebar-inner-housing { display: flex; flex-direction: column; height: 100%; padding: 1.75rem 1.25rem; gap: 1.75rem; box-sizing: border-box; }
+
+/* Brand logo top cluster inside left navigation column */
+.sidebar-brand-container { display: flex !important; width: 100% !important; padding: 0 0 1.25rem 0 !important; border-bottom: 1px solid rgba(255, 255, 255, 0.03) !important; box-sizing: border-box !important; }
+.sidebar-brand-refresh-link { display: inline-flex !important; align-items: center !important; gap: 0.75rem !important; text-decoration: none !important; outline: none !important; cursor: pointer !important; }
+.sidebar-brand-logo-img { width: 24px !important; height: 24px !important; flex-shrink: 0 !important; }
+.sidebar-brand-text-lbl { font-size: 0.95rem !important; font-weight: 900 !important; color: #ffffff !important; letter-spacing: 0.06em !important; }
+.sidebar-brand-text-lbl span { color: #f59e0b !important; font-size: 0.65rem !important; font-weight: 800 !important; border: 1px solid rgba(245, 158, 11, 0.3) !important; padding: 0.1rem 0.4rem !important; border-radius: 4px !important; margin-left: 0.25rem !important; vertical-align: middle !important; }
+
+/* Categorized navigation menus headers fields */
+.sidebar-category-group { display: flex; flex-direction: column; gap: 0.75rem; width: 100%; }
+.sidebar-cat-title { font-size: 0.68rem; font-weight: 800; color: #475569; text-transform: uppercase; letter-spacing: 0.06em; text-align: left; padding-left: 0.75rem; }
+
+.sidebar-nav { display: flex; flex-direction: column; gap: 0.45rem; width: 100%; }
+
+/* Menu selection items triggers interactives */
+.sidebar-menu-item {
+    display: flex !important; flex-direction: row !important; align-items: center !important; gap: 0.85rem !important;
+    width: 100% !important; background: transparent !important; border: 1px solid transparent !important;
+    padding: 0.75rem 1rem !important; border-radius: 10px !important; cursor: pointer !important; outline: none !important;
+    color: #94a3b8 !important; font-size: 0.92rem !important; font-weight: 600 !important; text-align: left;
+    transition: all 0.3s ease !important;
+}
+.sidebar-menu-item:hover { background: rgba(255,255,255,0.02) !important; color: #ffffff !important; }
+
+.menu-vector-icon { color: #475569; transition: color 0.3s; flex-shrink: 0; }
+.sidebar-menu-item:hover .menu-vector-icon { color: #ffffff; }
+
+/* Active Menu tab glow multiplier triggers states overrides */
+.sidebar-menu-item.item-active { background: rgba(245, 158, 11, 0.03) !important; border-color: rgba(245, 158, 11, 0.2) !important; color: #ffffff !important; }
+.sidebar-menu-item.item-active .menu-vector-icon { color: #f59e0b !important; filter: drop-shadow(0 0 4px #f59e0b); }
+
+/* Sidebar absolute bottom logout section */
+.sidebar-action-footer { margin-top: auto; border-top: 1px solid rgba(255,255,255,0.03); padding-top: 1.25rem; width: 100%; }
+.sidebar-logout-btn {
+    display: flex !important; flex-direction: row !important; align-items: center !important; gap: 0.85rem !important;
+    width: 100% !important; background: transparent !important; border: 1px solid transparent !important;
+    padding: 0.75rem 1rem !important; border-radius: 10px !important; cursor: pointer !important; outline: none !important;
+    color: #64748b !important; font-size: 0.92rem !important; font-weight: 700 !important; text-align: left;
+    transition: all 0.3s ease !important;
+}
+.sidebar-logout-btn:hover { background: rgba(239, 68, 68, 0.03) !important; color: #ef4444 !important; }
+.sidebar-logout-btn:hover .menu-vector-icon { color: #ef4444 !important; }
+
+/* --- COLUMN 2: RIGHT SIDE WORKSPACE CONTROL VIEWPORT --- */
+.dash-viewport-container {
+    grid-column: 2 !important; /* Hardlocks entire viewport container securely inside grid track cell 2 [INDEX] */
+    display: flex !important; flex-direction: column !important; /* Sequential vertical row building blocks flow layout */
+    height: 100vh !important; width: 100% !important; overflow: hidden !important; position: relative !important; box-sizing: border-box !important;
+    background-color: #04070d !important;
+}
+
+/* Master Fixed Header Component: Standard horizontal axis flow properties */
+.dash-master-header {
+    height: 75px !important; width: 100% !important; background-color: #04070d !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03) !important;
+    padding: 0 2.5rem !important; display: flex !important; flex-direction: row !important;
+    justify-content: space-between !important; align-items: center !important; flex-shrink: 0 !important; box-sizing: border-box !important;
+}
+.header-left-cluster { display: flex; align-items: center; }
+
+/* Mobile Hamburger Toggle button icon lines frames (Hidden on desktop screen tracking models) */
+.mobile-hamburger-toggle { display: none; flex-direction: column; gap: 4px; background: transparent; border: none; outline: none; cursor: pointer; padding: 0.25rem; z-index: 1000; }
+.hamburger-bar { width: 18px; height: 2px; background-color: #ffffff; transition: all 0.3s ease; }
+
+/* FIXED RIGHT CORNER CHANNEL: Snaps profile details and alert bell flush against the far edge [INDEX] */
+.header-right-cluster { display: flex !important; flex-direction: row !important; align-items: center !important; gap: 2rem !important; margin-left: auto !important; box-sizing: border-box !important; }
+
+/* Bell utility notification anchor links styles mapping */
+.header-utility-icon-btn { position: relative; background: transparent; border: none; outline: none; color: #64748b; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0.35rem; transition: color 0.3s; text-decoration: none !important; }
+.header-utility-icon-btn:hover { color: #ffffff; }
+.utility-notification-badge-dot { position: absolute; width: 6px; height: 6px; background-color: #f59e0b; border-radius: 50%; top: 2px; right: 2px; box-shadow: 0 0 6px #f59e0b; }
+
+/* Account session tracking visual badge capsule */
+.header-profile-capsule { display: flex; align-items: center; gap: 0.85rem; background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.03); padding: 0.45rem 1rem 0.45rem 0.65rem; border-radius: 50px; }
+.profile-avatar-box { width: 28px; height: 28px; background: rgba(245,158,11,0.04); border: 1px solid rgba(245,158,11,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #f59e0b; }
+
+.profile-identity-meta { display: flex; flex-direction: column; text-align: left; }
+.profile-welcome-lbl { font-size: 0.65rem; font-weight: 600; color: #475569; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1; margin-bottom: 0.15rem; }
+.profile-extracted-username { font-size: 0.88rem; font-weight: 700; color: #ffffff; line-height: 1; }
+
+/* FIXED MAIN VIEWPORT CONTENT DISPLAY HUD SYSTEM */
+.dash-content-display-pane {
+    display: block !important;
+    flex-grow: 1 !important; 
+    width: 100% !important; 
+    overflow-y: auto !important; /* Captures vertical text scrolling within content window capture bounds [INDEX] */
+    padding: 2.5rem !important; 
+    box-sizing: border-box !important;
+    background-color: #04070d !important; /* FIXED: Absolute black panel floor coverage exposes content views */
+}
+
+/* HIGH FIDELITY INNER HOUSING CONTAINER SYSTEM */
+.dash-view-content-housing {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    text-align: left !important;
+    box-sizing: border-box !important;
+}
+
+.dash-modular-view-section { display: none !important; width: 100% !important; box-sizing: border-box !important; }
+.dash-modular-view-section.view-active { display: flex !important; }
+
+.view-panel-title-heading { font-size: 1.75rem; font-weight: 800; color: #ffffff; margin: 0 0 0.75rem 0; letter-spacing: -0.01em; }
+.view-panel-placeholder-desc { font-size: 0.98rem; color: #64748b; line-height: 1.6; margin: 0 0 2rem 0; max-width: 680px; }
+
+/* High Tech Quantitative Dashboard Stats Showcase Row */
+.dash-metrics-showcase-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;gap: 1.5rem !important;width: 100%;max-width: 840px;box-sizing: border-box;}
+    
+.showcase-metric-card {background: rgba(9, 13, 22, 0.65) !important;border: 1px solid rgba(255, 255, 255, 0.04) !important;
+    padding: 1.5rem 1.75rem !important;border-radius: 16px !important;display: flex !important;flex-direction: column !important;
+    gap: 0.5rem;box-sizing: border-box;transition: border-color 0.3s ease;}.showcase-metric-card:hover {
+         border-color: rgba(245, 158, 11, 0.2) !important; }.metric-card-lbl { font-size: 0.72rem; font-weight: 700; color: #64748b; 
+            text-transform: uppercase; letter-spacing: 0.04em; }.metric-card-figure { font-size: 1.75rem; font-weight: 800; 
+                color: #ffffff; margin: 0; font-family: monospace; }.metric-card-delta-badge { font-size: 0.8rem; font-weight: 700; }
+                .text-emerald { color: #10b981; }
+                .dash-mobile-sidebar-blur-shroud { position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+     background-color: rgba(4, 7, 13, 0.7); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); z-index: 850; 
+     display: none; opacity: 0; transition: opacity 0.4s ease; }.dash-mobile-sidebar-blur-shroud.shroud-active { display: block; opacity: 1; }
+     @media (max-width: 992px) {.dash-master-wrapper { grid-template-columns: 1fr !important; }.mobile-hamburger-toggle
+      { display: flex !important; }.dash-master-header { padding: 0 1.25rem !important; justify-content: space-between !important; }
+      .header-right-cluster { margin-left: 0 !important; }.dash-content-display-pane { padding: 1.5rem 1.25rem !important; }
+      .dash-metrics-showcase-grid { grid-template-columns: 1fr !important; gap: 1rem !important; }
+      .dash-sidebar-housing {position: absolute !important; top: 0; left: 0; width: 75vw !important; max-width: 320px !important; 
+        height: 100% !important;transform: translate3d(-100%, 0, 0) !important;transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)
+         !important;}.dash-sidebar-housing.sidebar-mobile-open { transform: translate3d(0, 0, 0) !important;
+             box-shadow: 25px 0 60px rgba(0, 0, 0, 0.85) !important; }}
+    </style>
+ 
+ <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    
+    // Core structural control DOM node handles mappings
+    const hamburgerBtn = document.getElementById('hamburgerMenuBtn');
+    const dashboardSidebar = document.getElementById('dashboardSidebar');
+    const backgroundShroud = document.getElementById('sidebarBackgroundShroud');
+    const logoRefreshBtn = document.getElementById('brandLogoRefreshHook');
+    const logoutBtn = document.getElementById('partnerLogoutTrigger');
+    const headerUsernameDisplay = document.getElementById('headerExtractedUserField');
+    
+    // 1. MOBILE BACKDROP FREEZE LOCK: Hamburger interaction toggle monitoring logic loops
+    if (hamburgerBtn && dashboardSidebar && backgroundShroud) {
+        
+        function openMobileSidebarConsole() {
+            dashboardSidebar.classList.add('sidebar-mobile-open');
+            backgroundShroud.classList.add('shroud-active');
+            
+            // CRITICAL FUNCTION SPEC: Freezes back document body elements from scrolling out of bounds [INDEX]
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function closeMobileSidebarConsole() {
+            dashboardSidebar.classList.remove('sidebar-mobile-open');
+            backgroundShroud.classList.remove('shroud-active');
+            
+            // CRITICAL FUNCTION SPEC: RESTORES full vertical page scroll mobility tracking once closed [INDEX]
+            document.body.style.overflow = ''; 
+        }
+
+        hamburgerBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = dashboardSidebar.classList.contains('sidebar-mobile-open');
+            if (isOpen) { closeMobileSidebarConsole(); } else { openMobileSidebarConsole(); }
+        });
+
+        // Intercept close events if client clicks outside active 75% sidebar container shroud
+        backgroundShroud.addEventListener('click', closeMobileSidebarConsole);
+    }
+
+    // 2. DYNAMIC FIRST-NAME EXTRACTION: Pulls target prefix string out from login memory cache [INDEX]
+    if (headerUsernameDisplay) {
+        // Intercept reads account email entry strings from application workspace memory context storage [INDEX]
+        const sessionAccountContextMailString = localStorage.getItem('activePartnerSessionMail') || "jeevi@gmail.com"; 
+        
+        // Split indices string cleanly at the localized delimiter "@" mark boundary lines [INDEX]
+        const extractedMailPrefixComponents = sessionAccountContextMailString.split('@');
+        const finalCalculatedFirstName = extractedMailPrefixComponents[0]; // Capture first segment string text only ("jeevi") [INDEX]
+
+        // Map calculated name context back cleanly onto your template header fields node [INDEX]
+        headerUsernameDisplay.innerText = finalCalculatedFirstName;
+    }
+
+    // 3. BRAND REFRESH TRIGGER: Forces synchronous window console view parameter reload
+    if (logoRefreshBtn) {
+        logoRefreshBtn.addEventListener('click', () => {
+            window.location.reload(); // Performs immediate platform runtime environment clear slate hard refresh [INDEX]
+        });
+    }
+
+    // 4. TABBED VIEWS HUD MATRIX CONTROLLER SYSTEM (Section wise Main Independent views checks)
+    const sidebarMenuItemsList = document.querySelectorAll('.sidebar-menu-item');
+    const modularContentSectionsList = document.querySelectorAll('.dash-modular-view-section');
+
+    sidebarMenuItemsList.forEach(menuButton => {
+        menuButton.addEventListener('click', () => {
+            // Remove active modifiers from all tabs elements
+            sidebarMenuItemsList.forEach(btn => btn.classList.remove('item-active'));
+            modularContentSectionsList.forEach(view => view.classList.remove('view-active'));
+
+            // Hook current configuration state active
+            menuButton.classList.add('item-active');
+            const targetSectionViewId = menuButton.getAttribute('data-target');
+            const targetViewPanelNode = document.getElementById(targetSectionViewId);
+            
+            if (targetViewPanelNode) {
+                targetViewPanelNode.classList.add('view-active');
+            }
+
+            // Mobile safety closure auto-trigger: wraps up open panels safely on touch select clicks actions
+            if (window.innerWidth <= 992 && dashboardSidebar) {
+                dashboardSidebar.classList.remove('sidebar-mobile-open');
+                backgroundShroud.classList.remove('shroud-active');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+
+    // 5. SESSION TERMINATION EXITS ROUTING HANDSHAKE PIPELINE
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', () => {
+            // Flush localized workspace memory buffers states tracks safely to clean active caches allocations [INDEX]
+            localStorage.removeItem('activePartnerSessionMail');
+            // Route client gracefully back straight onto your multi-profile authentication portal window view file [INDEX]
+            window.location.href = "login-portal.html";
+        });
+    }
+});
+ </script>
+
+</body>
+</html>

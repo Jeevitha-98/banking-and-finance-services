@@ -1,0 +1,416 @@
+<!-- Main Parent Container: Secure Institutional Registration Portal Wrapper -->
+<main class="signup-portal-viewport">
+    
+    <!-- Ambient Canvas Backdrop Configurations -->
+    <div class="signup-portal-bg">
+        <img src="./Assests/analytics framework.webp" alt="Stackly Capital Encryption Shading Network Matrix" class="signup-bg-vector">
+        <div class="signup-bg-mask"></div>
+    </div>
+
+    <div class="signup-card-matrix">
+        <div class="signup-neon-glow-edge"></div>
+        <div class="signup-inner-housing">
+            
+            <!-- Top Header Control Row Component -->
+            <header class="signup-card-header">
+                <div class="signup-brand">
+                    <span class="brand-glyph">✦</span>
+                    <span class="brand-text">STACKLY</span>
+                </div>
+                <a href="login.html" class="signup-back-login-btn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                    <span>← BACK TO LOG IN</span>
+                </a>
+            </header>
+
+            <!-- Main Heading Copy Blocks -->
+            <section class="signup-welcome-cluster">
+                <h1 class="signup-main-title">Create <span>Account</span></h1>
+                <p class="signup-sub-headline">Register your sovereign profile parameters to initialize your customized sandbox project registry dashboard and track vault order milestones.</p>
+            </section>
+
+            <!-- Dynamic Feedback Alert Warning/Success Banner Slot -->
+            <div class="signup-status-alert-banner" id="signupPortalAlertBanner" aria-live="polite"></div>
+
+            <!-- Core Registration Submission Form Data Inputs Block Layout -->
+            <form id="secureAuthSignupForm" class="signup-portal-form-core" novalidate>
+                
+                <!-- Input Group 1: Client Full Name (Strict Alphabet Filters Armed) -->
+                <div class="signup-input-group">
+                    <label for="regClientName">Your Full Name</label>
+                    <div class="signup-input-row-shell">
+                        <input type="text" id="regClientName" placeholder="Enter your full name..." required autocomplete="off">
+                    </div>
+                </div>
+
+                <!-- Input Group 2: Corporate Access Email Address -->
+                <div class="signup-input-group">
+                    <label for="regEmailAddress">Email Address</label>
+                    <div class="signup-input-row-shell">
+                        <input type="email" id="regEmailAddress" placeholder="you@example.com" required autocomplete="off">
+                    </div>
+                </div>
+
+                <!-- Input Group 3: Mobile Telemetry Number (Strict Numeric Filters Armed) -->
+                <div class="signup-input-group">
+                    <label for="regClientMobile">10-Digit Mobile Number</label>
+                    <div class="signup-input-row-shell">
+                        <input type="text" id="regClientMobile" placeholder="10-digit mobile number" maxlength="10" required autocomplete="off">
+                    </div>
+                </div>
+
+                <!-- Input Group 4: Security Password Key String -->
+                <div class="signup-input-group">
+                    <label for="regPasswordKey">Password Key</label>
+                    <div class="signup-input-row-shell password-row-shell">
+                        <input type="password" id="regPasswordKey" placeholder="••••••••" required autocomplete="off">
+                        <button type="button" class="password-toggle-visibility-btn" data-target="regPasswordKey" aria-label="Toggle password visibility">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Input Group 5: Confirm Security Password Key String -->
+                <div class="signup-input-group">
+                    <label for="regConfirmPasswordKey">Confirm Password Key</label>
+                    <div class="signup-input-row-shell password-row-shell">
+                        <input type="password" id="regConfirmPasswordKey" placeholder="••••••••" required autocomplete="off">
+                        <button type="button" class="password-toggle-visibility-btn" data-target="regConfirmPasswordKey" aria-label="Toggle password visibility">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Submission Master Action Execution Button -->
+                <button type="submit" class="signup-submit-execution-btn">
+                    <span>SIGN UP ➔</span>
+                </button>
+
+            </form>
+
+            <!-- Alternative Navigation Back to Login Block Footer Element -->
+            <footer class="signup-card-footer-block">
+                <span>Already have an account? <a href="login.html" class="signup-login-link-anchor">Log In</a></span>
+            </footer>
+
+        </div>
+    </div>
+</main>
+
+<style>
+
+    /* ==========================================================================
+   GLOBAL REGISTER VIEWPORT SPATIAL RESET (ELIMINATES EDGE WHITE LEAKS)
+   ========================================================================== */
+
+/* Hard-locks the root document layout tree to strip out browser padding envelopes */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: #04070d !important; /* Forces absolute system black base to sit flush across all four screen limits */
+    box-sizing: border-box !important;
+}
+
+/* Enforces universal structural sizing parameters downstream across every elements box */
+*, *::before, *::after {
+    box-sizing: border-box !important;
+}
+
+/* ==========================================================================
+   UPDATED MASTER SIGNUP VIEWPORT COVERAGE SHIELD
+   ========================================================================== */
+.signup-portal-viewport {
+    position: relative !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    
+    /* CRITICAL FIX: Shifts dimensions to fluid viewport trackers to block spacing fractures */
+    width: 100vw !important; 
+    min-height: 100vh !important; 
+    
+    background-color: #04070d !important; /* Absolute system black branding base */
+    padding: 2.5rem 1rem !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+}
+
+
+    /* ==========================================================================
+   STACKLY REGISTER ACCOUNT SIGNUP PORTAL MASTER STYLESHEET
+   ========================================================================== */
+
+.signup-portal-viewport {
+    position: relative !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100vw !important; /* Full width edge expansion tracks */
+    min-height: 100vh !important;
+    background-color: #04070d !important; /* Locked absolute theme color matching banking page tree */
+    font-family: system-ui, -apple-system, sans-serif;
+    box-sizing: border-box;
+    padding: 2.5rem 1rem !important;
+    overflow-x: hidden;
+}
+
+/* Ambient backdrop layers mesh configurations */
+.signup-portal-bg {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;
+}
+.signup-bg-vector { width: 100%; height: 100%; object-fit: cover; opacity: 0.04; }
+.signup-bg-mask { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, transparent 30%, #04070d 95%); }
+
+/* Master layout central dashboard capsule box framework */
+.signup-card-matrix { position: relative; z-index: 5; width: 100%; max-width: 500px; perspective: 1000px; }
+
+.signup-inner-housing {
+    position: relative;
+    background: rgba(9, 13, 22, 0.65) !important; /* Premium glassmorphic texture profile matches dark brand theme */
+    border: 1px solid rgba(255, 255, 255, 0.04) !important;
+    border-radius: 24px !important;
+    padding: 2.5rem 2.25rem !important;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.25rem !important; /* Compact structural safety gaps between input tracks */
+    box-sizing: border-box !important;
+    width: 100% !important;
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.5s ease;
+}
+
+/* Hidden Absolute Golden Neon Border Outer Highlight Framework Frame */
+.signup-neon-glow-edge {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    border: 1.5px solid transparent; border-radius: 24px; pointer-events: none; z-index: 4;
+    transition: all 0.5s ease;
+}
+
+/* Immersive Card Position Shifts Tilted Movements & Ambient Halos Blossoms */
+.signup-card-matrix:hover .signup-inner-housing { transform: rotateX(1.5deg) rotateY(-1.5deg) translateY(-2px); border-color: rgba(245, 158, 11, 0.20) !important; }
+.signup-card-matrix:hover .signup-neon-glow-edge { border-color: #f59e0b !important; box-shadow: inset 0 0 15px rgba(245, 158, 11, 0.15), 0 0 25px rgba(245, 158, 11, 0.05) !important; }
+
+/* Control header row bars alignment properties fields */
+.signup-card-header { display: flex !important; justify-content: space-between !important; align-items: center !important; }
+.signup-brand { display: flex; align-items: center; gap: 0.5rem; }
+.brand-glyph { color: #f59e0b; font-weight: 800; font-size: 1.1rem; filter: drop-shadow(0 0 6px #f59e0b); }
+.brand-text { font-size: 1rem; font-weight: 900; color: #ffffff; letter-spacing: 0.05em; }
+
+.signup-back-login-btn {
+    display: inline-flex !important; align-items: center !important; gap: 0.5rem !important; text-decoration: none !important;
+    background: rgba(255,255,255,0.02) !important; border: 1px solid rgba(255,255,255,0.12) !important;
+    color: #ffffff !important; font-size: 0.72rem !important; font-weight: 700 !important; padding: 0.45rem 1rem !important; border-radius: 6px !important;
+    transition: all 0.3s ease !important;
+}
+.signup-back-login-btn:hover { border-color: #f59e0b !important; color: #f59e0b !important; background: rgba(245,158,11,0.04) !important; }
+
+/* Welcome text string copywriting cluster */
+.signup-welcome-cluster { display: flex; flex-direction: column; gap: 0.4rem; text-align: left; }
+.signup-main-title { font-size: 1.8rem; font-weight: 800; color: #ffffff; margin: 0; letter-spacing: -0.01em; }
+.signup-main-title span { color: #f59e0b !important; text-shadow: 0 0 15px rgba(245, 158, 11, 0.3); } /* Neon Gold Accent on Account string token */
+.signup-sub-headline { font-size: 0.88rem; color: #64748b; line-height: 1.5; margin: 0; font-weight: 500; }
+
+/* Interactive Inbound Forms Data Inputs Blocks Layout Rows Track */
+.signup-portal-form-core { display: flex !important; flex-direction: column !important; width: 100% !important; box-sizing: border-box; }
+
+.signup-input-group { display: flex; flex-direction: column; gap: 0.45rem; margin-bottom: 1.15rem; text-align: left; }
+.signup-input-group label { font-size: 0.72rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.04em; }
+
+.signup-input-row-shell {
+    display: flex; background: rgba(4, 7, 13, 0.4); border: 1px solid rgba(245, 255, 255, 0.06); border-radius: 10px; padding: 0.25rem; transition: border-color 0.3s ease; width: 100%; box-sizing: border-box;
+}
+.signup-input-row-shell:focus-within { border-color: #f59e0b !important; } /* Neon Gold Input Aura Focus Border */
+
+.signup-input-row-shell input {
+    width: 100%; background: transparent !important; border: none !important; outline: none !important; padding: 0.65rem 0.85rem; font-size: 0.95rem; font-weight: 600; color: #ffffff !important; box-sizing: border-box;
+}
+.signup-input-row-shell input::placeholder { color: #334155; font-weight: 500; }
+
+/* Password visibility action trigger configuration setup */
+.password-row-shell { position: relative; padding-right: 3rem !important; }
+.password-toggle-visibility-btn {
+    position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); background: transparent; border: none; outline: none; color: #475569; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0.25rem; transition: color 0.3s;
+}
+.password-toggle-visibility-btn:hover { color: #f59e0b; }
+
+/* Master Consultation Submission Button Element Box */
+.signup-submit-execution-btn {
+    display: block !important; width: 100% !important; background: rgba(255, 255, 255, 0.02) !important; color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important; padding: 0.9rem !important; border-radius: 8px !important; cursor: pointer;
+    font-weight: 800 !important; font-size: 0.92rem !important; letter-spacing: 0.02em; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important; margin-top: 0.5rem;
+}
+.signup-card-matrix:hover .signup-submit-execution-btn,
+.signup-submit-execution-btn:hover {
+    background: linear-gradient(135deg, #b45309 0%, #f59e0b 100%) !important;
+    color: #000000 !important; border-color: transparent !important; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35) !important;
+}
+
+/* Dynamic Status Alert Warning / Success Banner Box */
+.signup-status-alert-banner {
+    width: 100%; box-sizing: border-box; border-radius: 8px; font-size: 0.85rem; font-weight: 700; text-align: left; padding: 0; margin-bottom: 0; max-height: 0; opacity: 0; overflow: hidden; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Error banner theme */
+.signup-status-alert-banner.alert-active { 
+    padding: 0.85rem 1.15rem; margin-bottom: 0.5rem; max-height: 60px; opacity: 1; 
+    border: 1.5px solid #ef4444; background: rgba(239, 68, 68, 0.04); color: #ef4444; 
+}
+
+/* NEW: Success banner theme matching operational verification parameters */
+.signup-status-alert-banner.alert-success { 
+    padding: 0.85rem 1.15rem; margin-bottom: 0.5rem; max-height: 60px; opacity: 1; 
+    border: 1.5px solid #10b981; background: rgba(16, 185, 129, 0.04); color: #10b981; 
+}
+
+/* ERROR ACCENT STATE DEVIATION MODIFIERS */
+.signup-input-group.field-input-invalid .signup-input-row-shell { border-color: #ef4444 !important; background-color: rgba(239, 68, 68, 0.02) !important; }
+.signup-input-group.field-input-invalid label { color: #ef4444 !important; }
+
+/* Bottom card alternative profile navigation block footer elements */
+.signup-card-footer-block { font-size: 0.85rem; color: #475569; font-weight: 500; text-align: center; width: 100%; border-top: 1px solid rgba(255,255,255,0.04); padding-top: 1.25rem; margin-top: 0.5rem; }
+.signup-login-link-anchor { color: #ffffff; font-weight: 700; text-decoration: none; border-bottom: 1.5px solid #ffffff; transition: color 0.3s, border-color 0.3s; }
+.signup-login-link-anchor:hover { color: #f59e0b; border-color: #f59e0b; }
+
+@media (max-width: 480px) {
+    .signup-inner-housing { padding: 2rem 1.15rem !important; }
+}
+
+</style>
+
+<script>
+    // --- 37. REGISTRATION ACCOUNT INITIALIZATION COMPLIANCE & SUCCESS FLASH ENGINE ---
+document.addEventListener('DOMContentLoaded', () => {
+    const signupForm = document.getElementById('secureAuthSignupForm');
+    const nameInput = document.getElementById('regClientName');
+    const mobileInput = document.getElementById('regClientMobile');
+    const emailInput = document.getElementById('regEmailAddress');
+    const passwordInput = document.getElementById('regPasswordKey');
+    const confirmInput = document.getElementById('regConfirmPasswordKey');
+    const alertBanner = document.getElementById('signupPortalAlertBanner');
+    const toggleButtons = document.querySelectorAll('.password-toggle-visibility-btn');
+
+    if (signupForm && nameInput && mobileInput && passwordInput && confirmInput && alertBanner) {
+
+        // 1. HARD ALPHABET FILTER BLOCK: Rejects numerical keyboard entries on your name string field instantly
+        nameInput.addEventListener('input', () => {
+            const currentCursorPosition = nameInput.selectionStart;
+            const purifiedAlphaValue = nameInput.value.replace(/[0-9]/g, '');
+            
+            if (nameInput.value !== purifiedAlphaValue) {
+                nameInput.value = purifiedAlphaValue;
+                nameInput.setSelectionRange(currentCursorPosition - 1, currentCursorPosition - 1);
+            }
+        });
+
+        // 2. HARD DIGIT FILTER BLOCK: Intercepts and purges literal alphabetical characters inside your phone telemetry field
+        mobileInput.addEventListener('input', () => {
+            const currentCursorPosition = mobileInput.selectionStart;
+            const purifiedNumericValue = mobileInput.value.replace(/[^0-9]/g, '');
+            
+            if (mobileInput.value !== purifiedNumericValue) {
+                mobileInput.value = purifiedNumericValue;
+                mobileInput.setSelectionRange(currentCursorPosition - 1, currentCursorPosition - 1);
+            }
+        });
+
+        // 3. UNMASK PASSWORD SELECTION CONTROLLER INDEPENDENT LOOPS
+        toggleButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetFieldId = btn.getAttribute('data-target');
+                const targetField = document.getElementById(targetFieldId);
+                
+                if (targetField) {
+                    const isMaskedState = targetField.getAttribute('type') === 'password';
+                    targetField.setAttribute('type', isMaskedState ? 'text' : 'password');
+                    btn.style.color = isMaskedState ? '#f59e0b' : '#475569';
+                }
+            });
+        });
+
+        // 4. MASTER HANDSHAKE CRITICAL FORM INTERCEPTION COMPLIANCE LOOPS
+        signupForm.addEventListener('submit', (e) => {
+            e.preventDefault(); 
+
+            // Clear active layout class lists states
+            alertBanner.classList.remove('alert-active', 'alert-success');
+            alertBanner.innerText = "";
+
+            // Clear individual row input errors incidence fields indicators
+            const inputsList = signupForm.querySelectorAll('input');
+            inputsList.forEach(input => {
+                input.closest('.signup-input-group')?.classList.remove('field-input-invalid');
+            });
+
+            let trackingValidationPassFlag = true;
+            let criticalEmptyFieldFound = false;
+
+            // Loop checking empty input fields parameters status parameters
+            for (let i = 0; i < inputsList.length; i++) {
+                const currentInputNode = inputsList[i];
+                if (!currentInputNode.value.trim()) {
+                    criticalEmptyFieldFound = true;
+                    trackingValidationPassFlag = false;
+                    currentInputNode.closest('.signup-input-group')?.classList.add('field-input-invalid');
+                }
+            }
+
+            // A. EMPTY FIELD EXCEPTION BANNER TRIGGER
+            if (criticalEmptyFieldFound) {
+                alertBanner.innerText = "Please fill the fields before deploying account credentials.";
+                alertBanner.classList.add('alert-active');
+                return;
+            }
+
+            // B. SPECIFIC EMAIL RFC PATTERN STRUCTURAL CHECK FILTER
+            const emailPatternStructure = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPatternStructure.test(emailInput.value.trim())) {
+                trackingValidationPassFlag = false;
+                emailInput.closest('.signup-input-group')?.classList.add('field-input-invalid');
+                alertBanner.innerText = "Please enter a mathematically valid secure email configuration track address.";
+                alertBanner.classList.add('alert-active');
+                return;
+            }
+
+            // C. MOBILE DIGIT LENGTH COMPLIANCE TRACK FILTER
+            if (mobileInput.value.trim().length !== 10) {
+                trackingValidationPassFlag = false;
+                mobileInput.closest('.signup-input-group')?.classList.add('field-input-invalid');
+                alertBanner.innerText = "The mobile underwriting track telemetry must correspond to exactly 10 digits.";
+                alertBanner.classList.add('alert-active');
+                return;
+            }
+
+            // D. CRYPTOGRAPHIC PASSWORD SEQUENCE LOCK SYNC FILTER
+            if (passwordInput.value !== confirmInput.value) {
+                trackingValidationPassFlag = false;
+                passwordInput.closest('.signup-input-group')?.classList.add('field-input-invalid');
+                confirmInput.closest('.signup-input-group')?.classList.add('field-input-invalid');
+                alertBanner.innerText = "Cryptographic password keys do not match. Re-verify entry strings.";
+                alertBanner.classList.add('alert-active');
+                return;
+            }
+
+            // E. FIXED EXCEPTION ROUTING PASS: Triggers green emerald notification, freezes button tracking inputs, and schedules login hotswap redirect [INDEX]
+            if (trackingValidationPassFlag) {
+                // Flash successful alert message configuration banner
+                alertBanner.innerText = "Successfully signed in! Use credentials to login.";
+                alertBanner.classList.add('alert-success');
+                
+                // Freeze submit action button to protect system from infinite thread duplication loops
+                const executionBtn = signupForm.querySelector('.signup-submit-execution-btn');
+                if (executionBtn) executionBtn.disabled = true;
+
+                // Sets an absolute 3-second timing delay window before routing user smoothly back to login panel [INDEX]
+                setTimeout(() => {
+                    window.location.href = "login-portal.html";
+                }, 3000);
+            }
+        });
+    }
+});
+
+</script>
+
+</body>
