@@ -90,20 +90,20 @@ window.addEventListener('DOMContentLoaded', () => {
     <li><a href="index.html" class="nav-item">Home</a></li>
     <li><a href="digitalassests.html" class="nav-item">Digital Assets</a></li>
     <li><a href="cards.html" class="nav-item">Premium Cards</a></li>
-    <li><a href="#rates" class="nav-item">Market Rates</a></li>
-    <li><a href="#contact" class="nav-item">Contact Us</a></li>
+    <li><a href="rates.html" class="nav-item">Market Rates</a></li>
+    <li><a href="contact.html" class="nav-item">Contact Us</a></li>
     
     <!-- Mobile View Specific Auth Buttons (Hidden on Desktop) -->
     <div class="auth-group mobile-only-auth">
-        <a href="404.html" class="btn-auth btn-login">Login</a>
-        <a href="404.html" class="btn-auth btn-signup">Sign Up</a>
+        <a href="login.html" class="btn-auth btn-login">Login</a>
+        <a href="signup.html" class="btn-auth btn-signup">Sign Up</a>
     </div>
 </ul>
 
             <!-- Zone 3: Desktop View Specific Auth Buttons (Hidden on Mobile) -->
             <div class="auth-group desktop-only-auth">
-                <a href="404.html" class="btn-auth btn-login">Login</a>
-                <a href="404.html" class="btn-auth btn-signup">Sign Up</a>
+                <a href="login.html" class="btn-auth btn-login">Login</a>
+                <a href="signup.html" class="btn-auth btn-signup">Sign Up</a>
             </div>
 
             <!-- Mobile View Hamburger Icon Button Interface -->
@@ -210,7 +210,7 @@ window.addEventListener('DOMContentLoaded', () => {
             closeMenu(); // Safeguard: shut open drawers before navigation transitions
             
             const interfaceSegmentName = link.textContent.trim() || "Secure Gateway Module";
-            alert(`🔍 Stackly Route Monitor:\n\n"${interfaceSegmentName}" has been routed into a 404 navigation point safely!`);
+           ;
             window.location.href = "404.html";
         });
     });
@@ -1069,7 +1069,7 @@ document.addEventListener('DOMContentLoaded', () => {
     animation: stakeDotPulse 1.5s infinite alternate;
 }
 
-#stakeLiveRateText { font-size: 0.8rem; font-weight: 600; color: #94a3b8; }
+#stakeLiveRateText { font-size: 0.8rem; font-weight: 600; color: white; }
 
 /* Real-Time Arithmetic Calculation Display Layout Box */
 .stake-live-output {
@@ -1553,7 +1553,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     <!-- Zone 1: Ambient Canvas Backdrop Configurations -->
     <div class="cta-bg-canvas">
-        <img src="./Assets/cta-matrix-shading.webp" alt="Stackly Terminal Liquidity Matrix" class="cta-vector-backing">
+        <img src="./Assests/black card.webp" alt="Stackly Terminal Liquidity Matrix" class="cta-vector-backing">
         <div class="cta-masking-shade"></div>
     </div>
 
@@ -1705,7 +1705,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 .cta-sub-headline {
     font-size: 1.05rem;
-    color: #94a3b8;
+    color: white;
     line-height: 1.5;
     font-weight: 500;
 }
@@ -1925,12 +1925,12 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 .matrix-paragraph {
-    font-size: 1.05rem; color: #94a3b8; line-height: 1.65; margin-bottom: 2.5rem; max-width: 580px;
+    font-size: 1.05rem; color: white; line-height: 1.65; margin-bottom: 2.5rem; max-width: 580px;
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .matrix-paragraph:hover {
-    color: #ffffff; text-shadow: 0 0 10px rgba(245, 158, 11, 0.35); /* Elegant gold typographic glow on hover */
+    color: #f59e0b; text-shadow: 0 0 10px rgba(245, 158, 11, 0.35); /* Elegant gold typographic glow on hover */
 }
 
 /* Action row triggers links buttons */
@@ -2015,7 +2015,7 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 .matrix-badge-text { display: flex; flex-direction: column; }
-.matrix-badge-lbl { font-size: 0.68rem; color: #64748b; text-transform: uppercase; font-weight: 700; letter-spacing: 0.02em; }
+.matrix-badge-lbl { font-size: 0.68rem; color: white; text-transform: uppercase; font-weight: 700; letter-spacing: 0.02em; }
 .matrix-badge-val { font-size: 0.95rem; font-weight: 700; color: #ffffff; font-family: monospace; }
 
 /* --- CORE SYSTEM KINETIC LOOP KEYFRAMES --- */
@@ -2247,12 +2247,12 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 .tracker-paragraph {
-    font-size: 1.05rem; color: #94a3b8; line-height: 1.65; margin-bottom: 2.5rem; max-width: 580px;
+    font-size: 1.05rem; color: white; line-height: 1.65; margin-bottom: 2.5rem; max-width: 580px;
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .tracker-paragraph:hover {
-    color: #ffffff; text-shadow: 0 0 10px rgba(245, 158, 11, 0.35); /* Soft gold text halo glow on hover */
+    color: #f59e0b; text-shadow: 0 0 10px rgba(245, 158, 11, 0.35); /* Soft gold text halo glow on hover */
 }
 
 /* Action Trigger Links Buttons */
@@ -2327,7 +2327,7 @@ document.addEventListener('DOMContentLoaded', () => {
 .prime-node { background: rgba(245, 158, 11, 0.08); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.15); }
 
 .node-metric-row { display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid rgba(255,255,255,0.03); padding-top: 0.75rem; }
-.node-lbl { font-size: 0.72rem; color: #64748b; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; }
+.node-lbl { font-size: 0.72rem; color: white; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; }
 .node-val { font-size: 1.15rem; font-weight: 800; color: #f59e0b; text-shadow: 0 0 8px rgba(245,158,11,0.25); }
 
 /* ==========================================================================
@@ -2470,11 +2470,11 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 .velocity-paragraph {
-    font-size: 1.05rem; color: #94a3b8; line-height: 1.65; margin-bottom: 2.5rem; max-width: 580px;
+    font-size: 1.05rem; color: white; line-height: 1.65; margin-bottom: 2.5rem; max-width: 580px;
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 .velocity-paragraph:hover {
-    color: #ffffff; text-shadow: 0 0 10px rgba(245, 158, 11, 0.35); /* Soft gold text glow bloom on hover */
+    color: #f59e0b; text-shadow: 0 0 10px rgba(245, 158, 11, 0.35); /* Soft gold text glow bloom on hover */
 }
 
 /* Action Link Trigger Button */
@@ -2560,7 +2560,7 @@ document.addEventListener('DOMContentLoaded', () => {
     box-shadow: 0 0 8px #10b981; animation: velocityPulseBlink 1.5s infinite alternate;
 }
 .velocity-text-stack { display: flex; flex-direction: column; }
-.velocity-lbl { font-size: 0.68rem; color: #64748b; text-transform: uppercase; font-weight: 700; letter-spacing: 0.02em; }
+.velocity-lbl { font-size: 0.68rem; color: white; text-transform: uppercase; font-weight: 700; letter-spacing: 0.02em; }
 .velocity-val { font-size: 0.95rem; font-weight: 700; color: #ffffff; font-family: monospace; }
 
 /* --- CORE SYSTEM KINETIC LOOP KEYFRAMES --- */
@@ -2752,12 +2752,12 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 .clearing-paragraph {
-    font-size: 1.05rem; color: #94a3b8; line-height: 1.65; margin-bottom: 2.5rem; max-width: 580px;
+    font-size: 1.05rem; color: white; line-height: 1.65; margin-bottom: 2.5rem; max-width: 580px;
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .clearing-paragraph:hover {
-    color: #ffffff; text-shadow: 0 0 10px rgba(245, 158, 11, 0.35); /* Elegant gold typographic glow on hover */
+    color: #f59e0b; text-shadow: 0 0 10px rgba(245, 158, 11, 0.35); /* Elegant gold typographic glow on hover */
 }
 
 /* Action row triggers links buttons */
@@ -2842,7 +2842,7 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 .clearing-badge-text { display: flex; flex-direction: column; }
-.clearing-badge-lbl { font-size: 0.68rem; color: #64748b; text-transform: uppercase; font-weight: 700; letter-spacing: 0.02em; }
+.clearing-badge-lbl { font-size: 0.68rem; color: white; text-transform: uppercase; font-weight: 700; letter-spacing: 0.02em; }
 .clearing-badge-val { font-size: 0.95rem; font-weight: 700; color: #ffffff; font-family: monospace; }
 
 /* --- CORE SYSTEM KINETIC LOOP KEYFRAMES --- */
@@ -3013,7 +3013,7 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 .cta-horizon-headline-text span {
-    background: linear-gradient(135deg, #94a3b8 30%, #475569 100%);
+    background: linear-gradient(135deg, white 30%, #475569 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: all 0.4s ease;
@@ -3154,10 +3154,10 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="footer-links-column">
             <h4 class="directory-title">Quick Links</h4>
             <ul class="directory-list-stack">
-                <li><a href="#services" class="directory-item">Mutual Funds Alpha</a></li>
-                <li><a href="#liquidity" class="directory-item">SIP Compound Engines</a></li>
-                <li><a href="#features" class="directory-item">Quantum Trading Gates</a></li>
-                <li><a href="#cards" class="directory-item">Premium Credit Lines</a></li>
+                <li><a href="index.html" class="directory-item">Home</a></li>
+                <li><a href="digitalassests.html" class="directory-item">Digital Assests</a></li>
+                <li><a href="cards.html" class="directory-item">Preminum Cards</a></li>
+                <li><a href="rates.html" class="directory-item">Market Rates</a></li>
             </ul>
         </div>
 
@@ -3167,7 +3167,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <ul class="directory-list-stack">
                 <li><a href="404.html" class="directory-item">Encryption Keys SLA</a></li>
                 <li><a href="404.html" class="directory-item">Air-Gap Vault Setup</a></li>
-                <li><a href="#security" class="directory-item">Firewall Help Portal</a></li>
+                <li><a href="404.html" class="directory-item">Firewall Help Portal</a></li>
                 <li><a href="404.html" class="directory-item">Institutional Compliance</a></li>
             </ul>
         </div>

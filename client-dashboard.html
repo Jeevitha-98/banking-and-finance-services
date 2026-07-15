@@ -11,7 +11,7 @@
 
     <!-- Unified Master Grid System Container (Maintains absolute column integrity) -->
     <div class="dash-master-wrapper">
-        
+        <div class="dash-mobile-sidebar-blur-shroud" id="sidebarBackgroundShroud"></div>
         <!-- ==========================================
              COLUMN 1: SIDEBAR NAVIGATION MODULE 
              ========================================== -->
@@ -20,9 +20,9 @@
                 
                 <!-- BRAND LOGO HEADER CAPSULE: Handles direct console hard refresh on click -->
                 <div class="sidebar-brand-container">
-                    <a href="javascript:void(0)" class="sidebar-brand-refresh-link" id="brandLogoRefreshHook" title="Execute secure console hard refresh parameter reload">
-                        <svg class="sidebar-brand-logo-img" style="color: #f59e0b; filter: drop-shadow(0 0 4px #f59e0b);" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-                        <span class="sidebar-brand-text-lbl">STACKLY <span>PRO</span></span>
+                    <a href="javascript:void(0)"
+   class="sidebar-brand-refresh-link"
+   id="brandLogoRefreshHook"><span class="sidebar-brand-text-lbl">STACKLY <span>PRO</span></span>
                     </a>
                 </div>
 
@@ -84,7 +84,7 @@
 
             </div>
         </aside> <!-- Sidebar closure successfully isolated here -->
-
+<div class="dash-mobile-sidebar-blur-shroud" id="sidebarBackgroundShroud"></div>
         <!-- ==========================================
              COLUMN 2: MASTER VIEWPORT CONTAINER 
              ========================================== -->
@@ -114,76 +114,1448 @@
                         <span class="utility-notification-badge-dot"></span>
                     </a>
 
-                    
                     <div class="header-profile-capsule">
-                        <div class="profile-avatar-box">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <div class="profile-avatar-box">
+         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                                 <circle cx="12" cy="7" r="4"></circle>
                             </svg>
-                        </div>
-                        
-                            <span class="profile-welcome-lbl">Welcome,</span>
-                            <span class="profile-extracted-username" id="headerExtractedUserField">Client Node</span>
-                        </div>
-                    </div>
+    </div>
 
+    <div class="profile-identity-meta">
+        <span class="profile-welcome-lbl">Welcome,</span>
+        <span class="profile-extracted-username"
+              id="headerExtractedUserField">
+            Client Node
+        </span>
+    </div>
+</div>
+                    
                 </div>
             </header>
 
-            <!-- ==========================================
-                 MODULAR SEPARATE VIEW SECTIONS MAIN PANELS HUD
-                 ========================================== -->
+        
                         <!-- ==========================================
                  MODULAR SEPARATE VIEW SECTIONS MAIN PANELS HUD
                  ========================================== -->
             <main class="dash-content-display-pane">
                 
                 <!-- View Separate Section 1: Asset Registry View Panel -->
-                <section class="dash-modular-view-section view-active" id="asset-overview">
-                    <div class="dash-view-content-housing">
-                        <h2 class="view-panel-title-heading">Asset Registry View</h2>
-                        <p class="view-panel-placeholder-desc">Welcome to your secure asset vault overview. Select active menu routes down the left-hand column to query decentralized balances, active credit lines, and transaction logs.</p>
-                        
-                        <!-- High Fidelity Visual Metrics Overview Base Board Card Matrix Grid Row -->
-                        <div class="dash-metrics-showcase-grid">
-                            <div class="showcase-metric-card">
-                                <span class="metric-card-lbl">Total Net Equity Capital</span>
-                                <h3 class="metric-card-figure">$2,410,500.00</h3>
-                                <span class="metric-card-delta-badge text-emerald">▲ +4.15% Portfolio Delta</span>
-                            </div>
-                            <div class="showcase-metric-card">
-                                <span class="metric-card-lbl">Available Liquidity Lines</span>
-                                <h3 class="metric-card-figure">$750,000.00</h3>
-                                <span class="metric-card-delta-badge text-emerald">● Underwriting SLA Active</span>
-                            </div>
+                <!-- Enhanced Responsive Asset Registry Section Panel -->
+<section class="dash-modular-view-section view-active" id="asset-overview">
+    <div class="dash-view-content-housing">
+        
+        <!-- Row A: Title Header Info Block -->
+        <div class="dash-view-text-header">
+            <h2 class="view-panel-title-heading">Asset Registry Console</h2>
+            <p class="view-panel-placeholder-desc">Sovereign real-time wealth mapping system. Track cross-border capital settlements, monitor liquidity gearing limits, and execute direct zero-knowledge portfolio validations.</p>
+        </div>
+        
+        <!-- Row B: Core High Fidelity Responsive Metrics Overview Card Grid -->
+        <div class="dash-metrics-showcase-grid">
+            
+            <!-- Metric Card 1: Total Net Equity -->
+            <div class="showcase-metric-card">
+                <div class="metric-card-accent-line line-gold"></div>
+                <div class="metric-card-header-row">
+                    <span class="metric-card-lbl">Total Net Equity Capital</span>
+                    <span class="metric-badge badge-blue">Vault Secure</span>
+                </div>
+                <h3 class="metric-card-figure">$2,410,500.00</h3>
+                <div class="metric-card-footer-row">
+                    <span class="metric-card-delta-badge text-emerald">▲ +4.15% Portfolio Delta</span>
+                    <span class="metric-sub-text">vs previous fiscal period</span>
+                </div>
+                <a href="404.html" class="metric-action-route-btn">
+                    <span>Audit Valuation Breakdown</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
+
+            <!-- Metric Card 2: Liquidity Gearing -->
+            <div class="showcase-metric-card">
+                <div class="metric-card-accent-line line-gold"></div>
+                <div class="metric-card-header-row">
+                    <span class="metric-card-lbl">Available Gearing Lines</span>
+                    <span class="metric-badge badge-emerald">SLA Active</span>
+                </div>
+                <h3 class="metric-card-figure">$750,000.00</h3>
+                <div class="metric-card-footer-row">
+                    <span class="metric-card-delta-badge text-emerald">● LTV Ratio: 31.12%</span>
+                    <span class="metric-sub-text">Max Limit: $2.50M</span>
+                </div>
+                <a href="404.html" class="metric-action-route-btn">
+                    <span>Draw Down Liquidity</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Row C: Elaborate Institutional Asset Distribution Table Ledger -->
+        <div class="dash-extended-ledger-block">
+            <div class="ledger-block-header">
+                <h4 class="ledger-block-title">Distributed Capital Ledger</h4>
+                <a href="404.html" class="ledger-export-link-btn">
+                    <span>Export Comprehensive CSV</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                </a>
+            </div>
+            
+            <div class="ledger-table-housing">
+                <div class="ledger-table-grid">
+                    
+                    <!-- Table Header Row -->
+                    <div class="ledger-row table-head">
+                        <span class="cell-asset">Asset Discipline</span>
+                        <span class="cell-allocation">Allocation Weight</span>
+                        <span class="cell-valuation">Valuation (USD)</span>
+                        <span class="cell-status">Risk Perimeter</span>
+                    </div>
+
+                    <!-- Data Row 1 -->
+                    <div class="ledger-row">
+                        <span class="cell-asset font-bold">α Sovereign Credit Fund</span>
+                        <span class="cell-allocation font-mono">45.00%</span>
+                        <span class="cell-valuation font-mono">$1,084,725.00</span>
+                        <span class="cell-status"><span class="status-indicator sig-green"></span>Delta Neutral</span>
+                    </div>
+
+                    <!-- Data Row 2 -->
+                    <div class="ledger-row">
+                        <span class="cell-asset font-bold">β Multi-Chain Liquidity Pool</span>
+                        <span class="cell-allocation font-mono">35.00%</span>
+                        <span class="cell-valuation font-mono">$843,675.00</span>
+                        <span class="cell-status"><span class="status-indicator sig-green"></span>Direct Hedged</span>
+                    </div>
+
+                    <!-- Data Row 3 -->
+                    <div class="ledger-row">
+                        <span class="cell-asset font-bold">δ Air-Gapped Treasury Vault</span>
+                        <span class="cell-allocation font-mono">20.00%</span>
+                        <span class="cell-valuation font-mono">$482,100.00</span>
+                        <span class="cell-status"><span class="status-indicator sig-amber"></span>Unallocated Cash</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div> 
+</section> 
+
+<style>
+    /* ==========================================================================
+   ELABORATE RESPONSIVE ASSET REGISTRY SYSTEM MODULE STYLING
+   ========================================================================== */
+
+/* Main Interior Workspace Content Shell Box Layout */
+.dash-view-content-housing {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    text-align: left !important;
+    box-sizing: border-box !important;
+    gap: 2.5rem !important; /* Locks structural separation downwards across sub-grids row */
+}
+
+.dash-view-text-header { display: flex; flex-direction: column; gap: 0.5rem; width: 100%; }
+.view-panel-title-heading { font-size: 1.8rem !important; font-weight: 800 !important; color: #ffffff !important; margin: 0 !important; letter-spacing: -0.01em !important; }
+.view-panel-placeholder-desc { font-size: 0.98rem !important; color: #64748b !important; line-height: 1.6 !important; margin: 0 !important; max-width: 720px !important; }
+
+/* --- CORE METRICS MATRIX TRACK OVERLAYS --- */
+.dash-metrics-showcase-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; /* Symmetric twin layout tracks across widescreen desktop viewports */
+    gap: 1.75rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.showcase-metric-card {
+    position: relative !important;
+    background: rgba(9, 13, 22, 0.65) !important; /* Premium dark glass surface backdrop */
+    border: 1px solid rgba(255, 255, 255, 0.04) !important;
+    padding: 1.75rem 2rem !important;
+    border-radius: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.65rem !important;
+    box-sizing: border-box !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important;
+    overflow: hidden !important;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease !important;
+}
+
+/* Elegant gold left edge neon accent lines frame */
+.metric-card-accent-line {
+    position: absolute; left: 0; top: 0; width: 3px; height: 100%; background-color: transparent; transition: background-color 0.4s ease;
+}
+.showcase-metric-card:hover { border-color: rgba(245, 158, 11, 0.25) !important; box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), 0 0 15px rgba(245, 158, 11, 0.03) !important; }
+.showcase-metric-card:hover .metric-card-accent-line.line-gold { background-color: #f59e0b !important; }
+
+.metric-card-header-row { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.metric-card-lbl { font-size: 0.72rem !important; font-weight: 700; color: #475569 !important; text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* Status capsule badges components */
+.metric-badge { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 4px; letter-spacing: 0.02em; }
+.badge-blue { background: rgba(2, 132, 199, 0.08); color: #0284c7; border: 1px solid rgba(2, 132, 199, 0.15); }
+.badge-emerald { background: rgba(16, 185, 129, 0.08); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.15); }
+
+.metric-card-figure { font-size: 2.2rem !important; font-weight: 800 !important; color: #ffffff !important; margin: 0 !important; font-family: monospace !important; letter-spacing: -0.01em; }
+
+.metric-card-footer-row { display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 0.25rem; }
+.metric-card-delta-badge { font-size: 0.82rem !important; font-weight: 700; }
+.text-emerald { color: #10b981 !important; }
+.metric-sub-text { font-size: 0.75rem; color: #334155; font-weight: 600; }
+
+/* FIXED SUBMISSION PATH BUTTON CTA OVERLAYS LINK ROUTER */
+.metric-action-route-btn {
+    display: inline-flex !important; align-items: center !important; flex-direction: row !important; gap: 0.5rem !important; text-decoration: none !important; background: transparent !important; border: 1px solid rgba(255, 255, 255, 0.06) !important; color: #64748b !important; padding: 0.55rem 1.15rem !important; border-radius: 8px !important; font-weight: 700 !important; font-size: 0.8rem !important; margin-top: 0.85rem !important; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important; box-sizing: border-box;
+}
+.metric-action-route-btn svg { transition: transform 0.4s ease; }
+.metric-action-route-btn:hover { background: linear-gradient(135deg, #b45309 0%, #f59e0b 100%) !important; color: #000000 !important; border-color: transparent !important; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3) !important; }
+.metric-action-route-btn:hover svg { transform: translateX(3px) !important; color: #000000 !important; }
+
+/* --- ELABORATE DATA LEDGER SHEETS MATRIX BOX (ROW C) --- */
+.dash-extended-ledger-block {
+    width: 100%; background: rgba(9, 13, 22, 0.45); border: 1px solid rgba(255, 255, 255, 0.03); border-radius: 20px; padding: 1.75rem 2rem; box-sizing: border-box; display: flex; flex-direction: column; gap: 1.5rem;
+}
+
+.ledger-block-header { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.ledger-block-title { font-size: 1.15rem; font-weight: 700; color: #ffffff; margin: 0; }
+
+.ledger-export-link-btn {
+    display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none !important; font-size: 0.8rem; font-weight: 700; color: #64748b; border: 1px solid rgba(255,255,255,0.06); padding: 0.45rem 1rem; border-radius: 6px; transition: all 0.3s ease;
+}
+.ledger-export-link-btn:hover { border-color: #f59e0b; color: #f59e0b !important; background: rgba(245,158,11,0.02); }
+
+.ledger-table-housing { width: 100%; overflow-x: auto; box-sizing: border-box; }
+.ledger-table-grid { display: flex; flex-direction: column; gap: 0.5rem; width: 100%; min-width: 640px; box-sizing: border-box; }
+
+/* FIXED HORIZONTAL CELLS AXIS COMPONENT MAPPING */
+.ledger-row {
+    display: grid !important;
+    grid-template-columns: 1.4fr 1fr 1.2fr 1fr !important; /* Strict 4-cell spatial width constraint caps column drifting bugs */
+    align-items: center !important; background: rgba(4, 7, 13, 0.2); border: 1px solid rgba(255, 255, 255, 0.01); padding: 0.95rem 1.25rem !important; border-radius: 12px; box-sizing: border-box; width: 100% !important; transition: background 0.3s ease;
+}
+.ledger-row:not(.table-head):hover { background: rgba(13, 19, 33, 0.4); border-color: rgba(255, 255, 255, 0.04); }
+
+.table-head { background: transparent !important; border: none !important; padding: 0.25rem 1.25rem !important; font-size: 0.72rem; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.04em; }
+
+/* Cell Content Text Alignments Sync */
+.cell-asset { text-align: left; font-size: 0.95rem; color: #ffffff; }
+.cell-allocation { text-align: left; font-size: 0.95rem; color: #94a3b8; }
+.cell-valuation { text-align: left; font-size: 0.95rem; color: #ffffff; }
+.cell-status { text-align: right; font-size: 0.88rem; color: #94a3b8; display: inline-flex; align-items: center; justify-content: flex-end; gap: 0.5rem; }
+
+.font-bold { font-weight: 700; }
+.font-mono { font-family: monospace; font-weight: 600; }
+
+/* Direct color indicators */
+.status-indicator { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
+.sig-green { background-color: #10b981; box-shadow: 0 0 6px #10b981; }
+.sig-amber { background-color: #f59e0b; box-shadow: 0 0 6px #f59e0b; }
+
+/* ==========================================================================
+   3. MULTI-DEVICE MOBILE VIEWPORTS RESPONSIVE DESIGN MANAGEMENT OVERRIDES
+   ========================================================================== */
+@media (max-width: 992px) {
+    .dash-metrics-showcase-grid { grid-template-columns: 1fr !important; gap: 1.25rem !important; }
+    .showcase-metric-card { width: 100% !important; padding: 1.5rem 1.5rem !important; }
+    .metric-card-figure { font-size: 1.8rem !important; }
+    .dash-extended-ledger-block { padding: 1.25rem 1.15rem !important; }
+}
+
+@media (max-width: 600px) {
+    .view-panel-title-heading { font-size: 1.5rem !important; }
+    .metric-card-footer-row { flex-direction: column !important; align-items: flex-start !important; gap: 0.4rem; }
+    .metric-action-route-btn { width: 100% !important; justify-content: center; }
+    .ledger-block-header { flex-direction: column !important; align-items: flex-start !important; gap: 1rem; }
+    .ledger-export-link-btn { width: 100% !important; justify-content: center; }
+}
+
+/* ==========================================================
+   RESPONSIVE ADD-ON - Asset Registry Section
+   ========================================================== */
+
+@media (max-width: 768px) {
+
+    /* Main content spacing */
+    .dash-view-content-housing{
+        gap: 1.5rem !important;
+    }
+
+    /* Heading */
+    .view-panel-title-heading{
+        font-size: 1.5rem !important;
+        line-height: 1.3;
+    }
+
+    .view-panel-placeholder-desc{
+        font-size: 0.9rem !important;
+        max-width:100% !important;
+    }
+
+    /* Metrics cards become single column */
+    .dash-metrics-showcase-grid{
+        grid-template-columns:1fr !important;
+        gap:1rem !important;
+    }
+
+    .showcase-metric-card{
+        width:100% !important;
+        padding:1.25rem !important;
+        border-radius:16px !important;
+    }
+
+    .metric-card-header-row{
+        flex-direction:column !important;
+        align-items:flex-start !important;
+        gap:.6rem;
+    }
+
+    .metric-card-figure{
+        font-size:1.8rem !important;
+        word-break:break-word;
+    }
+
+    .metric-card-footer-row{
+        flex-direction:column !important;
+        align-items:flex-start !important;
+        gap:.5rem;
+    }
+
+    .metric-action-route-btn{
+        width:100% !important;
+        justify-content:center;
+    }
+
+    /* Ledger Section */
+    .dash-extended-ledger-block{
+        padding:1rem !important;
+    }
+
+    .ledger-block-header{
+        flex-direction:column !important;
+        align-items:flex-start !important;
+        gap:1rem;
+    }
+
+    .ledger-export-link-btn{
+        width:100% !important;
+        justify-content:center;
+    }
+
+    /* Each ledger row becomes vertical */
+    .ledger-table-grid{
+        min-width:100% !important;
+        gap:1rem !important;
+    }
+
+    .ledger-row{
+        display:flex !important;
+        flex-direction:column !important;
+        align-items:flex-start !important;
+        gap:.7rem !important;
+        padding:1rem !important;
+    }
+
+    .table-head{
+        display:none !important;
+    }
+
+    .cell-asset,
+    .cell-allocation,
+    .cell-valuation,
+    .cell-status{
+        width:100% !important;
+        text-align:left !important;
+        justify-content:flex-start !important;
+    }
+
+    .cell-asset::before{
+        content:"Asset";
+        display:block;
+        color:#64748b;
+        font-size:.72rem;
+        margin-bottom:4px;
+    }
+
+    .cell-allocation::before{
+        content:"Allocation";
+        display:block;
+        color:#64748b;
+        font-size:.72rem;
+        margin-bottom:4px;
+    }
+
+    .cell-valuation::before{
+        content:"Valuation";
+        display:block;
+        color:#64748b;
+        font-size:.72rem;
+        margin-bottom:4px;
+    }
+
+    .cell-status::before{
+        content:"Risk Status";
+        display:block;
+        color:#64748b;
+        font-size:.72rem;
+        margin-bottom:4px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width:480px){
+
+    .showcase-metric-card{
+        padding:1rem !important;
+    }
+
+    .metric-card-figure{
+        font-size:1.55rem !important;
+    }
+
+    .metric-card-lbl,
+    .metric-badge{
+        font-size:.65rem !important;
+    }
+
+    .metric-action-route-btn,
+    .ledger-export-link-btn{
+        font-size:.75rem !important;
+        padding:.75rem !important;
+    }
+
+    .ledger-row{
+        padding:.85rem !important;
+    }
+}
+</style>
+
+               <!-- Enhanced Responsive Credit Lines & Gearing View Panel -->
+<section class="dash-modular-view-section" id="credit-gearing">
+    <div class="dash-view-content-housing">
+        
+        <!-- Row A: Title Header Info Block -->
+        <div class="dash-view-text-header">
+            <h2 class="view-panel-title-heading">Credit Lines & Gearing Deck</h2>
+            <p class="view-panel-placeholder-desc">Institutional asset-backed underwriting terminal. Monitor recursive credit multiplier limits, analyze active base margin calculations, and dispatch direct liquidity drawdowns.</p>
+        </div>
+        
+        <!-- Row B: High Fidelity Responsive Credit Metrics Card Grid -->
+        <div class="dash-metrics-showcase-grid">
+            
+            <!-- Credit Card 1: Maximum Capacity -->
+            <div class="showcase-metric-card">
+                <div class="metric-card-accent-line line-amber"></div>
+                <div class="metric-card-header-row">
+                    <span class="metric-card-lbl">Total Underwritten Capacity</span>
+                    <span class="metric-badge badge-blue">Tier-1 Cleared</span>
+                </div>
+                <h3 class="metric-card-figure">$2,500,000.00</h3>
+                <div class="metric-card-footer-row">
+                    <span class="metric-card-delta-badge text-emerald">● Collateralized Coverage</span>
+                    <span class="metric-sub-text">LTV Ceiling: 70.00%</span>
+                </div>
+                <a href="404.html" class="metric-action-route-btn">
+                    <span>Audit Collateral Slates</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
+
+            <!-- Credit Card 2: Dynamic Interest Rate -->
+            <div class="showcase-metric-card">
+                <div class="metric-card-accent-line line-amber"></div>
+                <div class="metric-card-header-row">
+                    <span class="metric-card-lbl">Dynamic Cost of Capital</span>
+                    <span class="metric-badge badge-gold">Floating Rate</span>
+                </div>
+                <h3 class="metric-card-figure">4.85% <span class="figure-sub-text">APR</span></h3>
+                <div class="metric-card-footer-row">
+                    <span class="metric-card-delta-badge text-amber">▼ -0.15% SOFR Index Shift</span>
+                    <span class="metric-sub-text">Calibrated 1h ago</span>
+                </div>
+                <a href="404.html" class="metric-action-route-btn">
+                    <span>View Interest Parameters</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Row C: Elaborate Liquidity Drawdown Simulator Desk -->
+        <div class="dash-extended-ledger-block">
+            <div class="ledger-block-header">
+                <h4 class="ledger-block-title">Liquidity Drawdown Simulator Desk</h4>
+                <span class="credit-status-tag"><span class="status-indicator sig-green"></span> Route Clear</span>
+            </div>
+            
+            <!-- Simulator Interface Form Block Grid -->
+            <div class="credit-simulator-interface">
+                <div class="simulator-input-cluster">
+                    <div class="sim-input-box">
+                        <label for="creditDrawAmount">Target Drawdown Capital Amount (USD)</label>
+                        <div class="sim-input-row-shell">
+                            <span class="sim-currency-lbl">$</span>
+                            <input type="text" id="creditDrawAmount" placeholder="e.g. 250,000" autocomplete="off">
                         </div>
-                    </div> <!-- FIXED: Closes .dash-view-content-housing cleanly first -->
-                </section> <!-- FIXED: Closes section panel perfectly -->
-
-                <!-- View Separate Section 2: Credit Lines View Panel -->
-                <section class="dash-modular-view-section" id="credit-gearing">
-                    <div class="dash-view-content-housing">
-                        <h2 class="view-panel-title-heading">Credit Lines View</h2>
-                        <p class="view-panel-placeholder-desc">This panel monitors active liquidity lines, asset-backed loan multipliers, dynamic interest rates, and loan-to-value allocation ratios.</p>
                     </div>
-                </section>
-
-                <!-- View Separate Section 3: Secure Transfers View Panel -->
-                <section class="dash-modular-view-section" id="secure-transfers">
-                    <div class="dash-view-content-housing">
-                        <h2 class="view-panel-title-heading">Secure Transfers View</h2>
-                        <p class="view-panel-placeholder-desc">Initialize high-volume cross-border wire transfers or execute atomic multi-sig crypto clearings. Transactions are heavily guarded by automated delta-neutral perimeters.</p>
+                    
+                    <div class="sim-input-box">
+                        <label for="creditTargetSettlement">Destination Settlement Node</label>
+                        <div class="sim-select-shell">
+                            <select id="creditTargetSettlement">
+                                <option value="lhr">London Terminal Clearing Vault (LHR-Node)</option>
+                                <option value="nyc">New York Air-Gapped Vault (NYC-Vault)</option>
+                                <option value="hnd">Tokyo Gateway Clearing Hub (HND-Gate)</option>
+                            </select>
+                        </div>
                     </div>
-                </section>
+                </div>
 
-                <!-- View Separate Section 4: ZK Handshakes View Panel -->
-                <section class="dash-modular-view-section" id="zk-handshakes">
-                    <div class="dash-view-content-housing">
-                        <h2 class="view-panel-title-heading">ZK Handshakes View</h2>
-                        <p class="view-panel-placeholder-desc">Track and sign privacy-preserving zero-knowledge verification handshakes, view historical compliance logs, and rekey cold storage multi-sig parameters.</p>
+                <!-- Simulation Output Readout Sub-Panel -->
+                <div class="simulator-telemetry-feedback-panel">
+                    <div class="telemetry-row">
+                        <span class="telemetry-lbl">Projected Post-Drawdown LTV Ratio:</span>
+                        <span class="telemetry-val font-mono color-white">41.12%</span>
                     </div>
-                </section>
+                    <div class="telemetry-row">
+                        <span class="telemetry-lbl">Estimated Monthly Capital Service Cost:</span>
+                        <span class="telemetry-val font-mono color-gold">$1,010.42 / mo</span>
+                    </div>
+                </div>
+
+                <!-- Action Confirmation Row Button (Routes Safely to 404 Page) -->
+                <div class="simulator-action-row">
+                    <a href="404.html" class="simulator-execute-btn">
+                        <span>Authorize Liquidity Handshake Key</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </div> 
+</section> 
+
+<style>
+    /* ==========================================================================
+   ELABORATE RESPONSIVE CREDIT LINES VIEW STYLING MASTER
+   ========================================================================== */
+
+/* Accent line modifier variations */
+.metric-card-accent-line.line-amber {
+    position: absolute; left: 0; top: 0; width: 3px; height: 100%; background-color: transparent; transition: background-color 0.4s ease;
+}
+.showcase-metric-card:hover .metric-card-accent-line.line-amber { background-color: #f59e0b !important; }
+
+.figure-sub-text { font-size: 1.1rem; color: #475569; font-weight: 700; letter-spacing: 0; }
+.badge-gold { background: rgba(245, 158, 11, 0.08); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.15); }
+.text-amber { color: #f59e0b !important; }
+
+/* Status tags alignment group */
+.credit-status-tag {
+    display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(16, 185, 129, 0.06); border: 1px solid rgba(16, 185, 129, 0.2); padding: 0.35rem 0.8rem; border-radius: 30px; font-size: 0.72rem; font-weight: 700; color: #10b981; text-transform: uppercase;
+}
+
+/* --- INTERACTIVE SIMULATOR DESK INTERFACE LAYOUTS --- */
+.credit-simulator-interface {
+    display: flex; flex-direction: column; gap: 1.5rem; width: 100%; box-sizing: border-box;
+}
+
+.simulator-input-cluster {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; /* Side-by-side inputs across widescreen monitors */
+    gap: 1.5rem !important; width: 100%; box-sizing: border-box;
+}
+
+.sim-input-box { display: flex; flex-direction: column; gap: 0.45rem; text-align: left; width: 100%; box-sizing: border-box; }
+.sim-input-box label { font-size: 0.72rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.04em; }
+
+.sim-input-row-shell {
+    display: flex; align-items: center; background: rgba(4, 7, 13, 0.4); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 10px; padding: 0.25rem; transition: border-color 0.3s ease; width: 100%; box-sizing: border-box;
+}
+.sim-input-row-shell:focus-within { border-color: #f59e0b !important; }
+
+.sim-currency-lbl { font-size: 0.95rem; font-weight: 700; color: #334155; padding-left: 0.85rem; font-family: monospace; }
+.sim-input-row-shell input { width: 100%; background: transparent !important; border: none !important; outline: none !important; padding: 0.65rem 0.5rem; font-size: 0.95rem; font-weight: 600; color: #ffffff !important; box-sizing: border-box; }
+.sim-input-row-shell input::placeholder { color: #334155; }
+
+/* Simulator Dropdown custom configurations */
+.sim-select-shell { position: relative; width: 100%; background: rgba(4, 7, 13, 0.4); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 10px; padding: 0.25rem; transition: border-color 0.3s ease; box-sizing: border-box; }
+.sim-select-shell:focus-within { border-color: #f59e0b !important; }
+.sim-select-shell select { width: 100%; background: transparent !important; border: none !important; outline: none !important; padding: 0.65rem 2.5rem 0.65rem 0.85rem; font-size: 0.95rem; font-weight: 600; color: #ffffff !important; cursor: pointer; appearance: none; -webkit-appearance: none; box-sizing: border-box; }
+.sim-select-shell select option { background-color: #0d1321; color: #ffffff; }
+.sim-select-shell::after { content: '▼'; font-size: 0.65rem; color: #475569; position: absolute; right: 1.25rem; top: 50%; transform: translateY(-50%); pointer-events: none; }
+
+/* Sub-panel telemetry readout calculations rows wrap */
+.simulator-telemetry-feedback-panel {
+    display: flex; flex-direction: column; gap: 0.75rem; background: rgba(245, 158, 11, 0.02); padding: 1.15rem 1.5rem; border-radius: 12px; border: 1px solid rgba(245, 158, 11, 0.12); width: 100%; box-sizing: border-box;
+}
+.telemetry-row { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.telemetry-lbl { font-size: 0.85rem; color: #64748b; font-weight: 600; text-align: left; }
+.telemetry-val { font-size: 0.95rem; font-weight: 700; text-align: right; }
+.color-white { color: #ffffff; }
+.color-gold { color: #f59e0b; text-shadow: 0 0 10px rgba(245,158,11,0.2); }
+
+.simulator-action-row { width: 100%; display: flex; }
+
+/* Master Execution Action Trigger Button */
+.simulator-execute-btn {
+    display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 0.75rem !important; width: 100% !important; text-decoration: none !important; background: rgba(255, 255, 255, 0.02) !important; color: #ffffff !important; border: 1px solid rgba(255, 255, 255, 0.15) !important; padding: 0.9rem !important; border-radius: 8px !important; font-weight: 700 !important; font-size: 0.92rem !important; letter-spacing: 0.01em; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important; box-sizing: border-box;
+}
+.dash-extended-ledger-block:hover .simulator-execute-btn,
+.simulator-execute-btn:hover {
+    background: linear-gradient(135deg, #b45309 0%, #f59e0b 100__) !important; color: #000000 !important; border-color: transparent !important; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35) !important;
+}
+.simulator-execute-btn svg { transition: transform 0.4s ease; color: #64748b; }
+.simulator-execute-btn:hover svg { transform: translateX(3px) !important; color: #000000 !important; }
+
+/* ==========================================================================
+   LIQUID SAFETY RESPONSIVE BREAKPOINTS CONFIGURATION MAPPINGS
+   ========================================================================== */
+@media (max-width: 992px) {
+    /* LIQUID COLLAPSE SHIELD: Converts simulator sub-grids row into full vertical arrays sequentially */
+    .simulator-input-cluster {
+        grid-template-columns: 1fr !important; gap: 1.25rem !important;
+    }
+}
+@media (max-width: 600px) {
+    .telemetry-row { flex-direction: column !important; align-items: flex-start !important; gap: 0.25rem; }
+    .telemetry-val { text-align: left !important; }
+}
+
+/* ==========================================================
+   RESPONSIVE ADD-ON - CREDIT & GEARING PAGE
+   ========================================================== */
+
+@media screen and (max-width: 992px) {
+
+    /* Header */
+    .dash-view-text-header{
+        text-align:left;
+    }
+
+    /* Metric Cards */
+    .dash-metrics-showcase-grid{
+        display:grid !important;
+        grid-template-columns:1fr !important;
+        gap:1.25rem !important;
+    }
+
+    .showcase-metric-card{
+        width:100% !important;
+        padding:1.5rem !important;
+    }
+
+    .metric-card-header-row{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:.6rem;
+    }
+
+    .metric-card-footer-row{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:.5rem;
+    }
+
+    .metric-action-route-btn{
+        width:100%;
+        justify-content:center;
+    }
+
+    /* Ledger Block */
+    .dash-extended-ledger-block{
+        padding:1.25rem !important;
+    }
+
+    .ledger-block-header{
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:1rem;
+    }
+
+    /* Input Fields */
+    .simulator-input-cluster{
+        display:grid !important;
+        grid-template-columns:1fr !important;
+        gap:1rem !important;
+    }
+
+    .sim-input-box{
+        width:100%;
+    }
+
+    .sim-input-row-shell,
+    .sim-select-shell{
+        width:100%;
+    }
+
+    .sim-input-row-shell input,
+    .sim-select-shell select{
+        width:100%;
+    }
+
+    /* Telemetry */
+    .simulator-telemetry-feedback-panel{
+        padding:1rem;
+    }
+
+    .telemetry-row{
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:.35rem;
+    }
+
+    .telemetry-val{
+        text-align:left;
+    }
+
+    /* Button */
+    .simulator-action-row{
+        width:100%;
+    }
+
+    .simulator-execute-btn{
+        width:100% !important;
+        justify-content:center;
+    }
+}
+
+@media screen and (max-width:576px){
+
+    .view-panel-title-heading{
+        font-size:1.5rem !important;
+    }
+
+    .view-panel-placeholder-desc{
+        font-size:.9rem !important;
+    }
+
+    .metric-card-figure{
+        font-size:1.6rem !important;
+    }
+
+    .metric-card-lbl,
+    .metric-sub-text,
+    .telemetry-lbl,
+    .telemetry-val{
+        font-size:.85rem;
+    }
+
+    .simulator-execute-btn{
+        font-size:.85rem !important;
+        padding:.9rem !important;
+    }
+
+    .credit-status-tag{
+        width:100%;
+        justify-content:center;
+    }
+}
+</style>
+
+              <!-- Enhanced Responsive Secure Transfers View Panel -->
+<section class="dash-modular-view-section" id="secure-transfers">
+    <div class="dash-view-content-housing">
+        
+        <!-- Row A: Title Header Info Block -->
+        <div class="dash-view-text-header">
+            <h2 class="view-panel-title-heading">Secure Transfers Terminal</h2>
+            <p class="view-panel-placeholder-desc">High-volume clearing gateway and cross-chain routing matrix. Dispatched settlements pass recursive zero-knowledge perimeter checks and automated delta-neutral security validation natively.</p>
+        </div>
+        
+        <!-- Row B: High Fidelity Operational Performance Metrics Grid -->
+        <div class="dash-metrics-showcase-grid">
+            
+            <!-- Transfer Metrics Card 1 -->
+            <div class="showcase-metric-card">
+                <div class="metric-card-accent-line line-blue-glow"></div>
+                <div class="metric-card-header-row">
+                    <span class="metric-card-lbl">Daily Clearing Limit Remainder</span>
+                    <span class="metric-badge badge-blue">Unlimited SLA</span>
+                </div>
+                <h3 class="metric-card-figure">$14,582,100.00 <span class="figure-sub-text">USD</span></h3>
+                <div class="metric-card-footer-row">
+                    <span class="metric-card-delta-badge text-emerald">● Multi-Sig Bonded Pool</span>
+                    <span class="metric-sub-text">Reset locks in 6h</span>
+                </div>
+                <a href="404.html" class="metric-action-route-btn">
+                    <span>Audit Clearing Windows</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
+
+            <!-- Transfer Metrics Card 2 -->
+            <div class="showcase-metric-card">
+                <div class="metric-card-accent-line line-blue-glow"></div>
+                <div class="metric-card-header-row">
+                    <span class="metric-card-lbl">Active Settlement Tracks</span>
+                    <span class="metric-badge badge-emerald">Microsecond Sync</span>
+                </div>
+                <h3 class="metric-card-figure">0.0004s <span class="figure-sub-text">Latency</span></h3>
+                <div class="metric-card-footer-row">
+                    <span class="metric-card-delta-badge text-emerald">▲ Router Optimization Peak</span>
+                    <span class="metric-sub-text">LHR - NYC Route</span>
+                </div>
+                <a href="404.html" class="metric-action-route-btn">
+                    <span>Analyze Network Map</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Row C: Elaborate Atomic Transfer Dispatcher Form Desk -->
+        <div class="dash-extended-ledger-block">
+            <div class="ledger-block-header">
+                <h4 class="ledger-block-title">Atomic Multi-Sig Transfer Dispatcher</h4>
+                <span class="transfer-encryption-tag"><span class="status-indicator sig-green"></span> AES-256 Armed</span>
+            </div>
+            
+            <!-- Transfer Input Layout Grid Framework -->
+            <div class="transfer-dispatcher-interface">
+                <div class="transfer-input-cluster">
+                    
+                    <!-- Destination Target Account Input -->
+                    <div class="trans-input-box">
+                        <label for="transTargetNode">Target Settlement Receiver Address / Node ID</label>
+                        <div class="trans-input-row-shell">
+                            <input type="text" id="transTargetNode" placeholder="e.g. STK-LHR-VAULT-99218-ALPHA" autocomplete="off">
+                        </div>
+                    </div>
+                    
+                    <!-- Currency Asset Category Select -->
+                    <div class="trans-input-box">
+                        <label for="transAssetClass">Asset Denomination Currency</label>
+                        <div class="trans-select-shell">
+                            <select id="transAssetClass">
+                                <option value="usd">United States Fiat Liquidity (USD Bonded)</option>
+                                <option value="btc">Bitcoin Core Capital Settlement (BTC / Asset)</option>
+                                <option value="eth">Ethereum Gas Clearing Allocation (ETH / Main)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Valuation Entry Numeric Track -->
+                    <div class="trans-input-box">
+                        <label for="transAmountValue">Transfer Payload Volume Size</label>
+                        <div class="trans-input-row-shell">
+                            <span class="trans-currency-indicator">Σ</span>
+                            <input type="text" id="transAmountValue" placeholder="0.00" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <!-- Clearing Validation Threshold Level Dropdown Selection Box -->
+                    <div class="trans-input-box">
+                        <label for="transPriorityTier">Execution Velocity Speed SLA</label>
+                        <div class="trans-select-shell">
+                            <select id="transPriorityTier">
+                                <option value="flash">Microsecond Flash Clearance Tier (Direct Bank-Loop)</option>
+                                <option value="standard">Standard Multi-Sig Batch Queue (Validates in 3.5s)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Live Compliance Estimation Summary Readout Banner -->
+                <div class="transfer-telemetry-feedback-panel">
+                    <div class="trans-feedback-row">
+                        <span class="trans-lbl">Estimated Compliance Clearance Route Fee:</span>
+                        <span class="trans-val font-mono color-white">0.001% ($0.00 Base)</span>
+                    </div>
+                    <div class="trans-feedback-row">
+                        <span class="trans-lbl">Required Hardware Multi-Sig Signatures Approval Pool:</span>
+                        <span class="trans-val font-mono color-gold">3 of 5 Keys Required</span>
+                    </div>
+                </div>
+
+                <!-- Dispatch Submission Trigger Row Button Elements Block (Routes Safely to 404 Page) -->
+                <div class="transfer-action-row">
+                    <a href="404.html" class="transfer-execute-btn">
+                        <span>Sign & Dispatch Settlement Payload</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </div> 
+</section>
+
+<style>
+    /* ==========================================================================
+   ELABORATE RESPONSIVE SECURE TRANSERS TERMINAL SYSTEM STYLES
+   ========================================================================== */
+
+/* Blue accent indicator tracker lines overlay decoration framework */
+.metric-card-accent-line.line-blue-glow {
+    position: absolute; left: 0; top: 0; width: 3px; height: 100%; background-color: transparent; transition: background-color 0.4s ease;
+}
+.showcase-metric-card:hover .metric-card-accent-line.line-blue-glow { background-color: #0284c7 !important; }
+
+.transfer-encryption-tag {
+    display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(2, 132, 199, 0.06); border: 1px solid rgba(2, 132, 199, 0.2); padding: 0.35rem 0.8rem; border-radius: 30px; font-size: 0.72rem; font-weight: 700; color: #0284c7; text-transform: uppercase;
+}
+
+/* --- ATOMIC DISPATCHER INTERFACE ARCHITECTURE RULES --- */
+.transfer-dispatcher-interface {
+    display: flex; flex-direction: column; gap: 1.5rem; width: 100%; box-sizing: border-box;
+}
+
+.transfer-input-cluster {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; /* Standard side-by-side split row across desktop viewports */
+    gap: 1.5rem !important; width: 100%; box-sizing: border-box;
+}
+
+.trans-input-box { display: flex; flex-direction: column; gap: 0.45rem; text-align: left; width: 100%; box-sizing: border-box; }
+.trans-input-box label { font-size: 0.72rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.04em; }
+
+.trans-input-row-shell {
+    display: flex; align-items: center; background: rgba(4, 7, 13, 0.4); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 10px; padding: 0.25rem; transition: border-color 0.3s ease; width: 100%; box-sizing: border-box;
+}
+.trans-input-row-shell:focus-within { border-color: #0284c7 !important; } /* Blue aura tracking response accent */
+
+.trans-currency-indicator { font-size: 1rem; font-weight: 700; color: #334155; padding-left: 0.85rem; font-family: monospace; }
+.trans-input-row-shell input { width: 100%; background: transparent !important; border: none !important; outline: none !important; padding: 0.65rem 0.85rem; font-size: 0.95rem; font-weight: 600; color: #ffffff !important; box-sizing: border-box; }
+.trans-input-row-shell input::placeholder { color: #334155; }
+
+/* Custom transaction drop selection menus */
+.trans-select-shell { position: relative; width: 100%; background: rgba(4, 7, 13, 0.4); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 10px; padding: 0.25rem; transition: border-color 0.3s ease; box-sizing: border-box; }
+.trans-select-shell:focus-within { border-color: #0284c7 !important; }
+.trans-select-shell select { width: 100%; background: transparent !transparent; border: none !important; outline: none !important; padding: 0.65rem 2.5rem 0.65rem 0.85rem; font-size: 0.95rem; font-weight: 600; color: #ffffff !important; cursor: pointer; appearance: none; -webkit-appearance: none; box-sizing: border-box; }
+.trans-select-shell select option { background-color: #0d1321; color: #ffffff; }
+.trans-select-shell::after { content: '▼'; font-size: 0.65rem; color: #475569; position: absolute; right: 1.25rem; top: 50%; transform: translateY(-50%); pointer-events: none; }
+
+/* Telemetry estimation calculations breakdown box */
+.transfer-telemetry-feedback-panel {
+    display: flex; flex-direction: column; gap: 0.75rem; background: rgba(2, 132, 199, 0.02); padding: 1.15rem 1.5rem; border-radius: 12px; border: 1px solid rgba(2, 132, 199, 0.12); width: 100%; box-sizing: border-box;
+}
+.trans-feedback-row { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.trans-lbl { font-size: 0.85rem; color: #64748b; font-weight: 600; text-align: left; }
+.trans-val { font-size: 0.95rem; font-weight: 700; text-align: right; }
+
+.transfer-action-row { width: 100%; display: flex; }
+
+/* Main Master Execution Disptacher Action Link Button Trigger */
+.transfer-execute-btn {
+    display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 0.75rem !important; width: 100% !important; text-decoration: none !important; background: rgba(255, 255, 255, 0.02) !important; color: #ffffff !important; border: 1px solid rgba(255, 255, 255, 0.15) !important; padding: 0.9rem !important; border-radius: 8px !important; font-weight: 700 !important; font-size: 0.92rem !important; letter-spacing: 0.01em; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important; box-sizing: border-box;
+}
+.dash-extended-ledger-block:hover .transfer-execute-btn,
+.transfer-execute-btn:hover {
+    background: linear-gradient(135deg, #025h20 0%, #0284c7 100%) !important; /* Transforms outline block into high contrast structural banking blue ribbon overlay */
+    color: #ffffff !important; border-color: transparent !important; box-shadow: 0 4px 15px rgba(2, 132, 199, 0.35) !important;
+}
+.transfer-execute-btn svg { transition: transform 0.4s ease; color: #64748b; }
+.transfer-execute-btn:hover svg { transform: translateX(3px) !important; color: #ffffff !important; }
+
+/* ==========================================================================
+   LIQUID SAFETY RESPONSIVE MOBILE WIDTH OVERRIDES
+   ========================================================================== */
+@media (max-width: 992px) {
+    /* LIQUID COLLAPSE SHIELD: Converts symmetric dual inputs row into single rows tracks smoothly */
+    .transfer-input-cluster {
+        grid-template-columns: 1fr !important; gap: 1.25rem !important;
+    }
+}
+@media (max-width: 600px) {
+    .trans-feedback-row { flex-direction: column !important; align-items: flex-start !important; gap: 0.25rem; }
+    .trans-val { text-align: left !important; }
+}
+
+/* ==========================================================
+   RESPONSIVE ADD-ON - SECURE TRANSFERS PAGE
+   ========================================================== */
+
+@media screen and (max-width: 992px) {
+
+    /* Page Header */
+    .dash-view-text-header{
+        text-align:left;
+    }
+
+    /* Metric Cards */
+    .dash-metrics-showcase-grid{
+        display:grid !important;
+        grid-template-columns:1fr !important;
+        gap:1.25rem !important;
+    }
+
+    .showcase-metric-card{
+        width:100% !important;
+        padding:1.5rem !important;
+    }
+
+    .metric-card-header-row{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:.6rem;
+    }
+
+    .metric-card-footer-row{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:.5rem;
+    }
+
+    .metric-action-route-btn{
+        width:100% !important;
+        justify-content:center;
+    }
+
+    /* Main Transfer Panel */
+    .dash-extended-ledger-block{
+        padding:1.25rem !important;
+    }
+
+    .ledger-block-header{
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:1rem;
+    }
+
+    /* Input Fields */
+    .transfer-input-cluster{
+        display:grid !important;
+        grid-template-columns:1fr !important;
+        gap:1rem !important;
+    }
+
+    .trans-input-box{
+        width:100%;
+    }
+
+    .trans-input-row-shell,
+    .trans-select-shell{
+        width:100%;
+    }
+
+    .trans-input-row-shell input,
+    .trans-select-shell select{
+        width:100%;
+    }
+
+    /* Telemetry Panel */
+    .transfer-telemetry-feedback-panel{
+        padding:1rem !important;
+    }
+
+    .trans-feedback-row{
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:.35rem;
+    }
+
+    .trans-val{
+        text-align:left !important;
+    }
+
+    /* Button */
+    .transfer-action-row{
+        width:100%;
+    }
+
+    .transfer-execute-btn{
+        width:100% !important;
+        justify-content:center;
+    }
+}
+
+@media screen and (max-width:576px){
+
+    .view-panel-title-heading{
+        font-size:1.5rem !important;
+    }
+
+    .view-panel-placeholder-desc{
+        font-size:.9rem !important;
+    }
+
+    .metric-card-figure{
+        font-size:1.6rem !important;
+    }
+
+    .metric-card-lbl,
+    .metric-sub-text,
+    .trans-lbl,
+    .trans-val{
+        font-size:.85rem !important;
+    }
+
+    .transfer-encryption-tag{
+        width:100%;
+        justify-content:center;
+    }
+
+    .transfer-execute-btn{
+        font-size:.85rem !important;
+        padding:.9rem !important;
+    }
+}
+</style>
+
+               <!-- Enhanced Responsive Zero-Knowledge Validation View Panel -->
+<section class="dash-modular-view-section" id="zk-handshakes">
+    <div class="dash-view-content-housing">
+        
+        <!-- Row A: Title Header Info Block -->
+        <div class="dash-view-text-header">
+            <h2 class="view-panel-title-heading">ZK Handshakes & Audit Validation</h2>
+            <p class="view-panel-placeholder-desc">Sovereign identity protection and air-gapped cryptographic proof verification desk. Authorize multi-sig consensus updates, log non-interactive zero-knowledge proofs (NIZKPs), and track privacy compliance indexes natively.</p>
+        </div>
+        
+        <!-- Row B: High Fidelity Operational Performance Metrics Grid -->
+        <div class="dash-metrics-showcase-grid">
+            
+            <!-- ZK Metrics Card 1 -->
+            <div class="showcase-metric-card">
+                <div class="metric-card-accent-line line-emerald-glow"></div>
+                <div class="metric-card-header-row">
+                    <span class="metric-card-lbl">Cryptographic Compliance Index</span>
+                    <span class="metric-badge badge-emerald">100% Secure</span>
+                </div>
+                <h3 class="metric-card-figure">ZK-Snark <span class="figure-sub-text">Active</span></h3>
+                <div class="metric-card-footer-row">
+                    <span class="metric-card-delta-badge text-emerald">● Total Anonymity Mask Locked</span>
+                    <span class="metric-sub-text">Sovereign Status Verified</span>
+                </div>
+                <a href="404.html" class="metric-action-route-btn">
+                    <span>Inspect Proof Tree</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
+
+            <!-- ZK Metrics Card 2 -->
+            <div class="showcase-metric-card">
+                <div class="metric-card-accent-line line-emerald-glow"></div>
+                <div class="metric-card-header-row">
+                    <span class="metric-card-lbl">Consensus Block Anchors</span>
+                    <span class="metric-badge badge-gold">Multi-Sig State</span>
+                </div>
+                <h3 class="metric-card-figure">Epoch #4811 <span class="figure-sub-text">Synced</span></h3>
+                <div class="metric-card-footer-row">
+                    <span class="metric-card-delta-badge text-emerald">▲ 0.00ms Proof Generation Delay</span>
+                    <span class="metric-sub-text">Air-Gapped Loop</span>
+                </div>
+                <a href="404.html" class="metric-action-route-btn">
+                    <span>Review Node Relays</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Row C: Elaborate Cryptographic Verification Console Form Desk -->
+        <div class="dash-extended-ledger-block">
+            <div class="ledger-block-header">
+                <h4 class="ledger-block-title">ZK Validation Key & Proof Registry Simulator</h4>
+                <span class="zk-encryption-tag"><span class="status-indicator sig-green"></span> Proof Ready</span>
+            </div>
+            
+            <!-- Cryptographic Input Layout Grid Framework -->
+            <div class="zk-dispatcher-interface">
+                <div class="zk-input-cluster">
+                    
+                    <!-- Prover Reference Address Input -->
+                    <div class="zk-input-box">
+                        <label for="zkProverAddress">Prover Reference Hash (Public Commit Block)</label>
+                        <div class="zk-input-row-shell">
+                            <input type="text" id="zkProverAddress" placeholder="e.g. 0x71C...B49f82110A" autocomplete="off">
+                        </div>
+                    </div>
+                    
+                    <!-- ZK Circuit Profile Proof Type Selection Dropdown -->
+                    <div class="zk-input-box">
+                        <label for="zkCircuitProfile">Cryptographic Proof Circuit Variant</label>
+                        <div class="zk-select-shell">
+                            <select id="zkCircuitProfile">
+                                <option value="snark">Groth16 ZK-Snark Protocol (Zero-Knowledge Statement)</option>
+                                <option value="stark">Scalable Transparent STARK Model (Quantum-Resistant)</option>
+                                <option value="bulletproof">Bulletproofs Range Verification (Private Credit Assets)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Live Proof Verification Hash Telemetry Readout Banner -->
+                <div class="zk-telemetry-feedback-panel">
+                    <div class="zk-feedback-row">
+                        <span class="zk-lbl">Generated Witness Verification Parameter Hash:</span>
+                        <span class="zk-val font-mono color-white text-ellipsis">df78a1a9e992b45ba10d...ce8c3e80</span>
+                    </div>
+                    <div class="zk-feedback-row">
+                        <span class="zk-lbl">Consensus Handshake Status Validation:</span>
+                        <span class="zk-val font-mono color-gold">Awaiting Multi-Key Pass Signature</span>
+                    </div>
+                </div>
+
+                <!-- Simulation Trigger Action Execution Button (Routes Safely to 404 Page) -->
+                <div class="zk-action-row">
+                    <a href="404.html" class="zk-execute-btn">
+                        <span>Deploy Cryptographic Verification Handshake</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </div> 
+</section>
+
+<style>
+    /* ==========================================================================
+   ELABORATE RESPONSIVE ZERO-KNOWLEDGE CONSOLE SYSTEM STYLES
+   ========================================================================== */
+
+/* Emerald accent indicator tracker lines overlay decoration framework */
+.metric-card-accent-line.line-emerald-glow {
+    position: absolute; left: 0; top: 0; width: 3px; height: 100%; background-color: transparent; transition: background-color 0.4s ease;
+}
+.showcase-metric-card:hover .metric-card-accent-line.line-emerald-glow { background-color: #10b981 !important; }
+
+.zk-encryption-tag {
+    display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(16, 185, 129, 0.06); border: 1px solid rgba(16, 185, 129, 0.2); padding: 0.35rem 0.8rem; border-radius: 30px; font-size: 0.72rem; font-weight: 700; color: #10b981; text-transform: uppercase;
+}
+
+/* --- CRYPTOGRAPHIC SIMULATOR ARCHITECTURE RULES --- */
+.zk-dispatcher-interface {
+    display: flex; flex-direction: column; gap: 1.5rem; width: 100%; box-sizing: border-box;
+}
+
+.zk-input-cluster {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; /* Side-by-side balanced dual layout inputs split row across desktop profiles */
+    gap: 1.5rem !important; width: 100%; box-sizing: border-box;
+}
+
+.zk-input-box { display: flex; flex-direction: column; gap: 0.45rem; text-align: left; width: 100%; box-sizing: border-box; }
+.zk-input-box label { font-size: 0.72rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.04em; }
+
+.zk-input-row-shell {
+    display: flex; align-items: center; background: rgba(4, 7, 13, 0.4); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 10px; padding: 0.25rem; transition: border-color 0.3s ease; width: 100%; box-sizing: border-box;
+}
+.zk-input-row-shell:focus-within { border-color: #10b981 !important; } /* Emerald green validation feedback glow track */
+
+.zk-input-row-shell input { width: 100%; background: transparent !important; border: none !important; outline: none !important; padding: 0.65rem 0.85rem; font-size: 0.95rem; font-weight: 600; color: #ffffff !important; box-sizing: border-box; }
+.zk-input-row-shell input::placeholder { color: #334155; }
+
+/* Custom transaction drop selection menus */
+.zk-select-shell { position: relative; width: 100%; background: rgba(4, 7, 13, 0.4); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 10px; padding: 0.25rem; transition: border-color 0.3s ease; box-sizing: border-box; }
+.zk-select-shell:focus-within { border-color: #10b981 !important; }
+.zk-select-shell select { width: 100%; background: transparent !important; border: none !important; outline: none !important; padding: 0.65rem 2.5rem 0.65rem 0.85rem; font-size: 0.95rem; font-weight: 600; color: #ffffff !important; cursor: pointer; appearance: none; -webkit-appearance: none; box-sizing: border-box; }
+.zk-select-shell select option { background-color: #0d1321; color: #ffffff; }
+.zk-select-shell::after { content: '▼'; font-size: 0.65rem; color: #475569; position: absolute; right: 1.25rem; top: 50%; transform: translateY(-50%); pointer-events: none; }
+
+/* Telemetry estimation calculations breakdown box */
+.zk-telemetry-feedback-panel {
+    display: flex; flex-direction: column; gap: 0.75rem; background: rgba(16, 185, 129, 0.01); padding: 1.15rem 1.5rem; border-radius: 12px; border: 1px solid rgba(16, 185, 129, 0.12); width: 100%; box-sizing: border-box;
+}
+.zk-feedback-row { display: flex; justify-content: space-between; align-items: center; width: 100%; gap: 1.5rem; }
+.zk-lbl { font-size: 0.85rem; color: #64748b; font-weight: 600; text-align: left; }
+.zk-val { font-size: 0.95rem; font-weight: 700; text-align: right; }
+.text-ellipsis { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 50%; }
+
+.zk-action-row { width: 100%; display: flex; }
+
+/* Main Master Execution Disptacher Action Link Button Trigger */
+.zk-execute-btn {
+    display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 0.75rem !important; width: 100% !important; text-decoration: none !important; background: rgba(255, 255, 255, 0.02) !important; color: #ffffff !important; border: 1px solid rgba(255, 255, 255, 0.15) !important; padding: 0.9rem !important; border-radius: 8px !important; font-weight: 700 !important; font-size: 0.92rem !important; letter-spacing: 0.01em; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important; box-sizing: border-box;
+}
+.dash-extended-ledger-block:hover .zk-execute-btn,
+.zk-execute-btn:hover {
+    background: linear-gradient(135deg, #064e3b 0%, #10b981 100__) !important; /* Transforms outline block into high contrast structural emerald ribbon overlay */
+    color: #000000 !important; border-color: transparent !important; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.35) !important;
+}
+.zk-execute-btn svg { transition: transform 0.4s ease; color: #64748b; }
+.zk-execute-btn:hover svg { transform: translateX(3px) !important; color: #000000 !important; }
+
+/* ==========================================================================
+   LIQUID SAFETY RESPONSIVE MOBILE WIDTH OVERRIDES
+   ========================================================================== */
+@media (max-width: 992px) {
+    /* LIQUID COLLAPSE SHIELD: Converts symmetric dual inputs row into single rows tracks smoothly */
+    .zk-input-cluster {
+        grid-template-columns: 1fr !important; gap: 1.25rem !important;
+    }
+}
+@media (max-width: 600px) {
+    .zk-feedback-row { flex-direction: column !important; align-items: flex-start !important; gap: 0.25rem; }
+    .zk-val { text-align: left !important; max-width: 100% !important; }
+}
+
+/* ==========================================================================
+   RESPONSIVE ADD-ON - ZK HANDSHAKES SECTION
+   ========================================================================== */
+
+/* Tablet */
+@media screen and (max-width: 992px) {
+
+    /* Metrics cards */
+    .dash-metrics-showcase-grid{
+        grid-template-columns:1fr !important;
+        gap:1.5rem !important;
+    }
+
+    .showcase-metric-card{
+        width:100% !important;
+    }
+
+    /* Header */
+    .ledger-block-header{
+        flex-direction:column !important;
+        align-items:flex-start !important;
+        gap:1rem !important;
+    }
+
+    .zk-encryption-tag{
+        width:fit-content;
+    }
+
+    /* Input fields one below another */
+    .zk-input-cluster{
+        display:flex !important;
+        flex-direction:column !important;
+        gap:1rem !important;
+    }
+
+    .zk-input-box{
+        width:100% !important;
+    }
+
+    .zk-input-row-shell,
+    .zk-select-shell{
+        width:100% !important;
+    }
+
+    .zk-input-row-shell input,
+    .zk-select-shell select{
+        width:100% !important;
+    }
+
+    /* Feedback panel */
+    .zk-feedback-row{
+        flex-direction:column !important;
+        align-items:flex-start !important;
+        gap:.45rem !important;
+    }
+
+    .zk-lbl,
+    .zk-val{
+        width:100% !important;
+        text-align:left !important;
+    }
+
+    .text-ellipsis{
+        white-space:normal !important;
+        word-break:break-word !important;
+        overflow:visible !important;
+        text-overflow:unset !important;
+        max-width:100% !important;
+    }
+
+    /* Button */
+    .zk-action-row{
+        width:100% !important;
+    }
+
+    .zk-execute-btn{
+        width:100% !important;
+        justify-content:center !important;
+    }
+}
+
+
+/* Mobile */
+@media screen and (max-width: 768px){
+
+    .dash-view-content-housing{
+        gap:1.5rem !important;
+    }
+
+    .view-panel-title-heading{
+        font-size:1.5rem !important;
+    }
+
+    .view-panel-placeholder-desc{
+        font-size:.92rem !important;
+        line-height:1.6 !important;
+    }
+
+    .showcase-metric-card{
+        padding:1.25rem !important;
+    }
+
+    .metric-card-header-row{
+        flex-direction:column !important;
+        align-items:flex-start !important;
+        gap:.6rem !important;
+    }
+
+    .metric-card-figure{
+        font-size:1.6rem !important;
+        line-height:1.3 !important;
+    }
+
+    .metric-card-footer-row{
+        flex-direction:column !important;
+        align-items:flex-start !important;
+        gap:.5rem !important;
+    }
+
+    .metric-action-route-btn{
+        width:100% !important;
+        justify-content:center !important;
+    }
+
+    .dash-extended-ledger-block{
+        padding:1.2rem !important;
+    }
+}
+
+
+/* Small Mobile */
+@media screen and (max-width:480px){
+
+    .view-panel-title-heading{
+        font-size:1.35rem !important;
+    }
+
+    .metric-card-figure{
+        font-size:1.35rem !important;
+    }
+
+    .zk-input-box label{
+        font-size:.72rem !important;
+    }
+
+    .zk-input-row-shell input,
+    .zk-select-shell select{
+        font-size:.9rem !important;
+    }
+
+    .zk-execute-btn{
+        padding:.9rem !important;
+        font-size:.88rem !important;
+        flex-wrap:wrap !important;
+        text-align:center !important;
+    }
+}
+</style>
 
             </main> <!-- Closes your dashboard main workspace pane cleanly -->
 
@@ -344,106 +1716,238 @@
 .dash-metrics-showcase-grid {
     display: grid !important; grid-template-columns: repeat(2, 1fr) !important; gap: 1.5rem !important; width: 100%; max-width: 840px; box-sizing: border-box;
 }
-.showcase-metric-card {background: rgba(9, 13, 22, 0.65) !important; border: 1px solid rgba(255, 255, 255, 0.04) !important; padding: 1.5rem 1.75rem !important; border-radius: 16px !important; display: flex !important; flex-direction: column !important; gap: 0.5rem; box-sizing: border-box; transition: border-color 0.3s ease;}.showcase-metric-card:hover { border-color: rgba(245, 158, 11, 0.2) !important; }.metric-card-lbl { font-size: 0.72rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.04em; }.metric-card-figure { font-size: 1.75rem; font-weight: 800; color: #ffffff; margin: 0; font-family: monospace; }.metric-card-delta-badge { font-size: 0.8rem; font-weight: 700; }.text-emerald { color: #10b981; }/* ==========================================================================3. MOBILE RESPONSIVE SAFETY SHIELDS & BREAKPOINT CONTROLS MAPPINGS========================================================================== */.dash-mobile-sidebar-blur-shroud { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(4, 7, 13, 0.7); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); z-index: 850; display: none; opacity: 0; transition: opacity 0.4s ease; }.dash-mobile-sidebar-blur-shroud.shroud-active { display: block; opacity: 1; }@media (max-width: 992px) {.dash-master-wrapper { grid-template-columns: 1fr !important; }.mobile-hamburger-toggle { display: flex !important; }.dash-master-header { padding: 0 1.25rem !important; justify-content: space-between !important; }.header-right-cluster { margin-left: 0 !important; }.dash-content-display-pane { padding: 1.5rem 1.25rem !important; }.dash-metrics-showcase-grid { grid-template-columns: 1fr !important; gap: 1rem !important; }.dash-sidebar-housing {position: absolute !important; top: 0; left: 0; width: 75vw !important; max-width: 320px !important; height: 100% !important;transform: translate3d(-100%, 0, 0) !important;transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;}.dash-sidebar-housing.sidebar-mobile-open { transform: translate3d(0, 0, 0) !important; box-shadow: 25px 0 60px rgba(0, 0, 0, 0.85) !important; }}
+.showcase-metric-card {background: rgba(9, 13, 22, 0.65) !important; border: 1px solid rgba(255, 255, 255, 0.04) !important; padding: 1.5rem 1.75rem !important; border-radius: 16px !important; display: flex !important; flex-direction: column !important; gap: 0.5rem; box-sizing: border-box; transition: border-color 0.3s ease;}.showcase-metric-card:hover { border-color: rgba(245, 158, 11, 0.2) !important; }.metric-card-lbl { font-size: 0.72rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.04em; }.metric-card-figure { font-size: 1.75rem; font-weight: 800; color: #ffffff; margin: 0; font-family: monospace; }.metric-card-delta-badge { font-size: 0.8rem; font-weight: 700; }.text-emerald { color: #10b981; }/* ==========================================================================3. MOBILE RESPONSIVE SAFETY SHIELDS & BREAKPOINT CONTROLS MAPPINGS========================================================================== */
+.dash-mobile-sidebar-blur-shroud{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.55);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 899;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease;
+}
+
+.dash-mobile-sidebar-blur-shroud.shroud-active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.dash-sidebar-housing{
+    z-index:900;
+}
+
+
+
+@media (max-width:992px){
+
+.dash-master-wrapper{
+    grid-template-columns:1fr !important;
+}
+
+.mobile-hamburger-toggle{
+    display:flex !important;
+}
+
+.dash-sidebar-housing{
+
+    position:fixed !important;
+
+    top:0;
+    left:0;
+
+    width:280px;
+
+    max-width:80vw;
+
+    height:100vh;
+
+    transform:translateX(-100%);
+
+    transition:transform .35s ease;
+
+    z-index:999;
+
+    background:#090d16;
+}
+
+.dash-sidebar-housing.sidebar-mobile-open{
+    transform:translateX(0);
+}
+
+}
 
 </style>
-
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-    
-    // Core structural control DOM node handles mappings
+document.addEventListener('DOMContentLoaded', () => {
+
+    // DOM Elements
     const hamburgerBtn = document.getElementById('hamburgerMenuBtn');
     const dashboardSidebar = document.getElementById('dashboardSidebar');
     const backgroundShroud = document.getElementById('sidebarBackgroundShroud');
     const logoRefreshBtn = document.getElementById('brandLogoRefreshHook');
     const logoutBtn = document.getElementById('clientLogoutTrigger');
     const headerUsernameDisplay = document.getElementById('headerExtractedUserField');
-    
-    // 1. MOBILE BACKDROP FREEZE LOCK: Hamburger interaction toggle monitoring logic loops
-    if (hamburgerBtn && dashboardSidebar && backgroundShroud) {
-        
-        function openMobileSidebarConsole() {
-            dashboardSidebar.classList.add('sidebar-mobile-open');
-            backgroundShroud.classList.add('shroud-active');
-            
-            // CRITICAL FUNCTION SPEC: Freezes background document body elements from scrolling out of bounds [INDEX]
-            document.body.style.overflow = 'hidden'; 
-        }
 
-        function closeMobileSidebarConsole() {
-            dashboardSidebar.classList.remove('sidebar-mobile-open');
-            backgroundShroud.classList.remove('shroud-active');
-            
-            // CRITICAL FUNCTION SPEC: RESTORES full vertical page scroll mobility tracking once closed [INDEX]
-            document.body.style.overflow = ''; 
-        }
-
-        hamburgerBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const isOpen = dashboardSidebar.classList.contains('sidebar-mobile-open');
-            if (isOpen) { closeMobileSidebarConsole(); } else { openMobileSidebarConsole(); }
-        });
-
-        // Intercept close events if client clicks outside active 75% sidebar container shroud
-        backgroundShroud.addEventListener('click', closeMobileSidebarConsole);
-    }
-
-    // 2. DYNAMIC FIRST-NAME EXTRACTION: Pulls target prefix string out from login memory cache [INDEX]
-    if (headerUsernameDisplay) {
-        // Reads email entry strings from application memory context storage
-        const sessionAccountContextMailString = localStorage.getItem('activeClientSessionMail') || "jeevi@gmail.com"; 
-        
-        // Split indices string cleanly at the localized delimiter "@" mark boundary line [INDEX]
-        const extractedMailPrefixComponents = sessionAccountContextMailString.split('@');
-        const finalCalculatedFirstName = extractedMailPrefixComponents[0]; // Capture first segment string text only ("jeevi") [INDEX]
-
-        // Map calculated name context back cleanly onto your template header fields node [INDEX]
-        headerUsernameDisplay.innerText = finalCalculatedFirstName;
-    }
-
-    // 3. BRAND REFRESH TRIGGER: Forces synchronous window console view parameter reload
-    if (logoRefreshBtn) {
-        logoRefreshBtn.addEventListener('click', () => {
-            window.location.reload(); // Performs immediate platform runtime environment clear slate hard refresh [INDEX]
-        });
-    }
-
-    // 4. TABBED VIEWS HUD MATRIX CONTROLLER SYSTEM (Section wise Main Independent views checks)
     const sidebarMenuItemsList = document.querySelectorAll('.sidebar-menu-item');
     const modularContentSectionsList = document.querySelectorAll('.dash-modular-view-section');
 
-    sidebarMenuItemsList.forEach(menuButton => {
-        menuButton.addEventListener('click', () => {
-            // Remove active modifiers from all tabs elements
-            sidebarMenuItemsList.forEach(btn => btn.classList.remove('item-active'));
-            modularContentSectionsList.forEach(view => view.classList.remove('view-active'));
+    // ---------------------------
+    // Mobile Sidebar
+    // ---------------------------
 
-            // Hook current configuration state active
-            menuButton.classList.add('item-active');
-            const targetSectionViewId = menuButton.getAttribute('data-target');
-            const targetViewPanelNode = document.getElementById(targetSectionViewId);
-            
-            if (targetViewPanelNode) {
-                targetViewPanelNode.classList.add('view-active');
-            }
+    function openMobileSidebarConsole() {
+        dashboardSidebar.classList.add('sidebar-mobile-open');
 
-            // Mobile safety closure auto-trigger: wraps up open panels safely on touch select clicks actions
-            if (window.innerWidth <= 992 && dashboardSidebar) {
-                dashboardSidebar.classList.remove('sidebar-mobile-open');
-                backgroundShroud.classList.remove('shroud-active');
-                document.body.style.overflow = '';
+        if (backgroundShroud) {
+            backgroundShroud.classList.add('shroud-active');
+        }
+
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileSidebarConsole() {
+        dashboardSidebar.classList.remove('sidebar-mobile-open');
+
+        if (backgroundShroud) {
+            backgroundShroud.classList.remove('shroud-active');
+        }
+
+        document.body.style.overflow = '';
+    }
+
+    if (hamburgerBtn && dashboardSidebar) {
+
+        hamburgerBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+
+            if (dashboardSidebar.classList.contains('sidebar-mobile-open')) {
+                closeMobileSidebarConsole();
+            } else {
+                openMobileSidebarConsole();
             }
         });
+
+        if (backgroundShroud) {
+            backgroundShroud.addEventListener('click', closeMobileSidebarConsole);
+        }
+    }
+
+    // ---------------------------
+    // Username
+    // ---------------------------
+if (headerUsernameDisplay) {
+
+    const email = localStorage.getItem("activeSessionMail");
+
+    if (email) {
+        const username = email.split("@")[0];
+
+        headerUsernameDisplay.textContent =
+            username.charAt(0).toUpperCase() + username.slice(1);
+    } else {
+        headerUsernameDisplay.textContent = "Client";
+    }
+}
+
+    // ---------------------------
+    // Restore Last Open Menu
+    // ---------------------------
+
+    const savedMenu = localStorage.getItem("activeMenu");
+
+    if (savedMenu) {
+
+        sidebarMenuItemsList.forEach(btn =>
+            btn.classList.remove('item-active')
+        );
+
+        modularContentSectionsList.forEach(section =>
+            section.classList.remove('view-active')
+        );
+
+        const activeButton = document.querySelector(
+            `.sidebar-menu-item[data-target="${savedMenu}"]`
+        );
+
+        const activeSection = document.getElementById(savedMenu);
+
+        if (activeButton) activeButton.classList.add('item-active');
+
+        if (activeSection) activeSection.classList.add('view-active');
+    }
+
+    // ---------------------------
+    // Logo Refresh
+    // ---------------------------
+
+    if (logoRefreshBtn) {
+
+        logoRefreshBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            location.reload();
+        });
+
+    }
+
+    // ---------------------------
+    // Sidebar Menu Click
+    // ---------------------------
+
+    sidebarMenuItemsList.forEach(menuButton => {
+
+        menuButton.addEventListener('click', function () {
+
+            sidebarMenuItemsList.forEach(btn =>
+                btn.classList.remove('item-active')
+            );
+
+            modularContentSectionsList.forEach(section =>
+                section.classList.remove('view-active')
+            );
+
+            menuButton.classList.add('item-active');
+
+            const target = menuButton.dataset.target;
+
+            localStorage.setItem("activeMenu", target);
+
+            const targetSection = document.getElementById(target);
+
+            if (targetSection) {
+                targetSection.classList.add('view-active');
+            }
+
+            if (window.innerWidth <= 992) {
+                closeMobileSidebarConsole();
+            }
+
+        });
+
     });
 
-    // 5. SESSION TERMINATION EXITS ROUTING HANDSHAKE PIPELINE
+    // ---------------------------
+    // Logout
+    // ---------------------------
+
     if (logoutBtn) {
-        logoutBtn.addEventListener('click', () => {
-            // Flush localized workspace memory buffers states tracks safely to clean active caches allocations [INDEX]
-            localStorage.removeItem('activeClientSessionMail');
-            // Route client gracefully back straight onto your multi-profile authentication portal window view file [INDEX]
-            window.location.href = "login-portal.html";
-        });
+
+       logoutBtn.addEventListener('click', () => {
+    localStorage.removeItem("activeClientSessionMail");
+    localStorage.removeItem("activeUserRole");
+
+    window.location.href = "login.html";
+});
+
     }
+
 });
 </script>
+
+
+</div> <!-- dash-viewport-container -->
+</div> <!-- dash-master-wrapper -->
+
+</body>
+</html>
