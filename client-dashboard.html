@@ -261,7 +261,7 @@
 
 .dash-view-text-header { display: flex; flex-direction: column; gap: 0.5rem; width: 100%; }
 .view-panel-title-heading { font-size: 1.8rem !important; font-weight: 800 !important; color: #ffffff !important; margin: 0 !important; letter-spacing: -0.01em !important; }
-.view-panel-placeholder-desc { font-size: 0.98rem !important; color: #64748b !important; line-height: 1.6 !important; margin: 0 !important; max-width: 720px !important; }
+.view-panel-placeholder-desc { font-size: 0.98rem !important; color:  !important; line-height: 1.6 !important; margin: 0 !important; max-width: 720px !important; }
 
 /* --- CORE METRICS MATRIX TRACK OVERLAYS --- */
 .dash-metrics-showcase-grid {
@@ -296,7 +296,7 @@
 .showcase-metric-card:hover .metric-card-accent-line.line-gold { background-color: #f59e0b !important; }
 
 .metric-card-header-row { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-.metric-card-lbl { font-size: 0.72rem !important; font-weight: 700; color: #475569 !important; text-transform: uppercase; letter-spacing: 0.05em; }
+.metric-card-lbl { font-size: 0.72rem !important; font-weight: 700; color: white !important; text-transform: uppercase; letter-spacing: 0.05em; }
 
 /* Status capsule badges components */
 .metric-badge { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 4px; letter-spacing: 0.02em; }
@@ -312,11 +312,11 @@
 
 /* FIXED SUBMISSION PATH BUTTON CTA OVERLAYS LINK ROUTER */
 .metric-action-route-btn {
-    display: inline-flex !important; align-items: center !important; flex-direction: row !important; gap: 0.5rem !important; text-decoration: none !important; background: transparent !important; border: 1px solid rgba(255, 255, 255, 0.06) !important; color: #64748b !important; padding: 0.55rem 1.15rem !important; border-radius: 8px !important; font-weight: 700 !important; font-size: 0.8rem !important; margin-top: 0.85rem !important; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important; box-sizing: border-box;
+    display: inline-flex !important; align-items: center !important; flex-direction: row !important; gap: 0.5rem !important; text-decoration: none !important; background: transparent !important; border: 1px solid rgba(255, 255, 255, 0.06) !important; color: white !important; padding: 0.55rem 1.15rem !important; border-radius: 8px !important; font-weight: 700 !important; font-size: 0.8rem !important; margin-top: 0.85rem !important; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important; box-sizing: border-box;
 }
 .metric-action-route-btn svg { transition: transform 0.4s ease; }
-.metric-action-route-btn:hover { background: linear-gradient(135deg, #b45309 0%, #f59e0b 100%) !important; color: #000000 !important; border-color: transparent !important; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3) !important; }
-.metric-action-route-btn:hover svg { transform: translateX(3px) !important; color: #000000 !important; }
+.metric-action-route-btn:hover { background: linear-gradient(135deg, #b45309 0%, #f59e0b 100%) !important; color: white !important; border-color: transparent !important; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3) !important; }
+.metric-action-route-btn:hover svg { transform: translateX(3px) !important; color: white !important; }
 
 /* --- ELABORATE DATA LEDGER SHEETS MATRIX BOX (ROW C) --- */
 .dash-extended-ledger-block {
@@ -327,7 +327,7 @@
 .ledger-block-title { font-size: 1.15rem; font-weight: 700; color: #ffffff; margin: 0; }
 
 .ledger-export-link-btn {
-    display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none !important; font-size: 0.8rem; font-weight: 700; color: #64748b; border: 1px solid rgba(255,255,255,0.06); padding: 0.45rem 1rem; border-radius: 6px; transition: all 0.3s ease;
+    display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none !important; font-size: 0.8rem; font-weight: 700; color: white; border: 1px solid rgba(255,255,255,0.06); padding: 0.45rem 1rem; border-radius: 6px; transition: all 0.3s ease;
 }
 .ledger-export-link-btn:hover { border-color: #f59e0b; color: #f59e0b !important; background: rgba(245,158,11,0.02); }
 
@@ -342,7 +342,7 @@
 }
 .ledger-row:not(.table-head):hover { background: rgba(13, 19, 33, 0.4); border-color: rgba(255, 255, 255, 0.04); }
 
-.table-head { background: transparent !important; border: none !important; padding: 0.25rem 1.25rem !important; font-size: 0.72rem; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.04em; }
+.table-head { background: transparent !important; border: none !important; padding: 0.25rem 1.25rem !important; font-size: 0.72rem; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 0.04em; }
 
 /* Cell Content Text Alignments Sync */
 .cell-asset { text-align: left; font-size: 0.95rem; color: #ffffff; }
@@ -478,7 +478,7 @@
     .cell-asset::before{
         content:"Asset";
         display:block;
-        color:#64748b;
+        color:white;
         font-size:.72rem;
         margin-bottom:4px;
     }
@@ -486,7 +486,7 @@
     .cell-allocation::before{
         content:"Allocation";
         display:block;
-        color:#64748b;
+        color:white;
         font-size:.72rem;
         margin-bottom:4px;
     }
@@ -494,7 +494,7 @@
     .cell-valuation::before{
         content:"Valuation";
         display:block;
-        color:#64748b;
+        color:white;
         font-size:.72rem;
         margin-bottom:4px;
     }
@@ -502,7 +502,7 @@
     .cell-status::before{
         content:"Risk Status";
         display:block;
-        color:#64748b;
+        color:white;
         font-size:.72rem;
         margin-bottom:4px;
     }
@@ -654,7 +654,7 @@
 }
 .showcase-metric-card:hover .metric-card-accent-line.line-amber { background-color: #f59e0b !important; }
 
-.figure-sub-text { font-size: 1.1rem; color: #475569; font-weight: 700; letter-spacing: 0; }
+.figure-sub-text { font-size: 1.1rem; color: white; font-weight: 700; letter-spacing: 0; }
 .badge-gold { background: rgba(245, 158, 11, 0.08); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.15); }
 .text-amber { color: #f59e0b !important; }
 
@@ -675,30 +675,30 @@
 }
 
 .sim-input-box { display: flex; flex-direction: column; gap: 0.45rem; text-align: left; width: 100%; box-sizing: border-box; }
-.sim-input-box label { font-size: 0.72rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.04em; }
+.sim-input-box label { font-size: 0.72rem; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 0.04em; }
 
 .sim-input-row-shell {
     display: flex; align-items: center; background: rgba(4, 7, 13, 0.4); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 10px; padding: 0.25rem; transition: border-color 0.3s ease; width: 100%; box-sizing: border-box;
 }
 .sim-input-row-shell:focus-within { border-color: #f59e0b !important; }
 
-.sim-currency-lbl { font-size: 0.95rem; font-weight: 700; color: #334155; padding-left: 0.85rem; font-family: monospace; }
+.sim-currency-lbl { font-size: 0.95rem; font-weight: 700; color: white; padding-left: 0.85rem; font-family: monospace; }
 .sim-input-row-shell input { width: 100%; background: transparent !important; border: none !important; outline: none !important; padding: 0.65rem 0.5rem; font-size: 0.95rem; font-weight: 600; color: #ffffff !important; box-sizing: border-box; }
-.sim-input-row-shell input::placeholder { color: #334155; }
+.sim-input-row-shell input::placeholder { color: white; }
 
 /* Simulator Dropdown custom configurations */
 .sim-select-shell { position: relative; width: 100%; background: rgba(4, 7, 13, 0.4); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 10px; padding: 0.25rem; transition: border-color 0.3s ease; box-sizing: border-box; }
 .sim-select-shell:focus-within { border-color: #f59e0b !important; }
 .sim-select-shell select { width: 100%; background: transparent !important; border: none !important; outline: none !important; padding: 0.65rem 2.5rem 0.65rem 0.85rem; font-size: 0.95rem; font-weight: 600; color: #ffffff !important; cursor: pointer; appearance: none; -webkit-appearance: none; box-sizing: border-box; }
 .sim-select-shell select option { background-color: #0d1321; color: #ffffff; }
-.sim-select-shell::after { content: '▼'; font-size: 0.65rem; color: #475569; position: absolute; right: 1.25rem; top: 50%; transform: translateY(-50%); pointer-events: none; }
+.sim-select-shell::after { content: '▼'; font-size: 0.65rem; color: white; position: absolute; right: 1.25rem; top: 50%; transform: translateY(-50%); pointer-events: none; }
 
 /* Sub-panel telemetry readout calculations rows wrap */
 .simulator-telemetry-feedback-panel {
     display: flex; flex-direction: column; gap: 0.75rem; background: rgba(245, 158, 11, 0.02); padding: 1.15rem 1.5rem; border-radius: 12px; border: 1px solid rgba(245, 158, 11, 0.12); width: 100%; box-sizing: border-box;
 }
 .telemetry-row { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-.telemetry-lbl { font-size: 0.85rem; color: #64748b; font-weight: 600; text-align: left; }
+.telemetry-lbl { font-size: 0.85rem; color: white; font-weight: 600; text-align: left; }
 .telemetry-val { font-size: 0.95rem; font-weight: 700; text-align: right; }
 .color-white { color: #ffffff; }
 .color-gold { color: #f59e0b; text-shadow: 0 0 10px rgba(245,158,11,0.2); }
@@ -713,8 +713,8 @@
 .simulator-execute-btn:hover {
     background: linear-gradient(135deg, #b45309 0%, #f59e0b 100__) !important; color: #000000 !important; border-color: transparent !important; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35) !important;
 }
-.simulator-execute-btn svg { transition: transform 0.4s ease; color: #64748b; }
-.simulator-execute-btn:hover svg { transform: translateX(3px) !important; color: #000000 !important; }
+.simulator-execute-btn svg { transition: transform 0.4s ease; color: white; }
+.simulator-execute-btn:hover svg { transform: translateX(3px) !important; color: white !important; }
 
 /* ==========================================================================
    LIQUID SAFETY RESPONSIVE BREAKPOINTS CONFIGURATION MAPPINGS
@@ -1020,14 +1020,14 @@
 }
 
 .trans-input-box { display: flex; flex-direction: column; gap: 0.45rem; text-align: left; width: 100%; box-sizing: border-box; }
-.trans-input-box label { font-size: 0.72rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.04em; }
+.trans-input-box label { font-size: 0.72rem; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 0.04em; }
 
 .trans-input-row-shell {
     display: flex; align-items: center; background: rgba(4, 7, 13, 0.4); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 10px; padding: 0.25rem; transition: border-color 0.3s ease; width: 100%; box-sizing: border-box;
 }
 .trans-input-row-shell:focus-within { border-color: #0284c7 !important; } /* Blue aura tracking response accent */
 
-.trans-currency-indicator { font-size: 1rem; font-weight: 700; color: #334155; padding-left: 0.85rem; font-family: monospace; }
+.trans-currency-indicator { font-size: 1rem; font-weight: 700; color: white; padding-left: 0.85rem; font-family: monospace; }
 .trans-input-row-shell input { width: 100%; background: transparent !important; border: none !important; outline: none !important; padding: 0.65rem 0.85rem; font-size: 0.95rem; font-weight: 600; color: #ffffff !important; box-sizing: border-box; }
 .trans-input-row-shell input::placeholder { color: #334155; }
 
@@ -1036,14 +1036,14 @@
 .trans-select-shell:focus-within { border-color: #0284c7 !important; }
 .trans-select-shell select { width: 100%; background: transparent !transparent; border: none !important; outline: none !important; padding: 0.65rem 2.5rem 0.65rem 0.85rem; font-size: 0.95rem; font-weight: 600; color: #ffffff !important; cursor: pointer; appearance: none; -webkit-appearance: none; box-sizing: border-box; }
 .trans-select-shell select option { background-color: #0d1321; color: #ffffff; }
-.trans-select-shell::after { content: '▼'; font-size: 0.65rem; color: #475569; position: absolute; right: 1.25rem; top: 50%; transform: translateY(-50%); pointer-events: none; }
+.trans-select-shell::after { content: '▼'; font-size: 0.65rem; color: white; position: absolute; right: 1.25rem; top: 50%; transform: translateY(-50%); pointer-events: none; }
 
 /* Telemetry estimation calculations breakdown box */
 .transfer-telemetry-feedback-panel {
     display: flex; flex-direction: column; gap: 0.75rem; background: rgba(2, 132, 199, 0.02); padding: 1.15rem 1.5rem; border-radius: 12px; border: 1px solid rgba(2, 132, 199, 0.12); width: 100%; box-sizing: border-box;
 }
 .trans-feedback-row { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-.trans-lbl { font-size: 0.85rem; color: #64748b; font-weight: 600; text-align: left; }
+.trans-lbl { font-size: 0.85rem; color: white; font-weight: 600; text-align: left; }
 .trans-val { font-size: 0.95rem; font-weight: 700; text-align: right; }
 
 .transfer-action-row { width: 100%; display: flex; }
@@ -1057,7 +1057,7 @@
     background: linear-gradient(135deg, #025h20 0%, #0284c7 100%) !important; /* Transforms outline block into high contrast structural banking blue ribbon overlay */
     color: #ffffff !important; border-color: transparent !important; box-shadow: 0 4px 15px rgba(2, 132, 199, 0.35) !important;
 }
-.transfer-execute-btn svg { transition: transform 0.4s ease; color: #64748b; }
+.transfer-execute-btn svg { transition: transform 0.4s ease; color: white; }
 .transfer-execute-btn:hover svg { transform: translateX(3px) !important; color: #ffffff !important; }
 
 /* ==========================================================================
@@ -1344,7 +1344,7 @@
 }
 
 .zk-input-box { display: flex; flex-direction: column; gap: 0.45rem; text-align: left; width: 100%; box-sizing: border-box; }
-.zk-input-box label { font-size: 0.72rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.04em; }
+.zk-input-box label { font-size: 0.72rem; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 0.04em; }
 
 .zk-input-row-shell {
     display: flex; align-items: center; background: rgba(4, 7, 13, 0.4); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 10px; padding: 0.25rem; transition: border-color 0.3s ease; width: 100%; box-sizing: border-box;
@@ -1359,14 +1359,14 @@
 .zk-select-shell:focus-within { border-color: #10b981 !important; }
 .zk-select-shell select { width: 100%; background: transparent !important; border: none !important; outline: none !important; padding: 0.65rem 2.5rem 0.65rem 0.85rem; font-size: 0.95rem; font-weight: 600; color: #ffffff !important; cursor: pointer; appearance: none; -webkit-appearance: none; box-sizing: border-box; }
 .zk-select-shell select option { background-color: #0d1321; color: #ffffff; }
-.zk-select-shell::after { content: '▼'; font-size: 0.65rem; color: #475569; position: absolute; right: 1.25rem; top: 50%; transform: translateY(-50%); pointer-events: none; }
+.zk-select-shell::after { content: '▼'; font-size: 0.65rem; color: white; position: absolute; right: 1.25rem; top: 50%; transform: translateY(-50%); pointer-events: none; }
 
 /* Telemetry estimation calculations breakdown box */
 .zk-telemetry-feedback-panel {
     display: flex; flex-direction: column; gap: 0.75rem; background: rgba(16, 185, 129, 0.01); padding: 1.15rem 1.5rem; border-radius: 12px; border: 1px solid rgba(16, 185, 129, 0.12); width: 100%; box-sizing: border-box;
 }
 .zk-feedback-row { display: flex; justify-content: space-between; align-items: center; width: 100%; gap: 1.5rem; }
-.zk-lbl { font-size: 0.85rem; color: #64748b; font-weight: 600; text-align: left; }
+.zk-lbl { font-size: 0.85rem; color: white; font-weight: 600; text-align: left; }
 .zk-val { font-size: 0.95rem; font-weight: 700; text-align: right; }
 .text-ellipsis { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 50%; }
 
@@ -1379,10 +1379,10 @@
 .dash-extended-ledger-block:hover .zk-execute-btn,
 .zk-execute-btn:hover {
     background: linear-gradient(135deg, #064e3b 0%, #10b981 100__) !important; /* Transforms outline block into high contrast structural emerald ribbon overlay */
-    color: #000000 !important; border-color: transparent !important; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.35) !important;
+    color: white !important; border-color: transparent !important; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.35) !important;
 }
-.zk-execute-btn svg { transition: transform 0.4s ease; color: #64748b; }
-.zk-execute-btn:hover svg { transform: translateX(3px) !important; color: #000000 !important; }
+.zk-execute-btn svg { transition: transform 0.4s ease; color: white; }
+.zk-execute-btn:hover svg { transform: translateX(3px) !important; color: white !important; }
 
 /* ==========================================================================
    LIQUID SAFETY RESPONSIVE MOBILE WIDTH OVERRIDES
@@ -1610,7 +1610,7 @@
 
 /* Categorized navigation menus headers fields */
 .sidebar-category-group { display: flex; flex-direction: column; gap: 0.75rem; width: 100%; }
-.sidebar-cat-title { font-size: 0.68rem; font-weight: 800; color: #475569; text-transform: uppercase; letter-spacing: 0.06em; text-align: left; padding-left: 0.75rem; }
+.sidebar-cat-title { font-size: 0.68rem; font-weight: 800; color: white; text-transform: uppercase; letter-spacing: 0.06em; text-align: left; padding-left: 0.75rem; }
 
 .sidebar-nav { display: flex; flex-direction: column; gap: 0.45rem; width: 100%; }
 
@@ -1624,7 +1624,7 @@
 }
 .sidebar-menu-item:hover { background: rgba(255,255,255,0.02) !important; color: #ffffff !important; }
 
-.menu-vector-icon { color: #475569; transition: color 0.3s; flex-shrink: 0; }
+.menu-vector-icon { color: white; transition: color 0.3s; flex-shrink: 0; }
 .sidebar-menu-item:hover .menu-vector-icon { color: #ffffff; }
 
 /* Active Menu tab glow multiplier triggers states overrides */
@@ -1641,7 +1641,7 @@
     display: flex !important; flex-direction: row !important; align-items: center !important; gap: 0.85rem !important;
     width: 100% !important; background: transparent !important; border: 1px solid transparent !important;
     padding: 0.75rem 1rem !important; border-radius: 10px !important; cursor: pointer !important; outline: none !important;
-    color: #64748b !important; font-size: 0.92rem !important; font-weight: 700 !important; text-align: left;
+    color: white !important; font-size: 0.92rem !important; font-weight: 700 !important; text-align: left;
     transition: all 0.3s ease !important;
 }
 .sidebar-logout-btn:hover { background: rgba(239, 68, 68, 0.03) !important; color: #ef4444 !important; }
@@ -1680,7 +1680,7 @@
 
 /* Bell utility notification anchor links styles mapping */
 .header-utility-icon-btn {
-    position: relative; background: transparent; border: none; outline: none; color: #64748b; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0.35rem; transition: color 0.3s; text-decoration: none !important;
+    position: relative; background: transparent; border: none; outline: none; color: white; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0.35rem; transition: color 0.3s; text-decoration: none !important;
 }
 .header-utility-icon-btn:hover { color: #ffffff; }
 .utility-notification-badge-dot { position: absolute; width: 6px; height: 6px; background-color: #f59e0b; border-radius: 50%; top: 2px; right: 2px; box-shadow: 0 0 6px #f59e0b; }
@@ -1690,7 +1690,7 @@
 .profile-avatar-box { width: 28px; height: 28px; background: rgba(245,158,11,0.04); border: 1px solid rgba(245,158,11,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #f59e0b; }
 
 .profile-identity-meta { display: flex; flex-direction: column; text-align: left; }
-.profile-welcome-lbl { font-size: 0.65rem; font-weight: 600; color: #475569; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1; margin-bottom: 0.15rem; }
+.profile-welcome-lbl { font-size: 0.65rem; font-weight: 600; color: white; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1; margin-bottom: 0.15rem; }
 .profile-extracted-username { font-size: 0.88rem; font-weight: 700; color: #ffffff; line-height: 1; }
 
 /* FIXED MAIN VIEWPORT CONTENT SCREEN HUD: Isolated vertical scrolling capture bounds */
@@ -1710,13 +1710,13 @@
 .dash-modular-view-section.view-active { display: flex !important; }
 
 .view-panel-title-heading { font-size: 1.75rem; font-weight: 800; color: #ffffff; margin: 0 0 0.75rem 0; letter-spacing: -0.01em; }
-.view-panel-placeholder-desc { font-size: 0.98rem; color: #64748b; line-height: 1.6; margin: 0 0 2rem 0; max-width: 680px; }
+.view-panel-placeholder-desc { font-size: 0.98rem; color: white; line-height: 1.6; margin: 0 0 2rem 0; max-width: 680px; }
 
 /* High Tech Quantitative Dashboard Stats Showcase Row */
 .dash-metrics-showcase-grid {
     display: grid !important; grid-template-columns: repeat(2, 1fr) !important; gap: 1.5rem !important; width: 100%; max-width: 840px; box-sizing: border-box;
 }
-.showcase-metric-card {background: rgba(9, 13, 22, 0.65) !important; border: 1px solid rgba(255, 255, 255, 0.04) !important; padding: 1.5rem 1.75rem !important; border-radius: 16px !important; display: flex !important; flex-direction: column !important; gap: 0.5rem; box-sizing: border-box; transition: border-color 0.3s ease;}.showcase-metric-card:hover { border-color: rgba(245, 158, 11, 0.2) !important; }.metric-card-lbl { font-size: 0.72rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.04em; }.metric-card-figure { font-size: 1.75rem; font-weight: 800; color: #ffffff; margin: 0; font-family: monospace; }.metric-card-delta-badge { font-size: 0.8rem; font-weight: 700; }.text-emerald { color: #10b981; }/* ==========================================================================3. MOBILE RESPONSIVE SAFETY SHIELDS & BREAKPOINT CONTROLS MAPPINGS========================================================================== */
+.showcase-metric-card {background: rgba(9, 13, 22, 0.65) !important; border: 1px solid rgba(255, 255, 255, 0.04) !important; padding: 1.5rem 1.75rem !important; border-radius: 16px !important; display: flex !important; flex-direction: column !important; gap: 0.5rem; box-sizing: border-box; transition: border-color 0.3s ease;}.showcase-metric-card:hover { border-color: rgba(245, 158, 11, 0.2) !important; }.metric-card-lbl { font-size: 0.72rem; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 0.04em; }.metric-card-figure { font-size: 1.75rem; font-weight: 800; color: #ffffff; margin: 0; font-family: monospace; }.metric-card-delta-badge { font-size: 0.8rem; font-weight: 700; }.text-emerald { color: #10b981; }/* ==========================================================================3. MOBILE RESPONSIVE SAFETY SHIELDS & BREAKPOINT CONTROLS MAPPINGS========================================================================== */
 .dash-mobile-sidebar-blur-shroud{
     position: fixed;
     inset: 0;
